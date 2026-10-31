@@ -1,0 +1,80 @@
+[
+  {
+    "reference": "energie-ipad-air-win32.png",
+    "before_sha256": "b3214b812b1d7bdc85adcd47bc9100d154164e0223450b1aa4691dcabf0ef4ae",
+    "after_sha256": "818808e8a56f11c44b0c228b4f78e50f93712d1d702251a19f72976208e46cd5",
+    "reason": "Les champs trop étroits recouvraient leurs libellés. Leur largeur est corrigée et leur lisibilité est vérifiée à 820/1280 px. La référence iPad conservait aussi une ancienne disposition et un axe en secondes ; les valeurs calculées n'ont pas changé."
+  },
+  {
+    "reference": "energie-laptop-win32.png",
+    "before_sha256": "69fb98869a096eaf39e69f291aea4199c732af0d7b308de644a9c1799c7add2f",
+    "after_sha256": "0ccdb46b53ca4b9cb889d8b478653df1940af666a31c11e8f13e4dc504bb9e2f",
+    "reason": "Les champs trop étroits recouvraient leurs libellés. Leur largeur est corrigée et leur lisibilité est vérifiée à 820/1280 px. La référence iPad conservait aussi une ancienne disposition et un axe en secondes ; les valeurs calculées n'ont pas changé."
+  },
+  {
+    "reference": "penalites-ipad-air-win32.png",
+    "before_sha256": "98257bafc3ed069c8667d81737cf8d0df2b7d639c9cb93c43ada0005f10de96c",
+    "after_sha256": "cc8c4dfe79fd769cae7855b9f49675bfc672409d7aa9ba6e811b99cb6f4e56dd",
+    "reason": "La référence utilisait l'ancien ordre des cartes et les temps en secondes seulement. Le rendu actuel respecte les tests existants : Simples, Rentabilité, Doubles, avec secondes et minutes, et résultats sous les réglages."
+  },
+  {
+    "reference": "penalites-mobile-360-win32.png",
+    "before_sha256": "d60e56740b2a3deb7f83d97dbce695e0286e05212cdfb1215e9db36310e155a7",
+    "after_sha256": "7ff87c676189014f56697ad2447feb2c95e4cdf4e17d69342ced7eff371089cb",
+    "reason": "La grille de Rentabilité débordait et superposait ses champs. Les réglages sont empilés et le graphique conserve au moins 320 px. Les données restent identiques ; les audits contrôlent aussi la largeur et la carte suivante."
+  },
+  {
+    "reference": "penalites-mobile-390-win32.png",
+    "before_sha256": "bfcd884fdb79980fed14cdffb4d4599629c7d0189bec23d702b481cdefc11de1",
+    "after_sha256": "ce0588abcd3cd4a2552a026042fdb35a626587e02549a0faecdf3d43ad495ca2",
+    "reason": "La grille de Rentabilité débordait et superposait ses champs. Les réglages sont empilés et le graphique conserve au moins 320 px. Les données restent identiques ; les audits contrôlent aussi la largeur et la carte suivante."
+  },
+  {
+    "reference": "polaires-desktop-win32.png",
+    "before_sha256": "059f3dbad75a65cd6147e4ea982d58cdbc1f94a1d5b9e73086b5add752d33da9",
+    "after_sha256": "75f40a473e83bc2c8a23ae0985f80ff20de669deb9da7f6e70d0e1bbe3cd9978",
+    "reason": "La référence montrait encore trois graphiques en calcul (86 à 98 %). Le rendu vérifié contient six graphiques terminés. Les contrôles TWA/TWS correspondent aux axes ; les commandes ne se recouvrent plus à 1280/1440 px."
+  },
+  {
+    "reference": "polaires-ipad-air-win32.png",
+    "before_sha256": "68a3c841650ff3149149fae657f0075ce459dce6f7e6a2f612d02479f3ca7033",
+    "after_sha256": "10ab0ef4c078868175d77da91ae04f9764fccc2583a7cd1271b7092492a9aa26",
+    "reason": "La référence montrait encore trois graphiques en calcul (86 à 98 %). Le rendu vérifié contient six graphiques terminés. Les contrôles TWA/TWS correspondent aux axes ; les commandes ne se recouvrent plus à 1280/1440 px."
+  },
+  {
+    "reference": "polaires-laptop-win32.png",
+    "before_sha256": "cbaea41f93fedb19fc2537516a0bfedb6f748c870a8631c8330687af562435d0",
+    "after_sha256": "ef216d563a4f9536d4ba5bf6e1cf42b6954755a7e114d66a2f3ec0e790c06506",
+    "reason": "La référence montrait encore trois graphiques en calcul (86 à 98 %). Le rendu vérifié contient six graphiques terminés. Les contrôles TWA/TWS correspondent aux axes ; les commandes ne se recouvrent plus à 1280/1440 px."
+  },
+  {
+    "reference": "polaires-mobile-360-win32.png",
+    "before_sha256": "15e8913899823d4870000e5248cb299c46ae63a7de5426bed29788626328493a",
+    "after_sha256": "b7d121932d66946a0c855c593e336c12ac06d918d6967653cd5cc4a3808c6104",
+    "reason": "La référence montrait encore trois graphiques en calcul (86 à 98 %). Le rendu vérifié contient six graphiques terminés. Les contrôles TWA/TWS correspondent aux axes ; les commandes ne se recouvrent plus à 1280/1440 px."
+  },
+  {
+    "reference": "polaires-tablette-768-win32.png",
+    "before_sha256": "f70f7f4222716835ad56a68f671526fe241f5f73a7d10499397be4614f18cd23",
+    "after_sha256": "538b057d07909ff6444d6e4c5c906f473d31395f65bfdafbfd2c2fd882a6ad77",
+    "reason": "La référence montrait encore trois graphiques en calcul (86 à 98 %). Le rendu vérifié contient six graphiques terminés. Les contrôles TWA/TWS correspondent aux axes ; les commandes ne se recouvrent plus à 1280/1440 px."
+  },
+  {
+    "reference": "voiles-auto-mobile-360-win32.png",
+    "before_sha256": "4679ecfbea493220b4a2b620a67bc08cea9593c2d551d450ecf451300b659203",
+    "after_sha256": "74e5e6778e5c52464f23061bcbf77932dc01f870646cca79ce23e89f96f93b73",
+    "reason": "La référence contenait des calculs incomplets et d'anciennes légendes. Les graphiques terminés ont un cadre indépendant du canvas, une hauteur stable et six libellés lisibles. Les plages TWS 2,8–36,7 nds et TWA 62,9–132,1° sont conservées ; le recouvrement vide est explicite."
+  },
+  {
+    "reference": "voiles-auto-mobile-390-win32.png",
+    "before_sha256": "95e562f5c8dba19c7bd6857d0e8f41197f42567f41708893d88590b53bd7f85e",
+    "after_sha256": "78f05ba0afa8c99d5f75ca3f95f72819704168ecbc8590fb44a82ba8543d9749",
+    "reason": "La référence contenait des calculs incomplets et d'anciennes légendes. Les graphiques terminés ont un cadre indépendant du canvas, une hauteur stable et six libellés lisibles. Les plages TWS 2,8–36,7 nds et TWA 62,9–132,1° sont conservées ; le recouvrement vide est explicite."
+  },
+  {
+    "reference": "voiles-auto-tablette-768-win32.png",
+    "before_sha256": "dab80c1dce8320664dea61fc2966327b055308db9162fbc4c4049a0171dc831c",
+    "after_sha256": "bf66fca163adfcf4f093a642a23741f45f35136a5f682d14df55fb3043802b2b",
+    "reason": "La référence contenait des calculs incomplets et d'anciennes légendes. Les graphiques terminés ont un cadre indépendant du canvas, une hauteur stable et six libellés lisibles. Les plages TWS 2,8–36,7 nds et TWA 62,9–132,1° sont conservées ; le recouvrement vide est explicite."
+  }
+]

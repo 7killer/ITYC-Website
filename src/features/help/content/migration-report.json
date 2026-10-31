@@ -1,0 +1,2242 @@
+{
+  "documents": [
+    {
+      "source": "aide_pena.html",
+      "locale": "fr",
+      "headings": [
+        "Calcul des temps de pénalités",
+        "1. Courbe des pénalités",
+        "2. Courbe de référence $ f(tws)$",
+        "3. Coefficient multiplicateur de la stamina $ C_{stamina}$"
+      ],
+      "sectionCount": 3,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "aidePena/pena_ref_curve_vr.png",
+          "source": "assets/img/aidePena/pena_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aidePena/pena_ref_curve_stamina_vr.png",
+          "source": "assets/img/aidePena/pena_ref_curve_stamina_vr.png",
+          "layout": "below"
+        }
+      ],
+      "sourceTextNodes": 33,
+      "preservedTextNodes": 33,
+      "anomalies": [],
+      "markdown": "fr/aide_pena.md",
+      "figureCount": 2,
+      "formulaCount": 3
+    },
+    {
+      "source": "tuto_pena.html",
+      "locale": "fr",
+      "headings": [
+        "Tutoriel pénalités",
+        "1. Vue d'ensemble de la page",
+        "2. Sélection du bateau",
+        "3. Pénalités simples",
+        "Présentation",
+        "Courbe de pénalité simple",
+        "Calculatrice de pénalité simple",
+        "4. Rentabilité d'un changement de voile",
+        "Présentation",
+        "Courbe de rentabilité",
+        "Réglages",
+        "5. Pénalités doubles",
+        "Présentation",
+        "Courbe de pénalité double",
+        "Calculatrice de pénalité double"
+      ],
+      "sectionCount": 5,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "pena_vueensemble.png",
+          "source": "assets/img/pena_vueensemble.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_simple_all.png",
+          "source": "assets/img/tutoPena/pena_simple_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_simple_setting.png",
+          "source": "assets/img/tutoPena/pena_simple_setting.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_simple_curve.png",
+          "source": "assets/img/tutoPena/pena_simple_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_simple_tooltip.png",
+          "source": "assets/img/tutoPena/pena_simple_tooltip.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_simple_cal.png",
+          "source": "assets/img/tutoPena/pena_simple_cal.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_all.png",
+          "source": "assets/img/tutoPena/pena_renta_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_renta_curve.png",
+          "source": "assets/img/tutoPena/pena_renta_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_renta_tooltip.png",
+          "source": "assets/img/tutoPena/pena_renta_tooltip.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_simple_setting.png",
+          "source": "assets/img/tutoPena/pena_simple_setting.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal1.png",
+          "source": "assets/img/tutoPena/pena_renta_cal1.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal2.png",
+          "source": "assets/img/tutoPena/pena_renta_cal2.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal2.png",
+          "source": "assets/img/tutoPena/pena_renta_cal2.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal3.png",
+          "source": "assets/img/tutoPena/pena_renta_cal3.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal4.png",
+          "source": "assets/img/tutoPena/pena_renta_cal4.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_double_all.png",
+          "source": "assets/img/tutoPena/pena_double_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_simple_setting.png",
+          "source": "assets/img/tutoPena/pena_simple_setting.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_double_curve.png",
+          "source": "assets/img/tutoPena/pena_double_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_double_tooltip.png",
+          "source": "assets/img/tutoPena/pena_double_tooltip.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_double_cal.png",
+          "source": "assets/img/tutoPena/pena_double_cal.png",
+          "layout": "side"
+        }
+      ],
+      "sourceTextNodes": 103,
+      "preservedTextNodes": 103,
+      "anomalies": [
+        "Theme pair differs: tutoPena/pena_renta_cal1.png / assets/img/tutoPena/pena_renta_cal2_b.png"
+      ],
+      "markdown": "fr/tuto_pena.md",
+      "figureCount": 23,
+      "formulaCount": 0
+    },
+    {
+      "source": "aide_energy.html",
+      "locale": "fr",
+      "headings": [
+        "Calcul des pertes et des temps de récupération d'énergie",
+        "1. Pertes d'énergie",
+        "2. Courbe des pertes d'énergie $ f_p(tws)$",
+        "3. Coefficient multiplicateur du bateau $C_{bateau}$",
+        "4. Récupération d'énergie",
+        "5. Courbe de la récupération $ f_r(tws)$"
+      ],
+      "sectionCount": 5,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "aideEnergy/energy_loose_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_loose_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aideEnergy/energy_loose_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_loose_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aideEnergy/energy_recovery_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_recovery_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aideEnergy/energy_recovery_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_recovery_ref_curve_vr.png",
+          "layout": "below"
+        }
+      ],
+      "sourceTextNodes": 75,
+      "preservedTextNodes": 75,
+      "anomalies": [],
+      "markdown": "fr/aide_energy.md",
+      "figureCount": 4,
+      "formulaCount": 6
+    },
+    {
+      "source": "tuto_energy.html",
+      "locale": "fr",
+      "headings": [
+        "Tutoriel énergie",
+        "1. Vue d'ensemble de la page",
+        "2. Sélection du bateau",
+        "3. Pertes d'énergie",
+        "Présentation",
+        "Courbe de pertes d'énergie",
+        "Calculatrice de pertes d énergie",
+        "4. Récupération d'énergie",
+        "Présentation",
+        "Courbe de récupération d'énergie",
+        "Calculatrice de récupération d énergie"
+      ],
+      "sectionCount": 4,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "tutoEnergie/energie_vueensemble.png",
+          "source": "assets/img/tutoEnergie/energie_vueensemble.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_all.png",
+          "source": "assets/img/tutoEnergie/energie_loose_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_curve.png",
+          "source": "assets/img/tutoEnergie/energie_loose_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_curve_cursor.png",
+          "source": "assets/img/tutoEnergie/energie_loose_curve_cursor.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_cal.png",
+          "source": "assets/img/tutoEnergie/energie_loose_cal.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_all.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_curve.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_curve_cursor.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_curve_cursor.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_cal.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_cal.png",
+          "layout": "side"
+        }
+      ],
+      "sourceTextNodes": 57,
+      "preservedTextNodes": 57,
+      "anomalies": [],
+      "markdown": "fr/tuto_energy.md",
+      "figureCount": 12,
+      "formulaCount": 0
+    },
+    {
+      "source": "tuto_polaire.html",
+      "locale": "fr",
+      "headings": [
+        "Tutoriel polaires",
+        "1. Vue d'ensemble de la page",
+        "2. Sélection du bateau",
+        "3. Sélection des équipements",
+        "Présentation",
+        "Options et Packs",
+        "Voiles",
+        "4. Vitesse du bateau - f(tws) à TWA fixe",
+        "5. Vitesse du bateau - f(twa) à TWS fixe",
+        "6. Vitesse du bateau - f(tws) au meilleur angle VMG",
+        "7. Vitesse du bateau - Meilleure Vitesse"
+      ],
+      "sectionCount": 7,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "tutoPolar/polar_viewall.png",
+          "source": "assets/img/tutoPolar/polar_viewall.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption.png",
+          "source": "assets/img/tutoCommon/polar_selectOption.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption1.png",
+          "source": "assets/img/tutoCommon/polar_selectOption1.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption2.png",
+          "source": "assets/img/tutoCommon/polar_selectOption2.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwaval.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwaval.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwaCurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwaCurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_tws.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_tws.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwsval.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwsval.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwscurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwscurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_twa.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_twa.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedBVMGCurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedBVMGCurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_bvmg.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_bvmg.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedBSPDCurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedBSPDCurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_bspd.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_bspd.png",
+          "layout": "side half"
+        }
+      ],
+      "sourceTextNodes": 100,
+      "preservedTextNodes": 100,
+      "anomalies": [],
+      "markdown": "fr/tuto_polaire.md",
+      "figureCount": 17,
+      "formulaCount": 0
+    },
+    {
+      "source": "tuto_autoSail.html",
+      "locale": "fr",
+      "headings": [
+        "Tutoriel voiles automatiques",
+        "1. Vue d'ensemble de la page",
+        "2. Sélection du bateau",
+        "3. Sélection des équipements",
+        "Présentation",
+        "Options et Packs",
+        "Voiles",
+        "4. Voile active - TWA fixe",
+        "Présentation",
+        "Courbe de voile",
+        "Réglages",
+        "5. Voile active - TWS fixe",
+        "Présentation",
+        "Courbe de voile",
+        "Réglages",
+        "6. Plage d utilisation d'une voile",
+        "Présentation",
+        "Courbe de voile",
+        "Réglages"
+      ],
+      "sectionCount": 6,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "tutoAutoSail/autoSail_vueensemble.png",
+          "source": "assets/img/tutoAutoSail/autoSail_vueensemble.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption.png",
+          "source": "assets/img/tutoCommon/polar_selectOption.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption1.png",
+          "source": "assets/img/tutoCommon/polar_selectOption1.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption2.png",
+          "source": "assets/img/tutoCommon/polar_selectOption2.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa fixe_all.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa fixe_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa_fixe.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa_fixe.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSailZoom.png",
+          "source": "assets/img/tutoAutoSail/autoSailZoom.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/AutoSail_TooltipTWS.png",
+          "source": "assets/img/tutoAutoSail/AutoSail_TooltipTWS.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa fixe_setting.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa fixe_setting.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_tws fixe_all.png",
+          "source": "assets/img/tutoAutoSail/autoSail_tws fixe_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_tws_fixe.png",
+          "source": "assets/img/tutoAutoSail/autoSail_tws_fixe.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSailZoom.png",
+          "source": "assets/img/tutoAutoSail/autoSailZoom.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/AutoSail_TooltipTWA.png",
+          "source": "assets/img/tutoAutoSail/AutoSail_TooltipTWA.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_tws fixe_setting.png",
+          "source": "assets/img/tutoAutoSail/autoSail_tws fixe_setting.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_range_all.png",
+          "source": "assets/img/tutoAutoSail/autoSail_range_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_range.png",
+          "source": "assets/img/tutoAutoSail/autoSail_range.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_TooltipRange.png",
+          "source": "assets/img/tutoAutoSail/autoSail_TooltipRange.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_range_setting.png",
+          "source": "assets/img/tutoAutoSail/autoSail_range_setting.png",
+          "layout": "side"
+        }
+      ],
+      "sourceTextNodes": 150,
+      "preservedTextNodes": 150,
+      "anomalies": [],
+      "markdown": "fr/tuto_autoSail.md",
+      "figureCount": 21,
+      "formulaCount": 0
+    },
+    {
+      "source": "aide_dash.html",
+      "locale": "fr",
+      "headings": [
+        "Aide Dashboard",
+        "1. Présentation",
+        "2. Installation Chrome / Opera",
+        "1. Préparation",
+        "2.Menu Extension",
+        "3.Mode Développeur",
+        "4. Chargement",
+        "5. Ajout icone accès rapide",
+        "6.Redémarage Navigateur",
+        "3. Installation Edge",
+        "1. Préparation",
+        "2.Menu Extension",
+        "3.Mode Développeur",
+        "4. Chargement",
+        "5. Ajout icone accès rapide",
+        "6.Redémarage Navigateur",
+        "4. Démarrage",
+        "5. Intégration page du jeu",
+        "1. Présentation",
+        "2. Raccourcis",
+        "3.Mesures",
+        "4. Calculs",
+        "5. Pénalités",
+        "6. Onglet ITYC Dashboard",
+        "1. Présentation",
+        "2. Entête",
+        "3.Race Status",
+        "4. Page Journal",
+        "5. Page Flotte",
+        "6. Page Carte",
+        "7. Page Résumé",
+        "8. Page Graphique",
+        "9. Page Notifications",
+        "10. Page Configuration"
+      ],
+      "sectionCount": 6,
+      "tabCount": 27,
+      "images": [
+        {
+          "path": "dash/installChromeMenu.png",
+          "source": "assets/img/dash/installChromeMenu.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeParametre.png",
+          "source": "assets/img/dash/installChromeParametre.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeExtension1.png",
+          "source": "assets/img/dash/installChromeExtension1.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeExtension2.png",
+          "source": "assets/img/dash/installChromeExtension2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeSelect.png",
+          "source": "assets/img/dash/installChromeSelect.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeOk.png",
+          "source": "assets/img/dash/installChromeOk.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeprop.png",
+          "source": "assets/img/dash/installChromeprop.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeprop2.png",
+          "source": "assets/img/dash/installChromeprop2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/installEdgeMenu.png",
+          "source": "assets/img/dash/installEdgeMenu.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeParametre.png",
+          "source": "assets/img/dash/installEdgeParametre.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeExtension1.png",
+          "source": "assets/img/dash/installEdgeExtension1.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeExtension2.png",
+          "source": "assets/img/dash/installEdgeExtension2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeSelect.png",
+          "source": "assets/img/dash/installEdgeSelect.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeOk.png",
+          "source": "assets/img/dash/installEdgeOk.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeprop.png",
+          "source": "assets/img/dash/installEdgeprop.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeprop2.png",
+          "source": "assets/img/dash/installEdgeprop2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/InstallFirstStart.png",
+          "source": "assets/img/dash/InstallFirstStart.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/StartFirstDashNoCopng.png",
+          "source": "assets/img/dash/StartFirstDashNoCopng.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/startDash.png",
+          "source": "assets/img/dash/startDash.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/dashNoPlayerDetected.png",
+          "source": "assets/img/dash/dashNoPlayerDetected_b.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/StartDashNoPlyerDetected.png",
+          "source": "assets/img/dash/StartDashNoPlyerDetected.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/startRaceDetect.png",
+          "source": "assets/img/dash/startRaceDetect.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/fleet_full.png",
+          "source": "assets/img/dash/fleet_full.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/dahGame1.png",
+          "source": "assets/img/dash/dahGame1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dahGame2.png",
+          "source": "assets/img/dash/dahGame2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/dahGame3.png",
+          "source": "assets/img/dash/dahGame3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dahGame4.png",
+          "source": "assets/img/dash/dahGame4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dahGame5.png",
+          "source": "assets/img/dash/dahGame5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dashNoPlayerDetected.png",
+          "source": "assets/img/dash/dashNoPlayerDetected.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "dash/entete1.png",
+          "source": "assets/img/dash/entete1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/entete2.png",
+          "source": "assets/img/dash/entete2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus1.png",
+          "source": "assets/img/dash/raceSatus1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus2.png",
+          "source": "assets/img/dash/raceSatus2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus3.png",
+          "source": "assets/img/dash/raceSatus3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus4.png",
+          "source": "assets/img/dash/raceSatus4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus5.png",
+          "source": "assets/img/dash/raceSatus5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog1.png",
+          "source": "assets/img/dash/racelog1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog2.png",
+          "source": "assets/img/dash/racelog2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog3.png",
+          "source": "assets/img/dash/racelog3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog4.png",
+          "source": "assets/img/dash/racelog4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog5.png",
+          "source": "assets/img/dash/racelog5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog6.png",
+          "source": "assets/img/dash/racelog6.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_full.png",
+          "source": "assets/img/dash/fleet_full.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_filter.png",
+          "source": "assets/img/dash/fleet_filter.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_1.png",
+          "source": "assets/img/dash/fleet_1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_2.png",
+          "source": "assets/img/dash/fleet_2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_3.png",
+          "source": "assets/img/dash/fleet_3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_4.png",
+          "source": "assets/img/dash/fleet_4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_5.png",
+          "source": "assets/img/dash/fleet_5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_full.png",
+          "source": "assets/img/dash/map_full.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_start.png",
+          "source": "assets/img/dash/map_start.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_end.png",
+          "source": "assets/img/dash/map_end.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_gate_notOk.png",
+          "source": "assets/img/dash/map_gate_notOk.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_gate_Ok.png",
+          "source": "assets/img/dash/map_gate_Ok.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_me.png",
+          "source": "assets/img/dash/map_me.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_iconboat.png",
+          "source": "assets/img/dash/map_iconboat.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_action1.png",
+          "source": "assets/img/dash/map_action1.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_action11.png",
+          "source": "assets/img/dash/map_action11.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_cotes.png",
+          "source": "assets/img/dash/map_cotes.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_action12.png",
+          "source": "assets/img/dash/map_action12.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/draw_route_marker.png",
+          "source": "assets/img/dash/draw_route_marker.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_full_trace.png",
+          "source": "assets/img/dash/map_full_trace.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_action13.png",
+          "source": "assets/img/dash/map_action13.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/import_route.png",
+          "source": "assets/img/dash/import_route.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/draw_route_ssmarker.png",
+          "source": "assets/img/dash/draw_route_ssmarker.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_alt.png",
+          "source": "assets/img/dash/map_alt.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceboog.png",
+          "source": "assets/img/dash/raceboog.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/graph.png",
+          "source": "assets/img/dash/graph.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/notif.png",
+          "source": "assets/img/dash/notif.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config.png",
+          "source": "assets/img/dash/config.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config1.png",
+          "source": "assets/img/dash/config1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config2.png",
+          "source": "assets/img/dash/config2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config3.png",
+          "source": "assets/img/dash/config3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config4.png",
+          "source": "assets/img/dash/config4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config5.png",
+          "source": "assets/img/dash/config5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config6.png",
+          "source": "assets/img/dash/config6.png",
+          "layout": "below"
+        }
+      ],
+      "sourceTextNodes": 490,
+      "preservedTextNodes": 490,
+      "anomalies": [],
+      "markdown": "fr/aide_dash.md",
+      "figureCount": 75,
+      "formulaCount": 0
+    },
+    {
+      "source": "aide_penaEn.html",
+      "locale": "en",
+      "headings": [
+        "Penalty times computation",
+        "1. Penalty curve",
+        "2. Reference curve $f(tws)$",
+        "3. Stamina coefficient $ C_{stamina}$"
+      ],
+      "sectionCount": 3,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "aidePena/pena_ref_curve_vr.png",
+          "source": "assets/img/aidePena/pena_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aidePena/aidePena/aide_pena_table.png",
+          "source": "assets/img/aidePena/aidePena/aide_pena_table.png",
+          "layout": "side half",
+          "available": false
+        },
+        {
+          "path": "aidePena/pena_ref_curve_ityc.png",
+          "source": "assets/img/aidePena/pena_ref_curve_ityc.png",
+          "layout": "side half"
+        },
+        {
+          "path": "aidePena/pena_ref_curve_stamina_vr.png",
+          "source": "assets/img/aidePena/pena_ref_curve_stamina_vr.png",
+          "layout": "below"
+        }
+      ],
+      "sourceTextNodes": 34,
+      "preservedTextNodes": 34,
+      "anomalies": [],
+      "markdown": "en/aide_pena.md",
+      "figureCount": 3,
+      "formulaCount": 3
+    },
+    {
+      "source": "tuto_penaEn.html",
+      "locale": "en",
+      "headings": [
+        "Penalties tutorial",
+        "1. Page overview",
+        "2. Boat selection",
+        "3. Simples penalties",
+        "Presentation",
+        "Simple penalty curve",
+        "Simple penalty calculator",
+        "4. Sail change profitability",
+        "Presentation",
+        "Profitability curve",
+        "Settings",
+        "5. Doubles penalties",
+        "Presentation",
+        "Double penalty curve",
+        "Double penalty calculator"
+      ],
+      "sectionCount": 5,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "pena_vueensemble.png",
+          "source": "assets/img/pena_vueensemble.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_simple_all.png",
+          "source": "assets/img/tutoPena/pena_simple_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_simple_setting.png",
+          "source": "assets/img/tutoPena/pena_simple_setting.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_simple_curve.png",
+          "source": "assets/img/tutoPena/pena_simple_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_simple_tooltip.png",
+          "source": "assets/img/tutoPena/pena_simple_tooltip.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_simple_cal.png",
+          "source": "assets/img/tutoPena/pena_simple_cal.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_all.png",
+          "source": "assets/img/tutoPena/pena_renta_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_renta_curve.png",
+          "source": "assets/img/tutoPena/pena_renta_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_renta_tooltip.png",
+          "source": "assets/img/tutoPena/pena_renta_tooltip.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_simple_setting.png",
+          "source": "assets/img/tutoPena/pena_simple_setting.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal1.png",
+          "source": "assets/img/tutoPena/pena_renta_cal1.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal2.png",
+          "source": "assets/img/tutoPena/pena_renta_cal2.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal3.png",
+          "source": "assets/img/tutoPena/pena_renta_cal3.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_renta_cal4.png",
+          "source": "assets/img/tutoPena/pena_renta_cal4.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoPena/pena_double_all.png",
+          "source": "assets/img/tutoPena/pena_double_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPena/pena_simple_setting.png",
+          "source": "assets/img/tutoPena/pena_simple_setting.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_double_tooltip.png",
+          "source": "assets/img/tutoPena/pena_double_tooltip.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPena/pena_double_cal.png",
+          "source": "assets/img/tutoPena/pena_double_cal.png",
+          "layout": "side"
+        }
+      ],
+      "sourceTextNodes": 103,
+      "preservedTextNodes": 103,
+      "anomalies": [
+        "Theme pair differs: tutoPena/pena_renta_cal1.png / assets/img/tutoPena/pena_renta_cal2_b.png"
+      ],
+      "markdown": "en/tuto_pena.md",
+      "figureCount": 21,
+      "formulaCount": 0
+    },
+    {
+      "source": "aide_energyEn.html",
+      "locale": "en",
+      "headings": [
+        "Calculation of energy losses and recovery times",
+        "1. Energy loose",
+        "2. Energy loss curve $ f_l(tws)$",
+        "3. Coefficient multiplicateur du bateau $C_{boat}$",
+        "4. Energy recovery",
+        "5. Recovery Curve $ f_r(tws)$"
+      ],
+      "sectionCount": 5,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "aideEnergy/energy_loose_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_loose_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aideEnergy/energy_loose_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_loose_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aideEnergy/energy_recovery_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_recovery_ref_curve_vr.png",
+          "layout": "below"
+        },
+        {
+          "path": "aideEnergy/energy_recovery_ref_curve_vr.png",
+          "source": "assets/img/aideEnergy/energy_recovery_ref_curve_vr.png",
+          "layout": "below"
+        }
+      ],
+      "sourceTextNodes": 75,
+      "preservedTextNodes": 75,
+      "anomalies": [],
+      "markdown": "en/aide_energy.md",
+      "figureCount": 4,
+      "formulaCount": 6
+    },
+    {
+      "source": "tuto_energyEn.html",
+      "locale": "en",
+      "headings": [
+        "Tutoriel énergie",
+        "1. Page overview",
+        "2. Boat selection",
+        "3. Energy looses",
+        "Presentation",
+        "Energy loss curve",
+        "Energy loss calculator",
+        "4. Energy recovery",
+        "Presentation",
+        "Courbe de récupération d'énergie",
+        "Energy recovery calculator"
+      ],
+      "sectionCount": 4,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "tutoEnergie/energie_vueensemble.png",
+          "source": "assets/img/tutoEnergie/energie_vueensemble.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_all.png",
+          "source": "assets/img/tutoEnergie/energie_loose_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_curve.png",
+          "source": "assets/img/tutoEnergie/energie_loose_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_curve_cursor.png",
+          "source": "assets/img/tutoEnergie/energie_loose_curve_cursor.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoEnergie/energie_loose_cal.png",
+          "source": "assets/img/tutoEnergie/energie_loose_cal.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_all.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_curve.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_curve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_curve_cursor.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_curve_cursor.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoEnergie/energie_recovery_cal.png",
+          "source": "assets/img/tutoEnergie/energie_recovery_cal.png",
+          "layout": "side"
+        }
+      ],
+      "sourceTextNodes": 57,
+      "preservedTextNodes": 57,
+      "anomalies": [],
+      "markdown": "en/tuto_energy.md",
+      "figureCount": 12,
+      "formulaCount": 0
+    },
+    {
+      "source": "tuto_polaireEn.html",
+      "locale": "en",
+      "headings": [
+        "Polars tutorial",
+        "1. Page overview",
+        "2. Boat selection",
+        "3. Equipments selection",
+        "Presentation",
+        "Options and Packs",
+        "Sails",
+        "4. Boat speed - f (tws) at fixed TWA",
+        "5. Boat speed - f (twa) at fixed TWS",
+        "6. Boat speed - f(tws) at best VMG angle",
+        "7. Boat speed at best speed"
+      ],
+      "sectionCount": 7,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "tutoPolar/polar_viewall.png",
+          "source": "assets/img/tutoPolar/polar_viewall.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption.png",
+          "source": "assets/img/tutoCommon/polar_selectOption.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption1.png",
+          "source": "assets/img/tutoCommon/polar_selectOption1.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption2.png",
+          "source": "assets/img/tutoCommon/polar_selectOption2.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwaval.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwaval.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwaCurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwaCurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_tws.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_tws.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwsval.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwsval.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedTwscurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedTwscurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_twa.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_twa.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedBVMGCurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedBVMGCurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_bvmg.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_bvmg.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoPolar/polar_boatSpeedBSPDCurve.png",
+          "source": "assets/img/tutoPolar/polar_boatSpeedBSPDCurve.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoPolar/polar_tooltip_bspd.png",
+          "source": "assets/img/tutoPolar/polar_tooltip_bspd.png",
+          "layout": "side half"
+        }
+      ],
+      "sourceTextNodes": 98,
+      "preservedTextNodes": 98,
+      "anomalies": [],
+      "markdown": "en/tuto_polaire.md",
+      "figureCount": 17,
+      "formulaCount": 0
+    },
+    {
+      "source": "tuto_autoSailEn.html",
+      "locale": "en",
+      "headings": [
+        "Automatic sails tutorial",
+        "1. Page overview",
+        "2. Boat selection",
+        "3. Equipments selection",
+        "Presentation",
+        "Options and Packs",
+        "Sails",
+        "4. Active sail - Fixed TWA",
+        "Presentation",
+        "Sail curve",
+        "Setting",
+        "5. Active sail - Fixed TWS",
+        "Introduction",
+        "Sail curve",
+        "Setting",
+        "6. Sail range",
+        "Page Overview",
+        "Sail curve",
+        "Setting"
+      ],
+      "sectionCount": 6,
+      "tabCount": 0,
+      "images": [
+        {
+          "path": "tutoAutoSail/autoSail_vueensemble.png",
+          "source": "assets/img/tutoAutoSail/autoSail_vueensemble.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "select_boat_ityc.png",
+          "source": "assets/img/select_boat_ityc.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_game.png",
+          "source": "assets/img/select_boat_game.png",
+          "layout": "side"
+        },
+        {
+          "path": "select_boat_toxcct.png",
+          "source": "assets/img/select_boat_toxcct.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption.png",
+          "source": "assets/img/tutoCommon/polar_selectOption.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption1.png",
+          "source": "assets/img/tutoCommon/polar_selectOption1.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoCommon/polar_selectOption2.png",
+          "source": "assets/img/tutoCommon/polar_selectOption2.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa fixe_all.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa fixe_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa_fixe.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa_fixe.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSailZoom.png",
+          "source": "assets/img/tutoAutoSail/autoSailZoom.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/AutoSail_TooltipTWS.png",
+          "source": "assets/img/tutoAutoSail/AutoSail_TooltipTWS.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa fixe_setting.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa fixe_setting.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa fixe_all.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa fixe_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa_fixe.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa_fixe.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSailZoom.png",
+          "source": "assets/img/tutoAutoSail/autoSailZoom.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/AutoSail_TooltipTWS.png",
+          "source": "assets/img/tutoAutoSail/AutoSail_TooltipTWS.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_twa fixe_setting.png",
+          "source": "assets/img/tutoAutoSail/autoSail_twa fixe_setting.png",
+          "layout": "side"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_range_all.png",
+          "source": "assets/img/tutoAutoSail/autoSail_range_all.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_range.png",
+          "source": "assets/img/tutoAutoSail/autoSail_range.png",
+          "layout": "below"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_TooltipRange.png",
+          "source": "assets/img/tutoAutoSail/autoSail_TooltipRange.png",
+          "layout": "side half"
+        },
+        {
+          "path": "tutoAutoSail/autoSail_range_setting.png",
+          "source": "assets/img/tutoAutoSail/autoSail_range_setting.png",
+          "layout": "side"
+        }
+      ],
+      "sourceTextNodes": 150,
+      "preservedTextNodes": 150,
+      "anomalies": [],
+      "markdown": "en/tuto_autoSail.md",
+      "figureCount": 21,
+      "formulaCount": 0
+    },
+    {
+      "source": "aide_dashEn.html",
+      "locale": "en",
+      "headings": [
+        "Dashboard Help",
+        "1. Overview",
+        "2. Chrome / Opera Installation",
+        "1. Preparation",
+        "2. Extention Menu",
+        "3.Developer Mode",
+        "4. Loading",
+        "5. Added quick access icon",
+        "6.Restart Browser",
+        "3. Edge Installation",
+        "1. Preparation",
+        "2.Extention Menu",
+        "3.Developer Mode",
+        "4. Loading",
+        "5. Added quick access icon",
+        "6.Restart Browser",
+        "4. Starting",
+        "5. Game page integration",
+        "1. Overview",
+        "2. Shortcuts",
+        "3.Measures",
+        "4. Calculations",
+        "5. Penalties",
+        "6. ITYC Dashboard Tab",
+        "1. Overview",
+        "2. Header",
+        "3.Race Status",
+        "4. Journal Tab (Race log)",
+        "5. Flotte Tab ( Fleet )",
+        "6. Carte Tab ( map )",
+        "7. RÃ©sumÃ© Tab ( Race overview )",
+        "8. Graphics Tab",
+        "9. Notifications Tab",
+        "10. Configuration Tab"
+      ],
+      "sectionCount": 6,
+      "tabCount": 27,
+      "images": [
+        {
+          "path": "dash/installChromeMenu.png",
+          "source": "assets/img/dash/installChromeMenu.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeParametre.png",
+          "source": "assets/img/dash/installChromeParametre.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeExtension1.png",
+          "source": "assets/img/dash/installChromeExtension1.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeExtension2.png",
+          "source": "assets/img/dash/installChromeExtension2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeSelect.png",
+          "source": "assets/img/dash/installChromeSelect.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeOk.png",
+          "source": "assets/img/dash/installChromeOk.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeprop.png",
+          "source": "assets/img/dash/installChromeprop.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installChromeprop2.png",
+          "source": "assets/img/dash/installChromeprop2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/installEdgeMenu.png",
+          "source": "assets/img/dash/installEdgeMenu.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeParametre.png",
+          "source": "assets/img/dash/installEdgeParametre.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeExtension1.png",
+          "source": "assets/img/dash/installEdgeExtension1.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeExtension2.png",
+          "source": "assets/img/dash/installEdgeExtension2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeSelect.png",
+          "source": "assets/img/dash/installEdgeSelect.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeOk.png",
+          "source": "assets/img/dash/installEdgeOk.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeprop.png",
+          "source": "assets/img/dash/installEdgeprop.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/installEdgeprop2.png",
+          "source": "assets/img/dash/installEdgeprop2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/InstallFirstStart.png",
+          "source": "assets/img/dash/InstallFirstStart.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/StartFirstDashNoCopng.png",
+          "source": "assets/img/dash/StartFirstDashNoCopng.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/startDash.png",
+          "source": "assets/img/dash/startDash.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/dashNoPlayerDetected.png",
+          "source": "assets/img/dash/dashNoPlayerDetected_b.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/StartDashNoPlyerDetected.png",
+          "source": "assets/img/dash/StartDashNoPlyerDetected.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/startRaceDetect.png",
+          "source": "assets/img/dash/startRaceDetect.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/fleet_full.png",
+          "source": "assets/img/dash/fleet_full.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/dahGame1.png",
+          "source": "assets/img/dash/dahGame1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dahGame2.png",
+          "source": "assets/img/dash/dahGame2.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/dahGame3.png",
+          "source": "assets/img/dash/dahGame3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dahGame4.png",
+          "source": "assets/img/dash/dahGame4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dahGame5.png",
+          "source": "assets/img/dash/dahGame5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/dashNoPlayerDetected.png",
+          "source": "assets/img/dash/dashNoPlayerDetected.png",
+          "layout": "side wide"
+        },
+        {
+          "path": "dash/entete1.png",
+          "source": "assets/img/dash/entete1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/entete2.png",
+          "source": "assets/img/dash/entete2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus1.png",
+          "source": "assets/img/dash/raceSatus1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus2.png",
+          "source": "assets/img/dash/raceSatus2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus3.png",
+          "source": "assets/img/dash/raceSatus3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus4.png",
+          "source": "assets/img/dash/raceSatus4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceSatus5.png",
+          "source": "assets/img/dash/raceSatus5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog1.png",
+          "source": "assets/img/dash/racelog1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog2.png",
+          "source": "assets/img/dash/racelog2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog3.png",
+          "source": "assets/img/dash/racelog3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog4.png",
+          "source": "assets/img/dash/racelog4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog5.png",
+          "source": "assets/img/dash/racelog5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/racelog6.png",
+          "source": "assets/img/dash/racelog6.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_full.png",
+          "source": "assets/img/dash/fleet_full.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_filter.png",
+          "source": "assets/img/dash/fleet_filter.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_1.png",
+          "source": "assets/img/dash/fleet_1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_2.png",
+          "source": "assets/img/dash/fleet_2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_3.png",
+          "source": "assets/img/dash/fleet_3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_4.png",
+          "source": "assets/img/dash/fleet_4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/fleet_5.png",
+          "source": "assets/img/dash/fleet_5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_full.png",
+          "source": "assets/img/dash/map_full.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_start.png",
+          "source": "assets/img/dash/map_start.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_end.png",
+          "source": "assets/img/dash/map_end.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_gate_notOk.png",
+          "source": "assets/img/dash/map_gate_notOk.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_gate_Ok.png",
+          "source": "assets/img/dash/map_gate_Ok.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_me.png",
+          "source": "assets/img/dash/map_me.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_iconboat.png",
+          "source": "assets/img/dash/map_iconboat.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_action1.png",
+          "source": "assets/img/dash/map_action1.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_action11.png",
+          "source": "assets/img/dash/map_action11.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/map_cotes.png",
+          "source": "assets/img/dash/map_cotes.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_action12.png",
+          "source": "assets/img/dash/map_action12.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/draw_route_marker.png",
+          "source": "assets/img/dash/draw_route_marker.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_full_trace.png",
+          "source": "assets/img/dash/map_full_trace.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_action13.png",
+          "source": "assets/img/dash/map_action13.png",
+          "layout": "side half"
+        },
+        {
+          "path": "dash/import_route.png",
+          "source": "assets/img/dash/import_route.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/draw_route_ssmarker.png",
+          "source": "assets/img/dash/draw_route_ssmarker.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/map_alt.png",
+          "source": "assets/img/dash/map_alt.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/raceboog.png",
+          "source": "assets/img/dash/raceboog.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/graph.png",
+          "source": "assets/img/dash/graph.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/notif.png",
+          "source": "assets/img/dash/notif.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config.png",
+          "source": "assets/img/dash/config.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config1.png",
+          "source": "assets/img/dash/config1.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config2.png",
+          "source": "assets/img/dash/config2.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config3.png",
+          "source": "assets/img/dash/config3.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config4.png",
+          "source": "assets/img/dash/config4.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config5.png",
+          "source": "assets/img/dash/config5.png",
+          "layout": "below"
+        },
+        {
+          "path": "dash/config6.png",
+          "source": "assets/img/dash/config6.png",
+          "layout": "below"
+        }
+      ],
+      "sourceTextNodes": 489,
+      "preservedTextNodes": 489,
+      "anomalies": [],
+      "markdown": "en/aide_dash.md",
+      "figureCount": 75,
+      "formulaCount": 0
+    }
+  ],
+  "missingAssets": [
+    "aidePena/aidePena/aide_pena_table.png"
+  ],
+  "copiedAssets": [
+    "aideEnergy/energy_loose_ref_curve_vr.png",
+    "aideEnergy/energy_recovery_ref_curve_vr.png",
+    "aidePena/pena_ref_curve_ityc.png",
+    "aidePena/pena_ref_curve_stamina_vr.png",
+    "aidePena/pena_ref_curve_vr.png",
+    "dash/InstallFirstStart.png",
+    "dash/StartDashNoPlyerDetected.png",
+    "dash/StartDashNoPlyerDetected_b.png",
+    "dash/StartFirstDashNoCopng.png",
+    "dash/config.png",
+    "dash/config1.png",
+    "dash/config1_b.png",
+    "dash/config2.png",
+    "dash/config2_b.png",
+    "dash/config3.png",
+    "dash/config3_b.png",
+    "dash/config4.png",
+    "dash/config4_b.png",
+    "dash/config5.png",
+    "dash/config5_b.png",
+    "dash/config6.png",
+    "dash/config6_b.png",
+    "dash/config_b.png",
+    "dash/dahGame1.png",
+    "dash/dahGame1_b.png",
+    "dash/dahGame2.png",
+    "dash/dahGame2_b.png",
+    "dash/dahGame3.png",
+    "dash/dahGame3_b.png",
+    "dash/dahGame4.png",
+    "dash/dahGame4_b.png",
+    "dash/dahGame5.png",
+    "dash/dahGame5_b.png",
+    "dash/dashNoPlayerDetected.png",
+    "dash/dashNoPlayerDetected_b.png",
+    "dash/draw_route_marker.png",
+    "dash/draw_route_marker_b.png",
+    "dash/draw_route_ssmarker.png",
+    "dash/draw_route_ssmarker_b.png",
+    "dash/entete1.png",
+    "dash/entete1_b.png",
+    "dash/entete2.png",
+    "dash/entete2_b.png",
+    "dash/fleet_1.png",
+    "dash/fleet_1_b.png",
+    "dash/fleet_2.png",
+    "dash/fleet_2_b.png",
+    "dash/fleet_3.png",
+    "dash/fleet_3_b.png",
+    "dash/fleet_4.png",
+    "dash/fleet_4_b.png",
+    "dash/fleet_5.png",
+    "dash/fleet_5_b.png",
+    "dash/fleet_filter.png",
+    "dash/fleet_filter_b.png",
+    "dash/fleet_full.png",
+    "dash/fleet_full_b.png",
+    "dash/graph.png",
+    "dash/graph_b.png",
+    "dash/import_route.png",
+    "dash/import_route_b.png",
+    "dash/installChromeExtension1.png",
+    "dash/installChromeExtension2.png",
+    "dash/installChromeMenu.png",
+    "dash/installChromeOk.png",
+    "dash/installChromeParametre.png",
+    "dash/installChromeSelect.png",
+    "dash/installChromeprop.png",
+    "dash/installChromeprop2.png",
+    "dash/installEdgeExtension1.png",
+    "dash/installEdgeExtension2.png",
+    "dash/installEdgeMenu.png",
+    "dash/installEdgeOk.png",
+    "dash/installEdgeParametre.png",
+    "dash/installEdgeSelect.png",
+    "dash/installEdgeprop.png",
+    "dash/installEdgeprop2.png",
+    "dash/map_action1.png",
+    "dash/map_action11.png",
+    "dash/map_action11_b.png",
+    "dash/map_action12.png",
+    "dash/map_action12_b.png",
+    "dash/map_action13.png",
+    "dash/map_action13_b.png",
+    "dash/map_action1_b.png",
+    "dash/map_alt.png",
+    "dash/map_cotes.png",
+    "dash/map_cotes_b.png",
+    "dash/map_end.png",
+    "dash/map_full.png",
+    "dash/map_full_b.png",
+    "dash/map_full_trace.png",
+    "dash/map_full_trace_b.png",
+    "dash/map_gate_Ok.png",
+    "dash/map_gate_notOk.png",
+    "dash/map_iconboat.png",
+    "dash/map_me.png",
+    "dash/map_start.png",
+    "dash/notif.png",
+    "dash/notif_b.png",
+    "dash/raceSatus1.png",
+    "dash/raceSatus1_b.png",
+    "dash/raceSatus2.png",
+    "dash/raceSatus2_b.png",
+    "dash/raceSatus3.png",
+    "dash/raceSatus3_b.png",
+    "dash/raceSatus4.png",
+    "dash/raceSatus4_b.png",
+    "dash/raceSatus5.png",
+    "dash/raceSatus5_b.png",
+    "dash/raceboog.png",
+    "dash/raceboog_b.png",
+    "dash/racelog1.png",
+    "dash/racelog1_b.png",
+    "dash/racelog2.png",
+    "dash/racelog2_b.png",
+    "dash/racelog3.png",
+    "dash/racelog3_b.png",
+    "dash/racelog4.png",
+    "dash/racelog4_b.png",
+    "dash/racelog5.png",
+    "dash/racelog5_b.png",
+    "dash/racelog6.png",
+    "dash/racelog6_b.png",
+    "dash/startDash.png",
+    "dash/startRaceDetect.png",
+    "dash/startRaceDetect_b.png",
+    "pena_vueensemble.png",
+    "pena_vueensemble_b.png",
+    "select_boat_game.png",
+    "select_boat_ityc.png",
+    "select_boat_ityc_b.png",
+    "select_boat_toxcct.png",
+    "tutoAutoSail/AutoSail_TooltipTWA.png",
+    "tutoAutoSail/AutoSail_TooltipTWA_b.png",
+    "tutoAutoSail/AutoSail_TooltipTWS.png",
+    "tutoAutoSail/AutoSail_TooltipTWS_b.png",
+    "tutoAutoSail/autoSailZoom.png",
+    "tutoAutoSail/autoSailZoom_b.png",
+    "tutoAutoSail/autoSail_TooltipRange.png",
+    "tutoAutoSail/autoSail_TooltipRange_b.png",
+    "tutoAutoSail/autoSail_range.png",
+    "tutoAutoSail/autoSail_range_all.png",
+    "tutoAutoSail/autoSail_range_all_b.png",
+    "tutoAutoSail/autoSail_range_b.png",
+    "tutoAutoSail/autoSail_range_setting.png",
+    "tutoAutoSail/autoSail_range_setting_b.png",
+    "tutoAutoSail/autoSail_twa fixe_all.png",
+    "tutoAutoSail/autoSail_twa fixe_all_b.png",
+    "tutoAutoSail/autoSail_twa fixe_setting.png",
+    "tutoAutoSail/autoSail_twa fixe_setting_b.png",
+    "tutoAutoSail/autoSail_twa_fixe.png",
+    "tutoAutoSail/autoSail_twa_fixe_b.png",
+    "tutoAutoSail/autoSail_tws fixe_all.png",
+    "tutoAutoSail/autoSail_tws fixe_all_b.png",
+    "tutoAutoSail/autoSail_tws fixe_setting.png",
+    "tutoAutoSail/autoSail_tws fixe_setting_b.png",
+    "tutoAutoSail/autoSail_tws_fixe.png",
+    "tutoAutoSail/autoSail_tws_fixe_b.png",
+    "tutoAutoSail/autoSail_vueensemble.png",
+    "tutoAutoSail/autoSail_vueensemble_b.png",
+    "tutoCommon/polar_selectOption.png",
+    "tutoCommon/polar_selectOption1.png",
+    "tutoCommon/polar_selectOption1_b.png",
+    "tutoCommon/polar_selectOption2.png",
+    "tutoCommon/polar_selectOption2_b.png",
+    "tutoCommon/polar_selectOption_b.png",
+    "tutoEnergie/energie_loose_all.png",
+    "tutoEnergie/energie_loose_all_b.png",
+    "tutoEnergie/energie_loose_cal.png",
+    "tutoEnergie/energie_loose_cal_b.png",
+    "tutoEnergie/energie_loose_curve.png",
+    "tutoEnergie/energie_loose_curve_b.png",
+    "tutoEnergie/energie_loose_curve_cursor.png",
+    "tutoEnergie/energie_loose_curve_cursor_b.png",
+    "tutoEnergie/energie_recovery_all.png",
+    "tutoEnergie/energie_recovery_all_b.png",
+    "tutoEnergie/energie_recovery_cal.png",
+    "tutoEnergie/energie_recovery_cal_b.png",
+    "tutoEnergie/energie_recovery_curve.png",
+    "tutoEnergie/energie_recovery_curve_b.png",
+    "tutoEnergie/energie_recovery_curve_cursor.png",
+    "tutoEnergie/energie_recovery_curve_cursor_b.png",
+    "tutoEnergie/energie_vueensemble.png",
+    "tutoEnergie/energie_vueensemble_b.png",
+    "tutoPena/pena_double_all.png",
+    "tutoPena/pena_double_all_b.png",
+    "tutoPena/pena_double_cal.png",
+    "tutoPena/pena_double_cal_b.png",
+    "tutoPena/pena_double_curve.png",
+    "tutoPena/pena_double_curve_b.png",
+    "tutoPena/pena_double_tooltip.png",
+    "tutoPena/pena_double_tooltip_b.png",
+    "tutoPena/pena_renta_all.png",
+    "tutoPena/pena_renta_all_b.png",
+    "tutoPena/pena_renta_cal1.png",
+    "tutoPena/pena_renta_cal2.png",
+    "tutoPena/pena_renta_cal2_b.png",
+    "tutoPena/pena_renta_cal3.png",
+    "tutoPena/pena_renta_cal3_b.png",
+    "tutoPena/pena_renta_cal4.png",
+    "tutoPena/pena_renta_cal4_b.png",
+    "tutoPena/pena_renta_curve.png",
+    "tutoPena/pena_renta_curve_b.png",
+    "tutoPena/pena_renta_tooltip.png",
+    "tutoPena/pena_renta_tooltip_b.png",
+    "tutoPena/pena_simple_all.png",
+    "tutoPena/pena_simple_all_b.png",
+    "tutoPena/pena_simple_cal.png",
+    "tutoPena/pena_simple_cal_b.png",
+    "tutoPena/pena_simple_curve.png",
+    "tutoPena/pena_simple_curve_b.png",
+    "tutoPena/pena_simple_setting.png",
+    "tutoPena/pena_simple_setting_b.png",
+    "tutoPena/pena_simple_tooltip.png",
+    "tutoPena/pena_simple_tooltip_b.png",
+    "tutoPolar/polar_boatSpeedBSPDCurve.png",
+    "tutoPolar/polar_boatSpeedBSPDCurve_b.png",
+    "tutoPolar/polar_boatSpeedBVMGCurve.png",
+    "tutoPolar/polar_boatSpeedBVMGCurve_b.png",
+    "tutoPolar/polar_boatSpeedTwaCurve.png",
+    "tutoPolar/polar_boatSpeedTwaCurve_b.png",
+    "tutoPolar/polar_boatSpeedTwaval.png",
+    "tutoPolar/polar_boatSpeedTwaval_b.png",
+    "tutoPolar/polar_boatSpeedTwscurve.png",
+    "tutoPolar/polar_boatSpeedTwscurve_b.png",
+    "tutoPolar/polar_boatSpeedTwsval.png",
+    "tutoPolar/polar_boatSpeedTwsval_b.png",
+    "tutoPolar/polar_tooltip_bspd.png",
+    "tutoPolar/polar_tooltip_bspd_b.png",
+    "tutoPolar/polar_tooltip_bvmg.png",
+    "tutoPolar/polar_tooltip_bvmg_b.png",
+    "tutoPolar/polar_tooltip_twa.png",
+    "tutoPolar/polar_tooltip_twa_b.png",
+    "tutoPolar/polar_tooltip_tws.png",
+    "tutoPolar/polar_tooltip_tws_b.png",
+    "tutoPolar/polar_viewall.png",
+    "tutoPolar/polar_viewall_b.png"
+  ],
+  "notes": [
+    "All article text nodes are audited for one-time preservation, including text directly inside malformed legacy lists.",
+    "Accordion and tab labels become headings; theme variants become one figure with the original light/dark assets available to the renderer.",
+    "The English originals contain untranslated French text; it is intentionally preserved.",
+    "aide_penaEn.html describes the former polynomial reference curve; aide_pena.html describes the cosine reference curve and additionally documents magic furler and the stamina cap.",
+    "tuto_pena.html repeats the boat-speed-without-sail-change setting in the payback section; both original occurrences are preserved.",
+    "Legacy download and tool links remain explicit https://ityc.fr links."
+  ],
+  "totals": {
+    "documents": 14,
+    "sections": 72,
+    "tabs": 54,
+    "figures": 307,
+    "preservedTextNodes": 2014,
+    "copiedAssets": 238
+  }
+}

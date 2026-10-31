@@ -1,0 +1,57 @@
+/* The iframe layout reuses the tools without their editable boat setup. */
+.embedded-page {
+  --polar-command-height: 7rem;
+  --autosail-command-height: 7rem;
+  --analysis-command-height: 4.5rem;
+}
+
+.embedded-page .site-header-inner,
+.embedded-page .polar-workspace,
+.embedded-page .analysis-workspace,
+.embedded-page .autosail-workspace {
+  width: min(100% - 1.5rem, 1600px);
+}
+
+.embedded-site-header .site-header-inner {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  min-height: 2.8rem;
+}
+
+.embedded-site-header .brand { font-size: 1.15rem; }
+.embedded-site-header nav { flex: 1; }
+.embedded-site-header .main-navigation {
+  flex-wrap: wrap;
+  gap: .25rem .9rem;
+  padding-block: .4rem;
+  white-space: normal;
+}
+
+.embedded-page .polar-command-stack,
+.embedded-page .analysis-command-stack,
+.embedded-page .autosail-command-stack {
+  position: static;
+}
+
+.embedded-page .embedded-toolbar,
+.embedded-page .analysis-toolbar {
+  gap: .5rem .75rem;
+  padding-block: .5rem;
+}
+
+.embedded-boat-name {
+  flex: 1 1 8rem;
+  min-width: 0;
+  color: var(--ink);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.embedded-page .polar-chart-workspace,
+.embedded-page .analysis-content,
+.embedded-page .autosail-content { padding-bottom: 1rem; }
+
+.embedded-page .chart-card,
+.embedded-page .analysis-card,
+.embedded-page .autosail-card { scroll-margin-top: 4.5rem; }

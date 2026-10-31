@@ -1,0 +1,19 @@
+@import './tokens.css';
+@import './layout.css';
+@import './polar.css';
+@import './analysis.css';
+@import './dash.css';
+@import './embedded.css';
+@import './home.css';
+
+/* Shared chart controls use the spacing of the penalties page. */
+.chart-actions { display: flex; flex-shrink: 0; align-items: center; gap: .45rem; }
+.chart-actions > .icon-button { flex-shrink: 0; }
+.chart-help-button { text-decoration: none; font: 700 .95rem/1 system-ui, sans-serif; }
+.chart-help-button:hover, .chart-help-button:focus-visible { color: var(--page); background: var(--ocean-bright); }
+
+/* Sur tablette, les bords restent hors du canvas : ils servent au défilement
+   de la page au lieu de déclencher le zoom du graphique. */
+@media (max-width: 1024px) {
+  .interactive-line-chart { padding-inline: 8.333%; }
+}
