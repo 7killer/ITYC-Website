@@ -2,7 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
-
+### 1.1 Présentation
 
 Dans Virtual Regatta, comme dans le réel, votre skipper peut être en forme ou fatigué.
 
@@ -36,8 +36,37 @@ ITYC.FR vous permet d afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
 
+### 1.2  Boutons du graphique
+
+#### 1.2.1 Mode affichage
+Vous pouvez changer de mode d'affichage de 2 manières :
+
+* En utilisant le sélecteur en haut de page ![Description](/assets/help/common/focusgrille.png "icon:2.5em")
+* En utilisant les boutons de chaque courbe 
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeGrilleCurve.png "icon:2.5em")
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeFocusCurve.png "icon:2.5em")
+
+
+*Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
+
+#### 1.2.2 Reset zoom
+
+Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
+
+#### 1.2.3 Raccourci aide
+
+A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
+
+#### 1.2.4 Précision
+
+Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision10.png "icon:2.5em") , pour basculer le calcul en précision 0.01.
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision100.png "icon:2.5em") , pour basculer le calcul en précision 0.1.
+
+*Attention une précision de 0.01 demande plus de temps de calcul.*
+
 <!-- anchor:tp_p1_1 -->
-### 1.1 Mode Focus
+### 1.3 Mode Focus
 :::figure side image=left width=75% 
 ![energie Vue d ensemble focus](/assets/help/energy/energie_vueensemble.png)
 
@@ -50,7 +79,7 @@ Récupération d énergie
 :::
 
 <!-- anchor:tp_p1_1_2 -->
-### 1.2 Mode Grille
+### 1.4 Mode Grille
 
 :::figure side image=left width=75% 
 ![Energie Vue d ensemble grille](/assets/help/energy/energy_vueensemble_g.png)
@@ -140,7 +169,22 @@ Perte d énergie pour chaque type de manoeuvre.
 :::
 
 <!-- anchor:tp_p4_2 -->
-### 4.2 Fonctionnalités des courbes
+### 4.2 Réglages et Calculatrice 
+
+:::figure side image=left  blocks=30%,70%
+![Calculatrice energie perdue](/assets/help/energy/el/el_cal.png)
+
+Réglez la vitesse du vent (nds).
+
+---
+
+Obtenez le taux d'énergie perdue pour chaque type de manoeuvre (%)
+et le temps nécessaire à la récupération de l'énergie perdue.
+
+*Note: Ces données sont identiques à celles fournies pour la courbe.*
+
+:::
+### 4.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/energy/el/el_curve.png)
 
@@ -179,21 +223,6 @@ Pertes d'énergie.
 :::
 
 <!-- anchor:tp_p4_3 -->
-### 4.3 Réglages et Calculatrice 
-
-:::figure side image=left  blocks=30%,70%
-![Calculatrice energie perdue](/assets/help/energy/el/el_cal.png)
-
-Réglez la vitesse du vent (nds).
-
----
-
-Obtenez le taux d'énergie perdue pour chaque type de manoeuvre (%)
-et le temps nécessaire à la récupération de l'énergie perdue.
-
-*Note: Ces données sont identiques à celles fournies pour la courbe.*
-
-:::
 
 ## 5. Récupération d'énergie
 
@@ -231,7 +260,25 @@ Durée nécessaire pour récupérer un point d'énergie.
 :::
 
 <!-- anchor:tp_p5_2 -->
-### 5.2 Fonctionnalités des courbes
+### 5.2 Réglages et Calculatrice 
+
+:::figure side image=left  blocks=25%,25%,50%
+![Calculatrice energie recup](/assets/help/energy/er/er_cal.png)
+
+Réglez l énergie (stamina) actuel du skipper (%).
+
+---
+
+Réglez la vitesse du vent (nds).
+
+---
+Obtenez le taux d'énergie à récupérer (%), le temps nécessaire de récupération
+et le temps de récupération par point d énergie.
+
+*Note: Ces données sont identiques à celles fournies pour la courbe.*
+
+:::
+### 5.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de energie recup](/assets/help/energy/er/er_curve.png)
 
@@ -268,21 +315,3 @@ Temps nécessaire par point d'énergie.
 :::
 
 <!-- anchor:tp_p5_3 -->
-### 5.3 Réglages et Calculatrice 
-
-:::figure side image=left  blocks=25%,25%,50%
-![Calculatrice energie recup](/assets/help/energy/er/er_cal.png)
-
-Réglez l énergie (stamina) actuel du skipper (%).
-
----
-
-Réglez la vitesse du vent (nds).
-
----
-Obtenez le taux d'énergie à récupérer (%), le temps nécessaire de récupération
-et le temps de récupération par point d énergie.
-
-*Note: Ces données sont identiques à celles fournies pour la courbe.*
-
-:::

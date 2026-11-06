@@ -2,9 +2,11 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { SiteHeader } from '../../components/SiteHeader'
 import { SiteFooter } from '../../components/SiteFooter'
 import { InteractiveLineChart, type InteractiveLineChartHandle, type InteractiveLineChartProps } from '../../shared/charts/InteractiveLineChart'
+import { readChartPrecision, sampleChartRange, type ChartPrecision, type ChartPrecisions } from '../../shared/charts/chartPrecision'
 import { RangeNumberField } from '../../shared/ui/RangeNumberField'
-import { SegmentedControl } from '../../shared/ui/SegmentedControl'
 import { ChartHelpLink, type ChartHelpTopic } from '../../shared/ui/ChartHelpLink'
+import { ChartActionIcon } from '../../shared/ui/ChartActionIcon'
+import { ChartPrecisionButton } from '../../shared/ui/ChartPrecisionButton'
 import { SailingCommandBar } from '../polar/SailingCommandBar'
 import { readPageSessionState, savePageSessionState } from '../../shared/storage/pageSessionState'
 import { boats, sails, type ChartLayout, type PolarOptions, type SailId } from '../polar/polarModel'
@@ -28,11 +30,12 @@ type Interval = { max: number; min: number }
 
 type AutoSailPageSession = {
   boat: (typeof boats)[number]
+  chartPrecisions: ChartPrecisions
   firstOverlapSail: SailId
   focus: number
   layout: ChartLayout
   options: PolarOptions
-  overlapPrecision: '0.1' | '0.01'
+  overlapPrecision: ChartPrecision
   sailForRange: SailId
   sailForTwa: SailId
   sailForTws: SailId
@@ -46,7 +49,7 @@ type AutoSailPageSession = {
   twsStart: number
 }
 
-function format(value: number, locale: 'fr' | 'en') { return locale === 'fr' ? value.toFixed(1).replace('.', ',') : value.toFixed(1) }
+function format(value: number, locale: 'fr' | 'en', digits = 1) { return locale === 'fr' ? value.toFixed(digits).replace('.', ',') : value.toFixed(digits) }
 
 function usePolarData(boat: string) {
   const [state, setState] = useState<{ data?: PolarData; error?: string }>({})
@@ -75,14 +78,16 @@ function useSailZone(
   const [state, setState] = useState<ZoneState>({})
   useEffect(() => {
     if (!polar) return
+    let cancelled = false
     const worker = new Worker(new URL('./autoSailZone.worker.ts', import.meta.url), { type: 'module' })
     setState({ progress: 0 })
     worker.onmessage = ({ data }) => {
+      if (cancelled) return
       if (data.type === 'progress') setState({ progress: data.percent })
       if (data.type === 'result') setState({ chart: data.empty ? undefined : data.chart, empty: data.empty, progress: 100 })
     }
     worker.postMessage({ options, polar, precision, sails: Array.from(selectedSails), sail, secondSail })
-    return () => worker.terminate()
+    return () => { cancelled = true; worker.terminate() }
   }, [options, polar, precision, sail, secondSail, selectedSails])
   const chart = useMemo<InteractiveLineChartProps | undefined>(() => {
     if (!state.chart || !polar) return undefined
@@ -128,11 +133,12 @@ function buildAutoChart(
   to: number,
   selectedSail: SailId,
   locale: 'fr' | 'en',
+  precision: ChartPrecision = '0.1',
 ): { chart: InteractiveLineChartProps; intervals: Interval[] } {
   const unit = locale === 'fr' ? 'nds' : 'kts'
   const min = Math.min(from, to)
   const max = Math.max(from, to)
-  const samples = Array.from({ length: Math.max(2, Math.round((max - min) * 10) + 1) }, (_, index) => min + index / 10).map((x) => {
+  const samples = sampleChartRange(min, max, axis === 'tws' ? precision : '0.1').map((x) => {
     const twa = axis === 'tws' ? fixed : x
     const tws = axis === 'tws' ? x : fixed
     const result = getBestSpeed(polar, twa, tws, { foil: options.foil, hull: options.hull, sails: Array.from(selectedSails) })
@@ -254,6 +260,7 @@ export function buildUsageZoneChart(
 }
 
 function AutoSailCard({
+  actions,
   chart,
   controls,
   intervals,
@@ -269,9 +276,11 @@ function AutoSailCard({
   isFocusMode,
   onSelect,
   rangeAxis,
+  rangePrecision = '0.1',
   emptyMessage,
   empty = false,
 }: {
+  actions?: ReactNode
   chart?: InteractiveLineChartProps
   controls: ReactNode
   intervals: Interval[]
@@ -287,6 +296,7 @@ function AutoSailCard({
   isFocusMode: boolean
   onSelect: () => void
   rangeAxis?: string
+  rangePrecision?: ChartPrecision
   emptyMessage?: string
   empty?: boolean
 }) {
@@ -297,13 +307,21 @@ function AutoSailCard({
   const hasChartData = Boolean(chart?.series.some((series) => series.points.some((point) => point.y !== null && Number.isFinite(point.x) && Number.isFinite(point.y))))
   const showEmptyMessage = Boolean(emptyMessage && (empty || (progress === 100 && !hasChartData)))
   return <article className="autosail-card" id={`autosail-chart-${index}`}>
-    <div className="autosail-card-heading"><h2>{title}</h2><div className="autosail-card-actions chart-actions"><button aria-label={resetLabel} className="icon-button" onClick={() => chartRef.current?.resetView()} type="button">↺</button><button aria-label={layoutLabel} className="icon-button" onClick={onSelect} type="button">{isFocusMode ? '⊞' : '↗'}</button><ChartHelpLink topic={helpTopic} locale={locale} theme={theme} embedded={embedded} /></div></div>
+    <div className="autosail-card-heading">
+      <h2>{title}</h2>
+      <div className="autosail-card-actions chart-actions">
+        {actions}
+        <button aria-label={resetLabel} className="icon-button" onClick={() => chartRef.current?.resetView()} type="button"><ChartActionIcon action="reset" /></button>
+        <button aria-label={layoutLabel} className="icon-button" onClick={onSelect} type="button"><ChartActionIcon action={isFocusMode ? 'grid' : 'focus'} /></button>
+        <ChartHelpLink topic={helpTopic} locale={locale} theme={theme} embedded={embedded} />
+      </div>
+    </div>
     <div className="autosail-card-content">
       <div className="autosail-chart">{hasChartData && chart ? <InteractiveLineChart {...chart} ref={chartRef} /> : <p>{showEmptyMessage ? emptyMessage : (progress === undefined ? (fr ? 'Calcul de la courbe…' : 'Calculating chart…') : `${fr ? 'Calcul en cours' : 'Calculating'} : ${progress}%`)}</p>}</div>
       <aside className="autosail-settings">
         {controls}
         {showRanges && <section className="autosail-ranges"><h3>{fr ? 'Plage d’utilisation' : 'Usage range'}</h3>
-          {intervals.length ? <table><thead><tr><th></th><th>{fr ? 'Mini' : 'Min'}</th><th>{fr ? 'Maxi' : 'Max'}</th></tr></thead><tbody>{intervals.map((interval) => <tr key={`${interval.min}-${interval.max}`}><td><i>{rangeAxis}</i></td><td>{format(interval.min, locale)} {unit}</td><td>{format(interval.max, locale)} {unit}</td></tr>)}</tbody></table> : <p>{fr ? 'Aucune plage utilisable.' : 'No usable range.'}</p>}
+          {intervals.length ? <table><thead><tr><th></th><th>{fr ? 'Mini' : 'Min'}</th><th>{fr ? 'Maxi' : 'Max'}</th></tr></thead><tbody>{intervals.map((interval) => <tr key={`${interval.min}-${interval.max}`}><td><i>{rangeAxis}</i></td><td>{format(interval.min, locale, rangePrecision === '0.01' ? 2 : 1)} {unit}</td><td>{format(interval.max, locale, rangePrecision === '0.01' ? 2 : 1)} {unit}</td></tr>)}</tbody></table> : <p>{fr ? 'Aucune plage utilisable.' : 'No usable range.'}</p>}
         </section>}
       </aside>
     </div>
@@ -331,7 +349,14 @@ export function AutoSailPage({ embedded = false, locale, onBackHome, onLocaleCha
   const [sailForRange, setSailForRange] = useState<SailId>(() => initialSail(savedState.sailForRange, defaultSail))
   const [firstOverlapSail, setFirstOverlapSail] = useState<SailId>(() => initialSail(savedState.firstOverlapSail, defaultSail))
   const [secondOverlapSail, setSecondOverlapSail] = useState<SailId>(() => initialSail(savedState.secondOverlapSail, defaultOverlapSail))
-  const [overlapPrecision, setOverlapPrecision] = useState<'0.1' | '0.01'>(() => savedState.overlapPrecision ?? '0.1')
+  const [overlapPrecision, setOverlapPrecision] = useState<ChartPrecision>(() => readChartPrecision(savedState.overlapPrecision))
+  const [chartPrecisions, setChartPrecisions] = useState<ChartPrecisions>(() => ({
+    0: readChartPrecision(savedState.chartPrecisions?.[0]),
+    2: readChartPrecision(savedState.chartPrecisions?.[2]),
+  }))
+  const twaPrecision = readChartPrecision(chartPrecisions[0])
+  const rangePrecision = readChartPrecision(chartPrecisions[2])
+  const changePrecision = (index: number, value: ChartPrecision) => setChartPrecisions(current => ({ ...current, [index]: value }))
   const [layout, setLayout] = useState<ChartLayout>(() => savedState.layout === 'focus' ? 'focus' : 'grid')
   const [focus, setFocus] = useState(() => savedState.focus ?? 0)
   const [scrollToChart, setScrollToChart] = useState<number | null>(() => savedState.layout === 'focus' && savedState.focus !== undefined ? savedState.focus : null)
@@ -339,12 +364,12 @@ export function AutoSailPage({ embedded = false, locale, onBackHome, onLocaleCha
   const changeLayout = (value: ChartLayout) => { setLayout(value) }
 
   useEffect(() => {
-    savePageSessionState('autosail', { boat, firstOverlapSail, focus, layout, options, overlapPrecision, sailForRange, sailForTwa, sailForTws, secondOverlapSail, selectedSails: Array.from(selectedSails), twa, twaEnd, twaStart, tws, twsEnd, twsStart })
-  }, [boat, firstOverlapSail, focus, layout, options, overlapPrecision, sailForRange, sailForTwa, sailForTws, secondOverlapSail, selectedSails, twa, twaEnd, twaStart, tws, twsEnd, twsStart])
+    savePageSessionState('autosail', { boat, chartPrecisions, firstOverlapSail, focus, layout, options, overlapPrecision, sailForRange, sailForTwa, sailForTws, secondOverlapSail, selectedSails: Array.from(selectedSails), twa, twaEnd, twaStart, tws, twsEnd, twsStart })
+  }, [boat, chartPrecisions, firstOverlapSail, focus, layout, options, overlapPrecision, sailForRange, sailForTwa, sailForTws, secondOverlapSail, selectedSails, twa, twaEnd, twaStart, tws, twsEnd, twsStart])
 
-  const twaChart = useMemo(() => polar ? buildAutoChart(polar, options, selectedSails, 'tws', twa, twsStart, twsEnd, sailForTwa, locale) : undefined, [locale, options, polar, sailForTwa, selectedSails, twa, twsEnd, twsStart])
+  const twaChart = useMemo(() => polar ? buildAutoChart(polar, options, selectedSails, 'tws', twa, twsStart, twsEnd, sailForTwa, locale, twaPrecision) : undefined, [locale, options, polar, sailForTwa, selectedSails, twa, twsEnd, twsStart, twaPrecision])
   const twsChart = useMemo(() => polar ? buildAutoChart(polar, options, selectedSails, 'twa', tws, twaStart, twaEnd, sailForTws, locale) : undefined, [locale, options, polar, sailForTws, selectedSails, twaEnd, twaStart, tws])
-  const rangeChart = useSailZone(polar, options, selectedSails, sailForRange, locale)
+  const rangeChart = useSailZone(polar, options, selectedSails, sailForRange, locale, undefined, Number(rangePrecision) as .01 | .1)
   const overlapChart = useSailZone(polar, options, selectedSails, firstOverlapSail, locale, secondOverlapSail, Number(overlapPrecision) as .01 | .1)
 
   useEffect(() => {
@@ -386,7 +411,7 @@ export function AutoSailPage({ embedded = false, locale, onBackHome, onLocaleCha
     </div></div>
     <main className={`autosail-workspace autosail-content autosail-layout-${layout}`}>
       {error && <p className="autosail-error">{fr ? error : 'Unable to load polar data.'}</p>}
-      <AutoSailCard chart={twaChart?.chart} embedded={embedded} helpTopic="autosail-twa" index={0} intervals={twaChart?.intervals ?? []} isFocusMode={layout === 'focus'} locale={locale} theme={theme} onSelect={() => layout === 'focus' ? showGrid(0) : showFocus(0)} rangeAxis="TWS" title={fr ? 'Voile active · TWA fixe' : 'Active sail · fixed TWA'} unit={unit} controls={<>
+      <AutoSailCard actions={<ChartPrecisionButton label={fr ? 'Précision de la courbe TWA fixe' : 'Fixed TWA chart precision'} locale={locale} onChange={value => changePrecision(0, value)} value={twaPrecision} />} chart={twaChart?.chart} embedded={embedded} helpTopic="autosail-twa" index={0} intervals={twaChart?.intervals ?? []} isFocusMode={layout === 'focus'} locale={locale} theme={theme} onSelect={() => layout === 'focus' ? showGrid(0) : showFocus(0)} rangeAxis="TWS" rangePrecision={twaPrecision} title={fr ? 'Voile active · TWA fixe' : 'Active sail · fixed TWA'} unit={unit} controls={<>
         <label>{fr ? 'Voile' : 'Sail'}{sailSelect(sailForTwa, setSailForTwa)}</label>
         <RangeNumberField id="autosail-twa" label="True Wind Angle" shortLabel="TWA" max={180} min={0} onChange={setTwa} unit="°" value={twa} />
         <RangeNumberField id="autosail-tws-start" label={fr ? 'TWS début' : 'Start TWS'} max={50} min={.1} onChange={setTwsStart} unit={unit} value={twsStart} />
@@ -398,11 +423,10 @@ export function AutoSailPage({ embedded = false, locale, onBackHome, onLocaleCha
         <RangeNumberField id="autosail-twa-start" label={fr ? 'TWA début' : 'Start TWA'} max={180} min={0} onChange={setTwaStart} unit="°" value={twaStart} />
         <RangeNumberField id="autosail-twa-end" label={fr ? 'TWA fin' : 'End TWA'} max={180} min={0} onChange={setTwaEnd} unit="°" value={twaEnd} />
       </>} />
-      <AutoSailCard chart={rangeChart.chart} embedded={embedded} empty={rangeChart.empty} emptyMessage={fr ? 'Pas de zone d’utilisation.' : 'No usage zone.'} helpTopic="autosail-usage" index={2} intervals={[]} isFocusMode={layout === 'focus'} locale={locale} theme={theme} onSelect={() => layout === 'focus' ? showGrid(2) : showFocus(2)} progress={rangeChart.progress} showRanges={false} title={fr ? 'Zone d’utilisation' : 'Usage zone'} unit={unit} controls={<label>{fr ? 'Voile' : 'Sail'}{sailSelect(sailForRange, setSailForRange)}</label>} />
-      <AutoSailCard chart={overlapChart.chart} embedded={embedded} empty={overlapChart.empty} emptyMessage={fr ? 'Pas de zones de recouvrement.' : 'No overlap zone.'} helpTopic="autosail-overlap" index={3} intervals={[]} isFocusMode={layout === 'focus'} locale={locale} theme={theme} onSelect={() => layout === 'focus' ? showGrid(3) : showFocus(3)} progress={overlapChart.progress} showRanges={false} title={fr ? 'Zone de recouvrement' : 'Overlap zone'} unit={unit} controls={<>
+      <AutoSailCard actions={<ChartPrecisionButton label={fr ? 'Précision de la zone d’utilisation' : 'Usage zone precision'} locale={locale} onChange={value => changePrecision(2, value)} value={rangePrecision} />} chart={rangeChart.chart} embedded={embedded} empty={rangeChart.empty} emptyMessage={fr ? 'Pas de zone d’utilisation.' : 'No usage zone.'} helpTopic="autosail-usage" index={2} intervals={[]} isFocusMode={layout === 'focus'} locale={locale} theme={theme} onSelect={() => layout === 'focus' ? showGrid(2) : showFocus(2)} progress={rangeChart.progress} showRanges={false} title={fr ? 'Zone d’utilisation' : 'Usage zone'} unit={unit} controls={<label>{fr ? 'Voile' : 'Sail'}{sailSelect(sailForRange, setSailForRange)}</label>} />
+      <AutoSailCard actions={<ChartPrecisionButton label={fr ? 'Précision du recouvrement' : 'Overlap precision'} locale={locale} onChange={setOverlapPrecision} value={overlapPrecision} />} chart={overlapChart.chart} embedded={embedded} empty={overlapChart.empty} emptyMessage={fr ? 'Pas de zones de recouvrement.' : 'No overlap zone.'} helpTopic="autosail-overlap" index={3} intervals={[]} isFocusMode={layout === 'focus'} locale={locale} theme={theme} onSelect={() => layout === 'focus' ? showGrid(3) : showFocus(3)} progress={overlapChart.progress} showRanges={false} title={fr ? 'Zone de recouvrement' : 'Overlap zone'} unit={unit} controls={<>
         <label>{fr ? 'Première voile' : 'First sail'}{sailSelect(firstOverlapSail, setFirstOverlapSail)}</label>
         <label>{fr ? 'Seconde voile' : 'Second sail'}{sailSelect(secondOverlapSail, setSecondOverlapSail)}</label>
-        <div className="autosail-precision"><span>{fr ? 'Précision' : 'Precision'}</span><SegmentedControl ariaLabel={fr ? 'Précision du recouvrement' : 'Overlap precision'} onChange={setOverlapPrecision} options={[{ label: fr ? '0,1' : '0.1', value: '0.1' }, { label: fr ? '0,01' : '0.01', value: '0.01' }] as const} value={overlapPrecision} /></div>
       </>} />
     </main>
     {!embedded && <SiteFooter locale={locale} />}

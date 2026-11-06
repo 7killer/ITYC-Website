@@ -2,12 +2,41 @@
 
 L’aide affichée dans l’application est rédigée dans les fichiers Markdown des
 dossiers `fr/` et `en/`. Un fichier correspond à un document. Les sept documents
-historiques conservent leur nom, leur ordre, leurs textes et leurs illustrations.
-`nouvelle-interface.md` rassemble les compléments propres à la nouvelle interface.
+historiques conservent leur nom et leurs ancres ; leur contenu et leur mise en
+page peuvent évoluer, avec le français comme référence pour la traduction.
+`glossaire.md` rassemble les définitions des termes de navigation et des outils.
+`aide_polaire.md` et `aide_autoSail.md` expliquent les calculs des courbes à partir
+des workers et du moteur de vitesse du site, en complément des tutoriels illustrés.
+`nouvelle-interface.md` est conservé comme archive et n’est plus au catalogue.
 
 Modifier directement ces fichiers pour faire évoluer la documentation. Les
 changements sont pris en compte par Vite, puis inclus dans `npm run build`.
 Le catalogue et les groupes de navigation sont dans `../helpDocuments.ts`.
+
+## Recherche et glossaire
+
+La recherche porte sur le texte de chaque section des documents du catalogue,
+dans la langue active. Elle ignore la casse, les accents et l’ordre des mots,
+et affiche les sections les plus pertinentes avec un extrait de leur contenu.
+Les chemins des images, les URL, les commentaires et les options de mise en page
+ne font pas partie du texte recherché.
+
+Le glossaire utilise un titre `##` par terme, classé alphabétiquement. Chaque
+définition donne les variantes usuelles du terme ou de l’abréviation, les unités
+éventuelles et un lien vers les explications détaillées. Conserver les mêmes
+concepts dans les versions FR et EN et une ancre commune avant chaque titre,
+par exemple `<!-- anchor:glossary-twa -->`, pour partager un lien stable dans les
+deux langues : `#aide?article=glossaire&section=glossary-twa`.
+
+Déclarer `original: false` dans le catalogue pour un nouveau document sans page
+historique. Le champ `tool` peut être omis pour un document transversal.
+
+Pour les chapitres de calcul, vérifier les formules et les pas de balayage dans
+`polar/engine/polarCalculator.worker.ts`, `polar/engine/polarSailMap.worker.ts`,
+`polar/engine/polarMath.ts` et `autosail/autoSailZone.worker.ts` (chemins relatifs
+à `src/features/`). Les courbes à angle ou vent fixe des voiles automatiques
+sont construites dans `autosail/AutoSailPage.tsx` avec le même moteur de vitesse.
+Conserver les mêmes ancres et la même structure en français et en anglais.
 
 ## Titres et navigation
 
@@ -44,6 +73,33 @@ La largeur doit être supérieure à 0 et inférieure ou égale à 100 %.
 `align=left` (par défaut), `align=center` ou `align=right` règle son alignement.
 Sans ce bloc, les tableaux occupent 100 % de la largeur du contenu.
 Le défilement horizontal reste disponible si les cellules sont trop larges.
+
+## Insérer une icône dans le texte
+
+Ajouter le titre `"icon"` à une image Markdown pour l'afficher dans la ligne de
+texte, avec une hauteur de `1em` :
+
+```markdown
+Choisir le bateau avec ![Sélection du bateau](/assets/help/common/select_boat_ityc.png "icon").
+```
+
+Pour choisir sa hauteur, utiliser `"icon:1.2em"` :
+
+```markdown
+Cliquer sur ![Sélection du bateau](/assets/help/common/select_boat_ityc.png "icon:1.2em") pour changer de bateau.
+```
+
+La hauteur est relative à la taille du texte environnant : `0.8em`, `1em`,
+`1.5em`, etc. Utiliser un nombre positif avec un point pour les décimales.
+La largeur s'adapte pour conserver les proportions de l'image. Les icônes
+fonctionnent aussi dans les listes, les tableaux, les liens et le texte en gras.
+Elles n'ajoutent ni cadre ni lien d'agrandissement automatique. Leur description
+entre crochets sert de texte alternatif ; la laisser vide pour une image
+purement décorative. Les variantes PNG/JPEG `_b` sont sélectionnées en thème
+sombre lorsqu'elles existent, comme pour les captures.
+
+Une image sans titre `icon` reste une capture normale. Une taille invalide ou
+nulle n'active pas le mode icône.
 
 ## Associer une capture à ses explications
 
@@ -195,10 +251,13 @@ Chaque capture est un lien ouvrant le fichier à sa taille d’origine.
 
 ## Provenance et contrôle de la migration
 
-`migration-report.json` consigne les sections, figures, formules, textes
-conservés et anomalies des sources historiques. Les versions FR et EN ne sont
-pas toujours équivalentes : ces différences sont conservées et signalées dans
-le rapport. Une illustration absente des sources EN est signalée par une note.
+`migration-report.json` consigne l’état de l’import initial : sections, figures,
+formules, textes conservés et anomalies des sources historiques. Les contenus
+anglais du catalogue sont désormais alignés sur les documents français, qui
+servent de référence pour leur structure, leurs calculs et leurs illustrations.
+Le rapport historique ne décrit pas ces mises à jour éditoriales. Lorsqu’une
+capture récente n’existe qu’en français, elle est conservée avec une légende et
+des explications en anglais.
 
 Le script `python newSite/scripts/migrate-help.py`, lancé depuis la racine du
 dépôt, permet de **réimporter** les HTML historiques. Il vérifie que chaque nœud
@@ -209,5 +268,5 @@ vouloir les remplacer. Il ne fait pas partie du build.
 Vérification du rendu et de la navigation :
 
 ```bash
-npm exec playwright test help-wiki.spec.ts help-captures.spec.ts --workers=1
+npm exec playwright test help-wiki.spec.ts help-captures.spec.ts help-content-parity.spec.ts --workers=1
 ```

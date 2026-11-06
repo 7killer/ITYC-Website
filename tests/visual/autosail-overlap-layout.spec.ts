@@ -27,8 +27,8 @@ for (const viewport of [
 
     await expect(firstSail).toHaveValue('Code0')
     await expect(secondSail).toHaveValue('Jib')
-    await expect(overlap.getByRole('group', { name: 'Précision du recouvrement' })
-      .getByRole('button', { name: '0,1', exact: true })).toHaveAttribute('aria-pressed', 'true')
+    await expect(overlap.getByRole('button', { name: 'Précision du recouvrement : 0,1. Passer à 0,01.', exact: true }))
+      .toHaveText('0,1')
     await expect(empty).toBeVisible({ timeout: 15_000 })
     await expect(chart.locator('canvas')).toHaveCount(0)
 

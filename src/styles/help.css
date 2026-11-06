@@ -7,6 +7,8 @@
 .help-search:focus-within { outline: 2px solid var(--ocean); outline-offset: 2px; }
 .help-search > span { color: var(--muted); font-size: 1.45rem; }
 .help-search input { width: 100%; min-width: 0; color: var(--ink); font: inherit; background: transparent; border: 0; outline: 0; }
+.help-search input:focus-visible { outline: none; }
+.help-search input::-webkit-search-cancel-button { appearance: none; }
 .help-search input::placeholder { color: var(--muted); }
 .help-search button { padding: .2rem; color: var(--muted); font-size: 1.3rem; background: transparent; border: 0; cursor: pointer; }
 .help-layout { display: grid; width: min(100% - 3rem, 1640px); grid-template-columns: 14rem minmax(0, 1fr) 12rem; gap: clamp(1.5rem, 2.8vw, 3rem); align-items: start; padding-block: 2rem 5rem; margin-inline: auto; }
@@ -64,6 +66,7 @@
 .help-illustrated > .help-figure { margin: 0; }
 .help-figure a { display: block; width: fit-content; max-width: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: .2rem; }
 .help-figure img { display: block; width: auto; max-width: 100%; height: auto; }
+.help-inline-icon { display: inline-block; width: auto; vertical-align: -.15em; }
 .help-illustrated.side .help-figure a, .help-illustrated.side .help-figure img { width: 100%; }
 .help-illustrated.side.aligned > .help-figure { align-self: stretch; }
 .help-illustrated.side.aligned .help-figure a, .help-illustrated.side.aligned .help-figure img { height: 100%; }
@@ -103,11 +106,13 @@
 .help-toc a, .help-inline-toc a { color: var(--muted); font-size: .78rem; line-height: 1.45; text-decoration: none; }
 .help-toc a:hover, .help-inline-toc a:hover, .help-toc a[aria-current] { color: var(--ink); }
 .help-toc a[data-level='3'], .help-inline-toc a[data-level='3'] { padding-left: .65rem; font-size: .74rem; }
+.help-toc a[data-level='4'] { padding-left: 1.3rem; font-size: .72rem; }
 .help-inline-toc { display: none; padding: .8rem 1rem; margin-bottom: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: .3rem; }
 .help-inline-toc summary { cursor: pointer; font-size: .9rem; }
 .help-inline-toc nav { padding-top: 1rem; }
 .help-index, .help-results { border-top: 1px solid var(--line); }
 .help-index-entry, .help-result { position: relative; display: block; padding: 1.25rem 2rem 1.25rem 0; text-decoration: none; border-bottom: 1px solid var(--line); }
+.help-result { overflow-wrap: anywhere; }
 .help-index-entry:hover h3, .help-result:hover h3 { color: var(--ocean-bright); }
 .help-index-entry > span, .help-result > span { color: var(--muted); font-size: .75rem; }
 .help-index-entry h3, .help-result h3 { margin: .35rem 0 .5rem; font-size: 1.1rem; }

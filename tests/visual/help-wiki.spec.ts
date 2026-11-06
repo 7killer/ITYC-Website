@@ -43,24 +43,24 @@ for (const mobile of [false, true]) {
     const activeGroup = navigation.locator('section[data-active="true"]')
     await expect(activeGroup.locator('h2')).toHaveText('Pénalités')
     await expect(activeGroup.locator('.help-navigation-article > a')).toHaveText([
-      'Calcul des temps de pénalités', 'Tutoriel pénalités',
+      'Tutoriel pénalités', 'Calcul des temps de pénalités',
     ])
     await expect(activeGroup.locator('.help-navigation-article > a').first()).toBeVisible()
     await expect(activeGroup.locator('.help-navigation-article > a').last()).toBeVisible()
     await expect(navigation.locator('section[data-active="false"] .help-navigation-article')).toHaveCount(0)
 
     await navigation.locator('h2 > a.help-group-link').filter({ hasText: /^Énergie$/ }).click()
-    await expect(page).toHaveURL(/#aide\?article=aide_energy$/)
-    await expect(page.locator('.help-article > h2')).toHaveText("Calcul des pertes et des temps de récupération d'énergie")
+    await expect(page).toHaveURL(/#aide\?article=tuto_energy$/)
+    await expect(page.locator('.help-article > h2')).toHaveText('Tutoriel énergie')
     await openNavigation()
     await expect(activeGroup.locator('h2')).toHaveText('Énergie')
     await expect(activeGroup.locator('.help-navigation-article > a')).toHaveText([
-      "Calcul des pertes et des temps de récupération d'énergie", 'Tutoriel énergie',
+      'Tutoriel énergie', "Calcul des pertes et des temps de récupération d'énergie",
     ])
     await expect(navigation.locator('section[data-active="false"] .help-navigation-article')).toHaveCount(0)
 
     await page.reload()
-    await expect(page.locator('.help-article > h2')).toHaveText("Calcul des pertes et des temps de récupération d'énergie")
+    await expect(page.locator('.help-article > h2')).toHaveText('Tutoriel énergie')
     await openNavigation()
     await expect(activeGroup.locator('h2')).toHaveText('Énergie')
     await expect(activeGroup.locator('.help-navigation-article > a')).toHaveCount(2)
@@ -70,7 +70,7 @@ for (const mobile of [false, true]) {
     const destination = await sectionLink.getAttribute('href')
     const sectionId = new URLSearchParams(destination!.split('?')[1]).get('section')!
     await sectionLink.click()
-    await expect(page).toHaveURL(new RegExp(`article=aide_energy.*section=${encodeURIComponent(sectionId)}`))
+    await expect(page).toHaveURL(new RegExp(`article=tuto_energy.*section=${encodeURIComponent(sectionId)}`))
     await expect(page.locator(`[id="${sectionId}"] > h3`)).toBeInViewport()
   })
 }
@@ -109,7 +109,7 @@ test('le sommaire crée un lien de section partageable et rechargeable', async (
 test('l’ancienne ancre Flotte du Dashboard reste accessible après rechargement', async ({ page }) => {
   await page.goto('/#aide?article=aide_dash&section=tabDashTab5')
   const fleet = page.locator('h4').filter({ has: page.locator('#tabDashTab5') })
-  await expect(fleet).toHaveText('5. Page Flotte')
+  await expect(fleet).toHaveText(/^\d+\.\d+ Page Flotte$/)
   await expect(fleet).toBeInViewport()
   await page.reload()
   await expect(page).toHaveURL(/article=aide_dash&section=tabDashTab5$/)
@@ -119,7 +119,7 @@ test('l’ancienne ancre Flotte du Dashboard reste accessible après rechargemen
 test('la recherche trouve aussi les explications dans le corps du Dashboard', async ({ page }) => {
   await page.goto('/#aide')
   await page.getByRole('searchbox').fill('carte de présentation')
-  const result = page.locator('.help-results a[href*="article=aide_dash"]')
+  const result = page.locator('.help-results a[href*="article=aide_dash"]').first()
   await expect(result).toBeVisible()
   await result.click()
   await expect(page.locator('.help-article > h2')).toHaveText('Aide Dashboard')
@@ -129,8 +129,8 @@ test('la recherche trouve aussi les explications dans le corps du Dashboard', as
 test('le Dashboard conserve les détails de flotte et de configuration présents dans l’aide d’origine', async ({ page }) => {
   await page.goto('/#aide?article=aide_dash')
   const article = page.locator('.help-article')
-  await expect(article).toContainText('RT : Ouvre un onglet de routage zezo avec les coordonnées et les options pré remplies.')
-  await expect(article).toContainText('Le reste des options zezo seront celles que vous avez utilisé sur la page zezo pour la course concernée')
+  await expect(article).toContainText('RT : Ouvre un onglet de routage avec les coordonnées et les options pré remplies.')
+  await expect(article).toContainText('Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen, Naya.')
   await expect(article).toContainText('Time : Heure de la dernière itération serveur reçue.')
   await expect(article).toContainText('UTC ou temps local selon configuration utilisateur')
   await expect(article).toContainText('Team : Team du joueur.')
@@ -163,8 +163,8 @@ test('la version anglaise garde le document courant et ses captures', async ({ p
   await page.getByRole('button', { name: 'English', exact: true }).click()
   await expect(page.locator('.help-article > h2')).toHaveText('Dashboard Help')
   await expect(page).toHaveURL(/article=aide_dash$/)
-  await expect(page.locator('.help-content-section').first()).toContainText('Navigation on Virtual Regatta')
-  await expect(page.locator('.help-article')).toContainText('RT : Opens a zezo routing tab')
+  await expect(page.locator('.help-content-section').first()).toContainText('Sailing in Virtual Regatta')
+  await expect(page.locator('.help-article')).toContainText('RT: opens a routing tab with coordinates and options pre-filled.')
   expect(await page.locator('.help-figure img').count()).toBeGreaterThan(0)
   await expect(page.locator('.help-article-footer a').first()).toHaveAttribute('href', 'https://ityc.fr/aide_dashEn.html')
 })
@@ -176,7 +176,7 @@ test('toutes les captures Markdown FR et EN sont servies dans leurs thèmes disp
     for (const filename of readdirSync(directory).filter(name => name.endsWith('.md'))) {
       const source = readFileSync(resolve(directory, filename), 'utf8')
       for (const image of source.matchAll(/!\[[^\]]*\]\(([^\n)]+)\)/g)) {
-        const path = image[1]
+        const path = image[1].replace(/\s+(?:"[^"]*"|'[^']*')$/, '')
         expect(path, `${locale}/${filename}`).toMatch(/^\/assets\/help\//)
         imagePaths.add(path)
         const dark = path.replace(/\.(png|jpg|jpeg)$/i, '_b.$1')

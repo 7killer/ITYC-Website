@@ -2,6 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { SegmentedControl } from '../../shared/ui/SegmentedControl'
 import { RangeNumberField } from '../../shared/ui/RangeNumberField'
 import { ChartHelpLink } from '../../shared/ui/ChartHelpLink'
+import { ChartActionIcon } from '../../shared/ui/ChartActionIcon'
+import { ChartPrecisionButton } from '../../shared/ui/ChartPrecisionButton'
+import { readChartPrecision, type ChartPrecision, type ChartPrecisions } from '../../shared/charts/chartPrecision'
 import { SiteHeader } from '../../components/SiteHeader'
 import { SiteFooter } from '../../components/SiteFooter'
 import { InteractiveLineChart, type InteractiveLineChartHandle } from '../../shared/charts/InteractiveLineChart'
@@ -47,6 +50,7 @@ type ChartCondition = {
 
 type PolarPageSession = {
   boat: (typeof boats)[number]
+  chartPrecisions: ChartPrecisions
   expertDisplay: { auto: boolean; foils: boolean; sails: boolean }
   focus: number
   layout: ChartLayout
@@ -68,6 +72,8 @@ function ChartCard({
   isFocusMode,
   locale,
   onSelect,
+  onPrecisionChange,
+  precision,
   progress,
   sailMap,
   showLayoutAction = true,
@@ -84,6 +90,8 @@ function ChartCard({
   isFocusMode: boolean
   locale: 'fr' | 'en'
   onSelect: () => void
+  onPrecisionChange?: (precision: ChartPrecision) => void
+  precision?: ChartPrecision
   progress: number
   sailMap?: PolarSailMapData
   showLayoutAction?: boolean
@@ -104,10 +112,10 @@ function ChartCard({
         <div className="chart-card-actions">
           {condition && <div className="chart-condition"><RangeNumberField {...condition} /></div>}
           <div className="chart-actions">
-            <button aria-label={fr ? `Réinitialiser le zoom et le déplacement de ${title}` : `Reset zoom and pan for ${title}`} className="icon-button chart-reset-button" onClick={() => { chartRef.current?.resetView(); sailMapRef.current?.resetView() }} title={fr ? 'Réinitialiser le zoom' : 'Reset zoom'} type="button">↺</button>
-            {showLayoutAction && <button className="icon-button" onClick={onSelect} type="button">
-              <span className="sr-only">{isFocusMode ? (fr ? 'Revenir à la grille' : 'Return to grid') : (fr ? `Afficher ${title} en focus` : `Show ${title} in focus`)}</span>
-              <span aria-hidden="true">{isFocusMode ? '⊞' : '↗'}</span>
+            {precision && onPrecisionChange && <ChartPrecisionButton locale={locale} onChange={onPrecisionChange} value={precision} />}
+            <button aria-label={fr ? `Réinitialiser le zoom et le déplacement de ${title}` : `Reset zoom and pan for ${title}`} className="icon-button chart-reset-button" onClick={() => { chartRef.current?.resetView(); sailMapRef.current?.resetView() }} title={fr ? 'Réinitialiser le zoom' : 'Reset zoom'} type="button"><ChartActionIcon action="reset" /></button>
+            {showLayoutAction && <button aria-label={isFocusMode ? (fr ? 'Revenir à la grille' : 'Return to grid') : (fr ? `Afficher ${title} en focus` : `Show ${title} in focus`)} className="icon-button" onClick={onSelect} type="button">
+              <ChartActionIcon action={isFocusMode ? 'grid' : 'focus'} />
             </button>}
             <ChartHelpLink embedded={embedded} locale={locale} theme={theme} topic={helpTopics[index]} />
           </div>
@@ -137,6 +145,7 @@ export function PolarPage({ embedded = false, locale, onBackHome, onLocaleChange
   const [scrollToChart, setScrollToChart] = useState<number | null>(() => savedState.layout === 'focus' && savedState.focus !== undefined ? savedState.focus : null)
   const [twa, setTwa] = useState(() => savedState.twa ?? 120)
   const [tws, setTws] = useState(() => savedState.tws ?? 18)
+  const [chartPrecisions, setChartPrecisions] = useState<ChartPrecisions>(() => savedState.chartPrecisions ?? {})
   const [options, setOptions] = useState<PolarOptions>(() => savedState.options ?? { foil: true, fullPack: true, hull: true })
   const [expertDisplay, setExpertDisplay] = useState(() => savedState.expertDisplay ?? { auto: true, foils: true, sails: true })
   const [selectedSails, setSelectedSails] = useState<Set<SailId>>(
@@ -145,16 +154,17 @@ export function PolarPage({ embedded = false, locale, onBackHome, onLocaleChange
   const changeLayout = (value: ChartLayout) => { setLayout(value) }
 
   useEffect(() => {
-    savePageSessionState('polar', { boat, expertDisplay, focus, layout, level, options, selectedSails: Array.from(selectedSails), twa, tws })
-  }, [boat, expertDisplay, focus, layout, level, options, selectedSails, twa, tws])
+    savePageSessionState('polar', { boat, chartPrecisions, expertDisplay, focus, layout, level, options, selectedSails: Array.from(selectedSails), twa, tws })
+  }, [boat, chartPrecisions, expertDisplay, focus, layout, level, options, selectedSails, twa, tws])
 
   const chartTitles = getNormalCharts(locale)
   const chartConditions: Array<ChartCondition | undefined> = [
     { id: 'tws', label: 'True Wind Speed', max: 40, min: 1, onChange: setTws, unit: polarUnit(locale), value: tws },
     { id: 'twa', label: 'True Wind Angle', max: 180, min: 0, onChange: setTwa, unit: '°', value: twa },
   ]
-  const calculatedCharts = usePolarCalculations(boat, options, selectedSails, twa, tws)
-  const sailMap = usePolarSailMap(boat, options, selectedSails)
+  const calculatedCharts = usePolarCalculations(boat, options, selectedSails, twa, tws, chartPrecisions)
+  const sailMap = usePolarSailMap(boat, options, selectedSails, readChartPrecision(chartPrecisions[6]))
+  const changePrecision = (index: number, precision: ChartPrecision) => setChartPrecisions(current => ({ ...current, [index]: precision }))
 
   useEffect(() => {
     if (scrollToChart === null) return
@@ -252,13 +262,15 @@ export function PolarPage({ embedded = false, locale, onBackHome, onLocaleChange
                 locale={locale}
                 key={index}
                 onSelect={() => showFocus(index)}
+                onPrecisionChange={index === 1 ? precision => changePrecision(index, precision) : undefined}
+                precision={index === 1 ? readChartPrecision(chartPrecisions[index]) : undefined}
                 progress={calculation?.progress ?? 0}
                 theme={theme}
                 title={chart}
               />
             })}
           </div>}
-          <ExpertPolarPanel boat={boat} display={expertDisplay} embedded={embedded} isFocusMode={layout === 'focus'} locale={locale} onDisplayChange={toggleExpertDisplay} onTwaChange={setTwa} onTwsChange={setTws} options={options} selectedSails={selectedSails} theme={theme} twa={twa} tws={tws} />
+          <ExpertPolarPanel boat={boat} display={expertDisplay} embedded={embedded} isFocusMode={layout === 'focus'} locale={locale} onDisplayChange={toggleExpertDisplay} onLayoutChange={changeLayout} onTwaChange={setTwa} onTwsChange={setTws} options={options} selectedSails={selectedSails} theme={theme} twa={twa} tws={tws} />
         </section>}
         <section className={`chart-workspace layout-${layout}`} aria-label={locale === 'fr' ? `Courbes ${level === 'normal' ? 'normales' : 'expertes'} de ${boat}` : `${level === 'normal' ? 'Standard' : 'Expert'} charts for ${boat}`}>
           <div className="chart-grid">
@@ -278,6 +290,8 @@ export function PolarPage({ embedded = false, locale, onBackHome, onLocaleChange
                 locale={locale}
                 key={index}
                 onSelect={() => layout === 'focus' ? showGrid(index) : showFocus(index)}
+                onPrecisionChange={index > 0 ? precision => changePrecision(index, precision) : undefined}
+                precision={index > 0 ? readChartPrecision(chartPrecisions[index]) : undefined}
                 progress={isSailMap ? sailMap.progress : calculation?.progress ?? 0}
                 sailMap={isSailMap ? sailMap.data : undefined}
                 theme={theme}

@@ -6,16 +6,23 @@ import { basename, dirname, extname, isAbsolute, join, relative, resolve } from 
 
 // Keep this contract independent of the plugin's own list of emitted entries.
 const entries = [
+  'indexEn.html', 'aide.html', 'aideEn.html',
   'pena.html', 'penaEn.html',
   'energy.html', 'energyEn.html',
   'polar.html', 'polarEn.html',
   'autoSail.html', 'autoSailEn.html',
+  'dash.html', 'dashEn.html',
+  ...['aide_pena', 'tuto_pena', 'aide_energy', 'tuto_energy', 'aide_polaire', 'tuto_polaire', 'aide_autoSail', 'tuto_autoSail', 'aide_dash', 'glossaire']
+    .flatMap(document => [`${document}.html`, `${document}En.html`]),
+  'webstore_dashEn.html', 'webstore_helpEn.html',
   'penaDash.html', 'energyDash.html', 'polarDash.html', 'autoSailDash.html',
 ]
 const mimeTypes: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
 }
 
 let temporaryDirectory: string | undefined
@@ -77,15 +84,26 @@ test.afterAll(async () => {
   }
 })
 
-test('le build produit douze entrées HTML classiques et iframe identiques à index.html', async () => {
+function resources(html: string, url: string) {
+  return [...html.matchAll(/<(?:script|link)\b[^>]*\b(?:src|href)="([^"]+)"/g)]
+    .map(match => match[1])
+    .filter(resource => new URL(resource, url).origin === staticUrl)
+}
+
+test('le build produit les entrées publiques, historiques et iframe avec les mêmes ressources compilées', async () => {
   const htmlFiles = (await readdir(outputDirectory)).filter(filename => filename.endsWith('.html')).sort()
   expect(htmlFiles).toEqual(['index.html', ...entries].sort())
   expect(indexHtml).not.toContain('/src/main.tsx')
   expect(indexHtml).toMatch(/<script[^>]+src="[^"]*\/assets\/[^"]+\.js"/)
   expect(indexHtml).toMatch(/<link[^>]+href="[^"]*\/assets\/[^"]+\.css"/)
-  const indexBytes = await readFile(join(outputDirectory, 'index.html'))
+  expect(indexHtml).toContain('<link rel="canonical" href="https://ityc.fr/"')
   for (const entry of entries) {
-    expect((await readFile(join(outputDirectory, entry))).equals(indexBytes), entry).toBe(true)
+    const html = await readFile(join(outputDirectory, entry), 'utf8')
+    expect(resources(html, `${staticUrl}/${entry}`), entry).toEqual(resources(indexHtml, `${staticUrl}/index.html`))
+    expect(html, entry).toContain(`<html lang="${entry.endsWith('En.html') ? 'en' : 'fr'}"`)
+    expect(html.match(/googletagmanager\.com\/gtag\/js\?id=G-PNQ15CT161/g), entry).toHaveLength(1)
+    expect(html, entry).toMatch(/<link rel="canonical" href="https:\/\/ityc\.fr\/[^"?#]*"/)
+    if (entry.endsWith('Dash.html') || entry.startsWith('webstore_')) expect(html).toContain('content="noindex, follow"')
   }
 })
 
@@ -98,11 +116,11 @@ for (const entry of entries) {
     expect(response.headers()['location']).toBeUndefined()
     expect(response.headers()['content-type']).toMatch(/^text\/html/)
     const html = await response.text()
-    expect(html).toBe(indexHtml)
+    expect(html).toBe(await readFile(join(outputDirectory, entry), 'utf8'))
 
-    const resources = [...html.matchAll(/<(?:script|link)\b[^>]*\b(?:src|href)="([^"]+)"/g)].map(match => match[1])
-    expect(resources.length).toBeGreaterThanOrEqual(2)
-    for (const resource of resources) {
+    const localResources = resources(html, url)
+    expect(localResources.length).toBeGreaterThanOrEqual(2)
+    for (const resource of localResources) {
       const assetUrl = new URL(resource, url)
       expect(assetUrl.origin).toBe(staticUrl)
       const asset = await request.get(assetUrl.href, { maxRedirects: 0 })
@@ -115,6 +133,75 @@ for (const entry of entries) {
     }
   })
 }
+
+test('le sitemap expose les 34 pages canoniques avec leurs alternances FR/EN et robots.txt le déclare', async ({ request }) => {
+  const response = await request.get(`${staticUrl}/sitemap.xml`)
+  expect(response.status()).toBe(200)
+  expect(response.headers()['content-type']).toMatch(/^application\/xml/)
+  const xml = await response.text()
+  expect(xml).toContain('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')
+  expect(xml).toContain('xmlns:xhtml="http://www.w3.org/1999/xhtml"')
+  const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match => match[1])
+  const locations = blocks.map(block => block.match(/<loc>([^<]+)<\/loc>/)![1])
+  const expected = ['index.html', ...entries]
+    .filter(entry => !entry.endsWith('Dash.html') && !entry.startsWith('webstore_'))
+    .map(entry => `https://ityc.fr/${entry === 'index.html' ? '' : entry}`)
+  expect(locations.sort()).toEqual(expected.sort())
+  expect(new Set(locations).size).toBe(34)
+  for (const block of blocks) {
+    const location = new URL(block.match(/<loc>([^<]+)<\/loc>/)![1])
+    expect(location.hash).toBe('')
+    expect(location.search).toBe('')
+    const filename = location.pathname === '/' ? 'index.html' : location.pathname.slice(1)
+    const page = await request.get(`${staticUrl}/${filename}`, { maxRedirects: 0 })
+    expect(page.status(), filename).toBe(200)
+    const alternates = [...block.matchAll(/<xhtml:link rel="alternate" hreflang="(fr|en)" href="([^"]+)" \/>/g)]
+    expect(alternates.map(match => match[1])).toEqual(['fr', 'en'])
+    expect(alternates.map(match => match[2])).toContain(location.href)
+  }
+  const robots = await request.get(`${staticUrl}/robots.txt`)
+  expect(robots.status()).toBe(200)
+  expect(await robots.text()).toContain('Sitemap: https://ityc.fr/sitemap.xml')
+})
+
+for (const document of ['aide_pena', 'tuto_pena', 'aide_energy', 'tuto_energy', 'aide_polaire', 'tuto_polaire', 'aide_autoSail', 'tuto_autoSail', 'aide_dash', 'glossaire']) {
+  for (const locale of ['fr', 'en'] as const) {
+    test(`${document}${locale === 'en' ? 'En' : ''}.html ouvre directement son article dans la bonne langue`, async ({ page }) => {
+      await page.addInitScript(language => localStorage.setItem('locale', language === 'fr' ? 'en' : 'fr'), locale)
+      const file = `${document}${locale === 'en' ? 'En' : ''}.html`
+      const response = await page.goto(`${staticUrl}/${file}`)
+      expect(response!.status()).toBe(200)
+      const source = await readFile(resolve('src/features/help/content', locale, `${document}.md`), 'utf8')
+      const title = source.match(/^# (.+)$/m)![1]
+      await expect(page.locator('html')).toHaveAttribute('lang', locale)
+      await expect(page.locator('.help-article > h2')).toHaveText(title)
+      await expect(page).toHaveURL(`${staticUrl}/${file}`)
+    })
+  }
+}
+
+test('les anciens chemins Dashboard et WebStore affichent leur destination', async ({ page }) => {
+  for (const [file, locale] of [['dash.html', 'fr'], ['dashEn.html', 'en'], ['webstore_dashEn.html', 'en']] as const) {
+    await page.goto(`${staticUrl}/${file}`)
+    await expect(page.locator('html')).toHaveAttribute('lang', locale)
+    await expect(page.locator('.page-heading h1')).toHaveText('Dashboard')
+  }
+  await page.goto(`${staticUrl}/webstore_helpEn.html`)
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+  const source = await readFile(resolve('src/features/help/content/en/aide_dash.md'), 'utf8')
+  await expect(page.locator('.help-article > h2')).toHaveText(source.match(/^# (.+)$/m)![1])
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://ityc.fr/aide_dashEn.html')
+})
+
+test('une ancienne ancre de tutoriel reste accessible et le changement de langue conserve l’article', async ({ page }) => {
+  await page.goto(`${staticUrl}/tuto_pena.html#tp_p1`)
+  await expect(page.locator('#tp_p1').locator('..').locator(':scope > h3')).toBeInViewport()
+  await page.getByRole('button', { name: 'English', exact: true }).click()
+  await expect(page).toHaveURL(/\/tuto_penaEn\.html\?[^#]*#aide\?article=tuto_pena&section=tp_p1$/)
+  await expect(page.locator('#tp_p1').locator('..').locator(':scope > h3')).toBeInViewport()
+  await page.reload()
+  await expect(page.locator('#tp_p1').locator('..').locator(':scope > h3')).toBeInViewport()
+})
 
 test('energyEn.html initialise React et ses paramètres depuis le vrai build statique', async ({ page }) => {
   const query = '?b=Class_40&ts=18.5&se=60&th=light'

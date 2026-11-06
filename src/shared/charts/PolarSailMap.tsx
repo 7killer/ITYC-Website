@@ -9,6 +9,7 @@ export type PolarSailMapHandle = { resetView: () => void }
 type Viewport = { xMax: number; xMin: number; yMax: number; yMin: number }
 type Point = { x: number; y: number }
 type Contour = { level: number; segments: Float32Array }
+type SailRun = { color: string; xMin: number; xMax: number }
 
 const margin = { bottom: 32, left: 48, right: 14, top: 14 }
 
@@ -23,19 +24,25 @@ function addCrossing(points: Point[], level: number, a: number, b: number, start
 }
 
 function buildContours(data: PolarSailMapData): Contour[] {
-  const maxSpeed = Math.max(...data.speeds)
-  const contours: Contour[] = []
-  for (let level = 1.5; level <= maxSpeed + .001; level += 1.5) {
-    const segments: number[] = []
-    for (let yIndex = 0; yIndex < data.height - 1; yIndex += 1) {
-      for (let xIndex = 0; xIndex < data.width - 1; xIndex += 1) {
-        const index = yIndex * data.width + xIndex
-        const v00 = data.speeds[index]
-        const v10 = data.speeds[index + 1]
-        const v11 = data.speeds[index + data.width + 1]
-        const v01 = data.speeds[index + data.width]
-        const x0 = data.twsValues[xIndex]; const x1 = data.twsValues[xIndex + 1]
-        const y0 = data.twaValues[yIndex]; const y1 = data.twaValues[yIndex + 1]
+  let maxSpeed = 0
+  for (const speed of data.speeds) maxSpeed = Math.max(maxSpeed, speed)
+  const levels = Array.from({ length: Math.floor((maxSpeed + .001) / 1.5) }, (_, index) => ({ level: (index + 1) * 1.5, segments: [] as number[] }))
+  // Visit each cell once. Most fine cells contain no contour level, so avoid
+  // scanning the entire dense grid once again for every speed contour.
+  for (let yIndex = 0; yIndex < data.height - 1; yIndex += 1) {
+    for (let xIndex = 0; xIndex < data.width - 1; xIndex += 1) {
+      const index = yIndex * data.width + xIndex
+      const v00 = data.speeds[index]
+      const v10 = data.speeds[index + 1]
+      const v11 = data.speeds[index + data.width + 1]
+      const v01 = data.speeds[index + data.width]
+      const firstLevel = Math.max(1, Math.ceil(Math.min(v00, v10, v11, v01) / 1.5))
+      const lastLevel = Math.min(levels.length, Math.floor(Math.max(v00, v10, v11, v01) / 1.5))
+      if (firstLevel > lastLevel) continue
+      const x0 = data.twsValues[xIndex]; const x1 = data.twsValues[xIndex + 1]
+      const y0 = data.twaValues[yIndex]; const y1 = data.twaValues[yIndex + 1]
+      for (let levelIndex = firstLevel; levelIndex <= lastLevel; levelIndex++) {
+        const { level, segments } = levels[levelIndex - 1]
         const points: Point[] = []
         addCrossing(points, level, v00, v10, { x: x0, y: y0 }, { x: x1, y: y0 })
         addCrossing(points, level, v10, v11, { x: x1, y: y0 }, { x: x1, y: y1 })
@@ -45,15 +52,29 @@ function buildContours(data: PolarSailMapData): Contour[] {
         if (points.length === 4) segments.push(points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y, points[3].x, points[3].y)
       }
     }
-    contours.push({ level: Number(level.toFixed(1)), segments: new Float32Array(segments) })
   }
-  return contours
+  return levels.map(({ level, segments }) => ({ level: Number(level.toFixed(1)), segments: new Float32Array(segments) }))
+}
+
+function buildSailRows(data: PolarSailMapData): SailRun[][] {
+  return Array.from({ length: Math.max(0, data.height - 1) }, (_, yIndex) => {
+    const runs: SailRun[] = []
+    let start = 0
+    for (let xIndex = 0; xIndex < data.width - 1; xIndex++) {
+      const sail = data.sails[yIndex * data.width + xIndex]
+      if (xIndex < data.width - 2 && sail === data.sails[yIndex * data.width + xIndex + 1]) continue
+      runs.push({ color: sailColors[data.sailIds[sail]], xMin: data.twsValues[start], xMax: data.twsValues[xIndex + 1] })
+      start = xIndex + 1
+    }
+    return runs
+  })
 }
 
 export const PolarSailMap = forwardRef<PolarSailMapHandle, { data: PolarSailMapData; locale: 'fr' | 'en' }>(function PolarSailMap({ data, locale }, ref) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const resetRef = useRef<() => void>(() => undefined)
   const contours = useMemo(() => buildContours(data), [data])
+  const sailRows = useMemo(() => buildSailRows(data), [data])
 
   useImperativeHandle(ref, () => ({ resetView: () => resetRef.current() }), [])
 
@@ -181,7 +202,7 @@ export const PolarSailMap = forwardRef<PolarSailMapHandle, { data: PolarSailMapD
       const speed = data.speeds[index]
       const point = worldToScreen(tws, twa, rect)
       const textColor = color('--ink', '#fff')
-      const lines = [`TWS ${number(tws, 1)} ${unit}`, `TWA ${number(twa, 0)}°`, `${getSailName(sail, locale)} · ${number(speed, 2)} ${unit}`]
+      const lines = [`TWS ${number(tws, 2)} ${unit}`, `TWA ${number(twa, 0)}°`, `${getSailName(sail, locale)} · ${number(speed, 2)} ${unit}`]
 
       context.save()
       context.strokeStyle = color('--ocean-bright', '#5ce2dc'); context.setLineDash([4, 4])
@@ -209,13 +230,10 @@ export const PolarSailMap = forwardRef<PolarSailMapHandle, { data: PolarSailMapD
       for (let yIndex = 0; yIndex < data.height - 1; yIndex += 1) {
         const y0 = data.twaValues[yIndex]; const y1 = data.twaValues[yIndex + 1]
         if (y1 < viewport.yMin || y0 > viewport.yMax) continue
-        for (let xIndex = 0; xIndex < data.width - 1; xIndex += 1) {
-          const x0 = data.twsValues[xIndex]; const x1 = data.twsValues[xIndex + 1]
-          if (x1 < viewport.xMin || x0 > viewport.xMax) continue
-          const index = yIndex * data.width + xIndex
-          const sail = data.sailIds[data.sails[index]]
-          const p0 = worldToScreen(x0, y0, rect); const p1 = worldToScreen(x1, y1, rect)
-          context.fillStyle = sailColors[sail]
+        for (const run of sailRows[yIndex]) {
+          if (run.xMax < viewport.xMin || run.xMin > viewport.xMax) continue
+          const p0 = worldToScreen(run.xMin, y0, rect); const p1 = worldToScreen(run.xMax, y1, rect)
+          context.fillStyle = run.color
           context.fillRect(p0.x, p1.y, Math.max(1, p1.x - p0.x + .5), Math.max(1, p0.y - p1.y + .5))
         }
       }
@@ -271,7 +289,7 @@ export const PolarSailMap = forwardRef<PolarSailMapHandle, { data: PolarSailMapD
       resetRef.current = () => undefined
       observer.disconnect(); canvas.removeEventListener('wheel', onWheel); canvas.removeEventListener('mousedown', onMouseDown); canvas.removeEventListener('mousemove', onMouseMove); canvas.removeEventListener('mouseleave', onMouseLeave); canvas.removeEventListener('dblclick', reset); window.removeEventListener('mouseup', stopPan)
     }
-  }, [contours, data, locale])
+  }, [contours, data, locale, sailRows])
 
   return <div className="polar-sail-map"><canvas aria-label={locale === 'fr' ? 'Carte d’utilisation des voiles' : 'Sail usage map'} ref={canvasRef} role="img" /></div>
 })

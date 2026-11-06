@@ -21,11 +21,40 @@ async function expectDiagramInFrame(canvas: Locator) {
   expect(geometry.ring.y + geometry.ring.radius).toBeLessThanOrEqual(geometry.height + 1)
 }
 
+async function expectActionsInsideDiagram(panel: Locator) {
+  const geometry = await panel.evaluate(panel => {
+    const bounds = (element: Element) => {
+      const { left, right, top, bottom, width, height } = element.getBoundingClientRect()
+      return { left, right, top, bottom, width, height }
+    }
+    return {
+      column: bounds(panel.querySelector('.expert-diagram-column')!),
+      information: bounds(panel.querySelector('.expert-info-panel')!),
+      controls: [...panel.querySelectorAll('.expert-diagram-actions > .icon-button')].map(bounds),
+    }
+  })
+  expect(geometry.controls, 'Le diagramme propose reset, grille/focus et aide').toHaveLength(3)
+  for (const control of geometry.controls) {
+    expect(control.width).toBe(32)
+    expect(control.height).toBe(32)
+    expect(control.left).toBeGreaterThanOrEqual(geometry.column.left - 1)
+    expect(control.right).toBeLessThanOrEqual(geometry.column.right + 1)
+    expect(control.top).toBeGreaterThanOrEqual(geometry.column.top - 1)
+    expect(control.bottom).toBeLessThanOrEqual(geometry.column.bottom + 1)
+    const overlapsInformation = control.left < geometry.information.right - 1
+      && control.right > geometry.information.left + 1
+      && control.top < geometry.information.bottom - 1
+      && control.bottom > geometry.information.top + 1
+    expect(overlapsInformation, 'Les commandes restent hors du panneau d’informations').toBe(false)
+  }
+}
+
 for (const viewport of [
   { width: 360, height: 800 },
   { width: 390, height: 844 },
   { width: 820, height: 1180 },
   { width: 1440, height: 1000 },
+  { width: 1685, height: 1000 },
 ]) {
   for (const layout of ['grid', 'focus'] as const) {
     test(`la polaire Expert reste dans son cadre en ${layout} à ${viewport.width}px`, async ({ page }, testInfo) => {
@@ -51,9 +80,11 @@ for (const viewport of [
       }, layout)
       await page.goto('/#polaire')
       const canvas = page.locator('.expert-polar-diagram')
+      const panel = page.locator('.expert-polar-panel')
       await expect(canvas).toHaveCount(1)
       await page.evaluate(async () => { await document.fonts.ready })
       await expectDiagramInFrame(canvas)
+      await expectActionsInsideDiagram(panel)
       await canvas.scrollIntoViewIfNeeded()
       const bounds = await canvas.boundingBox()
       expect(bounds!.x).toBeGreaterThanOrEqual(-1)
@@ -68,7 +99,24 @@ for (const viewport of [
       await canvas.scrollIntoViewIfNeeded()
       await page.screenshot({ path: testInfo.outputPath(`expert-viewport-${layout}-${viewport.width}.png`), animations: 'disabled' })
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width + 1)
-      await page.locator('.expert-polar-panel').screenshot({ path: testInfo.outputPath(`expert-${layout}-${viewport.width}.png`), animations: 'disabled' })
+      await panel.screenshot({ path: testInfo.outputPath(`expert-${layout}-${viewport.width}.png`), animations: 'disabled' })
+
+      const layoutToggle = panel.locator('.expert-polar-layout')
+      const layoutGroup = page.getByRole('group', { name: 'Disposition des courbes', exact: true })
+      const initialLabel = layout === 'focus' ? 'Revenir à la grille' : 'Afficher la polaire en focus'
+      const changedMode = layout === 'focus' ? 'Grille' : 'Focus'
+      const initialMode = layout === 'focus' ? 'Focus' : 'Grille'
+      await expect(layoutToggle).toHaveAccessibleName(initialLabel)
+      await expect(layoutGroup.getByRole('button', { name: initialMode, exact: true })).toHaveAttribute('aria-pressed', 'true')
+      await layoutToggle.click()
+      await expect(layoutGroup.getByRole('button', { name: changedMode, exact: true })).toHaveAttribute('aria-pressed', 'true')
+      await expectDiagramInFrame(canvas)
+      await expectActionsInsideDiagram(panel)
+      await layoutToggle.click()
+      await expect(layoutGroup.getByRole('button', { name: initialMode, exact: true })).toHaveAttribute('aria-pressed', 'true')
+      await expect(layoutToggle).toHaveAccessibleName(initialLabel)
+      await expectDiagramInFrame(canvas)
+      await expectActionsInsideDiagram(panel)
     })
   }
 }

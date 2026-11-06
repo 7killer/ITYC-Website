@@ -112,18 +112,22 @@ test('l’entête de flotte conserve la capture au-dessus du détail RT, Skipper
   })
   await expect(fleetHeader).toHaveCount(1)
   await fleetHeader.scrollIntoViewIfNeeded()
-  await expect(fleetHeader).toContainText('RT : Ouvre un onglet de routage zezo')
-  await expect(fleetHeader).toContainText('Team : Team du joueur.')
-  await expect(fleetHeader).toContainText('Jaune : Top VSR')
+  const fleetDetails = fleetHeader.locator('xpath=following-sibling::*[1]')
+  await expect(fleetDetails).toHaveClass(/\bhelp-illustrated\b.*\brows\b/)
+  for (const text of [
+    'RT : Ouvre un onglet de routage avec les coordonnées et les options pré remplies.',
+    'Skipper : Puce Nom du bateau.',
+    'Team : Team du joueur.',
+    'Jaune : Top VSR',
+  ]) {
+    await expect(fleetDetails.getByText(text, { exact: true })).toBeVisible()
+  }
 
   const image = fleetHeader.locator('figure img')
   await expect.poll(() => image.evaluate((element) => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0)
-  const placement = await fleetHeader.evaluate((element) => {
-    const figure = element.querySelector('figure')!.getBoundingClientRect()
-    const paragraph = element.querySelector('p')!.getBoundingClientRect()
-    return { imageBottom: figure.bottom, textTop: paragraph.top }
-  })
-  expect(placement.imageBottom).toBeLessThanOrEqual(placement.textTop)
+  const imageBottom = await fleetHeader.locator('figure').evaluate(element => element.getBoundingClientRect().bottom)
+  const textTop = await fleetDetails.locator('.help-figure-explanation').evaluate(element => element.getBoundingClientRect().top)
+  expect(imageBottom).toBeLessThanOrEqual(textTop)
   await fleetHeader.screenshot({ path: testInfo.outputPath('entete-flotte-light.png'), animations: 'disabled' })
 })
 

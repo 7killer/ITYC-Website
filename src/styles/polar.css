@@ -181,7 +181,7 @@
 .expert-workspace.is-focus .expert-polar-panel { grid-template-columns: minmax(0, 1fr) 32rem; height: 100%; min-height: 0; max-height: 100%; }
 .expert-workspace.is-focus .expert-diagram-column, .expert-workspace.is-focus .expert-diagram-wrap { height: 100%; min-height: 0; }
 .expert-workspace.is-focus .expert-polar-diagram { min-height: 0; max-height: 100%; }
-.expert-workspace.is-focus .expert-info-panel { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto auto auto auto; align-content: start; column-gap: 1.25rem; width: 32rem; overflow: auto; transform: translateX(-1.5rem); }
+.expert-workspace.is-focus .expert-info-panel { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto auto auto auto; align-content: start; column-gap: 1.25rem; width: 32rem; overflow: auto; }
 .expert-workspace.is-focus .expert-info-panel::before { position: absolute; top: 2.5rem; left: calc(50% + .0625rem); width: 1px; height: 26.4rem; background: var(--line); content: ''; }
 .expert-workspace.is-focus .expert-info-panel .expert-diagram-toolbar { grid-column: 1; grid-row: 1; margin: -.4rem -.55rem .4rem; }
 .expert-workspace.is-focus .expert-info-panel .expert-conditions { grid-column: 1; grid-row: 2; }

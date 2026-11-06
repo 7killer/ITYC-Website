@@ -1,6 +1,12 @@
 # Tutoriel polaires
+
+Ce tutoriel présente les commandes et la lecture des graphiques. Pour les formules,
+les coefficients et la recherche des meilleures performances, consultez le
+[calcul des polaires](#aide?article=aide_polaire).
+
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
+### 1.1 Présentation
 Les polaires des bateaux permettent connaître la vitesse du bateau en fonction de nombreux paramètres :
 
 - Les options du bateau ( Foils / polish).
@@ -52,9 +58,37 @@ Mode polaire.
 ITYC.FR vous permet d'afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
+### 1.2 Boutons du graphique
+
+#### 1.2.1 Mode affichage
+Vous pouvez changer de mode d'affichage de 2 manières :
+
+* En utilisant le sélecteur en haut de page ![Description](/assets/help/common/focusgrille.png "icon:2.5em")
+* En utilisant les boutons de chaque courbe 
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeGrilleCurve.png "icon:2.5em")
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeFocusCurve.png "icon:2.5em")
+
+
+*Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
+
+#### 1.2.2 Reset zoom
+
+Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
+
+#### 1.2.3 Raccourci aide
+
+A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
+
+#### 1.2.4 Précision
+
+Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision10.png "icon:2.5em") , pour basculer le calcul en précision 0.01.
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision100.png "icon:2.5em") , pour basculer le calcul en précision 0.1.
+
+*Attention une précision de 0.01 demande plus de temps de calcul.*
 
 <!-- anchor:tp_p1_1 -->
-### 1.1 Mode Focus
+### 1.3 Mode Focus
 :::figure side image=left width=75% blocks=12.5%,12.5%,12.5%,12.5%,12.5%,12.5%,12.5%,12.5%
 ![polaire Vue d ensemble focus](/assets/help/polar/polar_viewall.png)
 
@@ -91,7 +125,7 @@ Carte d'utilisation des voiles (TWS, TWA).
 :::
 
 <!-- anchor:tp_p1_1_2 -->
-### 1.2 Mode Grille Normal
+### 1.4 Mode Grille Normal
 
 :::figure side image=left width=65% 
 ![polaire Vue d ensemble grille](/assets/help/polar/polar_viewall_g.png)
@@ -525,12 +559,12 @@ La VMG est la composante de vitesse utile dans l’axe du vent : elle décrit la
 Vous y trouverez l'angle au vent ( TWA ) pour obtenir la meilleure VMG en fonction de la vitesse vent (TWS).
 
 :::figure rows image=center width=80%
-![Energie perdue focus](/assets/help/polar/curve/polar_bspd_curve.png)
+![Energie perdue focus](/assets/help/polar/curve/polar_bvmg_curve.png)
 :::
 
 ### 8.2 Fonctionnalités de la courbe
 :::figure side width=60% 
-![Courbe de energie perdue](/assets/help/polar/curve/polar_bspd_curve.png)
+![Courbe de energie perdue](/assets/help/polar/curve/polar_bvmg_curve.png)
 
 La courbe de TWA pour obtenir le meilleur angle au vent au près ( Best VMG UP ) et la courbe de TWA pour obtenir le meilleur angle au vent au portant ( Best VMG DW )  en fonction de la TWS.
 
@@ -686,8 +720,8 @@ A la TWS, La TWA pour la Best speed, la vitesse du bateau (nds ) et la voile act
 :::
 
 
-## 10. Vitesse du bateau BestSpeed- f(tws) Meilleure vitesse du bateau 
-### 10.1 Présentation
+## 11. Vitesse du bateau BestSpeed- f(tws) Meilleure vitesse du bateau 
+### 11.1 Présentation
 
 Après avoir sélectionner vos équipements, la courbe des TWA pour la vitesse apparaîtra.
 
@@ -697,7 +731,7 @@ Vous y trouverez la meilleur vitesse ( vitesse max) du bateau en fonction de la 
 ![Energie perdue focus](/assets/help/polar/curve/polar_spd_curve.png)
 :::
 
-### 10.2 Fonctionnalités de la courbe
+### 11.2 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_spd_curve.png)
 

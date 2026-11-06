@@ -100,5 +100,5 @@ Le jeu évite les changements incessants : la voile candidate doit dépasser la 
 
 ### Régler la précision
 
-La précision 0,1 ou 0,01 règle le pas d’analyse de la zone. Une précision plus fine permet de détailler une transition, au prix d’un calcul plus poussé.
+Sur chaque graphique dont l’axe X est le TWS, le bouton avant le reset zoom affiche le pas actif : 0,1 ou 0,01. Un clic change la précision de ce graphique. Une précision plus fine permet de détailler une transition, au prix d’un calcul plus poussé. Le réglage TWS de la polaire experte utilise un pas de 0,01.
 

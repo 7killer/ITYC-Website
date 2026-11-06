@@ -14,5 +14,6 @@ export function navigationHref(href: string, locale: 'fr' | 'en', theme: 'dark' 
   context.set('lang', locale)
   if (context.has('locale')) context.set('locale', locale)
   const query = context.toString()
-  return `index.html${query ? `?${query}` : ''}${href}`
+  const entry = href === '#aide' ? 'aide' : href === '#dash' ? 'dash' : 'index'
+  return `${entry}${locale === 'en' ? 'En' : ''}.html${query ? `?${query}` : ''}${href}`
 }

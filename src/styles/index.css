@@ -8,9 +8,10 @@
 
 /* Shared chart controls use the spacing of the penalties page. */
 .chart-actions { display: flex; flex-shrink: 0; align-items: center; gap: .45rem; }
-.chart-actions > .icon-button { flex-shrink: 0; }
-.chart-help-button { text-decoration: none; font: 700 .95rem/1 system-ui, sans-serif; }
-.chart-help-button:hover, .chart-help-button:focus-visible { color: var(--page); background: var(--ocean-bright); }
+.chart-actions > .icon-button { flex-shrink: 0; padding: 0; line-height: 1; color: var(--muted); }
+.chart-action-icon { display: block; width: 1.1rem; height: 1.1rem; }
+.chart-precision-button { font: inherit; font-size: .7rem; font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -.025em; }
+.chart-help-button { text-decoration: none; }
 
 /* Sur tablette, les bords restent hors du canvas : ils servent au défilement
    de la page au lieu de déclencher le zoom du graphique. */

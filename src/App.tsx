@@ -8,6 +8,7 @@ import { EnergyPage } from './features/energy/EnergyPage'
 import { DashPage } from './features/dash/DashPage'
 import { buildToolHref, isEmbeddedToolPage, isToolPage, readToolRoute, readUrlPreferences, type ToolPage } from './shared/navigation/toolUrls'
 import { navigationHref } from './shared/navigation/siteLinks'
+import { publicPageFile, publicPages, readPublicPage } from './shared/navigation/publicPages'
 const HelpPage = lazy(() => import('./features/help/HelpPage').then(module => ({ default: module.HelpPage })))
 
 type AppRoute = ToolPage | 'home' | 'help' | 'dash'
@@ -17,7 +18,9 @@ function routeFromLocation(): AppRoute {
   if (/^#aide(?:\?|$)/.test(window.location.hash)) return 'help'
   if (window.location.hash === '#dash') return 'dash'
   if (window.location.hash === '#accueil') return 'home'
-  return readToolRoute()?.page ?? 'home'
+  const tool = readToolRoute()
+  if (tool) return tool.page
+  return readPublicPage(window.location.pathname)?.page.route ?? 'home'
 }
 
 function storedPreference(key: string) {
@@ -37,6 +40,12 @@ export default function App() {
       return
     }
     const address = new URL(window.location.href)
+    const filename = address.pathname.split('/').pop() ?? ''
+    const current = readPublicPage(address.pathname)
+    if (!filename || current?.page.route === 'home' || current?.page.route === 'help' || current?.page.route === 'dash') {
+      const page = current?.page.route === route ? current.page : publicPages.find(page => page.route === route)
+      if (page) address.pathname = address.pathname.replace(/[^/]*$/, publicPageFile(page, nextLocale))
+    }
     address.searchParams.set('lang', nextLocale)
     if (address.searchParams.has('locale')) address.searchParams.set('locale', nextLocale)
     address.searchParams.set('th', nextTheme)

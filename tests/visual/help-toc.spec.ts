@@ -4,7 +4,7 @@ test.use({ viewport: { width: 1440, height: 1000 } })
 
 const articleIds = [
   'aide_pena', 'tuto_pena', 'aide_energy', 'tuto_energy',
-  'tuto_polaire', 'tuto_autoSail', 'aide_dash',
+  'aide_polaire', 'tuto_polaire', 'aide_autoSail', 'tuto_autoSail', 'aide_dash',
 ] as const
 
 const firstChapter = '1-premier-chapitre'
@@ -18,6 +18,12 @@ const secondParts = [
   `${secondChapter}-2-1-premiere-partie-1`,
   `${secondChapter}-2-2-seconde-partie-3`,
 ]
+const firstDetail = `${firstChapter}-1-1-1-detail-2`
+const siblingDetails = [
+  `${firstChapter}-1-2-1-premier-detail-4`,
+  `${firstChapter}-1-2-2-second-detail-5`,
+]
+const secondDetail = `${secondChapter}-2-1-1-detail-2`
 
 const paragraphs = (name: string) => Array.from({ length: 22 }, (_, index) =>
   `${name}, paragraphe ${index + 1}. Ce texte permet de parcourir le chapitre sans rencontrer un autre titre. Les explications restent assez longues pour verifier le suivi du defilement dans les deux sens.`,
@@ -39,6 +45,14 @@ ${paragraphs('Premier chapitre, premiere partie')}
 ### 1.2 Seconde partie
 
 ${paragraphs('Premier chapitre, seconde partie')}
+
+#### 1.2.1 Premier detail
+
+${paragraphs('Premier chapitre, premier detail de la seconde partie')}
+
+#### 1.2.2 Second detail
+
+${paragraphs('Premier chapitre, second detail de la seconde partie')}
 
 <!-- anchor:legacy-second-chapter -->
 ## 2. Deuxieme chapitre
@@ -70,7 +84,10 @@ async function expectHrefs(links: Locator, expected: string[]) {
 
 async function expectParts(page: Page, ids: string[], article = 'tuto_pena') {
   await expectHrefs(page.locator('.help-toc a[data-level="3"]'), ids.map(id => href(article, id)))
-  await expect(page.locator('.help-toc a[data-level="4"]')).toHaveCount(0)
+}
+
+async function expectDetails(page: Page, ids: string[]) {
+  await expectHrefs(page.locator('.help-toc a[data-level="4"]'), ids.map(id => href('tuto_pena', id)))
 }
 
 async function scrollTo(page: Page, id: string) {
@@ -93,20 +110,26 @@ test('le sommaire droit suit le chapitre pendant le defilement dans les deux sen
 
   await scrollTo(page, firstChapter)
   await expectParts(page, firstParts)
+  await expectDetails(page, [])
   const originalUrl = page.url()
 
   await scrollTo(page, secondParts[0])
   await expectParts(page, secondParts)
+  await expectDetails(page, [secondDetail])
   await page.evaluate(() => window.scrollBy({ top: 600, behavior: 'instant' }))
   await expectParts(page, secondParts)
+  await expectDetails(page, [secondDetail])
 
   await scrollTo(page, thirdChapter)
   await expectParts(page, [])
+  await expectDetails(page, [])
 
   await scrollTo(page, secondParts[1])
   await expectParts(page, secondParts)
+  await expectDetails(page, [])
   await scrollTo(page, firstParts[1])
   await expectParts(page, firstParts)
+  await expectDetails(page, siblingDetails)
   expect(page.url()).toBe(originalUrl)
 
   // The inline contents keeps every subchapter even when the right contents collapses them.
@@ -115,16 +138,47 @@ test('le sommaire droit suit le chapitre pendant le defilement dans les deux sen
   await expect(page.locator('.help-inline-toc a[data-level="4"]')).toHaveCount(0)
 })
 
+test('les details restent limites au sous-chapitre actif et leurs liens suivent le defilement', async ({ page }) => {
+  await useFixture(page)
+  await page.goto('/#aide?article=tuto_pena')
+  await scrollTo(page, firstParts[0])
+  await expectDetails(page, [firstDetail])
+
+  await scrollTo(page, firstDetail)
+  await expectDetails(page, [firstDetail])
+  await expect(page.locator(`.help-toc a[href="${href('tuto_pena', firstDetail)}"]`)).toHaveAttribute('aria-current', 'location')
+
+  await scrollTo(page, firstParts[1])
+  await expectDetails(page, siblingDetails)
+  const secondDetailLink = page.locator(`.help-toc a[href="${href('tuto_pena', siblingDetails[1])}"]`)
+  await secondDetailLink.click()
+  await expect(page).toHaveURL(new RegExp(`section=${siblingDetails[1]}$`))
+  await expect(page.locator(`[id="${siblingDetails[1]}"]`)).toBeInViewport()
+  await expect(secondDetailLink).toHaveAttribute('aria-current', 'location')
+  await expectDetails(page, siblingDetails)
+
+  await scrollTo(page, siblingDetails[0])
+  await expectDetails(page, siblingDetails)
+  await expect(page.locator(`.help-toc a[href="${href('tuto_pena', siblingDetails[0])}"]`)).toHaveAttribute('aria-current', 'location')
+
+  await scrollTo(page, firstParts[0])
+  await expectDetails(page, [firstDetail])
+  await scrollTo(page, firstChapter)
+  await expectDetails(page, [])
+})
+
 test('cliquer un chapitre ouvre seulement ses sous-chapitres et conserve le lien partageable', async ({ page }) => {
   await useFixture(page)
   await page.goto('/#aide?article=tuto_pena')
   await page.locator(`.help-toc a[href="${href('tuto_pena', secondChapter)}"]`).click()
   await expect(page).toHaveURL(new RegExp(`section=${secondChapter}$`))
   await expectParts(page, secondParts)
+  await expectDetails(page, [])
   await expect(page.locator(`[id="${secondChapter}"] > h3`)).toBeInViewport()
 
   await page.locator(`.help-toc a[href="${href('tuto_pena', thirdChapter)}"]`).click()
   await expectParts(page, [])
+  await expectDetails(page, [])
   await expect(page.locator('.help-toc a[data-level="2"]')).toHaveCount(3)
 })
 
@@ -177,6 +231,7 @@ Une explication courte termine cet article.
 
 for (const section of [
   secondParts[0],
+  secondDetail,
   'legacy-second-part',
   'legacy-second-chapter',
   'legacy-second-detail',
@@ -192,12 +247,17 @@ for (const section of [
           ? page.locator('h4').filter({ has: page.locator(`[id="${section}"]`) })
           : page.locator(`[id="${section}"]`)
     await expectParts(page, secondParts)
+    await expectDetails(page, section === 'legacy-second-chapter' ? [] : [secondDetail])
+    if (section === secondDetail || section === 'legacy-second-detail') {
+      await expect(page.locator(`.help-toc a[href="${href('tuto_pena', secondDetail)}"]`)).toHaveAttribute('aria-current', 'location')
+    }
     await expect(heading).toBeInViewport()
     const sharedUrl = page.url()
 
     await page.reload()
     await expect(page).toHaveURL(sharedUrl)
     await expectParts(page, secondParts)
+    await expectDetails(page, section === 'legacy-second-chapter' ? [] : [secondDetail])
     await expect(heading).toBeInViewport()
   })
 }
@@ -221,12 +281,12 @@ for (const locale of ['fr', 'en'] as const) {
     await expect(page.locator('.help-article').getByRole('heading', {
       name: locale === 'fr' ? 'Documentation ITYC' : 'ITYC documentation', exact: true,
     })).toBeVisible()
-    await expect(page.locator('.help-index-entry')).toHaveCount(articleIds.length)
+    await expect(page.locator('.help-index-entry')).toHaveCount(articleIds.length + 1)
     await expect(page.locator('a[href*="article=nouvelle-interface"]')).toHaveCount(0)
     await expect(page.locator('.help-content-section')).toHaveCount(0)
     await expect(page.locator('.help-toc')).toHaveCount(0)
     await page.reload()
-    await expect(page.locator('.help-index-entry')).toHaveCount(articleIds.length)
+    await expect(page.locator('.help-index-entry')).toHaveCount(articleIds.length + 1)
     await expect(page.locator('a[href*="article=nouvelle-interface"]')).toHaveCount(0)
   })
 

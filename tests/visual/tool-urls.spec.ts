@@ -27,7 +27,7 @@ test.beforeEach(async ({ page }) => {
 
 async function values(page: Page, expected: Record<string, number>) {
   for (const [id, value] of Object.entries(expected)) {
-    await expect(page.locator(`[id="${id}-number"]`)).toHaveValue(value.toFixed(1))
+    await expect(page.locator(`[id="${id}-number"]`)).toHaveValue(value.toFixed(id === 'expert-tws' ? 2 : 1))
   }
 }
 
@@ -82,10 +82,11 @@ for (const locale of ['fr', 'en'] as const) {
       await page.goto(address)
 
       const check = async () => {
-        await expect(page.locator('.page-heading h1')).toHaveText(tool.heading)
+        const heading = locale === 'fr' ? tool.heading : { pena: 'Penalties', energy: 'Energy', polar: 'Polars', autoSail: 'Auto Sails' }[tool.file]
+        await expect(page.locator('.page-heading h1')).toHaveText(heading)
         await expect(page.locator('html')).toHaveAttribute('lang', locale)
         await expect(page.locator('html')).toHaveAttribute('data-theme', 'light')
-        await expect(page.getByRole('combobox', { name: 'Bateau', exact: true })).toHaveValue('Class 40 2021')
+        await expect(page.getByRole('combobox', { name: locale === 'fr' ? 'Bateau' : 'Boat', exact: true })).toHaveValue('Class 40 2021')
         await expect(page.getByRole('checkbox', { name: 'Full Pack', exact: true })).toBeChecked()
         await values(page, { [tool.wind]: 14.5 })
         if (tool.page === 'polar') await values(page, { twa: 72.5 })
@@ -152,8 +153,20 @@ test('Voiles Auto reconnaît LJ puis les sélecteurs, plages et précision propr
     await expect(page.locator(`#autosail-chart-${index} .autosail-settings select`)).toHaveValue(sail)
   }
   await overlapSails(page, ['LightJib', 'LightGnk'])
-  await expect(page.getByRole('group', { name: 'Précision du recouvrement' }).getByRole('button', { name: '0,01', exact: true })).toHaveAttribute('aria-pressed', 'true')
+  const precisionButton = page.locator('#autosail-chart-3').getByRole('button', { name: /^Précision du recouvrement :/ })
+  await expect(precisionButton).toHaveText('0,01')
+  await expect(precisionButton).toHaveAccessibleName('Précision du recouvrement : 0,01. Passer à 0,1.')
   await expect(page.locator('.autosail-layout-focus')).toBeVisible()
+
+  await precisionButton.click()
+  await expect(precisionButton).toHaveText('0,1')
+  await expect.poll(() => linkParameter(page, 'autoSail', 'precision')).toBe('0.1')
+  await expect.poll(() => page.evaluate(() => JSON.parse(sessionStorage.getItem('ityc:tool-page:autosail')!).overlapPrecision)).toBe('0.1')
+
+  await precisionButton.click()
+  await expect(precisionButton).toHaveText('0,01')
+  await expect.poll(() => linkParameter(page, 'autoSail', 'precision')).toBe('0.01')
+  await expect.poll(() => page.evaluate(() => JSON.parse(sessionStorage.getItem('ityc:tool-page:autosail')!).overlapPrecision)).toBe('0.01')
 })
 
 test('les noms historiques et les noms encodés de bateau sont décodés sans réécrire l’adresse', async ({ page }) => {
@@ -209,7 +222,8 @@ test('une voile scalaire ou une plage invalide conserve les sélections AutoSail
   await values(page, { 'autosail-tws-start': 2, 'autosail-tws-end': 3, 'autosail-twa-start': 30, 'autosail-twa-end': 140 })
   for (const index of [0, 1, 2]) await expect(page.locator(`#autosail-chart-${index} .autosail-settings select`)).toHaveValue('LightJib')
   await overlapSails(page, ['LightJib', 'LightGnk'])
-  await expect(page.getByRole('group', { name: 'Précision du recouvrement' }).getByRole('button', { name: '0,01', exact: true })).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.locator('#autosail-chart-3').getByRole('button', { name: 'Précision du recouvrement : 0,01. Passer à 0,1.', exact: true }))
+    .toHaveText('0,01')
 })
 
 for (const tool of tools) {
@@ -354,7 +368,8 @@ test('les préférences explicites restent cohérentes entre outil, aide et accu
   const sectionLink = page.locator('.help-toc a[data-level="2"]').first()
   await expect(sectionLink).toHaveAttribute('href', /article=tuto_pena&section=/)
   await page.evaluate(href => { window.location.hash = href! }, await sectionLink.getAttribute('href'))
-  const helpHash = new URL(page.url()).hash
+  // Language changes preserve the section through its stable historical alias.
+  const helpHash = '#aide?article=tuto_pena&section=tp_p1'
   await page.getByRole('button', { name: 'English', exact: true }).click()
   await page.locator('.theme-switch').click()
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light')
@@ -397,5 +412,34 @@ for (const tool of [
     await headerLink(page, tool.file).click()
     await expect(page.locator(`#${tool.prefix}-chart-1`)).toBeInViewport({ ratio: .2 })
     expect(new URL(page.url()).searchParams.get('focus')).toBe('1')
+  })
+}
+
+for (const tool of [
+  { file: 'polar' as const, page: 'polar', card: 'polar-chart-1', index: 1, other: 2 },
+  { file: 'autoSail' as const, page: 'autosail', card: 'autosail-chart-0', index: 0, other: 2 },
+  { file: 'pena' as const, page: 'penalties', card: 'analysis-card-0', index: 0, other: 1 },
+  { file: 'energy' as const, page: 'energy', card: 'analysis-card-0', index: 0, other: 1 },
+]) {
+  test(`${tool.file} conserve la précision propre à chaque courbe dans les liens et après navigation`, async ({ page }) => {
+    await seedSession(page, { [tool.page]: { chartPrecisions: { [tool.index]: '0.1', [tool.other]: '0.01' } } })
+    const parameter = `${tool.page}Precision${tool.index}`
+    const otherParameter = `${tool.page}Precision${tool.other}`
+    await page.goto(`/${tool.file}.html?${parameter}=0.01&${otherParameter}=invalid`)
+    const button = page.locator(`#${tool.card} .chart-precision-button`)
+    await expect(button).toHaveText('0,01')
+    await expect.poll(() => linkParameter(page, tool.file, otherParameter)).toBe('0.01')
+
+    await button.click()
+    await expect(button).toHaveText('0,1')
+    await expect.poll(() => linkParameter(page, tool.file, parameter)).toBe('0.1')
+    await expect.poll(() => linkParameter(page, tool.file, otherParameter)).toBe('0.01')
+
+    await headerLink(page, tool.file).click()
+    await expect(button).toHaveText('0,1')
+    await expect.poll(() => page.evaluate(({ pageName, index }) => {
+      const saved = JSON.parse(sessionStorage.getItem(`ityc:tool-page:${pageName}`)!)
+      return saved.chartPrecisions[index]
+    }, { pageName: tool.page, index: tool.index })).toBe('0.1')
   })
 }

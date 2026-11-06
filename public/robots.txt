@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /forms/
+Disallow: /dash/
+Disallow: /ajax/
+Disallow: /data/
+Disallow: /lib/
+Disallow: /log/
+Disallow: /Model/
+Disallow: /phpl/
+Disallow: /test/
+Disallow: /tmp/
+Disallow: /V2/
+Disallow: /VOriginal/
+
+Sitemap: https://ityc.fr/sitemap.xml

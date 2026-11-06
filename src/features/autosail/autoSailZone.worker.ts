@@ -1,6 +1,7 @@
 import { getBestSpeed, polarLimit, sailColors } from '../polar/engine/polarMath'
 import type { PolarData } from '../polar/engine/polarTypes'
 import type { PolarOptions, SailId } from '../polar/polarModel'
+import { sampleChartRange } from '../../shared/charts/chartPrecision'
 
 type Request = {
   options: PolarOptions
@@ -22,25 +23,30 @@ self.addEventListener('message', ({ data }: MessageEvent<Request>) => {
   const minTwa = Math.max(0, Math.min(...data.polar.twa))
   const maxTwa = Math.min(180, Math.max(...data.polar.twa))
   const maxTws = polarLimit(data.polar, 'tws', 50)
-  // Les zones d'usage historiques travaillent avec TWS Ã  .01 et TWA Ã  .1.
-  // La zone de recouvrement est plus sensible : elle utilise .01 sur les deux axes.
-  const twsStep = data.secondSail ? data.precision ?? .1 : .01
-  const twaStep = data.secondSail ? data.precision ?? .1 : .1
-  const total = Math.ceil((maxTws - .1) / twsStep) + 1
+  const precision = data.precision === .01 ? '0.01' : '0.1'
+  const winds = sampleChartRange(.1, maxTws, precision)
+  // Usage zones refine TWS alone; overlap zones keep refining both axes.
+  const angles = sampleChartRange(minTwa, maxTwa, data.secondSail ? precision : '0.1')
+  const calculationOptions = { foil: data.options.foil, hull: data.options.hull, sails: data.sails }
+  const total = winds.length
   const progressStep = Math.max(1, Math.floor(total / 100))
   let index = 0
 
-  for (let tws = .1; tws <= maxTws; tws += twsStep) {
-    const angles: number[] = []
-    for (let twa = minTwa; twa <= maxTwa; twa += twaStep) {
-      const result = getBestSpeed(data.polar, twa, tws, { foil: data.options.foil, hull: data.options.hull, sails: data.sails })
+  for (const tws of winds) {
+    let firstAngle: number | undefined
+    let lastAngle: number | undefined
+    for (const twa of angles) {
+      const result = getBestSpeed(data.polar, twa, tws, calculationOptions)
       const active = isActive(result, data.polar, data.sail)
       const alsoActive = data.secondSail ? isActive(result, data.polar, data.secondSail) : true
-      if (active && alsoActive) angles.push(twa)
+      if (active && alsoActive) {
+        firstAngle ??= twa
+        lastAngle = twa
+      }
     }
-    if (angles.length) {
-      lower.push({ x: Number(tws.toFixed(2)), y: Number(angles[0].toFixed(2)) })
-      upper.push({ x: Number(tws.toFixed(2)), y: Number(angles[angles.length - 1].toFixed(2)) })
+    if (firstAngle !== undefined && lastAngle !== undefined) {
+      lower.push({ x: tws, y: firstAngle })
+      upper.push({ x: tws, y: lastAngle })
     }
     index += 1
     if (index % progressStep === 0 || index === total) self.postMessage({ percent: Math.min(100, Math.round(index / total * 100)), type: 'progress' })

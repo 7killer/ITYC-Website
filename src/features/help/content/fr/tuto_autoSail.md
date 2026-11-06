@@ -1,8 +1,12 @@
 # Tutoriel voiles automatiques
 
+Ce tutoriel présente les commandes et la lecture des graphiques. Le chapitre
+[calcul des voiles automatiques](#aide?article=aide_autoSail) détaille le seuil de
+changement de voile, les plages d’utilisation et les zones de recouvrement.
+
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
-
+### 1.1 Présentation
 Grâce à la gestion des voiles automatiques par le jeu, nous n'avons pas à nous préoccuper des changements de voiles à la main.
 
 Les critères de changements sont multiples :
@@ -55,8 +59,37 @@ ITYC.FR vous permet d'afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
 
+### 1.2  Boutons du graphique
+
+#### 1.2.1 Mode affichage
+Vous pouvez changer de mode d'affichage de 2 manières :
+
+* En utilisant le sélecteur en haut de page ![Description](/assets/help/common/focusgrille.png "icon:2.5em")
+* En utilisant les boutons de chaque courbe 
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeGrilleCurve.png "icon:2.5em")
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeFocusCurve.png "icon:2.5em")
+
+
+*Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
+
+#### 1.2.2 Reset zoom
+
+Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
+
+#### 1.2.3 Raccourci aide
+
+A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
+
+#### 1.2.4 Précision
+
+Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision10.png "icon:2.5em") , pour basculer le calcul en précision 0.01.
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision100.png "icon:2.5em") , pour basculer le calcul en précision 0.1.
+
+*Attention une précision de 0.01 demande plus de temps de calcul.*
+
 <!-- anchor:tp_p1_1 -->
-### 1.1 Mode Focus
+### 1.3 Mode Focus
 :::figure side image=left width=75%
 ![polaire Vue d ensemble focus](/assets/help/autosail/autosail_all.png)
 
@@ -78,7 +111,7 @@ Zone de recouvrement inter voile en fonction de la vitesse du vent ( TWS ) et de
 :::
 
 <!-- anchor:tp_p1_1_2 -->
-### 1.2 Mode Grille
+### 1.4 Mode Grille
 
 :::figure side image=left width=64% 
 ![polaire Vue d ensemble grille](/assets/help/autosail/autosail_all_g.png)
@@ -180,8 +213,8 @@ Dans cette section , vous pouvez activer / désactiver indépendamment chaque vo
 Pour rappel, l'abréviation du nom anglais de la voile figure entre parenthèses pour une plus grande facilité d'utilisation.
 :::
 
-## 6. Voile active - TWA fixe
-### 6.1 Présentation
+## 4. Voile active - TWA fixe
+### 4.1 Présentation
 Mon routeur me ferait changer de voile pendant 1h ? On doit passer par une voile intermédiaire, es-ce utile ?
 
 Le coefficient de recouvrement permet t-il de couvrir ces cas, et d'éviter ce changement de voile et les pénalités associées ?
@@ -214,7 +247,7 @@ Vitesse du bateau pour la plage de TWS et la TWA donnée.
 
 :::
 
-### 6.2 Réglages
+### 4.2 Réglages
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_twa_set.png)
 
@@ -235,15 +268,15 @@ Obtenez la plage de TWS pour la voile sélectionnée à la TWA choisie.
 
 :::
 
-### 6.3 Fonctionnalités de la courbe
+### 4.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_twa_curve.png)
 
 Les courbes représentent la vitesse du bateau en noeuds en fonction de la vitesse du vent à la TWA spécifiée.
 
-La courbe "Theo" représente la vitesse du bateau avec la voile sélectionnée manuellement sans tenir compte du coefficient de recouvrement.
+La courbe "Theo" représente la meilleure vitesse parmi les voiles équipées, sans tenir compte du coefficient de recouvrement.
 
-La courbe "Auto" représente la vitesse du bateau avec la voile sélectionnée automatiquement en tenant compte du coefficient de recouvrement.
+La courbe "Auto" reprend cette meilleure vitesse. Sa couleur indique si la voile sélectionnée peut être conservée avec le coefficient de recouvrement, ou quelle voile est la meilleure. Pour connaître la vitesse de la voile sélectionnée, lisez la courbe "Manu".
 
 La courbe Manu représente la vitesse du bateau avec la voile sélectionnée.
 
@@ -304,8 +337,8 @@ Vitesse du bateau ( noeuds ), voile, gain dû au recouvrement par rapport à la 
 :::
 
 
-## 7. Voile active - TWS fixe
-### 7.1 Présentation
+## 5. Voile active - TWS fixe
+### 5.1 Présentation
 Mon routeur me ferait changer de voile pendant 1h ? On doit passer par une voile intermédiaire, es-ce utile ?
 
 Le coefficient de recouvrement permet t-il de couvrir ces cas, et d'éviter ce changement de voile et les pénalités associées ?
@@ -338,7 +371,7 @@ Vitesse du bateau pour la plage de TWA et la TWS donnée.
 
 :::
 
-### 7.2 Réglages
+### 5.2 Réglages
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_tws_set.png)
 
@@ -359,15 +392,15 @@ Obtenez la plage de TWA pour la voile sélectionnée à la TWS choisie.
 
 :::
 
-### 7.3 Fonctionnalités de la courbe
+### 5.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_tws_curve.png)
 
 Les courbes représentent la vitesse du bateau en noeuds en fonction de la TWA à la vitesse du vent spécifiée.
 
-La courbe "Theo" représente la vitesse du bateau avec la voile sélectionnée manuellement sans tenir compte du coefficient de recouvrement.
+La courbe "Theo" représente la meilleure vitesse parmi les voiles équipées, sans tenir compte du coefficient de recouvrement.
 
-La courbe "Auto" représente la vitesse du bateau avec la voile sélectionnée automatiquement en tenant compte du coefficient de recouvrement.
+La courbe "Auto" reprend cette meilleure vitesse. Sa couleur indique si la voile sélectionnée peut être conservée avec le coefficient de recouvrement, ou quelle voile est la meilleure. Pour connaître la vitesse de la voile sélectionnée, lisez la courbe "Manu".
 
 La courbe Manu représente la vitesse du bateau avec la voile sélectionnée.
 
@@ -427,8 +460,8 @@ Vitesse du bateau ( noeuds ), voile, gain dû au recouvrement par rapport à la 
 :::
 
 
-## 8. Plage d utilisation d'une voile
-### 8.1 Présentation
+## 6. Plage d utilisation d'une voile
+### 6.1 Présentation
 Envie de visualiser la zone d utilisation d'une voile en fonction de la vitesse du vent ( TWS ) et de l'angle au vent ( TWA ) ?
 
 ITYC.fr vous propose cet outil !!!
@@ -459,7 +492,7 @@ Limite haute et basse de l'angle au vent ( TWA ) pour une voile donnée.
 
 :::
 
-### 8.2 Réglages
+### 6.2 Réglages
 :::figure side image=left  width=30% 
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_zu_set.png)
 
@@ -467,7 +500,7 @@ Sélectionnez la voile active.
 
 :::
 
-### 8.3 Fonctionnalités de la courbe
+### 6.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_zu_curve.png)
 
@@ -517,8 +550,8 @@ Angle au vent min ( ° ) , vitesse du bateau ( nds ).
 
 :::
 
-## 8. Zone de recouvrement entre voile
-### 8.1 Présentation
+## 7. Zone de recouvrement entre voile
+### 7.1 Présentation
 Envie de visualiser la zone de recouvrement entre deux voiles en fonction de la vitesse du vent ( TWS ) et de l'angle au vent ( TWA ) ?
 
 ITYC.fr vous propose cet outil !!!
@@ -549,7 +582,7 @@ Limite haute et basse de l'angle au vent ( TWA ) de recouvrement entre les deux 
 
 :::
 
-### 8.2 Réglages
+### 7.2 Réglages
 :::figure side image=left  width=30% 
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_zr_set.png)
 
@@ -559,12 +592,9 @@ Sélectionnez la première voile .
 
 Sélectionnez la deuxième voile .
 
----
-
-Sélectionnez la précision de recherche sur les axe TWS et TWA.
 :::
 
-### 8.3 Fonctionnalités de la courbe
+### 7.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_zr_curve.png)
 

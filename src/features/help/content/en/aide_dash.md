@@ -3,54 +3,59 @@
 <!-- anchor:tp_p1 -->
 ## 1. Overview
 
-Sailing in Virtual Regatta, just as in real life, depends on many factors: wind speed and direction, changes over time, the boat's polars and more.
+Sailing in Virtual Regatta, as in real life, depends on many factors: wind speed and direction, changes over time, the boat's polars and more.
 
-To support your everyday sailing, ITYC provides a dashboard with advanced features. It lets you view the weather conditions your boat encounters and obtain more detailed information about your boat.
+To help you day to day, ITYC provides a dashboard with advanced features for viewing the weather conditions around your boat and obtaining more detailed information about its performance.
 
-Use the Map tab to see your competitors' positions at a glance, compare routes and clearly assess your distance from the coast. The Charts tab plots changes in the main parameters for easier reading. Discover the many features of the ITYC dashboard below.
+Use the Map tab to see your opponents' positions at a glance, compare routes and check your distance from the coast. The Charts tab makes changes in the main sailing parameters easier to follow. The sections below describe the features available in the ITYC Dashboard.
 
-The ITYC extension is provided as is and supplies INDICATIONS only.
+The ITYC extension is provided as is and gives INDICATIONS only.
 
-The ITYC extension is compatible with Chrome, Edge and Opera. It does not work in Firefox!
+The ITYC extension is compatible with Chrome, Edge and Opera. It does not work with Firefox.
 
-The ITYC extension works only on the Virtual Regatta Offshore game page, in all supported languages, and its associated iframe!
+The ITYC extension works only on the Virtual Regatta Offshore game page, in any supported language, and its associated iframe.
 
 <!-- anchor:tp_p2 -->
-## 2. Chrome / Opera installation
+## 2. Installing on Chrome / Opera / Edge
 
+You can install the extension in two ways:
+* Preferably from its official [Chrome Web Store page](https://chromewebstore.google.com/detail/vr-dashboard-ityc/mhgineegmgpjljjpmocmnlaonmegjkdg?hl=en)
+**so that all updates are installed automatically.**
+* Or manually, by following the procedure below.
 <!-- anchor:ChromeInstallTab1 -->
-### 1. Preparation
+### 2.1 Manual installation on Chrome / Opera
+#### 2.1.1 Preparation
 
 Download the source files here:
 
-[Download](https://ityc.fr/ITYC_Dash.zip)
+[Download ITYC Dashboard](https://ityc.fr/ITYC_Dash.zip)
 
-Then extract the archive's files to a location of your choice on your computer. Remember that location.
+Extract the archive to a folder of your choice on your computer, and remember its location.
 
-For example, you can use one of the methods described [here](https://www.ionos.fr/digitalguide/serveur/configuration/ouvrir-un-fichier-zip/).
+For example, you can use one of the methods described in [this guide](https://www.ionos.fr/digitalguide/serveur/configuration/ouvrir-un-fichier-zip/).
 
 <!-- anchor:ChromeInstallTab2 -->
-### 2.Extensions menu
+#### 2.1.2 Extensions menu
 
 :::figure side half
-![2.Extensions menu](/assets/help/original/dash/installChromeMenu.png)
+![2. Extensions menu](/assets/help/dashboard/install/installChromeMenu.png)
 
-To access Chrome's extensions menu, click the ... at the top right.
+To access Chrome's extension settings, click the three dots at the top right,
 
-Then click "Settings".
+then click "Settings".
 :::
 
 :::figure side half
-![2.Extensions menu](/assets/help/original/dash/installChromeParametre.png)
+![2. Extensions menu](/assets/help/dashboard/install/installChromeParametre.png)
 
-Then click Extensions in the left-hand column.
+Click "Extensions" in the left column.
 :::
 
 <!-- anchor:ChromeInstallTab3 -->
-### 3.Developer mode
+#### 2.1.3 Developer mode
 
 :::figure side half
-![3.Developer mode](/assets/help/original/dash/installChromeExtension1.png)
+![3. Developer mode](/assets/help/dashboard/install/installChromeExtension1.png)
 
 Enable developer mode using the switch
 
@@ -58,354 +63,383 @@ at the top right.
 :::
 
 <!-- anchor:ChromeInstallTab4 -->
-### 4. Loading
+#### 2.1.4 Loading the extension
 
 :::figure side half
-![4. Loading](/assets/help/original/dash/installChromeExtension2.png)
+![4. Loading the extension](/assets/help/dashboard/install/installChromeExtension2.png)
 
 Click "Load unpacked".
 
-Then select the location where you extracted the files in the first step.
+Select the folder where you extracted the files in the first step.
 :::
 
 :::figure side half
-![4. Loading](/assets/help/original/dash/installChromeSelect.png)
+![4. Loading the extension](/assets/help/dashboard/install/installChromeSelect.png)
 
-Select the directory containing the files and subdirectories, rather than its parent directory!
+Select the folder that contains the extension's files and subfolders, rather than its parent folder.
 :::
 
 :::figure side half
-![4. Loading](/assets/help/original/dash/installChromeOk.png)
+![4. Loading the extension](/assets/help/dashboard/install/installChromeOk.png)
 
 The ITYC Dashboard extension is now installed in your browser.
 :::
 
-<!-- anchor:ChromeInstallTab5 -->
-### 5. Adding a quick-access icon
-
-:::figure side half
-![5. Adding a quick-access icon](/assets/help/original/dash/installChromeprop.png)
-
-You can pin the extension to make it easier to launch!
-
-Click the puzzle icon at the top right of your browser.
-:::
-
-Then click the pin. The ITYC Dashboard extension's icon will remain visible in your browser.
-
-:::figure below
-![5. Adding a quick-access icon](/assets/help/original/dash/installChromeprop2.png)
-:::
-
-<!-- anchor:ChromeInstallTab6 -->
-### 6.Restarting the browser
-
-After installation, you must restart your browser completely!
-
-This is required to complete installation of the scripts that avoid the debugging system and support Manifest V3.
 
 <!-- anchor:tp_p3 -->
-## 3. Edge installation
+### 2.2 Installing on Edge
 
 <!-- anchor:EdgeInstallTab1 -->
-### 1. Preparation
+#### 2.2.1 Preparation
 
 Download the source files here:
 
 [Download](https://ityc.fr/ITYC_Dash.zip)
 
-Then extract the archive's files to a location of your choice on your computer. Remember that location.
+Extract the archive to a folder of your choice on your computer, and remember its location.
 
-For example, you can use one of the methods described [here](https://www.ionos.fr/digitalguide/serveur/configuration/ouvrir-un-fichier-zip/).
+For example, you can use one of the methods described in [this guide](https://www.ionos.fr/digitalguide/serveur/configuration/ouvrir-un-fichier-zip/).
 
 <!-- anchor:EdgeInstallTab2 -->
-### 2.Extensions menu
+#### 2.2.2 Extensions menu
 
 :::figure side half
-![2.Extensions menu](/assets/help/original/dash/installEdgeMenu.png)
+![2. Extensions menu](/assets/help/dashboard/install/installEdgeMenu.png)
 
-To access Edge's extensions menu, click the ... at the top right.
+To access Edge's extensions menu, click the three dots at the top right,
 
-Then click "Extensions".
+then click "Extensions".
 :::
 
 :::figure side half
-![2.Extensions menu](/assets/help/original/dash/installEdgeParametre.png)
+![2. Extensions menu](/assets/help/dashboard/install/installEdgeParametre.png)
 
-The following popup appears:
+The following popup appears.
 
-If it does not, click the puzzle icon.
+If it does not appear, click the puzzle piece icon.
 
 Then click "Manage extensions".
 :::
 
 <!-- anchor:EdgeInstallTab3 -->
-### 3.Developer mode
+#### 2.2.3 Developer mode
 
 :::figure side half
-![3.Developer mode](/assets/help/original/dash/installEdgeExtension1.png)
+![3. Developer mode](/assets/help/dashboard/install/installEdgeExtension1.png)
 
-Enable developer mode using the "Developer mode" switch
+Enable the "Developer mode" switch
 
-at the bottom of the left-hand column.
+at the bottom of the left column.
 :::
 
 <!-- anchor:EdgeInstallTab4 -->
-### 4. Loading
+#### 2.2.4 Loading the extension
 
 :::figure side half
-![4. Loading](/assets/help/original/dash/installEdgeExtension2.png)
+![4. Loading the extension](/assets/help/dashboard/install/installEdgeExtension2.png)
 
 Click "Load unpacked".
 
-Then select the location where you extracted the files in the first step.
+Select the folder where you extracted the files in the first step.
 :::
 
 :::figure side half
-![4. Loading](/assets/help/original/dash/installEdgeSelect.png)
+![4. Loading the extension](/assets/help/dashboard/install/installEdgeSelect.png)
 
-Select the directory containing the files and subdirectories, rather than its parent directory!
+Select the folder that contains the extension's files and subfolders, rather than its parent folder.
 :::
 
 :::figure side half
-![4. Loading](/assets/help/original/dash/installEdgeOk.png)
+![4. Loading the extension](/assets/help/dashboard/install/installEdgeOk.png)
 
 The ITYC Dashboard extension is now installed in your browser.
 :::
 
+
+### 2.3 Adding a quick access icon
+<!-- anchor:ChromeInstallTab5 -->
+#### 2.3.1 Chrome / Opera
+
+:::figure side half
+![5. Adding a quick access icon](/assets/help/dashboard/install/installChromeprop.png)
+
+You can pin the extension to make it easier to open.
+
+Click the puzzle piece icon at the top right of your browser.
+:::
+
+Click the pin. The ITYC Dashboard icon will now remain visible in the browser toolbar.
+
+:::figure below
+![5. Adding a quick access icon](/assets/help/dashboard/install/installChromeprop2.png)
+:::
+
 <!-- anchor:EdgeInstallTab5 -->
-### 5. Adding a quick-access icon
+#### 2.3.2 Edge
 
 :::figure side half
-![5. Adding a quick-access icon](/assets/help/original/dash/installEdgeprop.png)
+![5. Adding a quick access icon](/assets/help/dashboard/install/installEdgeprop.png)
 
-You can pin the extension to make it easier to launch!
+You can pin the extension to make it easier to open.
 
-Click the puzzle icon at the top right of your browser.
+Click the puzzle piece icon at the top right of your browser.
 :::
 
 :::figure side half
-![5. Adding a quick-access icon](/assets/help/original/dash/installEdgeprop2.png)
+![5. Adding a quick access icon](/assets/help/dashboard/install/installEdgeprop2.png)
 
-Then click the pin. The ITYC Dashboard extension's icon will remain visible in your browser.
+Click the pin. The ITYC Dashboard icon will now remain visible in the browser toolbar.
 :::
 
-<!-- anchor:EdgeInstallTab6 -->
-### 6.Restarting the browser
-
-After installation, you must restart your browser completely!
-
-This is required to complete installation of the scripts that avoid the debugging system and support Manifest V3.
 
 <!-- anchor:tp_p4 -->
-## 4. Starting
+
+<!-- anchor:ChromeInstallTab6 -->
+### 2.4 Restarting the browser
+
+After installation, you must completely restart your browser.
+
+This completes the installation of the scripts used with Manifest V3, without relying on the debugging system.
+
+
+## 3. Getting started
 
 :::figure side half
-![4. Starting](/assets/help/original/dash/InstallFirstStart.png)
+![4. Getting started](/assets/help/dashboard/start/dashGameLoading.png)
 
-After installing the ITYC extension, open the Virtual Regatta Offshore game page or its iframe.
+After installing the ITYC extension and restarting your browser, open the Virtual Regatta Offshore game page or its iframe.
+
+---
+
+An additional progress bar appears below it, showing the download progress of the game executable and its Loader, followed by game initialisation.
 :::
 
 :::figure side half
-![4. Starting](/assets/help/original/dash/StartFirstDashNoCopng.png)
+![4. Getting started](/assets/help/dashboard/start/StartFirstDashNoCopng.png)
 
-Once the page has finished loading,
+Once the page has fully loaded,
 
-the dashboard integrated into the game page should show "No dashboard activated", or "No race loaded" if the dashboard tab is already open.
+the dashboard panel embedded in the game page should show "No dashboard activated", or "No race loaded" if the Dashboard tab is already open.
 :::
 
 :::figure side half
-![4. Starting](/assets/help/original/dash/startDash.png)
+![4. Getting started](/assets/help/dashboard/start/startDash.png)
 
-You can do this at any time while the page loads, from the game's home screen or during a race.
+You can launch the extension while the page is loading, from the game's home screen or during a race.
 
-Launch the ITYC Dashboard extension by clicking its icon or its name in your browser's extensions menu.
+Open ITYC Dashboard by clicking its icon or its name in your browser's extensions menu.
 :::
 
 :::figure side half
-![4. Starting](/assets/help/original/dash/dashNoPlayerDetected.png)
+![4. Getting started](/assets/help/dashboard/start/dashNoPlayerDetected.png)
 
 The ITYC Dashboard tab opens.
 :::
 
 :::figure side half
-![4. Starting](/assets/help/original/dash/StartDashNoPlyerDetected.png)
+![4. Getting started](/assets/help/dashboard/start/StartFirstDashCo.png)
 
-The game tab's integration shows "No race loaded" if the player has already been detected. This step is optional.
+The embedded panel in the game tab shows "No race loaded" if the player has already been detected; this detection is optional at this stage.
 :::
 
 :::figure side half
-![4. Starting](/assets/help/original/dash/startRaceDetect.png)
+![4. Getting started](/assets/help/dashboard/start/startRaceDetect.png)
 
-Enter a race from the game's home screen.
+From the game's home screen, enter a race.
 
-If you are already in a race, switch races or return to the home screen.
+If you are already in a race, switch to another race or return to the home screen first.
 
-The game page's integration will display your boat's parameters.
+The embedded panel on the game page will display your boat's parameters.
 :::
 
 :::figure side half
-![4. Starting](/assets/help/original/dash/fleet_full.png)
+![4. Getting started](/assets/help/dashboard/fleet/fleet_full.png)
 
-The ITYC Dashboard tab is now active!
+The ITYC Dashboard tab is now active.
 :::
 
 <!-- anchor:tp_p5 -->
-## 5. Game page integration
+## 4. Integration with the game page
 
 <!-- anchor:ingratedGameTab1 -->
-### 1. Overview
+### 4.1. Overview
 
-:::figure below
-![1. Overview](/assets/help/original/dash/dahGame1.png)
-
+:::figure rows image=center width=80% blocks=10%,67%,23%
+![1. Overview](/assets/help/dashboard/ingame/dahGame1.png)
 Shortcuts.
 
 ---
 
-Boat parameters.
-
----
-
-Calculated parameters.
+Boat parameters and calculated values.
 
 ---
 
 Penalties.
+
 :::
 
+
 <!-- anchor:ingratedGameTab2 -->
-### 2. Shortcuts
+### 4.2 Shortcuts
 
-:::figure side half
-![2. Shortcuts](/assets/help/original/dash/dahGame2.png)
+:::figure side half width=20%
+![2. Shortcuts](/assets/help/dashboard/ingame/dahGame2.png)
 
-RT: opens a zezo routing tab with your coordinates and options pre-filled.
-
-The remaining zezo options are those you used on the zezo page for the relevant race.
+RT: opens a routing tab with your coordinates and options pre-filled.
+Shows the routers available for the race and lets you open:
+* Zezo
+* Sermar
+* VrZen
+* Naya
 
 ---
 
-PL: opens a toxxct tab with the race pre-selected.
+PL: opens a tools tab with the race selected and the options, TWS and TWA pre-filled.
 
----
-
-ITYC: opens an ITYC Auto Sails tab with the parameters pre-filled.
+* Toxxct: LSV or INC, according to the choice in the Configuration tab.
+* ITYC: opens ITYC's automatic sails tool with the parameters pre-filled.
 :::
 
 <!-- anchor:ingratedGameTab3 -->
-### 3.Measurements
+### 4.3 Sailing parameters
 
-:::figure below
-![3.Measurements](/assets/help/original/dash/dahGame3.png)
+:::figure below width=50%
+![3. Sailing parameters](/assets/help/dashboard/ingame/dahGame3.png)
+:::
+:::figure rows width=100%
 
-- Time: time of the last update received from the server.
+* Time: time of the last update received from the server.
 
-  UTC or local time, depending on user configuration (see the Configuration tab).
+  * UTC or local time, depending on user configuration (see the Configuration tab).
+  * Number of seconds since the last update was received.
 
-- TWD: True Wind Direction (°).
+* TWD: True Wind Direction (°).
 
-  Wind direction at the boat's position, as reported by the server.
+  * Wind direction at the boat's position, as reported by the server.
 
-- TWS: True Wind Speed (kts).
+* TWS: True Wind Speed (kts).
 
-  Wind speed at the boat's position, as reported by the server.
+  * Wind speed at the boat's position, as reported by the server.
 
-- TWA: True Wind Angle (°).
+* TWA: True Wind Angle (°).
 
-  Green on starboard tack, red on port tack.
+  * Green on starboard tack, red on port tack.
 
-  Bold in fixed TWA mode.
+  * Bold in fixed TWA mode.
 
-- HDG: Heading, the boat's course.
+* HDG: Heading, the boat's course.
 
-  Black/white and bold when fixed Heading mode is enabled.
+  * Black/white and bold when fixed Heading mode is enabled.
 
-  Blue/fuchsia when fixed TWA mode is enabled.
+  * Blue/fuchsia when fixed TWA mode is enabled.
 
-- Speed: boat speed.
+* Speed: boat speed.
 
-  Green: the boat is moving.
+  * Green: the boat is moving.
 
-  Red: you are aground or have not started!
+  * Red: you are aground or have not started.
+---
+  * Speed factor (percentage relative to 1).
 
-- ASail: current sail (remaining automatic sails time).
+  Multiplier applied to the boat's speed relative to the sail's theoretical speed.
 
-  Green: you have the optimal sail.
+  * It may exceed 1 when sails overlap or hull polish is used.
 
-  Red: you are not using the best sail!
+  * It may be below 1 during a manoeuvre.
 
-  Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
+  * Foil utilisation coefficient, if foils are fitted.
 
-- VMG: Velocity Made Good (kts).
+* ASail: current sail.
+ 
+  * Wind speed range (TWS) for the current sail.
 
-  Speed made good along the wind axis.
+  * Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero.
+  (remaining automatic sails time)
 
-  Red: you are aground or have not started!
+  * Wind angle range (TWA) for the current sail.
+  
+  * Green: you have the optimal sail.
+
+  * Red: you are not using the best sail.
+
+  
+* VMG: Velocity Made Good (kts).
+
+  * Speed made good along the wind axis.
+
+  * Red: you are aground or have not started.
 :::
 
 <!-- anchor:ingratedGameTab4 -->
-### 4. Calculations
+### 4.4 Indicators
 
-:::figure below
-![4. Calculations](/assets/help/original/dash/dahGame4.png)
+:::figure below width=50%
+![4. Calculated values](/assets/help/dashboard/ingame/dahGame4.png)
+:::
+:::figure rows width=100%
+* Best VMG: best VMG angle (°).
 
-- Best VMG: best VMG angle (°).
+  * Best VMG Up / Best VMG Down.
 
-  Best VMG Up / Best VMG Down.
+  * Boat speed, depending on user configuration (see the Configuration tab).
 
-  Boat speed according to user configuration (see the Configuration tab).
+* Best Speed: the best boat speed.
 
-- Best Speed: the best boat speed.
+  * Maximum boat speed (kts) and the required TWA (°).
+---
+* Stamina: energy (%) (penalty multiplier).
 
-  Maximum boat speed (kts) and the required TWA (°).
-
-- Stamina: energy (%) (penalty multiplier).
-
-  The skipper's energy followed by the multiplier applied to theoretical penalty times.
-
-- Factor: speed factor (percentage relative to 1).
-
-  The boat speed multiplier relative to the sail's theoretical speed.
-
-  It may exceed 1 when sails overlap or hull polish is used.
-
-  It may be below 1 during a manoeuvre.
-
-- Foils: percentage of foil usage.
-
-  Shown if the boat is equipped with foils.
-
-- Position: the boat's latitude / longitude, as reported by the server.
+  * The skipper's energy followed by the multiplier applied to theoretical penalty times.
+  
+* Position: the boat's latitude / longitude, as reported by the server.
 :::
 
 <!-- anchor:ingratedGameTab5 -->
-### 5. Penalties
+### 4.5 Penalties
 
-:::figure below
-![5. Penalties](/assets/help/original/dash/dahGame5.png)
+:::figure rows image=center width=100%
+![5. Penalties](/assets/help/dashboard/ingame/dahGame5.png)
+![5. Penalties](/assets/help/dashboard/ingame/dahGame5_p.png)
+:::
+:::figure rows width=100%
+When no manoeuvre is in progress:
+* Sail change.
 
-- Sail.
+  * Distance lost for a sail change at the current speed.
+  * Penalty time for a sail change at the current speed.
 
-  Remaining penalty time (s) for the current sail change.
+* Gybe.
 
-- Gybe.
+  * Distance lost for a gybe at the current speed.
+  * Penalty time for a gybe at the current speed.
 
-  Remaining penalty time (s) for the current gybe.
+* Tack.
 
-- Tack.
+  * Distance lost for a tack at the current speed.
+  * Penalty time for a tack at the current speed.
+---
+During a manoeuvre, the remaining penalty time is shown under the corresponding manoeuvre.
+* Sail change.
 
-  Remaining penalty time (s) for the current tack.
+  * Remaining penalty time (s) for the current sail change.
+
+* Gybe.
+
+  * Remaining penalty time (s) for the current gybe.
+
+* Tack.
+
+  * Remaining penalty time (s) for the current tack.
 :::
 
 <!-- anchor:tp_p6 -->
-## 6. ITYC Dashboard tab
+## 5. ITYC Dashboard tab
 
 <!-- anchor:tabDashTab1 -->
-### 1. Overview
+### 5.1 Overview
 
-:::figure side wide
-![1. Overview](/assets/help/original/dash/dashNoPlayerDetected.png)
+:::figure side wide blocks=8%,8%,8%,76%
+![1. Overview](/assets/help/dashboard/start/dashNoPlayerDetected.png)
 
 Header.
 
@@ -415,7 +449,7 @@ Race Status.
 
 ---
 
-Page selection / Filters.
+Page selection / filters.
 
 ---
 
@@ -423,578 +457,657 @@ Main display area.
 :::
 
 <!-- anchor:tabDashTab2 -->
-### 2. Header
+### 5.2 Header
+:::figure rows image=center width=80% blocks=40%,25%,35%
+![2. Header](/assets/help/dashboard/entete/entete1.png)
 
-:::figure below
-![2. Header](/assets/help/original/dash/entete1.png)
-
-Boat name and VIP status.
+Boat name, VIP status and credits.
 
 ---
 
-The boat's team.
+Boat's team.
 
 ---
 
 Race selection.
 
-The active race in the game is automatically pre-selected.
+The race currently open in the game is selected automatically.
+
+The Go button opens a new tab in the selected router with the race information.
 :::
 
-:::figure below
-![2. Header](/assets/help/original/dash/entete2.png)
+:::figure rows image=center width=80% blocks=25%,28%,25%,22%
+![2. Header](/assets/help/dashboard/entete/entete2.png)
 
-Automatically opens Zezo with the details pre-filled.
-
----
-
-NMEA output with a selectable port, useful for connecting the game to applications such as QTVLM and Avalon.
-
-After changing races, display the dashboard tab again to activate the sending of NMEA sentences.
+Automatically opens the router with the relevant information pre-filled.
 
 ---
 
-Light and dark theme selection.
+NMEA output, with a selectable port, for connecting the game to tools such as QTVLM and Avalon.
+
+After switching races, display the Dashboard tab again to activate the sending of NMEA messages.
 
 ---
 
-Link to this page.
+Theme and language selection.
 
 ---
 
-Extension version.
+Link to this help page and extension version.
+
 :::
 
 <!-- anchor:tabDashTab3 -->
-### 3.Race Status
-
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus1.png)
-
-- RT: opens a zezo routing tab with your coordinates and options pre-filled.
-
-  The remaining zezo options are those you used on the zezo page for the relevant race.
-
-- PL: opens a toxxct tab with the race pre-selected.
-
-- WI: opens a Windy tab at the boat's position as reported by the server.
-
-- ITYC: opens an ITYC Auto Sails tab with the parameters pre-filled.
-
-- Race: race name.
-
-- Time: time of the last update received from the server.
-
-  UTC or local time, depending on user configuration (see the Configuration tab).
-
-- Rank: the boat's ranking.
+### 5.3 Race Status
+#### 5.3.1 Overview
+:::figure below width=50%
+![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus1.png)
 :::
+:::figure rows width=100%
+*Note: you can customise which columns are shown in the Configuration tab.*
+#### 5.3.2 Columns RT to Rank
+* RT: opens a routing tab with your coordinates and options pre-filled.
 
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus2.png)
+Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
-- DTL: distance to the race leader (mn).
+* PL: opens a tools tab with the race selected and the options, TWS and TWA pre-filled.
 
-- DTF: distance to the finish (nm).
+  * Toxxct: LSV or INC, according to the choice in the Configuration tab.
+  * ITYC: opens ITYC's automatic sails tool with the parameters pre-filled.
+---
+* WI: opens Windy at the boat's position as reported by the server.
 
-- TWD: True Wind Direction (°).
+* ITYC: opens ITYC's automatic sails tool with the parameters pre-filled.
 
-  Wind direction at the boat's position, as reported by the server.
+* Race: race name.
 
-- TWS: True Wind Speed (kts).
+* Time: time of the last update received from the server.
 
-  Wind speed at the boat's position, as reported by the server.
+  * UTC or local time, depending on user configuration (see the Configuration tab).
 
-- TWA: True Wind Angle (°).
-
-  Green on starboard tack, red on port tack.
-
-  Bold in fixed TWA mode.
-
-- HDG: Heading, the boat's course.
-
-  Black/white and bold when fixed Heading mode is enabled.
-
-  Blue/fuchsia when fixed TWA mode is enabled.
+* Rank: the boat's ranking.
 :::
-
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus3.png)
-
-- ASail: current sail (remaining automatic sails time).
-
-  Green: you have the optimal sail.
-
-  Red: you are not using the best sail!
-
-  Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
-
-- Speed: boat speed.
-
-  Green: the boat is moving.
-
-  Red: you are aground or have not started!
-
-- VMG: Velocity Made Good (kts).
-
-  Speed made good along the wind axis.
-
-  Red: you are aground or have not started!
+#### 5.3.3 Columns DTL to HDG
+:::figure below width=50%
+![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus2.png)
 :::
+:::figure rows width=100%
 
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus4.png)
+* DTL: Distance To Leader (nm).
 
-- Best VMG: best VMG angle (°).
+* DTF: Distance To Finish (nm).
 
-  Best VMG Up / Best VMG Down.
+* TWD: True Wind Direction (°).
 
-  Boat speed, if enabled.
+  * Wind direction at the boat's position, as reported by the server.
 
-- Best Speed: the best boat speed.
+* TWS: True Wind Speed (kts).
 
-  Maximum boat speed (kts) and the required TWA (°).
+  * Wind speed at the boat's position, as reported by the server.
+---
+* TWA: True Wind Angle (°).
 
-- Stamina: energy (%) (penalty multiplier).
+  * Green on starboard tack, red on port tack.
 
-  The skipper's energy followed by the multiplier applied to theoretical penalty times.
+  * Bold in fixed TWA mode.
+
+* HDG: Heading, the boat's course.
+
+  * Black/white and bold when fixed Heading mode is enabled.
+
+  * Blue/fuchsia when fixed TWA mode is enabled.
 :::
+#### 5.3.4 Columns ASail to VMG
+:::figure below width=50%
+![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus3.png)
+:::
+:::figure rows width=100%
 
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus5.png)
+* ASail: current sail.
+ 
+  * Wind speed range (TWS) for the current sail.
 
-- Gybe.
+  * Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero.
+  (remaining automatic sails time)
 
-  Information for the current wind, sail and stamina conditions.
+  * Wind angle range (TWA) for the current sail.
+  
+  * Green: you have the optimal sail.
 
-  Distance lost / penalty time.
+  * Red: you are not using the best sail.
+---
+* Speed: boat speed.
 
-  Stamina lost / recovery time.
+  * Green: the boat is moving.
 
-- Tack.
+  * Red: you are aground or have not started.
 
-  Information for the current wind, sail and stamina conditions.
+* VMG: Velocity Made Good (kts).
 
-  Distance lost / penalty time.
+  * Speed made good along the wind axis.
 
-  Stamina lost / recovery time.
+  * Red: you are aground or have not started.
+:::
+#### 5.3.5 Columns Best VMG to Stamina
+:::figure below width=50%
+![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus4.png)
+:::
+:::figure rows width=100%
 
-- Sail change.
+* Best VMG: best VMG angle (°).
 
-  Information for the current wind, sail and stamina conditions.
+  * Best VMG Up / Best VMG Down.
 
-  Distance lost / penalty time.
+  * Boat speed, if enabled.
+---
+* Best Speed: the best boat speed.
 
-  Stamina lost / recovery time.
+  * Maximum boat speed (kts) and the required TWA (°).
 
-- Agnd.
+* Stamina: energy (%) (penalty multiplier).
 
-  Green background: you are not aground!
+  * The skipper's energy followed by the multiplier applied to theoretical penalty times.
+:::
+#### 5.3.6 Columns Gybe to Mnvr
 
-  Red background: you are aground!
+:::figure below width=50%
+![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus5.png)
+:::
+:::figure rows width=100%
 
-- Mnvr.
+* Gybe.
 
-  Manoeuvre in progress.
+  * Information for the current wind, sail and stamina conditions.
+
+  * Distance lost / penalty time.
+
+  * Stamina lost / recovery time.
+
+* Tack.
+
+  * Information for the current wind, sail and stamina conditions.
+
+  * Distance lost / penalty time.
+
+  * Stamina lost / recovery time.
+---
+* Sail change.
+
+  * Information for the current wind, sail and stamina conditions.
+
+  * Distance lost / penalty time.
+
+  * Stamina lost / recovery time.
+
+* Agnd.
+
+  * Green background: you are not aground.
+
+  * Red background: you are aground.
+
+* Mnvr.
+
+  * Manoeuvre in progress.
 :::
 
 <!-- anchor:tabDashTab4 -->
-### 4. Log page
+### 5.4 Log page
 
-:::figure below
-![4. Log page](/assets/help/original/dash/racelog1.png)
+#### 5.4.1 Overview
+:::figure below width=100%
+![4. Calculated values](/assets/help/dashboard/raceLog/racelog1.png)
+:::
+:::figure rows width=100%
 
-- Your boat's log.
+* Your boat's log.
 
-  Displays your boat's state and sailing conditions, current penalties and other orders given at each update received from the server or command sent.
+  * Displays your boat's state and sailing conditions, current penalties and other orders given at each update received from the server or command sent.
+  * The row under the pointer is outlined in red.
 :::
 
-:::figure below
-![4. Log page](/assets/help/original/dash/racelog2.png)
 
-- Time: time of the last update received from the server.
+#### 5.4.2 Columns Time to HDG
+:::figure rows width=70% 
+![4. Calculated values](/assets/help/dashboard/raceLog/racelog2.png)
+:::
+:::figure rows width=100%
 
-  UTC or local time, depending on user configuration (see the Configuration tab).
 
-- Rank: the boat's ranking.
+* Time: time of the last update received from the server.
 
-.
+  * UTC or local time, depending on user configuration (see the Configuration tab).
 
-- DTL: Distance To Leader (nm).
+* Rank: the boat's ranking.
 
-  Distance from the race leader.
+* DTL: Distance To Leader (nm).
 
-- TWD: True Wind Direction (°).
+* DTF: Distance To Finish (nm).
 
-  Wind direction at the boat's position, as reported by the server.
+* TWD: True Wind Direction (°).
 
-- TWS: True Wind Speed (kts).
+  * Wind direction at the boat's position, as reported by the server.
+---
+* TWS: True Wind Speed (kts).
 
-  Wind speed at the boat's position, as reported by the server.
+  * Wind speed at the boat's position, as reported by the server.
 
-- TWA: True Wind Angle (°).
+* TWA: True Wind Angle (°).
 
-  Green on starboard tack, red on port tack.
+  * Green on starboard tack, red on port tack.
 
-  Bold in fixed TWA mode.
+  * Bold in fixed TWA mode.
 
-- HDG: Heading, the boat's course.
+* HDG: Heading, the boat's course.
 
-  Black/white and bold when fixed Heading mode is enabled.
+  * Black/white and bold when fixed Heading mode is enabled.
 
-  Blue/fuchsia when fixed TWA mode is enabled.
+  * Blue/fuchsia when fixed TWA mode is enabled.
+
 :::
 
-:::figure below
-![4. Log page](/assets/help/original/dash/racelog3.png)
+#### 5.4.3 Columns ASail to Stamina
+:::figure rows width=70%
+![4. Calculated values](/assets/help/dashboard/raceLog/racelog3.png)
+:::
+:::figure rows width=100%
 
-- ASail: current sail (remaining automatic sails time).
+* ASail: current sail (remaining automatic sails time).
 
-  Green: you have the optimal sail.
+  * Green: you have the optimal sail.
 
-  Red: you are not using the best sail!
+  * Red: you are not using the best sail.
 
-  Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
+  * Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero.
 
-- vR: actual boat speed (kts).
+* vR: actual boat speed (kts).
 
-  Boat speed reported by the server.
+  * Boat speed reported by the server.
+---
+* vC: calculated boat speed (kts).
 
-- vC: calculated boat speed (kts).
+  * Boat speed calculated by the dashboard using sailing conditions, distance travelled and elapsed time.
 
-  Boat speed calculated by the dashboard using sailing conditions, distance travelled and elapsed time.
+* Stamina: energy (%).
 
-- Stamina: energy (%).
-
-  The skipper's energy.
+  * The skipper's energy.
 :::
 
-:::figure below
-![4. Log page](/assets/help/original/dash/racelog4.png)
+#### 5.4.4 Columns Δd to Tack
+:::figure rows width=70%
+![4. Calculated values](/assets/help/dashboard/raceLog/racelog4.png)
+:::
+:::figure rows width=100%
 
-- Δd: distance travelled (nm) between the last 2 updates received.
+* Δd: distance travelled (nm) between the last two updates received.
 
-- Δt: elapsed time (seconds) between the last 2 updates received.
+* Δt: elapsed time (seconds) between the last two updates received.
 
-- Position: the boat's latitude / longitude, as reported by the server.
+* Position: the boat's latitude / longitude, as reported by the server.
 
-- Sail.
+* Sail change.
 
-  Remaining penalty time (s) for the current sail change.
+  * Remaining penalty time (s) for the current sail change.
+---
+* Gybe.
 
-- Gybe.
+  * Remaining penalty time (s) for the current gybe.
 
-  Remaining penalty time (s) for the current gybe.
+* Tack.
 
-- Tack.
-
-  Remaining penalty time (s) for the current tack.
+  * Remaining penalty time (s) for the current tack.
 :::
 
-:::figure below
-![4. Log page](/assets/help/original/dash/racelog5.png)
+#### 5.4.5 Command rows
+:::figure below width=90%
+![4. Calculated values](/assets/help/dashboard/raceLog/racelog5.png)
+:::
+:::figure rows width=100%
 
-- Commands: sending waypoints.
+* Commands: sending waypoints.
+  * The first column shows when the server is due to apply the orders.
+  * Command @ shows when the order was sent.
 :::
 
-:::figure below
-![4. Log page](/assets/help/original/dash/racelog6.png)
 
-- Commands: sending scheduled orders.
+:::figure below width=90%
+![4. Calculated values](/assets/help/dashboard/raceLog/racelog6.png)
+:::
+:::figure rows width=100%
+
+* Commands: sending scheduled orders.
+  * The first column shows when the server is due to apply the orders.
+  * Command @ shows when the order was sent.
 :::
 
 <!-- anchor:tabDashTab5 -->
-### 5. Fleet page
+### 5.5 Fleet page
+#### 5.5.1 Overview
 
 :::figure below
-![5. Fleet page](/assets/help/original/dash/fleet_full.png)
+![5. Fleet page](/assets/help/dashboard/fleet/fleet_full.png)
 
-- Fleet state.
+* Fleet state.
 
-  Displays the state of your boat and all boats shown on the game map for the selected race.
-
-  Applies the filters selected at the top right.
+  * Displays the state of your boat and all boats shown on the game map for the selected race.
+  * Your player's row is highlighted in purple.
+  * The row under the pointer is highlighted in red.
+  * You can customise which columns are shown in the Configuration tab.
 :::
 
-:::figure below
-![5. Fleet page](/assets/help/original/dash/fleet_filter.png)
+
+  The filters selected at the top right are applied.
+
+  
+#### 5.5.2 Filters
+:::figure below width=90%
+![4. Calculated values](/assets/help/dashboard/fleet/fleet_filter.png)
+:::
+:::figure rows width=100%
 
 - Team: selects boats belonging to the logged-in player's team.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
 
 - Friends: selects the logged-in player's friends.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
 
 - Top VSR: selects Top VSR boats.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
 
 - Sponsors: selects sponsor boats in the selected race.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
 
 - Certified: selects certified boats in the selected race.
 
-  Dark background: show / light background: hide.
-
+  * Checked box: show / crossed box: hide.
+---
 - Opponents: selects opponent boats in the selected race.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
 
 - Real: selects real boats in the selected race.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
 
 - Selected: selects boats you have clicked on the game map.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
 
 - Racing: selects boats currently racing in the selected race.
 
-  Dark background: show / light background: hide.
+  * Checked box: show / crossed box: hide.
+
+- Export SailRanks.
+  * Copies the fleet data to the clipboard in SailRanks format.
 :::
 
-:::figure below
-![5. Fleet page](/assets/help/original/dash/fleet_1.png)
+#### 5.5.3 Columns RT to Rank
+:::figure below width=90%
+![4. Calculated values](/assets/help/dashboard/fleet/fleet_1.png)
+:::
+:::figure rows width=100%
 
-RT: opens a zezo routing tab with coordinates and options pre-filled.
+* RT: opens a routing tab with coordinates and options pre-filled.
 
-The remaining zezo options are those you used on the zezo page for the relevant race.
 
-- Time: time of the last update received from the server.
+- Date: time of the last update received from the server.
 
-  UTC or local time, depending on user configuration (see the Configuration tab).
+  * UTC or local time, depending on user configuration (see the Configuration tab).
 
 - Skipper: marker and boat name.
 
-  Markers:
+  * Markers:
 
-  - Star: logged-in player.
+    * Star: logged-in player.
 
-  - Other colours: the same as the filters.
+    * Other colours: the same as the filters.
 
-  Colours:
+  * Colours:
 
-  - Purple: logged-in player.
+    * Purple: logged-in player.
 
-  - Yellow: Top VSR.
+    * Yellow: Top VSR.
+---
+* Team: the player's team.
 
-- Team: the player's team.
+  * Loaded when opening the race for team members.
 
-  Loaded when opening the race for team members.
+  * Loaded from the profile card for other boats.
 
-  Loaded from the profile card for other boats.
+  * Pre-loaded at startup using ITYC data.
 
-  Pre-loaded at startup using ITYC data.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+* Rank: the boat's ranking.
 
-- Rank: the boat's ranking.
-
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 :::
+#### 5.5.4 Columns DTU to HDG
+:::figure below width=90%
+![4. Calculated values](/assets/help/dashboard/fleet/fleet_2.png)
+:::
+:::figure rows width=100%
 
-:::figure below
-![5. Fleet page](/assets/help/original/dash/fleet_2.png)
+- DTU: Distance To yoU (nm).
 
-- DTU: Distance To yoU (mn).
+  * Distance between your boat and the listed boat.
 
-  Distance between your boat and the listed boat.
-
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
 - DTF: Distance To Finish (nm).
 
-  Distance to the finish (nm).
+  * Distance to the finish (nm).
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
 - TWD: True Wind Direction (°).
 
-  Wind direction at the boat's position, as reported by the server.
+  * Wind direction at the boat's position, as reported by the server.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
-
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+---
 - TWS: True Wind Speed (kts).
 
-  Wind speed at the boat's position, as reported by the server.
+  * Wind speed at the boat's position, as reported by the server.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
 - TWA: True Wind Angle (°).
 
-  Green on starboard tack, red on port tack.
+  * Green on starboard tack, red on port tack.
 
-  Fixed TWA mode: bold and **Ⓐ** displayed.
+  * Fixed TWA mode: bold and **Ⓐ** displayed.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
 - HDG: Heading, the boat's course.
 
-  Black/white and bold when fixed Heading mode is enabled.
+  * Black/white and bold when fixed Heading mode is enabled.
 
-  Blue/fuchsia when fixed TWA mode is enabled.
+  * Blue/fuchsia when fixed TWA mode is enabled.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 :::
-
-:::figure below
-![5. Fleet page](/assets/help/original/dash/fleet_3.png)
+#### 5.5.5 Columns Speed to Foils
+:::figure below width=60%
+![4. Calculated values](/assets/help/dashboard/fleet/fleet_3.png)
+:::
+:::figure rows width=100%
 
 - Speed: boat speed.
 
-  Green: the boat is moving.
+  * Green: the boat is moving.
 
-  Red: you are aground or have not started!
+  * Red: you are aground or have not started.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
 - VMG: Velocity Made Good (kts).
 
-  Speed made good along the wind axis.
+  * Speed made good along the wind axis.
 
-  Red: you are aground or have not started!
+  * Red: you are aground or have not started.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
 - ASail: current sail (remaining automatic sails time).
 
-  Green: you have the optimal sail.
+  * Green: you have the optimal sail.
 
-  Red: you are not using the best sail!
+  * Red: you are not using the best sail.
 
-  Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
+  * Sail names: LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
-
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+---
 - Factor: speed factor (percentage relative to 1).
 
-  The boat speed multiplier relative to the sail's theoretical speed.
+  * Multiplier applied to the boat's speed relative to the sail's theoretical speed.
 
-  It may exceed 1 when sails overlap or hull polish is used.
+    * It may exceed 1 when sails overlap or hull polish is used.
 
-  It may be below 1 during a manoeuvre.
+    * It may be below 1 during a manoeuvre.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
-- Stamina: energy (%) (penalty multiplier).
+- Foil utilisation coefficient, if foils are fitted.
 
-  The skipper's energy followed by the multiplier applied to theoretical penalty times.
-
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 :::
-
-:::figure below
-![5. Fleet page](/assets/help/original/dash/fleet_4.png)
+#### 5.5.6 Columns RaceTime to avgS
+:::figure below width=40%
+![4. Calculated values](/assets/help/dashboard/fleet/fleet_6.png)
+:::
+:::figure rows width=100%
 
 - RaceTime: displayed only for record races.
 
-  Elapsed time since the start.
+  * Elapsed time since the start.
 
-  Loaded from the profile card for other boats.
+  * Loaded from the profile card for other boats.
 
-  Pre-loaded at startup using ITYC data.
+  * Pre-loaded at startup using ITYC data.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 
 - ERT: Enhanced Race Time.
 
-  Theoretical time to complete the course based on distance travelled, remaining distance and average speed.
+  * Theoretical time to complete the course based on distance travelled, remaining distance and average speed.
 
-  Loaded from the profile card for other boats.
+  * Loaded from the profile card for other boats.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
-
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+---
 - avgS: Average Speed (kts).
 
-  Average speed since the start.
+  * Average speed since the start.
 
-  Loaded from the profile card for other boats.
+  * Loaded from the profile card for other boats.
 
-  Can be hidden by unchecking it in the Fleet section of the Configuration tab.
+  * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 :::
-
-:::figure below
-![5. Fleet page](/assets/help/original/dash/fleet_5.png)
+#### 5.5.7 Columns Position to Selection
+:::figure below width=60%
+![4. Calculated values](/assets/help/dashboard/fleet/fleet_4.png)
+:::
+:::figure rows width=100%
 
 - Position: the boat's latitude / longitude.
 
 - Boat options.
+  The VR server now sends only the logged-in player's options.
 
-  - FP: Full Pack
+  ITYC dashboards share this information if you allow it in the Configuration tab.
+  
+  When you open a race, your dashboard queries the ITYC server to retrieve the options of all known players.
 
-  - AP: Full Options
+  * Options in italics: options inferred by the system from sailing parameters.
 
-  - [H,L,R] [F,h,W]
+- FP: Full Pack.
+
+  - AP: Full Options.
+
+  - [H,L,R] [W,F,h,W,M,J,C]
+
 
     - H: Heavy sails: STAY: Staysail, HG: Heavy Gennaker.
 
     - L: Light sails: LJ: Light Jib, LG: Light Gennaker.
 
     - R: Reaching sail: C0: Code Zero.
+    - W: Winch Pro.
 
     - F: Foils.
 
     - h: Hull: Polish.
+    - M: MagicFurler: furler.
 
-    - W: W: Winch Pro.
+    - J: VRJacket.
+
+    - C: ComfortLoungePug: beanbag.
+
+* Selection.
+  Select a player by clicking their boat in the game. A red cross then appears on their row, and you can include them using the Selected filter.
+  Click the red cross to clear the selection.
+
 :::
 
+
 <!-- anchor:tabDashTab6 -->
-### 6. Map page
-
+### 5.6 Map page
+#### 5.6.1 Overview
 :::figure below
-![6. Map page](/assets/help/original/dash/map_full.png)
+![6. Map page](/assets/help/dashboard/map/map_full.png)
 
-- Map: displays the race on a LeaFleat map.
+- Map: displays the race on a Leaflet map.
 
   It provides an overview of the race and its various elements.
 
   Zoom with the mouse wheel or the + and - buttons at the top left of the map.
 
-  Hold the mouse button to drag the map from left to right.
+  Hold the mouse button to drag the map.
 :::
 
-:::figure side half
-![6. Map page](/assets/help/original/dash/map_start.png)
+:::figure side width=20%
+![6. Map page](/assets/help/dashboard/map/map_start.png)
 
 Race start.
 :::
 
-:::figure side half
-![6. Map page](/assets/help/original/dash/map_end.png)
+:::figure side width=20%
+![6. Map page](/assets/help/dashboard/map/map_end.png)
 
 Race finish, shown here with a finish circle.
 :::
 
-:::figure side half
-![6. Map page](/assets/help/original/dash/map_gate_notOk.png)
+:::figure side width=20%
+![6. Map page](/assets/help/dashboard/map/map_gate_notOk.png)
 
-Unvalidated gate: yellow line, red direction icon.
+Unvalidated gate: yellow line and red direction icon.
 :::
 
-:::figure side half
-![6. Map page](/assets/help/original/dash/map_gate_Ok.png)
+:::figure side width=20%
+![6. Map page](/assets/help/dashboard/map/map_gate_Ok.png)
 
-Validated gate: green line, green direction icon.
+Validated gate: green line and green direction icon.
 :::
 
-:::figure side half
-![6. Map page](/assets/help/original/dash/map_me.png)
+:::figure side  width=20%
+![6. Map page](/assets/help/dashboard/map/map_me.png)
 
 Purple player icon.
 
-Projection line at a fixed heading and speed: 1 point every 2 minutes.
+Projection line at a fixed heading and speed, with one point every two minutes.
 :::
 
 :::figure side half
-![6. Map page](/assets/help/original/dash/map_iconboat.png)
+![6. Map page](/assets/help/dashboard/map/map_iconboat.png)
 
 Fleet boat icons: fill and border.
 
-- Yellow: Top Vsr.
+- Yellow: Top VSR.
 
 - Green: friend.
 
@@ -1003,327 +1116,495 @@ Fleet boat icons: fill and border.
 - Grey: opponents.
 :::
 
+#### 5.6.2 Actions
 :::figure side half
-![6. Map page](/assets/help/original/dash/map_action1.png)
+![6. Map page](/assets/help/dashboard/map/map_action2.png)
 
-Map actions: dark background enabled / light background disabled.
-:::
-
-:::figure side half
-![6. Map page](/assets/help/original/dash/map_action11.png)
-
-- Coastlines
-
-  Displays coastlines around the centre of the map.
-
-  To refresh the displayed area, disable this option and enable it again.
-
-- Help
+- Help.
 
   Displays a popup summarising how to use the various features.
+- Markers.
+
+  * Displays detailed route points, with more information when hovering over them.
+  * Dark background: enabled / light background: disabled.
+
+- Tracks.
+
+  * Displays the tracks of each boat in the race.
+  * Dark background: enabled / light background: disabled.
+
 :::
 
-Coastlines
 
-:::figure below
-![6. Map page](/assets/help/original/dash/map_cotes.png)
+:::figure side half
+![6. Map page](/assets/help/dashboard/map/map_action3.png)
+
+- Add.
+  Opens the route import popup.
+
+- Clear.
+  Clears all imported routes.
 :::
 
 :::figure side half
-![6. Map page](/assets/help/original/dash/map_action12.png)
+![6. Map page](/assets/help/dashboard/map/map_action4.png)
 
-- Markers
+- Coastline colour.
 
-  Displays detailed route points, with more information when hovering over them.
-
-- Tracks
-
-  Displays the tracks of each boat in the race.
-:::
-
-Routes with markers
-
-Fleet with tracks
-
-:::figure below
-![6. Map page](/assets/help/original/dash/draw_route_marker.png)
-![6. Map page](/assets/help/original/dash/map_full_trace.png)
+- Projection line colour.
 :::
 
 :::figure side half
-![6. Map page](/assets/help/original/dash/map_action13.png)
+![6. Map page](/assets/help/dashboard/map/map_action3.png)
 
-- Add
+- Add.
+  Opens the route import popup.
 
-  Imports Zezo, VrZen, Avalon or gpx routes onto the map.
-
-- Clear
-
-  Clears all loaded routes.
+- Clear.
+  Clears all imported routes.
 :::
 
-:::figure below
-![6. Map page](/assets/help/original/dash/import_route.png)
+:::figure side  width=10%  blocks=25%,50%,25%
+![6. Map page](/assets/help/dashboard/map/map_action5.png)
+
+- Centres the map on the logged-in player.
+---
+- Zoom, also available with Ctrl + mouse wheel.
+---
+- Measurement tool.
+:::
+
+:::figure side half
+![6. Map page](/assets/help/dashboard/map/map_action6.png)
+Measurement tool.
+  - Click the icon to enable it.
+  - Each click on the map draws a red segment between the last two points, with heading and distance information.
+  - Click + Esc stops the current chain of segments.
+  - Click the icon again to disable it, or use Click + Esc a second time. The icon turns grey again.
+
+
+:::
+
+#### 5.6.3 Coastlines
+:::figure rows image=center  width=80%
+![6. Map page](/assets/help/dashboard/map/map_cotes.png)
+:::
+Coastlines appear as you zoom in on the map.
+
+You can choose their colour in the left panel.
+
+#### 5.6.4 Importing routes
+Click Add in the left panel to open the route import popup.
+:::figure side half
+![6. Map page](/assets/help/dashboard/map/import_routage_popup1.png)
 
 Dropdown menu for selecting the route source.
 
-- Zezo
+- Zezo.
 
-  Select the boat from the central list.
+  * Select the boat from the central list.
 
-  Click Import.
+  * Click Import.
 
-  If the boat's options are known, the route appears on the map after a short delay.
+  * If the boat's options are known, the route appears on the map after a short delay.
 
-  You can select any colour you prefer.
-
-- Avalon
-
-  Export your route from Avalon in csv format.
-
-  You can give the route any name you like. By default, the field is pre-filled with your boat's name.
-
-  Click Import and select the csv file exported from Avalon.
-
-  You can select any colour you prefer.
-
-- Avalon
-
-  Export your route from VR Zen in csv format.
-
-  You can give the route any name you like. By default, the field is pre-filled with your boat's name.
-
-  Click Import and select the csv file exported from VR Zen.
-
-  You can select any colour you prefer.
-
-- GPX
-
-  Export your route in gpx format from your preferred router.
-
-  You can give the route any name you like. By default, the field is pre-filled with your boat's name.
-
-  Click Import.
-
-  Click Import and select the exported GPX file.
-
-  You can select any colour you prefer.
+  * You can select any colour you prefer.
 :::
+:::figure side half
+![6. Map page](/assets/help/dashboard/map/import_routage_popup2.png)
+- Avalon / VrZen / Zephir / Sermar / Naya.
 
-Route import
+  * Export your route from Avalon in CSV format.
 
-:::figure below
-![6. Map page](/assets/help/original/dash/draw_route_ssmarker.png)
+  * You can give the route any name you like. By default, the field is pre-filled with your boat's name.
+
+  * Click Import and select the CSV file exported from Avalon.
+
+  * You can select any colour you prefer.
+
+- GPX.
+
+  * Export your route in GPX format from your preferred router.
+
+  * You can give the route any name you like. By default, the field is pre-filled with your boat's name.
+
+  * Click Import.
+
+  * Click Import and select the exported GPX file.
+
+  * You can select any colour you prefer.
+:::
+:::figure rows image=center width=80%
+![6. Map page](/assets/help/dashboard/map/draw_route_ssmarker.png)
 
 Click a route's name to show or hide it: dark background shown / light background hidden.
 
 Click the colour to the right of a route to change its colour.
 :::
 
-Alternative base map
+Route with markers enabled.
+:::figure rows image=center width=80%
+![6. Map page](/assets/help/dashboard/map/draw_route_marker.png)
 
-:::figure below
-![6. Map page](/assets/help/original/dash/map_alt.png)
-
-Click the icon at the top right of the map to change the base map.
+Black markers indicate sail changes.
 :::
 
-<!-- anchor:tabDashTab7 -->
-### 7. Summary page
 
-:::figure below
-![7. Summary page](/assets/help/original/dash/raceboog.png)
+#### 5.6.5 Base maps
+Click the icon at the top right of the map to choose between:
+ * OSM Standard.
+
+ * OSM Dark.
+
+ * Satellite, with a limited maximum zoom.
+
+ * Arctic, with a limited maximum zoom, designed for sailing around the North Pole.
+
+:::figure rows image=center width=80%
+![6. Map page](/assets/help/dashboard/map/map_osm.png)
+
+OSM Standard.
+:::
+
+:::figure rows image=center width=80%
+![6. Map page](/assets/help/dashboard/map/map_osm_dark.png)
+
+OSM Dark.
+:::
+
+:::figure rows image=center width=80%
+![6. Map page](/assets/help/dashboard/map/map_sattelite.png)
+
+Google Satellite.
+:::
+
+:::figure rows image=center width=80%
+![6. Map page](/assets/help/dashboard/map/map_artic.png)
+
+Arctic.
+:::
+
+
+<!-- anchor:tabDashTab7 -->
+### 5.7 Summary page
+#### 5.7.1 Overview
+:::figure side width=60% blocks=10%,10%,39%,41%
+![7. Summary page](/assets/help/dashboard/raceResume/resume.png)
 
 - Race summary.
 
-  Find the various details of the race here.
+---
+
+- Credits and options.
+
+---
+
+- Race waypoints.
+
+---
+
+- Exclusion zones and ice limit.
+
 :::
-
-Upper section
-
-- Race name.
-
-- Race ID.
-
-- VSR level.
+#### 5.7.2 Race summary
+:::figure rows image=center width=100%
+![4. Calculated values](/assets/help/dashboard/raceResume/resume_1.png)
+:::
+:::figure rows width=100% blocks=36%,26%,38%
+- Race name and ID.
 
 - Boat name.
+---
+- Wind model.
+---
+- VSR level.
+- Reward level.
+- Community ranking category.
 
-Middle section
+:::
 
-- Credits offered.
 
-- Cost of each option.
 
-Lower section
 
-- Coordinates of the various waypoints.
+#### 5.7.3 Credits and options
+:::figure rows image=center width=100%
+![4. Calculated values](/assets/help/dashboard/raceResume/resume_2.png)
+:::
+:::figure rows width=100%
+- Game Credits: credits in the player's account.
+- Free Credits: the race's starting allowance (PDD).
+- Race Credits: credits spent on the race, with the amount spent on the boat's current options shown in brackets.
 
-- Waypoint status.
+*If you purchase a Full Pack, the system shows the total cost of the options. This amount has not been deducted from the player's credits.*
+
+---
+
+- Winnings: the credits you would earn based on your current race ranking.
+- Options and their individual costs.
+
+*Green options are enabled.*
+:::
+#### 5.7.4 Race waypoints
+:::figure rows image=center width=90%
+![4. Calculated values](/assets/help/dashboard/raceResume/resume_3.png)
+:::
+:::figure rows width=100%
+- Start coordinates and start date.
+- List of the race's waypoints, their coordinates and their status.
+:::
+
+
+#### 5.7.5 Exclusion zones and ice limits
+:::figure rows image=center width=90%
+![4. Calculated values](/assets/help/dashboard/raceResume/resume_4.png)
+:::
+:::figure rows width=100%
+- For each exclusion zone:
+ - Its name.
+ - Coordinates of each point.
+- For the ice limit:
+ - Coordinates of each point.
+:::
 
 <!-- anchor:tabDashTab8 -->
-### 8. Charts page
+### 5.8 Charts page
+
+#### 5.8.1 Overview
+Graphical representation of the boat's log.
+
+View charts of TWS, TWS, HDG, TWA, speed and stamina for each update received from the server.
 
 :::figure below
-![8. Charts page](/assets/help/original/dash/graph.png)
+![8. Charts page](/assets/help/dashboard/graph/graph.png)
 
-- Graphical representation of the boat's log.
 
-  View charts of TWS, TWS, HDG, TWA, speed and stamina for each update received from the server.
 :::
 
 - Clear the plots using the Clear button at the top left.
 
-- Export the data in csv format using the Export button.
+- Export the data in CSV format using the Export button.
 
-- The plot colour corresponds to the sail.
+- The plot colour corresponds to the current sail.
 
-<!-- anchor:tabDashTab9 -->
-### 9. Notifications page
-
+### 5.9 Analysis page
+#### 5.9.1 Overview
+Access the ITYC website's tools with the boat, options and sailing parameters already configured.
 :::figure below
-![9. Notifications page](/assets/help/original/dash/notif.png)
+![8. Charts page](/assets/help/dashboard/analyse/analyse.png)
 
-- You can create alerts for several conditions and receive a notification when a threshold is crossed.
 
-  The dashboard MUST be connected to the game with the relevant race open for this to work.
 :::
 
-- Schedule a reminder after the specified number of minutes!
-
-- Set a limit for HDG, TWA, TWS or TWD!
-
-<!-- anchor:tabDashTab10 -->
-### 10. Configuration page
+<!-- anchor:tabDashTab9 -->
+### 5.10 Notifications page
+#### 5.10.1 Overview
 
 :::figure below
-![10. Configuration page](/assets/help/original/dash/config.png)
+![9. Notifications page](/assets/help/dashboard/notif.png)
+
+- Create alerts for several conditions and receive a notification when a threshold is crossed.
+
+  The dashboard MUST be connected to the game with the relevant race open for alerts to work.
+:::
+
+- Schedule a reminder after the specified number of minutes.
+
+- Set a limit for HDG, TWA, TWS or TWD.
+
+<!-- anchor:tabDashTab10 -->
+### 5.11 Configuration page
+
+#### 5.11.1 Overview
+:::figure below
+![10. Configuration page](/assets/help/dashboard/config/config.png)
 
 - Configure the dashboard's display and behaviour.
 :::
 
-:::figure below
-![10. Configuration page](/assets/help/original/dash/config1.png)
 
-General options
+#### 5.11.2 General section
+:::figure rows image=center width=90%
+![4. Calculated values](/assets/help/dashboard/config/config_1.png)
+:::
+:::figure rows width=100%
+General options.
 
-- Latitude - Longitude separator
+- Latitude - longitude separator.
 
-  Enabled: "-" is used to separate latitude and longitude.
+  * Enabled: "-" separates latitude and longitude.
 
-  Disabled: " " is used to separate latitude and longitude.
+  * Disabled: a space separates latitude and longitude.
 
-- +1 digit
+- Alternative filter display.
 
-  Enabled: parameters are displayed with 3 digits.
+  * Enabled: filters use checkboxes.
 
-  Disabled: parameters are displayed with 2 digits.
+  * Disabled: filters use toggle buttons.
 
-- Reuse external tab
+- Reuse external tab.
 
-  Enabled: tries to reuse the existing tab when opening an external link.
+  * Enabled: tries to reuse the existing tab when opening an external link.
 
-  Disabled: opens external links in a new tab.
+  * Disabled: opens external links in a new tab.
+---
+- Local times.
 
-- Local times
+  * Enabled: times are displayed in the local time zone.
 
-  Enabled: times are displayed in the local time zone.
+  * Disabled: times are displayed in UTC.
 
-  Disabled: times are displayed in UTC.
+- Polar websites.
+  * LSV uses [Toxxct by LSV](https://vro.civis.net/polars) for Toxxct links.
+  * INC uses [Toxxct by INC](http://inc.bureauvallee.free.fr/polaires/) for Toxxct links.
 
-- Send information to ITYC
+- Send information to ITYC.
 
-  Enabled: your fleet's information is sent to ITYC.
+  * Enabled: your fleet's information and your options are sent to ITYC.
 
-  Disabled: your fleet's information is not sent to ITYC.
+  * Disabled: only polars and race definition information are sent to ITYC.
+
+*Note: in either case, your dashboard uses ITYC information to improve the fleet display, including players' options and teams.*
+
 :::
 
-:::figure below
-![10. Configuration page](/assets/help/original/dash/config2.png)
-
-Race Status options
-
-- Display boat speed in the BVMG field
-
-  Enabled: boat speed is displayed in the BestVMG field.
-
-  Disabled: boat speed is displayed in the BestVMG field.
-
-  Updates after an update is received from the server.
-
-- Display latest orders
-
-  Enabled: the latest orders are displayed in an additional column.
-
-  Disabled: the latest orders are not displayed.
-
-  Updates after an update is received from the server.
+#### 5.11.3 Display section
+:::figure rows image=center width=40%
+![4. Calculated values](/assets/help/dashboard/config/config_2.png)
 :::
+:::figure rows width=100%
+- Fullscreen mode.
+  * Enabled: the dashboard stretches the game to fill the chosen percentage of the display.
+  * Disabled: the game is displayed at its original size.
+---
+- Game size.
+ * Percentage of the display occupied by the game when fullscreen mode is enabled.
 
-:::figure below
-![10. Configuration page](/assets/help/original/dash/config3.png)
-
-Map options
-
-- Display details of opponents' tracks
-
-  Displays markers on opponent boats' tracks, with more details when hovering over them.
-
-  Requires restarting the dashboard.
-
-  Uses a large amount of memory!
 :::
-
-:::figure below
-![10. Configuration page](/assets/help/original/dash/config4.png)
-
-Fleet options 1
-
-- Display abbreviated option names
-
-  Enabled: boat options are abbreviated, with the full definition available when hovering over them.
-
-  Disabled: boat options are displayed in full.
-
-  Updates after an update is received from the server.
-
-- Clear outdated information
-
-  Some information about opponent boats is available only after clicking the boat, such as rank, stamina and TWA lock.
-
-  Enabled: outdated information is cleared after the specified delay.
-
-  Disabled: outdated information is not cleared.
-
-  Updates after an update is received from the server.
+#### 5.11.4 Race data section
+:::figure rows image=center width=80%
+![10. Configuration page](/assets/help/dashboard/config/config_3.png)
 :::
+:::figure rows width=100%
+- Display boat speed in the BVMG field.
 
-:::figure below
-![10. Configuration page](/assets/help/original/dash/config5.png)
+  * Enabled: boat speed is displayed in the BestVMG field.
 
-Fleet options 2
+  * Disabled: boat speed is displayed in the BestVMG field.
 
-- Configure the columns displayed in the fleet table.
+  *Updates after an update is received from the server.*
+---
+- Display latest orders.
+
+  * Enabled: the latest orders appear in an additional column.
+
+  * Disabled: the latest orders are not displayed.
+
+  *Updates after an update is received from the server.*
+:::
+#### 5.11.5 Log section
+:::figure rows image=center width=90%
+![10. Configuration page](/assets/help/dashboard/config/config_4.png)
+:::
+:::figure rows width=100%
+- Show only the last five command rows.
+  * Enabled: only the latest command rows are shown in the table.
+  * Disabled: all command rows are shown in the table.
+
+- Configure the columns displayed in the Log table.
 
   You can choose to hide a column.
 
-  Enabled: the column is displayed.
+  * Enabled: the column is displayed.
 
-  Disabled: the column is not displayed.
+  * Disabled: the column is not displayed.
 
-  Updates after an update is received from the server.
+  *Updates after an update is received from the server.*
+:::
+#### 5.11.6 Map section
+
+:::figure rows image=center width=90%
+![10. Configuration page](/assets/help/dashboard/config/config_5.png)
+:::
+:::figure rows width=100%
+
+- Display details of opponents' tracks.
+
+  * Displays markers on opponent boats' tracks, with more details when hovering over them.
+
+  *Requires restarting the dashboard.*
+
+  This uses a large amount of memory.
+
+- Projection line length.
+  * Customises the length of the projection line on the Map page.
+- Show invisible buoys.
+  * Enabled: all buoys are shown, including waypoint and ranking buoys.
+  * Disabled: only buoys visible in the game are shown, namely waypoint buoys.
+  *Requires restarting the dashboard.*
 :::
 
-:::figure below
-![10. Configuration page](/assets/help/original/dash/config6.png)
 
-Extra options
+#### 5.11.7 Fleet section
+:::figure rows image=center width=90%
+![10. Configuration page](/assets/help/dashboard/config/config_6.png)
+:::
+:::figure rows width=100%
+
+- Display abbreviated option names.
+
+  * Enabled: boat options are abbreviated, with their full names available when hovering over them.
+
+  * Disabled: boat options are displayed in full.
+
+  *Updates after an update is received from the server.*
+
+- Clear outdated information.
+
+  Some information about opponent boats, such as rank and TWA lock, is available only after clicking the boat.
+
+  * Enabled: outdated information is cleared after the specified delay.
+
+  * Disabled: outdated information is not cleared.
+
+  *Updates after an update is received from the server.*
+
+- Configure the columns displayed in the Fleet table.
+
+  You can choose to hide a column.
+
+  * Enabled: the column is displayed.
+
+  * Disabled: the column is not displayed.
+
+  *Updates after an update is received from the server.*
+
+- SailRanks raceId.
+ * Your race's ID in SailRanks.
+ If this is filled in, clicking Export SailRanks sends the data directly to the SailRanks server.
+
+:::
+#### 5.11.8 Export section
+:::figure rows image=center width=90%
+![10. Configuration page](/assets/help/dashboard/config/config_7.png)
+:::
+:::figure rows width=100%
+- Export exclusion zones.
+  * Export all of the race's exclusion zones in JSON format.
 
 - Export polars.
 
-  Export all polars known to the dashboard in JSON format.
+  * Export all polars known to the dashboard in JSON format.
 
 - Export stamina.
 
-  Export all stamina parameters known to the dashboard in JSON format.
+  * Export all stamina parameters in JSON format.
+
+- Export boat track.
+
+  * Export the logged-in player's track in the active race in GPX format.
+
+- CSV file value separator.
+  * ; uses a semicolon as the separator.
+  * , uses a comma as the separator.
+  * Tab uses a tab character as the separator.
 :::

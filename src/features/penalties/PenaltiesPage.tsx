@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { RangeNumberField } from '../../shared/ui/RangeNumberField'
 import type { InteractiveLineChartProps } from '../../shared/charts/InteractiveLineChart'
+import { readChartPrecision, sampleChartRange, type ChartPrecision, type ChartPrecisions } from '../../shared/charts/chartPrecision'
 import { loadPolarData } from '../polar/engine/polarData'
 import type { PolarData } from '../polar/engine/polarTypes'
 import type { ChartLayout } from '../polar/polarModel'
@@ -10,7 +11,7 @@ import { readPageSessionState, savePageSessionState } from '../../shared/storage
 type Props = { embedded?: boolean; locale: 'fr' | 'en'; onBackHome: () => void; onLocaleChange: (locale: 'fr' | 'en') => void; onThemeChange: (theme: 'dark' | 'light') => void; theme: 'dark' | 'light' }
 type Penalties = { gybe: number; sail: number; tack: number }
 type WinchData = { hws: number; lws: number; tack: { std: { hw: { timer: number }; lw: { timer: number } } }; gybe: { std: { hw: { timer: number }; lw: { timer: number } } }; sailChange: { std: { hw: { timer: number }; lw: { timer: number } } } }
-type PenaltiesPageSession = { boat: string; doubleEnergy: number; doubleSpeed: number; doubleWind: number; focus: number; fullPack: boolean; furler: boolean; jacket: boolean; layout: ChartLayout; rentEnergy: number; rentWind: number; simpleEnergy: number; simpleSpeed: number; simpleWind: number; winch: boolean; withSpeed: number; withoutSpeed: number }
+type PenaltiesPageSession = { boat: string; chartPrecisions: ChartPrecisions; doubleEnergy: number; doubleSpeed: number; doubleWind: number; focus: number; fullPack: boolean; furler: boolean; jacket: boolean; layout: ChartLayout; rentEnergy: number; rentWind: number; simpleEnergy: number; simpleSpeed: number; simpleWind: number; winch: boolean; withSpeed: number; withoutSpeed: number }
 
 function usePolar(boat: string) { const [polar, setPolar] = useState<PolarData>(); useEffect(() => { let live = true; void loadPolarData(boat as Parameters<typeof loadPolarData>[0]).then((data) => { if (live) setPolar(data) }); return () => { live = false } }, [boat]); return polar }
 function interpolate(wind: number, lowWind: number, highWind: number, low: number, high: number) { if (wind <= lowWind) return low; if (wind >= highWind) return high; return low + (1 - Math.cos((wind - lowWind) / (highWind - lowWind) * Math.PI)) * .5 * (high - low) }
@@ -31,7 +32,7 @@ function sameManoeuvreCoefficients(polar: PolarData | undefined) {
     && winch.tack.std.hw.timer === winch.gybe.std.hw.timer)
 }
 function lossAt(boat: string, wind: number, jacket: boolean, furler: boolean) { const factor = windFactor(wind, jacket) * (consumptionByStamina[staminaByBoat[boat] ?? 0] ?? 1); return { tack: 10 * factor, gybe: 10 * factor, sail: 20 * factor * (furler ? .8 : 1) } }
-function chartFor(title: string, lines: Array<{ color: string; id: string; label: string; value: (wind: number) => number }>, locale: 'fr' | 'en'): InteractiveLineChartProps { const points = Array.from({ length: 351 }, (_, index) => index / 10); return { cursor: 'vertical', series: lines.map((line) => ({ ...line, points: points.map((x) => ({ x, y: line.value(x) })) })), tooltip: { label: (item) => `${item.dataset.label} : ${minuteSecondTime(item.parsed.y ?? 0)}` }, xAxis: { label: 'True Wind Speed', unit: locale === 'fr' ? 'nds' : 'kts' }, yAxis: { label: title, unit: 's' }, zoom: 'x' } }
+function chartFor(title: string, lines: Array<{ color: string; id: string; label: string; value: (wind: number) => number }>, locale: 'fr' | 'en', precision: ChartPrecision): InteractiveLineChartProps { const points = sampleChartRange(0, 35, precision); return { cursor: 'vertical', series: lines.map((line) => ({ ...line, points: points.map((x) => ({ x, y: line.value(x) })) })), tooltip: { label: (item) => `${item.dataset.label} : ${minuteSecondTime(item.parsed.y ?? 0)}` }, xAxis: { label: 'True Wind Speed', unit: locale === 'fr' ? 'nds' : 'kts' }, yAxis: { label: title, unit: 's' }, zoom: 'x' } }
 
 type PenaltyResult = { name: string; time: number; energy: number; distance: number }
 type ResultColumn = 'time' | 'energy' | 'distance'
@@ -55,6 +56,12 @@ export function PenaltiesPage(props: Props) {
   const gybeSail = fr ? 'Empannage + voile' : 'Gybe + sail change'
   const combinedSail = fr ? 'Virement / Empannage + voile' : 'Tack / Gybe + sail change'
   const [savedState] = useState(() => readPageSessionState<PenaltiesPageSession>('penalties'))
+  const [chartPrecisions, setChartPrecisions] = useState<ChartPrecisions>(() => ({
+    0: readChartPrecision(savedState.chartPrecisions?.[0]),
+    1: readChartPrecision(savedState.chartPrecisions?.[1]),
+  }))
+  const simplePrecision = readChartPrecision(chartPrecisions[0])
+  const doublePrecision = readChartPrecision(chartPrecisions[1])
   const [boat, setBoat] = useState(() => savedState.boat ?? 'Class 40 2021'); const polar = usePolar(boat); const [layout, setLayout] = useState<ChartLayout>(() => savedState.layout === 'focus' ? 'focus' : 'grid'); const [focus, setFocus] = useState(() => savedState.focus ?? 0)
   const changeLayout = (value: ChartLayout) => { setLayout(value) }
   const [fullPack, setFullPack] = useState(() => savedState.fullPack ?? true); const [winch, setWinch] = useState(() => savedState.winch ?? true); const [furler, setFurler] = useState(() => savedState.furler ?? true); const [jacket, setJacket] = useState(() => savedState.jacket ?? true)
@@ -62,18 +69,18 @@ export function PenaltiesPage(props: Props) {
   const [doubleEnergy, setDoubleEnergy] = useState(() => savedState.doubleEnergy ?? 66.7); const [doubleWind, setDoubleWind] = useState(() => savedState.doubleWind ?? 10); const [doubleSpeed, setDoubleSpeed] = useState(() => savedState.doubleSpeed ?? 5)
   const [rentEnergy, setRentEnergy] = useState(() => savedState.rentEnergy ?? 66.7); const [rentWind, setRentWind] = useState(() => savedState.rentWind ?? 10); const [withoutSpeed, setWithoutSpeed] = useState(() => savedState.withoutSpeed ?? 10); const [withSpeed, setWithSpeed] = useState(() => savedState.withSpeed ?? 12)
   useEffect(() => {
-    savePageSessionState('penalties', { boat, doubleEnergy, doubleSpeed, doubleWind, focus, fullPack, furler, jacket, layout, rentEnergy, rentWind, simpleEnergy, simpleSpeed, simpleWind, winch, withSpeed, withoutSpeed })
-  }, [boat, doubleEnergy, doubleSpeed, doubleWind, focus, fullPack, furler, jacket, layout, rentEnergy, rentWind, simpleEnergy, simpleSpeed, simpleWind, winch, withSpeed, withoutSpeed])
+    savePageSessionState('penalties', { boat, chartPrecisions, doubleEnergy, doubleSpeed, doubleWind, focus, fullPack, furler, jacket, layout, rentEnergy, rentWind, simpleEnergy, simpleSpeed, simpleWind, winch, withSpeed, withoutSpeed })
+  }, [boat, chartPrecisions, doubleEnergy, doubleSpeed, doubleWind, focus, fullPack, furler, jacket, layout, rentEnergy, rentWind, simpleEnergy, simpleSpeed, simpleWind, winch, withSpeed, withoutSpeed])
   const setPack = (value: boolean) => { setFullPack(value); setWinch(value); setFurler(value); setJacket(value) }
   const simpleChart = useMemo(() => { const same = sameManoeuvreCoefficients(polar); return chartFor(fr ? 'Temps' : 'Time', [
     { id: 'tack', label: same ? combined : tack, color: '#00a000', value: (wind) => penaltyAt(polar, wind, furler).tack * energyFactor(simpleEnergy) },
     ...(same ? [] : [{ id: 'gybe', label: gybe, color: '#1267e9', value: (wind: number) => penaltyAt(polar, wind, furler).gybe * energyFactor(simpleEnergy) }]),
     { id: 'sail', label: sail, color: '#e00000', value: (wind) => penaltyAt(polar, wind, furler).sail * energyFactor(simpleEnergy) },
-  ], locale) }, [furler, locale, polar, simpleEnergy])
+  ], locale, simplePrecision) }, [furler, locale, polar, simpleEnergy, simplePrecision])
   const doubleChart = useMemo(() => { const same = sameManoeuvreCoefficients(polar); return chartFor(fr ? 'Temps' : 'Time', [
     { id: 'tack-sail', label: same ? combinedSail : tackSail, color: '#00a000', value: (wind) => Math.max(penaltyAt(polar, wind, furler).tack, penaltyAt(polar, wind, furler).sail) * energyFactor(doubleEnergy) },
     ...(same ? [] : [{ id: 'gybe-sail', label: gybeSail, color: '#1267e9', value: (wind: number) => Math.max(penaltyAt(polar, wind, furler).gybe, penaltyAt(polar, wind, furler).sail) * energyFactor(doubleEnergy) }]),
-  ], locale) }, [doubleEnergy, furler, locale, polar])
+  ], locale, doublePrecision) }, [doubleEnergy, doublePrecision, furler, locale, polar])
   const rentPenalty = penaltyAt(polar, rentWind, furler).sail * energyFactor(rentEnergy)
   const rentability = useMemo(() => {
     const reducedSpeed = withSpeed * (winch ? .7 : .5)
@@ -131,8 +138,8 @@ export function PenaltiesPage(props: Props) {
   </div>{rentTable}</div>
   const controls = <div className="analysis-page-options"><AnalysisToggle checked={fullPack} label="Full Pack" onChange={setPack} /><AnalysisToggle checked={winch} label="Winch" onChange={(value) => { setWinch(value); setFullPack(value && furler && jacket) }} /><AnalysisToggle checked={furler} label={fr ? 'Enrouleur' : 'Furler'} onChange={(value) => { setFurler(value); setFullPack(value && winch && jacket) }} /><AnalysisToggle checked={jacket} label={fr ? 'Veste' : 'Jacket'} onChange={(value) => { setJacket(value); setFullPack(value && winch && furler) }} /></div>
   return <AnalysisShell active="penalites" boat={boat} layout={layout} onBoatChange={setBoat} onLayoutChange={changeLayout} options={controls} {...props} title={fr ? 'Pénalités' : 'Penalties'}>
-    <AnalysisCard chart={simpleChart} embedded={embedded} focus={focus === 0} helpTopic="penalties-simple" index={0} layout={layout} locale={locale} theme={theme} onLayoutChange={(value) => { setFocus(0); changeLayout(value) }} settings={penaltySettings('pena-simple', simpleEnergy, simpleWind, simpleSpeed, setSimpleEnergy, setSimpleWind, setSimpleSpeed, simpleRows)} title={fr ? 'Pénalités simples' : 'Simple penalties'} />
+    <AnalysisCard chart={simpleChart} embedded={embedded} focus={focus === 0} helpTopic="penalties-simple" index={0} layout={layout} locale={locale} theme={theme} onLayoutChange={(value) => { setFocus(0); changeLayout(value) }} precision={{ value: simplePrecision, onChange: (value) => setChartPrecisions(current => ({ ...current, 0: value })) }} settings={penaltySettings('pena-simple', simpleEnergy, simpleWind, simpleSpeed, setSimpleEnergy, setSimpleWind, setSimpleSpeed, simpleRows)} title={fr ? 'Pénalités simples' : 'Simple penalties'} />
     <AnalysisCard chart={rentChart} embedded={embedded} focus={focus === 2} helpTopic="penalties-rentability" index={2} layout={layout} locale={locale} theme={theme} onLayoutChange={(value) => { setFocus(2); changeLayout(value) }} settings={rentSettings} title={fr ? 'Rentabilité' : 'Break-even'} />
-    <AnalysisCard chart={doubleChart} embedded={embedded} focus={focus === 1} helpTopic="penalties-double" index={1} layout={layout} locale={locale} theme={theme} onLayoutChange={(value) => { setFocus(1); changeLayout(value) }} settings={penaltySettings('pena-double', doubleEnergy, doubleWind, doubleSpeed, setDoubleEnergy, setDoubleWind, setDoubleSpeed, doubleRows)} title={fr ? 'Pénalités doubles' : 'Double penalties'} />
+    <AnalysisCard chart={doubleChart} embedded={embedded} focus={focus === 1} helpTopic="penalties-double" index={1} layout={layout} locale={locale} theme={theme} onLayoutChange={(value) => { setFocus(1); changeLayout(value) }} precision={{ value: doublePrecision, onChange: (value) => setChartPrecisions(current => ({ ...current, 1: value })) }} settings={penaltySettings('pena-double', doubleEnergy, doubleWind, doubleSpeed, setDoubleEnergy, setDoubleWind, setDoubleSpeed, doubleRows)} title={fr ? 'Pénalités doubles' : 'Double penalties'} />
   </AnalysisShell>
 }

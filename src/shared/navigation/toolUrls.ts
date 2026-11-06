@@ -1,4 +1,5 @@
 import { boats, sails, type BoatName, type SailId } from '../../features/polar/polarModel'
+import { readPublicPage } from './publicPages'
 
 export type ToolPage = 'polar' | 'autosail' | 'penalties' | 'energy'
 type Locale = 'fr' | 'en'
@@ -28,6 +29,9 @@ const allSails = sails.map(sail => sail.id)
 const sailFields = ['sailForTwa', 'sailForTws', 'sailForRange', 'firstOverlapSail', 'secondOverlapSail'] as const
 const optionFields = ['fullPack', 'foil', 'hull', 'winch', 'furler', 'jacket', 'pug'] as const
 const focusMax: Record<ToolPage, number> = { polar: 6, autosail: 3, penalties: 2, energy: 1 }
+const precisionChartIndexes: Record<ToolPage, readonly number[]> = {
+  polar: [1, 2, 3, 4, 5, 6], autosail: [0, 2], penalties: [0, 1], energy: [0, 1],
+}
 const numericFields: Record<ToolPage, Record<string, Bounds>> = {
   polar: { twa: [0, 180], tws: [1, 40] },
   autosail: { twa: [0, 180], tws: [.1, 50], twsStart: [.1, 50], twsEnd: [.1, 50], twaStart: [0, 180], twaEnd: [0, 180] },
@@ -128,10 +132,11 @@ export function readUrlPreferences(): { locale?: Locale; theme?: 'dark' | 'light
     return { locale: requestedLocale ?? 'fr', theme: theme === 'light' || theme === 'dark' ? theme : 'dark' }
   }
   const filenameLocale = fileRoute(location.pathname)?.locale
+  const siteLocale = location.pathname.split('/').pop() ? readPublicPage(location.pathname)?.locale : undefined
   const hash = location.hash.replace(/^#/, '').split('?')[0]
   // Non-tool pages can remain on an old tool filename during hash navigation.
   const locale = hash === 'aide' || hash === 'accueil' || hash === 'dash'
-    ? requestedLocale ?? filenameLocale : filenameLocale ?? requestedLocale
+    ? requestedLocale ?? filenameLocale ?? siteLocale : filenameLocale ?? requestedLocale ?? siteLocale
   return { ...(locale ? { locale } : {}), ...(theme === 'dark' || theme === 'light' ? { theme } : {}) }
 }
 
@@ -196,6 +201,15 @@ function cleanState(page: ToolPage, saved: object): State {
   }
   for (const field of sailFields) { if (field in state) { const parsed = sail(state[field]); if (parsed) state[field] = parsed; else delete state[field] } }
   if ('overlapPrecision' in state && state.overlapPrecision !== '0.1' && state.overlapPrecision !== '0.01') delete state.overlapPrecision
+  if ('chartPrecisions' in state) {
+    const source = record(state.chartPrecisions)
+    const precisions: State = {}
+    for (const index of precisionChartIndexes[page]) {
+      const value = source?.[index]
+      if (value === '0.1' || value === '0.01') precisions[index] = value
+    }
+    state.chartPrecisions = precisions
+  }
   return completeState(page, state)
 }
 
@@ -281,6 +295,12 @@ export function applyToolUrlState<T extends object>(page: ToolPage, saved: Parti
     const precision = get('precision') ?? get('overlapPrecision')
     if (precision === '0.1' || precision === '0.01') state.overlapPrecision = precision
   }
+  for (const index of precisionChartIndexes[page]) {
+    const precision = get(`${page}Precision${index}`)
+    if (precision === '0.1' || precision === '0.01') {
+      state.chartPrecisions = { ...record(state.chartPrecisions), [index]: precision }
+    }
+  }
   return completeState(page, state) as Partial<T>
 }
 
@@ -354,6 +374,8 @@ function writeState(entries: QueryEntry[], page: ToolPage, state: State) {
     if (field !== 'twa' && field !== 'tws') put(entries, field, state[field])
   }
   for (const field of ['layout', 'level', 'focus']) put(entries, field, state[field])
+  const precisions = record(state.chartPrecisions)
+  for (const index of precisionChartIndexes[page]) put(entries, `${page}Precision${index}`, precisions?.[index])
   if (page === 'polar') {
     const display = record(state.expertDisplay)
     for (const [parameter, field] of [['displayAuto', 'auto'], ['displayFoils', 'foils'], ['displaySails', 'sails']]) {

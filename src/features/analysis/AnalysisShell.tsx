@@ -4,6 +4,9 @@ import { SiteHeader } from '../../components/SiteHeader'
 import { InteractiveLineChart, type InteractiveLineChartHandle, type InteractiveLineChartProps } from '../../shared/charts/InteractiveLineChart'
 import { SegmentedControl } from '../../shared/ui/SegmentedControl'
 import { ChartHelpLink, type ChartHelpTopic } from '../../shared/ui/ChartHelpLink'
+import { ChartActionIcon } from '../../shared/ui/ChartActionIcon'
+import { ChartPrecisionButton } from '../../shared/ui/ChartPrecisionButton'
+import type { ChartPrecision } from '../../shared/charts/chartPrecision'
 import { boats, polarUpdatedAt, type ChartLayout } from '../polar/polarModel'
 
 type PageProps = {
@@ -80,12 +83,13 @@ type CardProps = {
   layout: ChartLayout
   locale?: 'fr' | 'en'
   onLayoutChange: (layout: ChartLayout) => void
+  precision?: { value: ChartPrecision; onChange: (value: ChartPrecision) => void }
   settings?: ReactNode
   table?: ReactNode
   theme?: 'dark' | 'light'
   title: string
 }
-export function AnalysisCard({ chart, controls, embedded = false, focus, helpTopic, index, layout, locale = 'fr', onLayoutChange, settings, table, theme = 'dark', title }: CardProps) {
+export function AnalysisCard({ chart, controls, embedded = false, focus, helpTopic, index, layout, locale = 'fr', onLayoutChange, precision, settings, table, theme = 'dark', title }: CardProps) {
   const chartRef = useRef<InteractiveLineChartHandle>(null)
   const resetLabel = locale === 'fr' ? `Réinitialiser le zoom de ${title}` : `Reset zoom for ${title}`
   const layoutLabel = layout === 'focus' ? (locale === 'fr' ? 'Revenir à la grille' : 'Back to grid') : (locale === 'fr' ? `Afficher ${title} en focus` : `Focus on ${title}`)
@@ -95,7 +99,7 @@ export function AnalysisCard({ chart, controls, embedded = false, focus, helpTop
     window.setTimeout(() => document.getElementById(`analysis-card-${index}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0)
   }
   return <section className={`analysis-card ${focus ? 'is-focus' : ''}`} id={`analysis-card-${index}`}>
-    <div className="analysis-card-heading"><h2>{title}</h2><div className="analysis-card-actions chart-actions"><button aria-label={resetLabel} className="icon-button" onClick={() => chartRef.current?.resetView()} type="button">↺</button><button aria-label={layoutLabel} className="icon-button" onClick={select} type="button"><span className="sr-only">{layoutLabel}</span><span aria-hidden="true">{layout === 'focus' ? '⊞' : '↗'}</span></button>{helpTopic && <ChartHelpLink topic={helpTopic} locale={locale} theme={theme} embedded={embedded} />}</div></div>
+    <div className="analysis-card-heading"><h2>{title}</h2><div className="analysis-card-actions chart-actions">{precision && <ChartPrecisionButton locale={locale} onChange={precision.onChange} value={precision.value} />}<button aria-label={resetLabel} className="icon-button" onClick={() => chartRef.current?.resetView()} type="button"><ChartActionIcon action="reset" /></button><button aria-label={layoutLabel} className="icon-button" onClick={select} type="button"><ChartActionIcon action={layout === 'focus' ? 'grid' : 'focus'} /></button>{helpTopic && <ChartHelpLink topic={helpTopic} locale={locale} theme={theme} embedded={embedded} />}</div></div>
     <div className="analysis-card-content">{settings ?? <div className="analysis-settings">{controls}{table}</div>}<div className="analysis-chart"><InteractiveLineChart {...chart} ref={chartRef} /></div></div>
   </section>
 }

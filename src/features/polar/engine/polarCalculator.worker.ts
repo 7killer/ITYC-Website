@@ -1,6 +1,7 @@
 /// <reference lib="webworker" />
 
 import { getBestSpeed, polarLimit, sailColors } from './polarMath'
+import { sampleChartRange, type ChartPrecision } from '../../../shared/charts/chartPrecision'
 import type {
   CalculatedChart,
   CalculatedSeries,
@@ -92,8 +93,8 @@ function speedChartByTwa(polar: PolarData, options: PolarCalculationOptions, tws
   }
 }
 
-function speedChartByTws(polar: PolarData, options: PolarCalculationOptions, twa: number): CalculatedChart {
-  const xValues = range(polarLimit(polar, 'tws', 50), .1, .1)
+function speedChartByTws(polar: PolarData, options: PolarCalculationOptions, twa: number, precision: ChartPrecision): CalculatedChart {
+  const xValues = sampleChartRange(.1, polarLimit(polar, 'tws', 50), precision)
   return {
     cursor: 'vertical',
     series: withSpeedTooltips([
@@ -109,10 +110,11 @@ function speedChartByTws(polar: PolarData, options: PolarCalculationOptions, twa
 function derivedCharts(
   polar: PolarData,
   options: PolarCalculationOptions,
+  precision: ChartPrecision,
   onProgress: (percent: number) => void,
 ): Array<{ chart: CalculatedChart; index: number }> {
-  // Même domaine que les workers historiques : de 1 à la limite, par 0,1.
-  const winds = range(polarLimit(polar, 'tws', 50), .1, 1)
+  // Keep the historical angle search; only the TWS sampling follows the button.
+  const winds = sampleChartRange(1, polarLimit(polar, 'tws', 50), precision)
   const angles = range(polarLimit(polar, 'twa', 180), .1, 1)
   const upAngle: CalculatedSeries = { color: '#cd0342', id: 'up-angle', label: 'Best VMG UP', points: [], segments: [], tooltips: [] }
   const downAngle: CalculatedSeries = { color: '#0000ff', id: 'down-angle', label: 'Best VMG DW', points: [], segments: [], tooltips: [] }
@@ -120,6 +122,7 @@ function derivedCharts(
   const downVmg: CalculatedSeries = { color: '#0000ff', id: 'down-vmg', label: 'VMG DW', points: [], segments: [], tooltips: [] }
   const bestSpeedAngle: CalculatedSeries = { color: '#00a000', id: 'best-speed-angle', label: 'TWA', points: [], segments: [], tooltips: [] }
   const bestSpeed: CalculatedSeries = { color: '#00a000', id: 'best-speed', label: 'VSPD', points: [], segments: [], tooltips: [] }
+  let previousProgress = -1
 
   winds.forEach((wind, windIndex) => {
     let up: { sail: PolarSailId; speed: number; twa: number; vmg: number } = { sail: 'Jib', speed: 0, twa: 0, vmg: -Infinity }
@@ -153,7 +156,8 @@ function derivedCharts(
     bestSpeed.segments?.push({ color: sailColors[max.sail] })
     bestSpeed.tooltips?.push(speedAtAngleTooltip(max.speed, max.twa, max.sail))
 
-    onProgress(Math.round(((windIndex + 1) / winds.length) * 100))
+    const progress = Math.round(((windIndex + 1) / winds.length) * 100)
+    if (progress !== previousProgress) { onProgress(progress); previousProgress = progress }
   })
 
   return [
@@ -166,9 +170,10 @@ function derivedCharts(
 
 function calculate(request: PolarWorkerRequest) {
   const { options, polar, task, twa, tws } = request
+  const precision = request.precision ?? '0.1'
   if (task === 'twa') return [{ chart: speedChartByTwa(polar, options, tws), index: 0 }]
-  if (task === 'tws') return [{ chart: speedChartByTws(polar, options, twa), index: 1 }]
-  return derivedCharts(polar, options, (percent) => postProgress(request, percent))
+  if (task === 'tws') return [{ chart: speedChartByTws(polar, options, twa, precision), index: 1 }]
+  return derivedCharts(polar, options, precision, (percent) => postProgress(request, percent))
 }
 
 function chartIndexes(task: PolarTask) {

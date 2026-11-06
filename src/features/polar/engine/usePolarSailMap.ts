@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { SailId } from '../polarModel'
 import { loadPolarData } from './polarData'
+import type { ChartPrecision } from '../../../shared/charts/chartPrecision'
 import type { PolarSailMapData, PolarSailMapMessage, PolarSailMapRequest } from './polarTypes'
 
 export type PolarSailMapState = {
@@ -13,6 +14,7 @@ export function usePolarSailMap(
   boat: string,
   options: { foil: boolean; hull: boolean },
   selectedSails: ReadonlySet<SailId>,
+  precision: ChartPrecision = '0.1',
 ) {
   const [state, setState] = useState<PolarSailMapState>({ progress: 0 })
   const requestId = useRef(0)
@@ -40,21 +42,22 @@ export function usePolarSailMap(
             worker?.terminate()
           }
         }
-        worker.onerror = () => setState({ error: 'Le calcul de la carte a échoué', progress: 0 })
+        worker.onerror = () => { if (!cancelled) setState({ error: 'Le calcul de la carte a échoué', progress: 0 }) }
         const request: PolarSailMapRequest = {
           options: { foil: options.foil, hull: options.hull, sails: Array.from(selectedSails) },
           polar,
+          precision,
           requestId: activeRequest,
         }
         worker.postMessage(request)
       })
-      .catch((error: unknown) => setState({ error: error instanceof Error ? error.message : 'Chargement de la polaire impossible', progress: 0 }))
+      .catch((error: unknown) => { if (!cancelled) setState({ error: error instanceof Error ? error.message : 'Chargement de la polaire impossible', progress: 0 }) })
 
     return () => {
       cancelled = true
       worker?.terminate()
     }
-  }, [boat, options.foil, options.hull, sailKey])
+  }, [boat, options.foil, options.hull, precision, sailKey])
 
   return state
 }

@@ -100,5 +100,5 @@ The game avoids constant sail changes: a candidate sail must exceed the current 
 
 ### Set precision
 
-Precision 0.1 or 0.01 sets the analysis step. Finer precision can detail a transition, with a more intensive calculation.
+On each chart with TWS on the X axis, the button before reset zoom shows the active step: 0.1 or 0.01. Clicking changes that chart's precision. Finer precision can detail a transition, with a more intensive calculation. The Expert polar's TWS control uses a 0.01 step.
 

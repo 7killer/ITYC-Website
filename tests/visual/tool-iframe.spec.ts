@@ -26,7 +26,7 @@ test.beforeEach(async ({ page }) => {
 
 async function values(scope: Scope, expected: Record<string, number>) {
   for (const [id, value] of Object.entries(expected)) {
-    await expect(scope.locator(`[id="${id}-number"]`)).toHaveValue(value.toFixed(1))
+    await expect(scope.locator(`[id="${id}-number"]`)).toHaveValue(value.toFixed(id === 'expert-tws' ? 2 : 1))
   }
 }
 

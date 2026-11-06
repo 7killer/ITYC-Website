@@ -85,8 +85,10 @@
    leaves the result table immediately below the header, like the other
    compact analysis cards. */
 @media (min-width: 1540px) {
-  .analysis-layout-grid .analysis-card:has(.energy-settings) { position: relative; }
-  .analysis-layout-grid .energy-settings-controls { position: absolute; top: 0; right: 7.6rem; flex-wrap: nowrap; }
+  .analysis-layout-grid .analysis-card:has(.energy-settings) { position: relative; --energy-fields-width: 14.5rem; }
+  .analysis-layout-grid .analysis-card:has(.energy-settings-controls > .range-field:nth-child(2)) { --energy-fields-width: 30rem; }
+  .analysis-layout-grid .analysis-card:has(.energy-settings) .analysis-card-heading h2 { max-width: calc(100% - 10.05rem - var(--energy-fields-width) - .6rem); }
+  .analysis-layout-grid .energy-settings-controls { position: absolute; top: 0; right: 10.05rem; flex-wrap: nowrap; }
   .analysis-layout-grid .energy-settings-controls > .range-field { flex: 0 0 14.5rem; max-width: 14.5rem; }
 }
 .analysis-layout-grid .penalty-settings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: .4rem 1rem; }

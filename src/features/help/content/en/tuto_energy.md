@@ -2,7 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Page overview
-
+### 1.1 Overview
 
 In Virtual Regatta, as in real sailing, your skipper can be fit or tired.
 
@@ -13,7 +13,7 @@ ITYC.fr provides this calculator to work out energy loss and recovery rates for 
 The data is displayed after you select a boat.
 
 :::figure rows image=center width=100% blocks=23%,40%,22%,15%
-![Penalties page overview](/assets/help/energy/energy_vueensembleEntete.png)
+![Energy page overview](/assets/help/energy/energy_vueensembleEntete.png)
 
 
 Boat selection.
@@ -36,8 +36,37 @@ ITYC.FR offers two page layouts:
 - Focus mode: one chart per view for better visibility.
 - Grid mode: two charts per view for a more compact layout.
 
+### 1.2 Chart controls
+
+#### 1.2.1 Display mode
+You can switch display modes in two ways:
+
+* Using the selector at the top of the page ![Description](/assets/help/common/focusgrille.png "icon:2.5em")
+* Using the buttons on each chart
+  * Switch from Focus to Grid mode ![Description](/assets/help/common/modeGrilleCurve.png "icon:2.5em")
+  * Switch from Grid to Focus mode ![Description](/assets/help/common/modeFocusCurve.png "icon:2.5em")
+
+
+*When switching modes, the page scrolls automatically to keep the current chart in view.*
+
+#### 1.2.2 Reset zoom
+
+You can reset a chart's zoom at any time by pressing the button ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
+
+#### 1.2.3 Help shortcut
+
+You can open the help for the current chart at any time by clicking this button ![Description](/assets/help/common/aide.png "icon:2.5em")
+
+#### 1.2.4 Precision
+
+For every chart with TWS on the X axis, you can choose a calculation step of 0.1 or 0.01.
+* Click this button ![Description](/assets/help/common/precision10.png "icon:2.5em") to switch the calculation to 0.01 precision.
+* Click this button ![Description](/assets/help/common/precision100.png "icon:2.5em") to switch the calculation to 0.1 precision.
+
+*A precision of 0.01 requires more calculation time.*
+
 <!-- anchor:tp_p1_1 -->
-### 1.1 Focus mode
+### 1.3 Focus mode
 :::figure side image=left width=75% 
 ![Energy page overview in focus mode](/assets/help/energy/energie_vueensemble.png)
 
@@ -50,7 +79,7 @@ Energy recovery.
 :::
 
 <!-- anchor:tp_p1_1_2 -->
-### 1.2 Grid mode
+### 1.4 Grid mode
 
 :::figure side image=left width=75% 
 ![Energy page overview in grid mode](/assets/help/energy/energy_vueensemble_g.png)
@@ -140,7 +169,23 @@ Energy loss for each manoeuvre type.
 :::
 
 <!-- anchor:tp_p4_2 -->
-### 4.2 Chart features
+### 4.2 Settings and calculator
+
+:::figure side image=left  blocks=30%,70%
+![Energy loss calculator](/assets/help/energy/el/el_cal.png)
+
+Set True Wind Speed (kts).
+
+---
+
+Read the energy lost for each manoeuvre type (%)
+and the time needed to recover the lost energy.
+
+*Note: These values are identical to those shown on the chart.*
+
+:::
+
+### 4.3 Chart features
 :::figure side width=60% 
 ![Energy loss chart](/assets/help/energy/el/el_curve.png)
 
@@ -179,21 +224,6 @@ Energy loss.
 :::
 
 <!-- anchor:tp_p4_3 -->
-### 4.3 Settings and calculator
-
-:::figure side image=left  blocks=30%,70%
-![Energy loss calculator](/assets/help/energy/el/el_cal.png)
-
-Set True Wind Speed (kts).
-
----
-
-Read the energy lost for each manoeuvre type (%)
-and the time needed to recover the lost energy.
-
-*Note: These values are identical to those shown on the chart.*
-
-:::
 
 ## 5. Energy recovery
 
@@ -207,7 +237,7 @@ How long will it take to restore your energy to 100%?
 This section has two parts:
  - Focus mode
 :::figure rows image=center width=80% blocks=77%,23%
-![Energy loss in focus mode](/assets/help/energy/er/er_all.png)
+![Energy recovery in Focus mode](/assets/help/energy/er/er_all.png)
 
 
 Time needed to recover one energy point.
@@ -231,7 +261,25 @@ Time needed to recover one energy point.
 :::
 
 <!-- anchor:tp_p5_2 -->
-### 5.2 Chart features
+### 5.2 Settings and calculator
+
+:::figure side image=left  blocks=25%,25%,50%
+![Energy recovery calculator](/assets/help/energy/er/er_cal.png)
+
+Set the skipper's current energy (stamina) (%).
+
+---
+
+Set True Wind Speed (kts).
+
+---
+Read the energy to recover (%), the required recovery time
+and the recovery time per energy point.
+
+*Note: These values are identical to those shown on the chart.*
+
+:::
+### 5.3 Chart features
 :::figure side width=60% 
 ![Energy recovery chart](/assets/help/energy/er/er_curve.png)
 
@@ -268,21 +316,4 @@ Time needed per energy point.
 :::
 
 <!-- anchor:tp_p5_3 -->
-### 5.3 Settings and calculator
 
-:::figure side image=left  blocks=25%,25%,50%
-![Energy recovery calculator](/assets/help/energy/er/er_cal.png)
-
-Set the skipper's current energy (stamina) (%).
-
----
-
-Set True Wind Speed (kts).
-
----
-Read the energy to recover (%), the required recovery time
-and the recovery time per energy point.
-
-*Note: These values are identical to those shown on the chart.*
-
-:::

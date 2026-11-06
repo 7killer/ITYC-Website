@@ -1,10 +1,11 @@
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { RangeNumberField } from '../../shared/ui/RangeNumberField'
 import { ChartHelpLink } from '../../shared/ui/ChartHelpLink'
+import { ChartActionIcon } from '../../shared/ui/ChartActionIcon'
 import { getBestSpeed, polarLimit, sailColors } from './engine/polarMath'
 import { loadPolarData } from './engine/polarData'
 import type { PolarCalculationOptions, PolarData, PolarSailId } from './engine/polarTypes'
-import { formatPolarNumber, localizePolarText, polarUnit, type SailId } from './polarModel'
+import { formatPolarNumber, localizePolarText, polarUnit, type ChartLayout, type SailId } from './polarModel'
 import { getSailName } from './sailNames'
 
 type ExpertPolarPanelProps = {
@@ -14,6 +15,7 @@ type ExpertPolarPanelProps = {
   isFocusMode: boolean
   locale: 'fr' | 'en'
   onDisplayChange: (key: 'auto' | 'foils' | 'sails') => void
+  onLayoutChange: (layout: ChartLayout) => void
   onTwaChange: (value: number) => void
   onTwsChange: (value: number) => void
   options: { foil: boolean; hull: boolean }
@@ -383,16 +385,17 @@ const ExpertPolarDiagram = forwardRef<ExpertPolarDiagramHandle, { display: Exper
     return () => { resetZoomRef.current = () => undefined; observer.disconnect(); canvas.removeEventListener('mousedown', onDown); canvas.removeEventListener('mousemove', onMove); canvas.removeEventListener('wheel', onWheel); window.removeEventListener('mouseup', onUp); window.removeEventListener('resize', draw) }
   }, [display, isFocusMode, locale, model, onTwaChange, theme, twa])
 
-  return <canvas aria-label={`${locale === 'fr' ? 'Polaire visuelle' : 'Visual polar'}; True Wind Angle ${formatPolarNumber(twa, 1, locale)}°; True Wind Speed ${formatPolarNumber(model.tws, 1, locale)} ${polarUnit(locale)}`} className="expert-polar-diagram" ref={canvasRef} role="img" />
+  return <canvas aria-label={`${locale === 'fr' ? 'Polaire visuelle' : 'Visual polar'}; True Wind Angle ${formatPolarNumber(twa, 1, locale)}°; True Wind Speed ${formatPolarNumber(model.tws, 2, locale)} ${polarUnit(locale)}`} className="expert-polar-diagram" ref={canvasRef} role="img" />
 })
 
-export function ExpertPolarPanel({ boat, display, embedded = false, isFocusMode, locale, onDisplayChange, onTwaChange, onTwsChange, options, selectedSails, theme, twa, tws }: ExpertPolarPanelProps) {
+export function ExpertPolarPanel({ boat, display, embedded = false, isFocusMode, locale, onDisplayChange, onLayoutChange, onTwaChange, onTwsChange, options, selectedSails, theme, twa, tws }: ExpertPolarPanelProps) {
   const { data: polar, error } = usePolarData(boat)
   const calculationOptions = useMemo<PolarCalculationOptions>(() => ({ foil: options.foil, hull: options.hull, sails: Array.from(selectedSails) }), [options.foil, options.hull, selectedSails])
   const model = useMemo(() => polar ? buildModel(polar, calculationOptions, twa, tws, display.auto) : undefined, [calculationOptions, display.auto, polar, twa, tws])
   const diagramRef = useRef<ExpertPolarDiagramHandle>(null)
   const currentSail = model ? getSailName(model.current.sail, locale) : ''
   const fr = locale === 'fr'
+  const layoutLabel = isFocusMode ? (fr ? 'Revenir à la grille' : 'Back to grid') : (fr ? 'Afficher la polaire en focus' : 'Focus on the polar diagram')
   const unit = polarUnit(locale)
   const number = (value: number, digits = 2) => formatPolarNumber(value, digits, locale)
 
@@ -403,7 +406,8 @@ export function ExpertPolarPanel({ boat, display, embedded = false, isFocusMode,
     <div className="expert-panel-container"><section className="expert-polar-panel" aria-label={fr ? 'Polaire experte' : 'Expert polar'}>
       <div className="expert-diagram-column">
         <div className="expert-diagram-actions chart-actions">
-          <button aria-label={fr ? 'Réinitialiser le zoom de la polaire' : 'Reset polar zoom'} className="icon-button expert-polar-reset" onClick={() => diagramRef.current?.resetZoom()} title={fr ? 'Réinitialiser le zoom' : 'Reset zoom'} type="button">↺</button>
+          <button aria-label={fr ? 'Réinitialiser le zoom de la polaire' : 'Reset polar zoom'} className="icon-button expert-polar-reset" onClick={() => diagramRef.current?.resetZoom()} title={fr ? 'Réinitialiser le zoom' : 'Reset zoom'} type="button"><ChartActionIcon action="reset" /></button>
+          <button aria-label={layoutLabel} className="icon-button expert-polar-layout" onClick={() => onLayoutChange(isFocusMode ? 'grid' : 'focus')} title={layoutLabel} type="button"><ChartActionIcon action={isFocusMode ? 'grid' : 'focus'} /></button>
           <ChartHelpLink embedded={embedded} locale={locale} theme={theme} topic="polar-diagram" />
         </div>
         <div className="expert-diagram-wrap"><ExpertPolarDiagram display={display} isFocusMode={isFocusMode} locale={locale} model={model} onTwaChange={onTwaChange} ref={diagramRef} theme={theme} twa={twa} /></div>
@@ -416,7 +420,7 @@ export function ExpertPolarPanel({ boat, display, embedded = false, isFocusMode,
         </div>
         <div className="expert-conditions">
           <RangeNumberField id="expert-twa" label="True Wind Angle" max={180} min={0} onChange={onTwaChange} unit="°" value={twa} />
-          <RangeNumberField id="expert-tws" label="True Wind Speed" max={40} min={1} onChange={onTwsChange} unit={unit} value={tws} />
+          <RangeNumberField id="expert-tws" label="True Wind Speed" max={40} min={1} onChange={onTwsChange} step={0.01} unit={unit} value={tws} />
         </div>
         <section><h3>{fr ? 'Actuelle' : 'Current'}</h3><dl><dt>TWA</dt><dd>{number(twa, 1)}°</dd><dt>{fr ? 'Vitesse' : 'Speed'}</dt><dd>{number(model.current.speed)} {unit}</dd><dt>VMG</dt><dd>{number(Math.abs(model.current.vmg))} {unit}</dd><dt>{fr ? 'Voile' : 'Sail'}</dt><dd>{currentSail}</dd></dl></section>
         <section><h3>{fr ? 'Vitesse max' : 'Best Speed'}</h3><dl><dt>TWA</dt><dd>{number(model.max.angle, 1)}°</dd><dt>{fr ? 'Vitesse' : 'Speed'}</dt><dd>{number(model.max.speed)} {unit}</dd><dt>{fr ? 'Voile' : 'Sail'}</dt><dd>{getSailName(model.max.sail, locale)}</dd></dl></section>

@@ -1,8 +1,12 @@
 # Automatic sails tutorial
 
+This tutorial explains the controls and how to read the charts.
+[Auto Sails calculations](#aide?article=aide_autoSail) details the sail-change
+threshold, usage ranges and overlap zones.
+
 <!-- anchor:tp_p1 -->
 ## 1. Page overview
-
+### 1.1 Overview
 The game's automatic sail management means we do not have to change sails manually.
 
 Several factors determine when a sail changes:
@@ -26,7 +30,7 @@ ITYC.fr provides this calculator to help you analyse boat polars more easily.
 The data appears once you select a boat.
 
 :::figure rows image=center width=100% blocks=68%,20%,12%
-![Penalties overview](/assets/help/autosail/entete/autosail_entete.png)
+![Auto Sails page overview](/assets/help/autosail/entete/autosail_entete.png)
 
 
 Boat selection.
@@ -55,10 +59,39 @@ ITYC.FR provides two page layouts:
 - Focus mode: one chart per page for better visibility.
 - Grid mode: two charts per page for a more compact layout.
 
+### 1.2 Chart controls
+
+#### 1.2.1 Display mode
+You can switch display modes in two ways:
+
+* Using the selector at the top of the page ![Description](/assets/help/common/focusgrille.png "icon:2.5em")
+* Using the buttons on each chart
+  * Switch from Focus to Grid mode ![Description](/assets/help/common/modeGrilleCurve.png "icon:2.5em")
+  * Switch from Grid to Focus mode ![Description](/assets/help/common/modeFocusCurve.png "icon:2.5em")
+
+
+*When switching modes, the page scrolls automatically to keep the current chart in view.*
+
+#### 1.2.2 Reset zoom
+
+You can reset a chart's zoom at any time by pressing the button ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
+
+#### 1.2.3 Help shortcut
+
+Open the help for the current chart at any time by clicking the ![Chart help](/assets/help/common/aide.png "icon:2.5em") button.
+
+#### 1.2.4 Precision
+
+For every chart with TWS on the X axis, you can choose a calculation step of 0.1 or 0.01.
+* Click the ![0.1 precision button](/assets/help/common/precision10.png "icon:2.5em") to switch the calculation step to 0.01.
+* Click the ![0.01 precision button](/assets/help/common/precision100.png "icon:2.5em") to switch the calculation step to 0.1.
+
+*A calculation step of 0.01 takes longer to compute.*
+
 <!-- anchor:tp_p1_1 -->
-### 1.1 Focus mode
+### 1.3 Focus mode
 :::figure side image=left width=75%
-![Polar overview in Focus mode](/assets/help/autosail/autosail_all.png)
+![Auto Sails overview in Focus mode](/assets/help/autosail/autosail_all.png)
 
 Active sail as a function of wind speed (TWS) at a fixed wind angle (TWA).
 
@@ -78,10 +111,10 @@ Overlap zone between sails as a function of wind speed (TWS) and wind angle (TWA
 :::
 
 <!-- anchor:tp_p1_1_2 -->
-### 1.2 Grid mode
+### 1.4 Grid mode
 
 :::figure side image=left width=64% 
-![Polar overview in Grid mode](/assets/help/autosail/autosail_all_g.png)
+![Auto Sails overview in Grid mode](/assets/help/autosail/autosail_all_g.png)
 
 
 Active sail as a function of wind speed (TWS) at a fixed wind angle (TWA).
@@ -180,8 +213,8 @@ In this section, you can enable or disable each sail independently.
 For ease of use, the abbreviation of each sail's English name is shown in parentheses.
 :::
 
-## 6. Active sail - fixed TWA
-### 6.1 Overview
+## 4. Active sail - fixed TWA
+### 4.1 Overview
 Does my router suggest changing sails for one hour? Is switching temporarily to an intermediate sail worthwhile?
 
 Can the overlap coefficient cover these cases and avoid the sail change and its associated penalties?
@@ -191,7 +224,7 @@ ITYC.fr provides this tool to help you answer these questions in just a few clic
 This section has two parts:
 
 :::figure rows image=center width=80% blocks=80%,20%
-![Energy loss in Focus mode](/assets/help/autosail/curve/autosail_twa_all.png)
+![Active sail at fixed TWA in Focus mode](/assets/help/autosail/curve/autosail_twa_all.png)
 
 
 Boat speed over the TWS range at the specified TWA.
@@ -203,7 +236,7 @@ Chart settings and calculator.
 :::
  - Grid mode
 :::figure side image=left width=60% blocks=20%,80%
-![Energy loss in Grid mode](/assets/help/autosail/curve/autosail_twa_all_g.png)
+![Active sail at fixed TWA in Grid mode](/assets/help/autosail/curve/autosail_twa_all_g.png)
 
 
 Chart settings and calculator.
@@ -214,9 +247,9 @@ Boat speed over the TWS range at the specified TWA.
 
 :::
 
-### 6.2 Settings
+### 4.2 Settings
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
-![Energy loss calculator](/assets/help/autosail/curve/autosail_twa_set.png)
+![Active sail at fixed TWA settings](/assets/help/autosail/curve/autosail_twa_set.png)
 
 Select the active sail.
 
@@ -235,17 +268,17 @@ Read the TWS range for the selected sail at the chosen TWA.
 
 :::
 
-### 6.3 Chart features
+### 4.3 Chart features
 :::figure side width=60% 
-![Energy loss chart](/assets/help/autosail/curve/autosail_twa_curve.png)
+![Active sail at fixed TWA chart](/assets/help/autosail/curve/autosail_twa_curve.png)
 
 The charts show boat speed in knots as a function of wind speed at the specified TWA.
 
-The "Theo" curve shows boat speed with the manually selected sail, without applying the overlap coefficient.
+The "Theoretical" curve shows the best boat speed among the equipped sails, without applying the overlap coefficient.
 
-The "Auto" curve shows boat speed with the automatically selected sail, applying the overlap coefficient.
+The "Auto" curve shows the same best boat speed. Its colour indicates whether the selected sail can be retained through overlap or the best sail is needed. Read the selected sail's speed on the "Manual" curve.
 
-The Manu curve shows boat speed with the selected sail.
+The "Manual" curve shows boat speed with the selected sail.
 
 ---
 
@@ -293,7 +326,7 @@ Finally, from point 3, the sail change takes place and the heavy spinnaker is se
 Hover over the curve to display a tooltip like this:
 
 :::figure side width=40% blocks=25%,75%
-![Energy loss tooltip](/assets/help/autosail/curve/autosail_twa_tooltip.png)
+![Active sail at fixed TWA tooltip](/assets/help/autosail/curve/autosail_twa_tooltip.png)
 
 Wind speed (knots).
 
@@ -304,8 +337,8 @@ Boat speed (knots), sail and, where applicable, the gain from overlap compared w
 :::
 
 
-## 7. Active sail - fixed TWS
-### 7.1 Overview
+## 5. Active sail - fixed TWS
+### 5.1 Overview
 Does my router suggest changing sails for one hour? Is switching temporarily to an intermediate sail worthwhile?
 
 Can the overlap coefficient cover these cases and avoid the sail change and its associated penalties?
@@ -315,7 +348,7 @@ ITYC.fr provides this tool to help you answer these questions in just a few clic
 This section has two parts:
 
 :::figure rows image=center width=80% blocks=80%,20%
-![Energy loss in Focus mode](/assets/help/autosail/curve/autosail_tws_all.png)
+![Active sail at fixed TWS in Focus mode](/assets/help/autosail/curve/autosail_tws_all.png)
 
 
 Boat speed over the TWA range at the specified TWS.
@@ -327,7 +360,7 @@ Chart settings and calculator.
 :::
  - Grid mode
 :::figure side image=left width=60% blocks=20%,80%
-![Energy loss in Grid mode](/assets/help/autosail/curve/autosail_tws_all_g.png)
+![Active sail at fixed TWS in Grid mode](/assets/help/autosail/curve/autosail_tws_all_g.png)
 
 
 Chart settings and calculator.
@@ -338,9 +371,9 @@ Boat speed over the TWA range at the specified TWS.
 
 :::
 
-### 7.2 Settings
+### 5.2 Settings
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
-![Energy loss calculator](/assets/help/autosail/curve/autosail_tws_set.png)
+![Active sail at fixed TWS settings](/assets/help/autosail/curve/autosail_tws_set.png)
 
 Select the active sail.
 
@@ -359,17 +392,17 @@ Read the TWA range for the selected sail at the chosen TWS.
 
 :::
 
-### 7.3 Chart features
+### 5.3 Chart features
 :::figure side width=60% 
-![Energy loss chart](/assets/help/autosail/curve/autosail_tws_curve.png)
+![Active sail at fixed TWS chart](/assets/help/autosail/curve/autosail_tws_curve.png)
 
 The charts show boat speed in knots as a function of TWA at the specified wind speed.
 
-The "Theo" curve shows boat speed with the manually selected sail, without applying the overlap coefficient.
+The "Theoretical" curve shows the best boat speed among the equipped sails, without applying the overlap coefficient.
 
-The "Auto" curve shows boat speed with the automatically selected sail, applying the overlap coefficient.
+The "Auto" curve shows the same best boat speed. Its colour indicates whether the selected sail can be retained through overlap or the best sail is needed. Read the selected sail's speed on the "Manual" curve.
 
-The Manu curve shows boat speed with the selected sail.
+The "Manual" curve shows boat speed with the selected sail.
 
 ---
 
@@ -416,7 +449,7 @@ Finally, from point 3, the sail change takes place and the heavy spinnaker is se
 Hover over the curve to display a tooltip like this:
 
 :::figure side width=40% blocks=25%,75%
-![Energy loss tooltip](/assets/help/autosail/curve/autosail_tws_tooltip.png)
+![Active sail at fixed TWS tooltip](/assets/help/autosail/curve/autosail_tws_tooltip.png)
 
 Wind speed (knots).
 
@@ -427,8 +460,8 @@ Boat speed (knots), sail and, where applicable, the gain from overlap compared w
 :::
 
 
-## 8. Sail usage range
-### 8.1 Overview
+## 6. Sail usage range
+### 6.1 Overview
 Want to view a sail's usage zone as a function of wind speed (TWS) and wind angle (TWA)?
 
 ITYC.fr provides this tool!
@@ -436,7 +469,7 @@ ITYC.fr provides this tool!
 This section has two parts:
 
 :::figure rows image=center width=80% blocks=80%,20%
-![Energy loss in Focus mode](/assets/help/autosail/curve/autosail_zu_all.png)
+![Sail usage range in Focus mode](/assets/help/autosail/curve/autosail_zu_all.png)
 
 
 Upper and lower wind angle (TWA) limits for a given sail.
@@ -448,7 +481,7 @@ Chart settings and calculator.
 :::
  - Grid mode
 :::figure side image=left width=60% blocks=20%,80%
-![Energy loss in Grid mode](/assets/help/autosail/curve/autosail_zu_all_g.png)
+![Sail usage range in Grid mode](/assets/help/autosail/curve/autosail_zu_all_g.png)
 
 
 Chart settings and calculator.
@@ -459,17 +492,17 @@ Upper and lower wind angle (TWA) limits for a given sail.
 
 :::
 
-### 8.2 Settings
+### 6.2 Settings
 :::figure side image=left  width=30% 
-![Energy loss calculator](/assets/help/autosail/curve/autosail_zu_set.png)
+![Sail usage range settings](/assets/help/autosail/curve/autosail_zu_set.png)
 
 Select the active sail.
 
 :::
 
-### 8.3 Chart features
+### 6.3 Chart features
 :::figure side width=60% 
-![Energy loss chart](/assets/help/autosail/curve/autosail_zu_curve.png)
+![Sail usage range chart](/assets/help/autosail/curve/autosail_zu_curve.png)
 
 The charts show the minimum and maximum wind angle (TWA) limits in degrees as a function of wind speed in knots for a given sail.
 
@@ -502,7 +535,7 @@ Use the 'reset zoom' button to reset the view.
 Hover over the curve to display a tooltip like this:
 
 :::figure side width=40% blocks=25%,75%
-![Energy loss tooltip](/assets/help/autosail/curve/autosail_zu_tooltip.png)
+![Sail usage range tooltip](/assets/help/autosail/curve/autosail_zu_tooltip.png)
 
 
 Wind speed (knots).
@@ -517,8 +550,8 @@ Minimum wind angle (°), boat speed (kts).
 
 :::
 
-## 8. Overlap zone between sails
-### 8.1 Overview
+## 7. Overlap zone between sails
+### 7.1 Overview
 Want to view the overlap zone between two sails as a function of wind speed (TWS) and wind angle (TWA)?
 
 ITYC.fr provides this tool!
@@ -526,7 +559,7 @@ ITYC.fr provides this tool!
 This section has two parts:
 
 :::figure rows image=center width=80% blocks=80%,20%
-![Energy loss in Focus mode](/assets/help/autosail/curve/autosail_zr_all.png)
+![Sail overlap zone in Focus mode](/assets/help/autosail/curve/autosail_zr_all.png)
 
 
 Upper and lower wind angle (TWA) limits of the overlap between the two sails.
@@ -538,7 +571,7 @@ Chart settings and calculator.
 :::
  - Grid mode
 :::figure side image=left width=60% blocks=20%,80%
-![Energy loss in Grid mode](/assets/help/autosail/curve/autosail_zr_all_g_b.png)
+![Sail overlap zone in Grid mode](/assets/help/autosail/curve/autosail_zr_all_g_b.png)
 
 
 Chart settings and calculator.
@@ -549,9 +582,9 @@ Upper and lower wind angle (TWA) limits of the overlap between the two sails.
 
 :::
 
-### 8.2 Settings
+### 7.2 Settings
 :::figure side image=left  width=30% 
-![Energy loss calculator](/assets/help/autosail/curve/autosail_zr_set.png)
+![Sail overlap zone settings](/assets/help/autosail/curve/autosail_zr_set.png)
 
 Select the first sail.
 
@@ -559,14 +592,11 @@ Select the first sail.
 
 Select the second sail.
 
----
-
-Select the search precision on the TWS and TWA axes.
 :::
 
-### 8.3 Chart features
+### 7.3 Chart features
 :::figure side width=60% 
-![Energy loss chart](/assets/help/autosail/curve/autosail_zr_curve.png)
+![Sail overlap zone chart](/assets/help/autosail/curve/autosail_zr_curve.png)
 
 The curves outline a wind angle (TWA) zone as a function of wind speed for a given sail.
 
@@ -599,7 +629,7 @@ Use the 'reset zoom' button to reset the view.
 Hover over the curve to display a tooltip like this:
 
 :::figure side width=40% blocks=25%,75%
-![Energy loss tooltip](/assets/help/autosail/curve/autosail_zr_tooltip.png)
+![Sail overlap zone tooltip](/assets/help/autosail/curve/autosail_zr_tooltip.png)
 
 
 Wind speed (knots).

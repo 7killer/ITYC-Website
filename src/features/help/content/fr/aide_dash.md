@@ -16,24 +16,29 @@ L'extension ITYC est compatible avec les navigateurs Chrome, Edge et Opera. Elle
 L'extension ITYC ne fonctionne que sur la page du jeu virtual regatta offshore ( toutes langues supportées) et leur iframe associée!
 
 <!-- anchor:tp_p2 -->
-## 2. Installation Chrome / Opera
+## 2. Installation Chrome / Opera / Edge
 
+Vous pouvez installer extension de 2 manières :
+* De préférence depuis la page officielle sur le webstore en suivant ce lien [Extension webstore](https://chromewebstore.google.com/detail/vr-dashboard-ityc/mhgineegmgpjljjpmocmnlaonmegjkdg?hl=fr)
+**car vous aurez toutes les mises à jour automatiquement.**
+* Ou manuellement en suivant la procedure ci dessous.
 <!-- anchor:ChromeInstallTab1 -->
-### 1. Préparation
+### 2.1 Installation manuelle Chrome / Opera
+#### 2.1.1 Préparation
 
 Télécharger les sources en cliquant ici :
 
-[Télécharger](https://ityc.fr/ITYC_Dash.zip)
+[Télécharger ityc dasboard](https://ityc.fr/ITYC_Dash.zip)
 
 Il faut ensuite ensuite extraire les fichiers de l archive à l'emplacement de votre choix sur votre pc (pensez à le mémoriser).
 
 Pour se faire, vous pouvez utiliser une des méthodes décrites [ici](https://www.ionos.fr/digitalguide/serveur/configuration/ouvrir-un-fichier-zip/) , par exemple.
 
 <!-- anchor:ChromeInstallTab2 -->
-### 2.Menu Extension
+#### 2.1.2 Menu Extension
 
 :::figure side half
-![2.Menu Extension](/assets/help/original/dash/installChromeMenu.png)
+![2.Menu Extension](/assets/help/dashboard/install/installChromeMenu.png)
 
 Pour accéder au menu extension de chrome, cliquez en haut à droite sur les ...
 
@@ -41,16 +46,16 @@ puis cliquez sur "paramètres"
 :::
 
 :::figure side half
-![2.Menu Extension](/assets/help/original/dash/installChromeParametre.png)
+![2.Menu Extension](/assets/help/dashboard/install/installChromeParametre.png)
 
 Puis cliquez sur extension dans la colonne de gauche
 :::
 
 <!-- anchor:ChromeInstallTab3 -->
-### 3.Mode Développeur
+#### 2.1.3 Mode Développeur
 
 :::figure side half
-![3.Mode Développeur](/assets/help/original/dash/installChromeExtension1.png)
+![3.Mode Développeur](/assets/help/dashboard/install/installChromeExtension1.png)
 
 Activer ensuite le mode développeur en activant le bouton
 
@@ -58,10 +63,10 @@ en haut à droite
 :::
 
 <!-- anchor:ChromeInstallTab4 -->
-### 4. Chargement
+#### 2.1.4 Chargement
 
 :::figure side half
-![4. Chargement](/assets/help/original/dash/installChromeExtension2.png)
+![4. Chargement](/assets/help/dashboard/install/installChromeExtension2.png)
 
 Cliquez sur "Charger l'extension non empaquetée"
 
@@ -69,46 +74,23 @@ Puis sélectionnez l'emplacement où vous avez extrait les fichiers lors de la p
 :::
 
 :::figure side half
-![4. Chargement](/assets/help/original/dash/installChromeSelect.png)
+![4. Chargement](/assets/help/dashboard/install/installChromeSelect.png)
 
 Veillez à bien sélectionner le répertoire contenant les fichiers et sous-répertoire et non le répertoire parent !
 :::
 
 :::figure side half
-![4. Chargement](/assets/help/original/dash/installChromeOk.png)
+![4. Chargement](/assets/help/dashboard/install/installChromeOk.png)
 
 Bravo , l'extension ITYC Dashboard est dorénavant installée dans votre navigateur.
 :::
 
-<!-- anchor:ChromeInstallTab5 -->
-### 5. Ajout icone accès rapide
-
-:::figure side half
-![5. Ajout icone accès rapide](/assets/help/original/dash/installChromeprop.png)
-
-Pour faciliter le démarrage de votre extension,vous pouvez l'épingler !
-
-Pour se faire, cliquez sur le puzzle en haut à droite de votre navigateur
-:::
-
-Puis cliquez sur la punaise, l'icône de l extension ITYC Dashboard sera dorénavant toujours présent dans votre navigateur.
-
-:::figure below
-![5. Ajout icone accès rapide](/assets/help/original/dash/installChromeprop2.png)
-:::
-
-<!-- anchor:ChromeInstallTab6 -->
-### 6.Redémarage Navigateur
-
-Après installation, il est obligatoire de redémarrer complètement votre navigateur !
-
-En effet, c'est nécessaire pour finaliser l'installation des scripts permettant de se passer du système de debuggage et le manifest V3.
 
 <!-- anchor:tp_p3 -->
-## 3. Installation Edge
+### 2.2 Installation Edge
 
 <!-- anchor:EdgeInstallTab1 -->
-### 1. Préparation
+#### 2.2.1 Préparation
 
 Télécharger les sources en cliquant ici :
 
@@ -119,10 +101,10 @@ Il faut ensuite ensuite extraire les fichiers de l archive a l'emplacement de vo
 Pour se faire, vous pouvez utiliser une des méthodes décrites [ici](https://www.ionos.fr/digitalguide/serveur/configuration/ouvrir-un-fichier-zip/) , par exemple.
 
 <!-- anchor:EdgeInstallTab2 -->
-### 2.Menu Extension
+#### 2.2.2 Menu Extension
 
 :::figure side half
-![2.Menu Extension](/assets/help/original/dash/installEdgeMenu.png)
+![2.Menu Extension](/assets/help/dashboard/install/installEdgeMenu.png)
 
 Pour accéder au menu extension de Edge, cliquez en haut à droite sur les ...
 
@@ -130,7 +112,7 @@ puis cliquez sur "extensions"
 :::
 
 :::figure side half
-![2.Menu Extension](/assets/help/original/dash/installEdgeParametre.png)
+![2.Menu Extension](/assets/help/dashboard/install/installEdgeParametre.png)
 
 Le popup suivant apparaît :
 
@@ -140,10 +122,10 @@ Cliquez ensuite sur "Gérez les extensions"
 :::
 
 <!-- anchor:EdgeInstallTab3 -->
-### 3.Mode Développeur
+#### 2.2.3 Mode Développeur
 
 :::figure side half
-![3.Mode Développeur](/assets/help/original/dash/installEdgeExtension1.png)
+![3.Mode Développeur](/assets/help/dashboard/install/installEdgeExtension1.png)
 
 Activer ensuite le mode développeur en activant le bouton "Mode développeur"
 
@@ -151,10 +133,10 @@ en bas dans la colonne de gauche
 :::
 
 <!-- anchor:EdgeInstallTab4 -->
-### 4. Chargement
+#### 2.2.4 Chargement
 
 :::figure side half
-![4. Chargement](/assets/help/original/dash/installEdgeExtension2.png)
+![4. Chargement](/assets/help/dashboard/install/installEdgeExtension2.png)
 
 Cliquez sur "Charger l'extension non empaquetée"
 
@@ -162,22 +144,41 @@ Puis sélectionnez l'emplacement où vous avez extrait les fichiers lors de la p
 :::
 
 :::figure side half
-![4. Chargement](/assets/help/original/dash/installEdgeSelect.png)
+![4. Chargement](/assets/help/dashboard/install/installEdgeSelect.png)
 
 Veillez à bien sélectionner le repertoire contenant les fichiers et les sous répertoires et non le répertoire parent !
 :::
 
 :::figure side half
-![4. Chargement](/assets/help/original/dash/installEdgeOk.png)
+![4. Chargement](/assets/help/dashboard/install/installEdgeOk.png)
 
 Bravo , l'extension ITYC Dashboard est dorénavant installée dans votre navigateur.
 :::
 
-<!-- anchor:EdgeInstallTab5 -->
-### 5. Ajout icone accès rapide
+
+### 2.3 Ajout icone accès rapide
+<!-- anchor:ChromeInstallTab5 -->
+#### 2.3.1 Chrome / Opera
 
 :::figure side half
-![5. Ajout icone accès rapide](/assets/help/original/dash/installEdgeprop.png)
+![5. Ajout icone accès rapide](/assets/help/dashboard/install/installChromeprop.png)
+
+Pour faciliter le démarrage de votre extension,vous pouvez l'épingler !
+
+Pour se faire, cliquez sur le puzzle en haut à droite de votre navigateur
+:::
+
+Puis cliquez sur la punaise, l'icône de l extension ITYC Dashboard sera dorénavant toujours présent dans votre navigateur.
+
+:::figure below
+![5. Ajout icone accès rapide](/assets/help/dashboard/install/installChromeprop2.png)
+:::
+
+<!-- anchor:EdgeInstallTab5 -->
+#### 2.3.2 Edge
+
+:::figure side half
+![5. Ajout icone accès rapide](/assets/help/dashboard/install/installEdgeprop.png)
 
 Pour faciliter le démarrage de votre extension, vous pouvez l'épingler !
 
@@ -185,29 +186,36 @@ Pour se faire, cliquez sur le puzzle en haut à droite de votre navigateur
 :::
 
 :::figure side half
-![5. Ajout icone accès rapide](/assets/help/original/dash/installEdgeprop2.png)
+![5. Ajout icone accès rapide](/assets/help/dashboard/install/installEdgeprop2.png)
 
 Puis cliquez sur la punaise, l'icône de l'extension ITYC Dashboard sera dorénavant toujours présent dans votre navigateur.
 :::
 
-<!-- anchor:EdgeInstallTab6 -->
-### 6.Redémarage Navigateur
+
+<!-- anchor:tp_p4 -->
+
+<!-- anchor:ChromeInstallTab6 -->
+### 2.4 Redémarrage Navigateur
 
 Après installation, il est obligatoire de redémarrer complètement votre navigateur !
 
-en effet, c'est nécessaire pour finaliser l'installation des scripts permettant de se passer du système de debuggage et le manifest V3.
+En effet, c'est nécessaire pour finaliser l'installation des scripts permettant de se passer du système de debuggage et le manifest V3.
 
-<!-- anchor:tp_p4 -->
-## 4. Démarrage
+
+## 3. Démarrage
 
 :::figure side half
-![4. Démarrage](/assets/help/original/dash/InstallFirstStart.png)
+![4. Démarrage](/assets/help/dashboard/start/dashGameLoading.png)
 
-Après avoir installé l extension ITYC, rendez sur la page du jeu Virtual Regatta Offshore (ou son iframe)
+Après avoir installé l extension ITYC et avoir rédémarrez, rendez sur la page du jeu Virtual Regatta Offshore (ou son iframe)
+
+---
+
+Une barre supplémentaire apparait en dessous, vous indiquant le pourcentage d avancement du téléchargement du fichier executable du jeu ainsi que son fichier de chargement (Loader) ainsi que l'initialisation du jeu.
 :::
 
 :::figure side half
-![4. Démarrage](/assets/help/original/dash/StartFirstDashNoCopng.png)
+![4. Démarrage](/assets/help/dashboard/start/StartFirstDashNoCopng.png)
 
 A la fin du chargement complet de la page,
 
@@ -215,7 +223,7 @@ Le tableau dashboard intégré à la page du jeu devrait vous indiquer "Pas de d
 :::
 
 :::figure side half
-![4. Démarrage](/assets/help/original/dash/startDash.png)
+![4. Démarrage](/assets/help/dashboard/start/startDash.png)
 
 A n'importe quel moment durant le chargement de la page ou depuis l'écran d accueil du jeu ou dans une course .
 
@@ -223,189 +231,215 @@ Lancez l'extension ITYC dashboard en cliquant sur son icône ou en cliquant sur 
 :::
 
 :::figure side half
-![4. Démarrage](/assets/help/original/dash/dashNoPlayerDetected.png)
+![4. Démarrage](/assets/help/dashboard/start/dashNoPlayerDetected.png)
 
 L'onglet ITYC Dashboard s'ouvre.
 :::
 
 :::figure side half
-![4. Démarrage](/assets/help/original/dash/StartDashNoPlyerDetected.png)
+![4. Démarrage](/assets/help/dashboard/start/StartFirstDashCo.png)
 
 Et l'intégration sur l'onglet du jeu indique "Pas de course chargée" si le joueur a déjà été détecté (facultatif).
 :::
 
 :::figure side half
-![4. Démarrage](/assets/help/original/dash/startRaceDetect.png)
+![4. Démarrage](/assets/help/dashboard/start/startRaceDetect.png)
 
 Depuis l'écran d accueil du jeu, rentrez dans une course'.
 
-Si vous êtes déjà dans une course, changez de course ou repassez par l accueil'.
+Si vous êtes déjà dans une course, changez de course ou repassez par l accueil.
 
-L'intégration sur la page du jeu vous indiquera les paramètres de votre bateau'.
+L'intégration sur la page du jeu vous indiquera les paramètres de votre bateau.
 :::
 
 :::figure side half
-![4. Démarrage](/assets/help/original/dash/fleet_full.png)
+![4. Démarrage](/assets/help/dashboard/fleet/fleet_full.png)
 
 L'onglet ITYC Dashboard est maintenant actif!
 :::
 
 <!-- anchor:tp_p5 -->
-## 5. Intégration page du jeu
+## 4. Intégration page du jeu
 
 <!-- anchor:ingratedGameTab1 -->
-### 1. Présentation
+### 4.1. Présentation
 
-:::figure below
-![1. Présentation](/assets/help/original/dash/dahGame1.png)
-
+:::figure rows image=center width=80% blocks=10%,67%,23%
+![1. Présentation](/assets/help/dashboard/ingame/dahGame1.png)
 Raccourcis.
 
 ---
 
-Paramètres bateau.
-
----
-
-Paramètres calculés.
+Paramètres bateau et Paramètres calculés.
 
 ---
 
 Pénalités.
+
 :::
 
+
 <!-- anchor:ingratedGameTab2 -->
-### 2. Raccourcis
+### 4.2 Raccourcis
 
-:::figure side half
-![2. Raccourcis](/assets/help/original/dash/dahGame2.png)
+:::figure side half width=20%
+![2. Raccourcis](/assets/help/dashboard/ingame/dahGame2.png)
 
-RT : Ouvre un onglet de routage zezo avec vos coordonnées et vos options pré remplies.
-
-Le reste des options zezo seront celles que vous avez utilisé sur la page zezo pour la course concernée.
+RT : Ouvre un onglet de routage avec vos coordonnées et vos options pré remplies.
+Affiche les routeurs actifs pour la course, permet de lancer :
+* Zezo
+* Sermar
+* VrZen
+* Naya
 
 ---
 
-PL : Ouvre un onglet de toxxct avec la course pré-sélectionnée.
+PL : Ouvre un onglet de outils avec la course pré-sélectionnée , options pré remplies et paramètres de TWS et TWA.
 
----
-
-ITYC : Ouvre un onglet de voile auto d ITYC avec les paramétres pré-remplies.
+* Toxxct ( Lsv ou inc suivant sélection dans onglet Config)
+* ITYC : Ouvre un onglet de voile auto d ITYC avec les paramètres pré-remplies.
 :::
 
 <!-- anchor:ingratedGameTab3 -->
-### 3.Mesures
+### 4.3 Paramètres de navigation
 
-:::figure below
-![3.Mesures](/assets/help/original/dash/dahGame3.png)
-
-- Time : Heure de la dernière itération serveur reçue.
-
-  UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
-
-- TWD : True Wind Direction (°).
-
-  Direction du vent à l'emplacement du bateau vue du serveur.
-
-- TWS : True Wind Speed (nds).
-
-  Vitesse du vent à l'emplacement du bateau vue du serveur.
-
-- TWA : True Wind Angle (°).
-
-  Couleur verte si le bateau est tribord, rouge bâbord.
-
-  Gras si le mode TWA fixe.
-
-- HDG : Heading , cap du bateau.
-
-  Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
-
-  Couleur Blue/Fuschia si le mode TWA fixe est activée.
-
-- Speed : Vitesse du bateau.
-
-  Couleur Verte Le bateau avance.
-
-  Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!.
-
-- ASail : Voile actuelle ( temps restant voile automatique).
-
-  Couleur Verte : Vous avez la voile optimale.
-
-  Couleur rouge : Vous n utilisez pas la meilleure voile!.
-
-  Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
-
-- VMG : Velocity Made Good (nds).
-
-  Vitesse de gain au vent.
-
-  Couleur rouge : Vous êtes échoués ou vous n'êtes pas parti!.
+:::figure below width=50%
+![3.Mesures](/assets/help/dashboard/ingame/dahGame3.png)
 :::
+:::figure rows width=100%
 
-<!-- anchor:ingratedGameTab4 -->
-### 4. Calculs
+* Time : Heure de la dernière itération serveur reçue.
 
-:::figure below
-![4. Calculs](/assets/help/original/dash/dahGame4.png)
+  * UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
+  * Compteur de secondes depuis la réception de la dernière itération.
 
-- Best VMG : Meilleure VMG (°).
+* TWD : True Wind Direction (°).
 
-  Best VMG Up / Best VMG Down.
+  *Direction du vent à l'emplacement du bateau vue du serveur.
 
-  Vitesse du bateau selon configuration utilisateur (cf Onglet Configuration).
+* TWS : True Wind Speed (nds).
 
-- Best Speed : Meilleure Vitesse du bateau .
+  * Vitesse du vent à l'emplacement du bateau vue du serveur.
 
-  Vitesse maximale du bateau (nds) avec la TWA (°) nécessaire.
+* TWA : True Wind Angle (°).
 
-- Stamina : Energie (%) (Coefficient multiplicateur de pénalités).
+  * Couleur verte si le bateau est tribord, rouge bâbord.
 
-  Energie du skipper suivi du coefficient appliqué au temps de pénalité théorique.
+  * Gras si le mode TWA fixe.
 
-- Factor : Facteur de vitesse (pourcentage par rapport à 1).
+* HDG : Heading , cap du bateau.
+
+  * Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
+
+  * Couleur Blue/Fuschia si le mode TWA fixe est activée.
+
+* Speed : Vitesse du bateau.
+
+  * Couleur Verte Le bateau avance.
+
+  * Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!.
+---
+  * Facteur de vitesse (pourcentage par rapport à 1).
 
   Coefficient multiplicateur de vitesse de votre bateau par rapport à la vitesse théorique de la voile.
 
-  Peut être supérieur à 1 en cas de recouvrement de voile ou d'usage du polish.
+  * Peut être supérieur à 1 en cas de recouvrement de voile ou d'usage du polish.
 
-  Peut être inférieur à 1 en cas de manoeuvre.
+  * Peut être inférieur à 1 en cas de manoeuvre.
 
-- Foils : Pourcentage d'utilisation des foils.
+  * Coefficient d'utilisation des foils ( si installé).
 
-  Présent si le bateau en est équipé.
+* ASail : Voile actuelle .
+ 
+  * Plage de vitesse de vent (TWS) pour la voile active.
 
-- Position : Latitude / Longitude du bateau vu du serveur.
+  * Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
+  ( temps restant voile automatique)
+
+  * Plage d angle au vent (TWA) pour la voile active.
+  
+  * Couleur Verte : Vous avez la voile optimale.
+
+  * Couleur rouge : Vous n utilisez pas la meilleure voile!.
+
+  
+* VMG : Velocity Made Good (nds).
+
+  * Vitesse de gain au vent.
+
+  * Couleur rouge : Vous êtes échoués ou vous n'êtes pas parti!.
+:::
+
+<!-- anchor:ingratedGameTab4 -->
+### 4.4 Indicateurs
+
+:::figure below width=50%
+![4. Calculs](/assets/help/dashboard/ingame/dahGame4.png)
+:::
+:::figure rows width=100%
+* Best VMG : Meilleure VMG (°).
+
+  * Best VMG Up / Best VMG Down.
+
+  * Vitesse du bateau selon configuration utilisateur (cf Onglet Configuration).
+
+* Best Speed : Meilleure Vitesse du bateau .
+
+  * Vitesse maximale du bateau (nds) avec la TWA (°) nécessaire.
+---
+* Stamina : Energie (%) (Coefficient multiplicateur de pénalités).
+
+  * Energie du skipper suivi du coefficient appliqué au temps de pénalité théorique.
+  
+* Position : Latitude / Longitude du bateau vu du serveur.
 :::
 
 <!-- anchor:ingratedGameTab5 -->
-### 5. Pénalités
+### 4.5 Pénalités
 
-:::figure below
-![5. Pénalités](/assets/help/original/dash/dahGame5.png)
+:::figure rows image=center width=100%
+![5. Pénalités](/assets/help/dashboard/ingame/dahGame5.png)
+![5. Pénalités](/assets/help/dashboard/ingame/dahGame5_p.png)
+:::
+:::figure rows width=100%
+Pas de manoeuvre en cours
+* Voile.
 
-- Voile.
+  * Distance perdue en cas de changement de voile à la vitesse actuelle.
+  * Temps de pénalités en cas de changement de voile à la vitesse actuelle.
 
-  Temps restant (s) de pénalités de changement en cours.
+* Empannage.
 
-- Empannage.
+  * Distance perdue en cas d'empannage à la vitesse actuelle.
+  * Temps de pénalités en cas d'empannage à la vitesse actuelle.
 
-  Temps restant (s) de pénalités d'empannage en cours.
+* Virement.
 
-- Virement.
+  * Distance perdue en cas de virement à la vitesse actuelle.
+  * Temps de pénalités en cas de virement à la vitesse actuelle.
+---
+Si manoeuvre en cours, le temps de pénalités restant s affichent sous la manoeuvre correspondante.
+* Voile.
 
-  Temps restant (s) de pénalités de virement en cours.
+  * Temps restant (s) de pénalités de changement en cours.
+
+* Empannage.
+
+  * Temps restant (s) de pénalités d'empannage en cours.
+
+* Virement.
+
+  * Temps restant (s) de pénalités de virement en cours.
 :::
 
 <!-- anchor:tp_p6 -->
-## 6. Onglet ITYC Dashboard
+## 5. Onglet ITYC Dashboard
 
 <!-- anchor:tabDashTab1 -->
-### 1. Présentation
+### 5.1 Présentation
 
-:::figure side wide
-![1. Présentation](/assets/help/original/dash/dashNoPlayerDetected.png)
+:::figure side wide blocks=8%,8%,8%,76%
+![1. Présentation](/assets/help/dashboard/start/dashNoPlayerDetected.png)
 
 Entête.
 
@@ -423,12 +457,11 @@ Zone affichage principale.
 :::
 
 <!-- anchor:tabDashTab2 -->
-### 2. Entête
+### 5.2 Entête
+:::figure rows image=center width=80% blocks=40%,25%,35%
+![2. Entête](/assets/help/dashboard/entete/entete1.png)
 
-:::figure below
-![2. Entête](/assets/help/original/dash/entete1.png)
-
-Nom du bateau et VIP status.
+Nom du bateau , VIP status et credits.
 
 ---
 
@@ -439,514 +472,594 @@ Team du bateau.
 Sélection Course.
 
 La course active dans le jeu est pré-sélectionnée automatiquement.
+
+Le bouton go ouvre un nouvelle onglet du routeur sélectionné avec les infos courses.
 :::
 
-:::figure below
-![2. Entête](/assets/help/original/dash/entete2.png)
+:::figure rows image=center width=80% blocks=25%,28%,25%,22%
+![2. Entête](/assets/help/dashboard/entete/entete2.png)
 
-Ouverture automatique du routeur Zezo pré renseigné.
+Ouverture automatique du routeur pré renseigné.
 
 ---
 
 Sortie NMEA (port sélectionnable), utile pour interfacer avec le jeu avec QTVLM et Avalon par exemple.
 
-Vous devrez ré affciher l'onglet dashboard après un changement de course pour activer l'envoi des trames NMEA.
+Vous devrez ré afficher l'onglet dashboard après un changement de course pour activer l'envoi des trames NMEA.
 
 ---
 
-Sélection du thème fond clair et foncé.
+Sélection du thème et langue.
 
 ---
 
-Lien vers cette page.
+Lien vers cette page et Version Extension.
 
----
-
-Version Extension.
 :::
 
 <!-- anchor:tabDashTab3 -->
-### 3.Race Status
-
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus1.png)
-
-- RT : Ouvre un onglet de routage zezo avec vos coordonnées et vos options pré remplies.
-
-  Le reste des options zezo seront celles que vous avez utilisé sur la page zezo pour la course concernée.
-
-- PL : Ouvre un onglet de toxxct avec la course pré-sélectionnée.
-
-- WI : Ouvre un onglet de Windy à la position du bateau vue du serveur.
-
-- ITYC : Ouvre un onglet de voile auto d ITYC avec les paramètres pré-remplies.
-
-- Race : Nom de la course
-
-- Time : Heure de la dernière itération serveur reçue.
-
-  UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
-
-- Rank : Classement du bateau.
+### 5.3 Race Status
+#### 5.3.1 Présentation
+:::figure below width=50%
+![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus1.png)
 :::
+:::figure rows width=100%
+*Note : Vous personnaliser l affichage des colonne dans l onglet Configuration*
+#### 5.3.2 Colonne RT à Rank
+* RT : Ouvre un onglet de routage avec vos coordonnées et vos options pré remplies.
 
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus2.png)
+Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen, Naya.
 
-- DTL : Distance au leader de la course (mn).
+* PL : Ouvre un onglet de outils avec la course pré-sélectionnée , options pré remplies et paramètres de TWS et TWA.
 
-- DTF : Distance à l arrivée (nm).
+  * Toxxct ( Lsv ou Inc suivant sélection dans onglet Config)
+  * ITYC : Ouvre un onglet de voile auto d ITYC avec les paramètres pré-remplies.
+---
+* WI : Ouvre un onglet de Windy à la position du bateau vue du serveur.
 
-- TWD : True Wind Direction (°).
+* ITYC : Ouvre un onglet de voile auto d ITYC avec les paramètres pré-remplies.
 
-  Direction du vent à l emplacement du bateau vue du serveur.
+* Race : Nom de la course
 
-- TWS : True Wind Speed (nds).
+* Time : Heure de la dernière itération serveur reçue.
 
-  Vitesse du vent à l emplacement du bateau vue du serveur.
+  * UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
 
-- TWA : True Wind Angle (°).
-
-  Couleur verte si le bateau est tribord, rouge bâbord.
-
-  Gras si le mode TWA fixe.
-
-- HDG : Heading , cap du bateau.
-
-  Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
-
-  Couleur Blue/Fuschia si le mode TWA fixe est activée.
+* Rank : Classement du bateau.
 :::
-
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus3.png)
-
-- ASail : Voile actuelle ( temps restant voile automatique).
-
-  Couleur Verte Vous avez la voile optimale.
-
-  Couleur rouge Vous n utilisez pas la meilleure voile!.
-
-  Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
-
-- Speed : Vitesse du bateau.
-
-  Couleur Verte Le bateau avance.
-
-  Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!.
-
-- VMG : Velocity Made Good (nds).
-
-  Vitesse de gain au vent.
-
-  Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!.
+#### 5.3.3 Colonne DTL à HDG
+:::figure below width=50%
+![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus2.png)
 :::
+:::figure rows width=100%
 
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus4.png)
+* DTL : Distance au leader de la course (mn).
 
-- Best VMG : Meilleure VMG (°).
+* DTF : Distance à l arrivée (nm).
 
-  Best VMG Up / Best VMG Down.
+* TWD : True Wind Direction (°).
 
-  Vitesse du bateau si activée.
+  * Direction du vent à l emplacement du bateau vue du serveur.
 
-- Best Speed : Meilleure Vitesse du bateau .
+* TWS : True Wind Speed (nds).
 
-  Vitesse maximale du bateau (nds) avec la TWA (°) nécessaire.
+  * Vitesse du vent à l emplacement du bateau vue du serveur.
+---
+* TWA : True Wind Angle (°).
 
-- Stamina : Energie (%) (Coefficient multiplicateur de pénalités).
+  * Couleur verte si le bateau est tribord, rouge bâbord.
 
-  Energie du skipper suivi du coefficient appliqué au temps de pénalité théorique.
+  * Gras si le mode TWA fixe.
+
+* HDG : Heading , cap du bateau.
+
+  * Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
+
+  * Couleur Blue/Fuschia si le mode TWA fixe est activée.
 :::
+#### 5.3.4 Colonne ASail à VMG
+:::figure below width=50%
+![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus3.png)
+:::
+:::figure rows width=100%
 
-:::figure below
-![3.Race Status](/assets/help/original/dash/raceSatus5.png)
+* ASail : Voile actuelle .
+ 
+  * Plage de vitesse de vent (TWS) pour la voile active.
 
-- Empannage.
+  * Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
+  ( temps restant voile automatique)
 
-  Information dans les conditions actuelles de vent, de voile et de stamina.
+  * Plage d angle au vent (TWA) pour la voile active.
+  
+  * Couleur Verte : Vous avez la voile optimale.
 
-  Distance perdue / temps de pénalités
+  * Couleur rouge : Vous n utilisez pas la meilleure voile!.
+---
+* Speed : Vitesse du bateau.
 
-  Stamina perdue / Temps de récupérations.
+  * Couleur Verte Le bateau avance.
 
-- Virement.
+  * Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!.
 
-  Information dans les conditions actuelles de vent, de voile et de stamina.
+* VMG : Velocity Made Good (nds).
 
-  Distance perdue / temps de pénalités
+  * Vitesse de gain au vent.
 
-  Stamina perdue / Temps de récupérations.
+  * Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!.
+:::
+#### 5.3.5 Colonne Best VMG à Stamina
+:::figure below width=50%
+![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus4.png)
+:::
+:::figure rows width=100%
 
-- Changement de voile.
+* Best VMG : Meilleure VMG (°).
 
-  Information dans les conditions actuelles de vent, de voile et de stamina.
+  * Best VMG Up / Best VMG Down.
 
-  Distance perdue / temps de pénalités
+  * Vitesse du bateau si activée.
+---
+* Best Speed : Meilleure Vitesse du bateau .
 
-  Stamina perdue / Temps de récupérations.
+  * Vitesse maximale du bateau (nds) avec la TWA (°) nécessaire.
 
-- Agnd.
+* Stamina : Energie (%) (Coefficient multiplicateur de pénalités).
 
-  Fond Vert : Vous n'êtes pas échoué !
+  * Energie du skipper suivi du coefficient appliqué au temps de pénalité théorique.
+:::
+#### 5.3.6 Colonne Empannage à Mnvr
 
-  Fond Rouge : vous êtes échoué !
+:::figure below width=50%
+![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus5.png)
+:::
+:::figure rows width=100%
 
-- Mnvr.
+* Empannage.
 
-  Manoeuvre en cours.
+  * Information dans les conditions actuelles de vent, de voile et de stamina.
+
+  * Distance perdue / temps de pénalités
+
+  * Stamina perdue / Temps de récupération.
+
+* Virement.
+
+  * Information dans les conditions actuelles de vent, de voile et de stamina.
+
+  * Distance perdue / temps de pénalités
+
+  * Stamina perdue / Temps de récupération.
+---
+* Changement de voile.
+
+  * Information dans les conditions actuelles de vent, de voile et de stamina.
+
+  * Distance perdue / temps de pénalités
+
+  * Stamina perdue / Temps de récupérations.
+
+* Agnd.
+
+  * Fond Vert : Vous n'êtes pas échoué !
+
+  * Fond Rouge : vous êtes échoué !
+
+* Mnvr.
+
+  * Manoeuvre en cours.
 :::
 
 <!-- anchor:tabDashTab4 -->
-### 4. Page Journal
+### 5.4 Page Journal
 
-:::figure below
-![4. Page Journal](/assets/help/original/dash/racelog1.png)
+#### 5.4.1 Presentation
+:::figure below width=100%
+![4. Calculs](/assets/help/dashboard/raceLog/racelog1.png)
+:::
+:::figure rows width=100%
 
-- Journal de bord de votre bateau
+* Journal de bord de votre bateau
 
-  Affiche l'état de votre bateau , ces conditions de navigation ainsi que les pénalités en cours et les autres ordres donnés à chaque itération reçue du serveur ou autre émis
+  * Affiche l'état de votre bateau , ces conditions de navigation ainsi que les pénalités en cours et les autres ordres donnés à chaque itération reçue du serveur ou autre émis.
+  * La ligne sous le curseur est encadré d un cadre rouge. 
 :::
 
-:::figure below
-![4. Page Journal](/assets/help/original/dash/racelog2.png)
 
-- Time : Heure de la dernière itération serveur reçue.
+#### 5.4.2 Colonne Time à HDG
+:::figure rows width=70% 
+![4. Calculs](/assets/help/dashboard/raceLog/racelog2.png)
+:::
+:::figure rows width=100%
 
-  UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
 
-- Rank : Classement du bateau.
+* Time : Heure de la dernière itération serveur reçue.
 
-.
+  * UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
 
-- DTL : Distance To Leader (nm).
+* Rank : Classement du bateau.
 
-  distance par rapport au leader de la course.
+* DTL : Distance au leader de la course (mn).
 
-- TWD : True Wind Direction (°).
+* DTF : Distance à l arrivée (nm).
 
-  Direction du vent à l emplacement du bateau vu du serveur.
+* TWD : True Wind Direction (°).
 
-- TWS : True Wind Speed (nds).
+  * Direction du vent à l emplacement du bateau vue du serveur.
+---
+* TWS : True Wind Speed (nds).
 
-  Vitesse du vent à l emplacement du bateau vu du serveur.
+  * Vitesse du vent à l emplacement du bateau vue du serveur.
 
-- TWA : True Wind Angle (°).
+* TWA : True Wind Angle (°).
 
-  Couleur verte si le bateau est tribord, rouge bâbord.
+  * Couleur verte si le bateau est tribord, rouge bâbord.
 
-  Gras si le mode TWA fixe.
+  * Gras si le mode TWA fixe.
 
-- HDG : Heading , cap du bateau.
+* HDG : Heading , cap du bateau.
 
-  Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
+  * Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
 
-  Couleur Blue/Fuschia si le mode TWA fixe est activée.
+  * Couleur Blue/Fuschia si le mode TWA fixe est activée.
+
 :::
 
-:::figure below
-![4. Page Journal](/assets/help/original/dash/racelog3.png)
+#### 5.4.3 Colonne ASail à Stamina
+:::figure rows width=70%
+![4. Calculs](/assets/help/dashboard/raceLog/racelog3.png)
+:::
+:::figure rows width=100%
 
-- ASail : Voile actuelle ( temps restant voile automatique).
+* ASail : Voile actuelle ( temps restant voile automatique).
 
-  Couleur Verte Vous avez la voile optimale.
+  * Couleur Verte Vous avez la voile optimale.
 
-  Couleur rouge Vous n utilisez pas la meilleure voile!.
+  * Couleur rouge Vous n utilisez pas la meilleure voile!.
 
-  Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
+  * Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
 
-- vR : Vitesse réel du bateau (nds).
+* vR : Vitesse réel du bateau (nds).
 
-  Vitesse du bateau reporté par le serveur.
+  * Vitesse du bateau reporté par le serveur.
+---
+* vC : Vitesse calculée du bateau (nds).
 
-- vC : Vitesse calculée du bateau (nds).
+  * Vitesse du bateau calculé par la dashboard en tenant des conditions des navigation ainsi que des distances parcourues et du temps écoulés.
 
-  Vitesse du bateau calculé par la dashboard en tenant des conditions des navigation ainsi que des distances parcourues et du temps écoulés.
+* Stamina : Energie (%).
 
-- Stamina : Energie (%).
-
-  Energie du skipper.
+  * Energie du skipper.
 :::
 
-:::figure below
-![4. Page Journal](/assets/help/original/dash/racelog4.png)
+#### 5.4.4 Colonne Δd à Virement
+:::figure rows width=70%
+![4. Calculs](/assets/help/dashboard/raceLog/racelog4.png)
+:::
+:::figure rows width=100%
 
-- Δd : Distance parcourue (nm) entre les 2 dernières itérations reçues.
+* Δd : Distance parcourue (nm) entre les 2 dernières itérations reçues.
 
-- Δt : Temps écoulé (secondes) entre les 2 dernières itérations reçues.
+* Δt : Temps écoulé (secondes) entre les 2 dernières itérations reçues.
 
-- Position : Latitude / Longitude du bateau vue du serveur.
+* Position : Latitude / Longitude du bateau vue du serveur.
 
-- Voile.
+* Voile.
 
-  Temps restant (s) de pénalités de changement en cours.
+  * Temps restant (s) de pénalités de changement en cours.
+---
+* Empannage.
 
-- Empannage.
+  * Temps restant (s) de pénalités d'empannage en cours.
 
-  Temps restant (s) de pénalités d'empannage en cours.
+* Virement.
 
-- Virement.
-
-  Temps restant (s) de pénalités de virement en cours.
+  * Temps restant (s) de pénalités de virement en cours.
 :::
 
-:::figure below
-![4. Page Journal](/assets/help/original/dash/racelog5.png)
+#### 5.4.5 Lignes Commandes
+:::figure below width=90%
+![4. Calculs](/assets/help/dashboard/raceLog/racelog5.png)
+:::
+:::figure rows width=100%
 
-- Commandes : envoie de waypoints.
+*  Commandes : envoie de waypoints.
+  * La première colonne indique l heure d application des ordres par le serveur.
+  * Command @ indique l heure à laquelle l ordre a été envoyé.
 :::
 
-:::figure below
-![4. Page Journal](/assets/help/original/dash/racelog6.png)
 
-- Commandes : envoie de programmation.
+:::figure below width=90%
+![4. Calculs](/assets/help/dashboard/raceLog/racelog6.png)
+:::
+:::figure rows width=100%
+
+* Commandes : envoie de programmation.
+  * La première colonne indique l heure d application des ordres par le serveur.
+  * Command @ indique l heure à laquelle l ordre a été envoyé.
 :::
 
 <!-- anchor:tabDashTab5 -->
-### 5. Page Flotte
+### 5.5 Page Flotte
+#### 5.5.1 Presentation
 
 :::figure below
-![5. Page Flotte](/assets/help/original/dash/fleet_full.png)
+![5. Page Flotte](/assets/help/dashboard/fleet/fleet_full.png)
 
-- Etat de la flotte
+* Etat de la flotte
 
-  Affiche l'état de votre bateau, et de tous les bateaux affichés sur la carte du jeu pour la course sélectionnée.
-
-  En tenant compte des filtres sélectionnés en haut à droite.
+  * Affiche l'état de votre bateau, et de tous les bateaux affichés sur la carte du jeu pour la course sélectionnée.
+  * La ligne de votre joueur est surlignée en violet.
+  * La ligne sous le curseur est surlignée en rouge.
+  * L'affichage des colonnes peut être personnaliser depuis l'onglet configuration.
 :::
 
-:::figure below
-![5. Page Flotte](/assets/help/original/dash/fleet_filter.png)
+
+  En tenant compte des filtres sélectionnés en haut à droite.
+
+  
+#### 5.5.2 Filtres
+:::figure below width=90%
+![4. Calculs](/assets/help/dashboard/fleet/fleet_filter.png)
+:::
+:::figure rows width=100%
 
 - Team: Sélectionne les bateaux de la team du joueur connecté.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
 
 - Amis: Sélectionne les amis du joueur connecté.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
 
 - Top VSR: Sélectionne les bateaux Top VSR.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
 
 - Sponsors: Sélectionne les bateaux sponsors de la course sélectionnée.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
 
 - Certifié: Sélectionne les bateaux certifiés de la course sélectionnée.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
-
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
+---
 - Adversaires: Sélectionne les bateaux adversaires de la course sélectionnée.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
 
 - Réels: Sélectionne les bateaux réels de la course sélectionnée.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
 
 - Sélectionné: Sélectionne les bateaux que vous avez cliquez sur la carte du jeu.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
 
-- Racing: Sélectionne les bateaux en course sur la course sélectionnée.
+- En course: Sélectionne les bateaux en course sur la course sélectionnée.
 
-  fond sombre : Afficher / fond clair : Ne pas afficher.
+  * Case validée : Afficher / Case avec croix : Ne pas afficher.
+
+- Export SailRanks
+  * Copie dans le presse papier le contenu de la flotte au format SailRanks.
 :::
 
-:::figure below
-![5. Page Flotte](/assets/help/original/dash/fleet_1.png)
+#### 5.5.3 Colonne RT à Rank
+:::figure below width=90%
+![4. Calculs](/assets/help/dashboard/fleet/fleet_1.png)
+:::
+:::figure rows width=100%
 
-RT : Ouvre un onglet de routage zezo avec les coordonnées et les options pré remplies.
+* RT : Ouvre un onglet de routage  avec les coordonnées et les options pré remplies.
 
-Le reste des options zezo seront celles que vous avez utilisé sur la page zezo pour la course concernée
 
-- Time : Heure de la dernière itération serveur reçue.
+- Date : Heure de la dernière itération serveur reçue.
 
-  UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
+  * UTC ou temps local selon configuration utilisateur (cf Onglet Configuration).
 
 - Skipper : Puce Nom du bateau.
 
-  Puces :
+  * Puces :
 
-  - Etoile : Joueur connecté
+    * Etoile : Joueur connecté
 
-  - Autres couleurs : identique aux filtres
+    * Autres couleurs : identique aux filtres
 
-  Couleurs :
+  * Couleurs :
 
-  - Violet : Joueur connecté
+    * Violet : Joueur connecté
 
-  - Jaune : Top VSR
+    * Jaune : Top VSR
+---
+* Team : Team du joueur.
 
-- Team : Team du joueur.
+  * Chargé à l'ouverture de la course pour les joueurs de la team.
 
-  Chargé à l'ouverture de la course pour les joueurs de la team.
+  * Chargé à la carte de présentation pour les autres bateaux.
 
-  Chargé à la carte de présentation pour les autres bateaux.
+  * Pré - chargé au démarrage avec les données d'ITYC.
 
-  Pré - chargé au démarrage avec les données d'ITYC.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+* Rank : Classement du bateau.
 
-- Rank : Classement du bateau.
-
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 :::
-
-:::figure below
-![5. Page Flotte](/assets/help/original/dash/fleet_2.png)
+#### 5.5.4 Colonne DTU à HDG
+:::figure below width=90%
+![4. Calculs](/assets/help/dashboard/fleet/fleet_2.png)
+:::
+:::figure rows width=100%
 
 - DTU : Distance To yoU (mn).
 
-  Distance entre votre bateau et le bateau listé.
+  * Distance entre votre bateau et le bateau listé.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
 - DTF : Distance To Finish (nm).
 
-  Distance de l arrivée (nm).
+  * Distance de l arrivée (nm).
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
 - TWD : True Wind Direction (°).
 
-  Direction du vent à l emplacement du bateau vue du serveur.
+  * Direction du vent à l emplacement du bateau vue du serveur.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
-
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
+---
 - TWS : True Wind Speed (nds).
 
-  Vitesse du vent à l emplacement du bateau vue du serveur.
+  * Vitesse du vent à l emplacement du bateau vue du serveur.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
 - TWA : True Wind Angle (°).
 
-  Couleur verte si le bateau est tribord, rouge bâbord.
+  * Couleur verte si le bateau est tribord, rouge bâbord.
 
-  Mode TWA fixe : Gras et **Ⓐ** affiché
+  * Mode TWA fixe : Gras et **Ⓐ** affiché
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
 - HDG : Heading , cap du bateau.
 
-  Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
+  * Couleur Noir/Blanc et gras si le mode Heading fixe est activée.
 
-  Couleur Blue/Fuschia si le mode TWA fixe est activée.
+  * Couleur Blue/Fuschia si le mode TWA fixe est activée.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 :::
-
-:::figure below
-![5. Page Flotte](/assets/help/original/dash/fleet_3.png)
+#### 5.5.5 Colonne Speed à Foils
+:::figure below width=60%
+![4. Calculs](/assets/help/dashboard/fleet/fleet_3.png)
+:::
+:::figure rows width=100%
 
 - Speed : Vitesse du bateau.
 
-  Couleur Verte Le bateau avance.
+  * Couleur Verte Le bateau avance.
 
-  Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!
+  * Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
 - VMG : Velocity Made Good (nds).
 
-  Vitesse de gain au vent.
+  * Vitesse de gain au vent.
 
-  Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!
+  * Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
 - ASail : Voile actuelle ( temps restant voile automatique).
 
-  Couleur Verte : Vous avez la voile optimale.
+  * Couleur Verte : Vous avez la voile optimale.
 
-  Couleur rouge : Vous n utilisez pas la meilleure voile!
+  * Couleur rouge : Vous n utilisez pas la meilleure voile!
 
-  Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
+  * Nom du voile : LJ: Light Jib, LG: Light Gennaker, STAY: Staysail, HG: Heavy Gennaker, C0: Code Zero
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
-
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
+---
 - Factor : Facteur de vitesse (pourcentage par rapport à 1).
 
-  Coefficient multiplicateur de vitesse de votre bateau par rapport à la vitesse théorique de la voile.
+  * Coefficient multiplicateur de vitesse de votre bateau par rapport à la vitesse théorique de la voile.
 
-  Peut être supérieur à 1 en cas de recouvrement de voile ou d usage du polish.
+    * Peut être supérieur à 1 en cas de recouvrement de voile ou d usage du polish.
 
-  Peut être inférieur à 1 en cas de manoeuvre.
+    * Peut être inférieur à 1 en cas de manoeuvre.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
-- Stamina : Energie (%) (Coefficient multiplicateur de pénalités).
+- Coefficient d'utilisation des foils ( si installé)..
 
-  Energie du skipper suivi du coefficient appliqué au temps de pénalité théorique.
-
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
 :::
-
-:::figure below
-![5. Page Flotte](/assets/help/original/dash/fleet_4.png)
+#### 5.5.6 Colonne RaceTime à avgS
+:::figure below width=40%
+![4. Calculs](/assets/help/dashboard/fleet/fleet_6.png)
+:::
+:::figure rows width=100%
 
 - RaceTime : Affiché que sur les course de type record.
 
-  Temps écoulé depuis le départ.
+  * Temps écoulé depuis le départ.
 
-  Chargé à la carte de présentation pour les autres bateaux.
+  * Chargé à la carte de présentation pour les autres bateaux.
 
-  Pré - chargé aux démarrage avec les données d'ITYC.
+  * Pré - chargé aux démarrage avec les données d'ITYC.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 
 - ERT : Enhanced Race Time.
 
-  Temps théorique pour effectuer le parcours en fonction de la distance parcourue, du reste à parcourir et de la vitesse moyenne.
+  * Temps théorique pour effectuer le parcours en fonction de la distance parcourue, du reste à parcourir et de la vitesse moyenne.
 
-  Chargé à la carte de présentation pour les autres bateaux.
+  * Chargé à la carte de présentation pour les autres bateaux.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
-
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
+---
 - avgS : Average Speed (nds).
 
-  Vitesse moyenne depuis le départ.
+  * Vitesse moyenne depuis le départ.
 
-  Chargé à la carte de présentation pour les autres bateaux.
+  * Chargé à la carte de présentation pour les autres bateaux.
 
-  Peut être caché si décoché dans l'onglet Configuration section Flotte.
+  * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 :::
-
-:::figure below
-![5. Page Flotte](/assets/help/original/dash/fleet_5.png)
+#### 5.5.7 Colonne Postion à Sélection
+:::figure below width=60%
+![4. Calculs](/assets/help/dashboard/fleet/fleet_4.png)
+:::
+:::figure rows width=100%
 
 - Position : Latitude / Longitude du bateau.
 
 - Options du bateau.
+  Le serveur VR ne transmet plus que les options du joueur connectés.
 
-  - FP : Full Pack
+  Les dash ITYC transmettent si vous l'autorisez dans l onglet Configuration.
+  
+  Lors de l ouverture de la course , votre dash interroge le serveur ITYC qui lui transmet toutes les options des joueurs connus.
+
+  * Options italiques : Options déduites par le système au vue des paramètres de navigation.
+
+- FP : Full Pack
 
   - AP : Full Options
 
-  - [H,L,R] [F,h,W]
+  - [H,L,R] [W,F,h,W,M,J,C]
+
 
     - H : Voiles Heavy : STAY: Staysail, HG: Heavy Gennaker.
 
     - L : Voiles Ligth : LJ: Light Jib, LG: Light Gennaker.
 
     - R : Voile Reaching : C0: Code Zero.
+    - W : Winch Pro.
 
     - F : Foils.
 
     - h : Hull : Polish.
+    - M : MagicFurler : Enrouleur.
 
-    - W : W : Winch Pro.
+    - J : VRJacket.
+
+    - C : ComfortLoungePug : Pouf.
+
+* Sélection
+  Vous pouvez sélectionné un joueur en cliquant sur son bateau dans le jeu, la croix rouge apparaitra alors sur sa ligne et vous pourrez le filtrer grâce au filtre Sélectionné.
+  Cliquez sur la croix rouge pour supprimer la sélection.
+
 :::
 
-<!-- anchor:tabDashTab6 -->
-### 6. Page Carte
 
+<!-- anchor:tabDashTab6 -->
+### 5.6 Page Carte
+#### 5.6.1 Présentation
 :::figure below
-![6. Page Carte](/assets/help/original/dash/map_full.png)
+![6. Page Carte](/assets/help/dashboard/map/map_full.png)
 
 - Carte : Affiche une vue de la course sur une carte LeaFleat.
 
@@ -957,32 +1070,32 @@ Le reste des options zezo seront celles que vous avez utilisé sur la page zezo 
   Vous pouvez la glisser de gauche à droite en maintenant activer le clique de votre souris.
 :::
 
-:::figure side half
-![6. Page Carte](/assets/help/original/dash/map_start.png)
+:::figure side width=20%
+![6. Page Carte](/assets/help/dashboard/map/map_start.png)
 
 Départ de la course
 :::
 
-:::figure side half
-![6. Page Carte](/assets/help/original/dash/map_end.png)
+:::figure side width=20%
+![6. Page Carte](/assets/help/dashboard/map/map_end.png)
 
 Arrivée de la course (Ici avec cercle d arrivée).
 :::
 
-:::figure side half
-![6. Page Carte](/assets/help/original/dash/map_gate_notOk.png)
+:::figure side width=20%
+![6. Page Carte](/assets/help/dashboard/map/map_gate_notOk.png)
 
 Porte non validée ( trait jaune, icon de direction rouge ).
 :::
 
-:::figure side half
-![6. Page Carte](/assets/help/original/dash/map_gate_Ok.png)
+:::figure side width=20%
+![6. Page Carte](/assets/help/dashboard/map/map_gate_Ok.png)
 
 Porte validée ( trait vert, icon de direction vert ).
 :::
 
-:::figure side half
-![6. Page Carte](/assets/help/original/dash/map_me.png)
+:::figure side  width=20%
+![6. Page Carte](/assets/help/dashboard/map/map_me.png)
 
 Icone du joueur violet
 
@@ -990,7 +1103,7 @@ Ligne de projection a cap et vitesse fixe ( 1 point toutes les 2 minutes ).
 :::
 
 :::figure side half
-![6. Page Carte](/assets/help/original/dash/map_iconboat.png)
+![6. Page Carte](/assets/help/dashboard/map/map_iconboat.png)
 
 Icone des bateaux de la flotte ( Remplissage et bordure )
 
@@ -1003,186 +1116,289 @@ Icone des bateaux de la flotte ( Remplissage et bordure )
 - Gris : Adversaires.
 :::
 
+#### 5.6.2 Actions
 :::figure side half
-![6. Page Carte](/assets/help/original/dash/map_action1.png)
-
-Actions de la carte (Fond sombre : Activé / Fond Clair : Désactivé)
-:::
-
-:::figure side half
-![6. Page Carte](/assets/help/original/dash/map_action11.png)
-
-- Cotes
-
-  Vous permet d'afficher les traits de cotes autour du centre de la carte.
-
-  Pour actualiser la zone affichée, désactiver puis réactiver cette option.
+![6. Page Carte](/assets/help/dashboard/map/map_action2.png)
 
 - Aide
 
   Vous permet d'afficher un popup résumant l usage des différents fonctions.
-:::
-
-Traits de cotes
-
-:::figure below
-![6. Page Carte](/assets/help/original/dash/map_cotes.png)
-:::
-
-:::figure side half
-![6. Page Carte](/assets/help/original/dash/map_action12.png)
-
 - Marqueurs
 
-  Vous permet d'afficher les points détaillés sur les routages (informations détaillées au survol de la souris).
+  * Vous permet d'afficher les points détaillés sur les routages (informations détaillées au survol de la souris).
+  * Fond sombre : Activé / Fond Clair : Désactivé
 
 - Traces
 
-  Vous permet d'afficher les traces de chaque bateau de la courses.
+  * Vous permet d'afficher les traces de chaque bateau de la courses.
+  * Fond sombre : Activé / Fond Clair : Désactivé
+
 :::
 
-Routages avec marqueurs
 
-Flotte avec traces
+:::figure side half
+![6. Page Carte](/assets/help/dashboard/map/map_action3.png)
 
-:::figure below
-![6. Page Carte](/assets/help/original/dash/draw_route_marker.png)
-![6. Page Carte](/assets/help/original/dash/map_full_trace.png)
+- Ajouter 
+  Ouvre le popup pour importer un routage.
+
+- Effacer
+  Efface tous les routages importés.
 :::
 
 :::figure side half
-![6. Page Carte](/assets/help/original/dash/map_action13.png)
+![6. Page Carte](/assets/help/dashboard/map/map_action4.png)
 
-- Ajouter
+- Couleur des traits de cotes.
 
-  Vous permet d'importer des routages Zezo, VrZen, Avalon ou gpx sur la carte.
-
-- Effacer
-
-  Vous permet d'effacer tous les routages chargés.
+- Couleur de la ligne projection.
 :::
 
-:::figure below
-![6. Page Carte](/assets/help/original/dash/import_route.png)
+:::figure side half
+![6. Page Carte](/assets/help/dashboard/map/map_action3.png)
+
+- Ajouter 
+  Ouvre le popup pour importer un routage.
+
+- Effacer
+  Efface tous les routages importés.
+:::
+
+:::figure side  width=10%  blocks=25%,50%,25%
+![6. Page Carte](/assets/help/dashboard/map/map_action5.png)
+
+- Rentrez la carte sur le joueur connecté.
+---
+- Zoom ( au ctrl + Molette).
+---
+- Outil mesure.
+:::
+
+:::figure side half
+![6. Page Carte](/assets/help/dashboard/map/map_action6.png)
+Outil mesure.
+  - cliquez sur l icône pour activer.
+  - A chaque clique sur la carte un trait rouge apparait entre les 2 derniers points avec les infos de cap et de distance.
+  - Click + Echap pour stopper la chaine en cours.
+  - Re cliquez sur l'icône pour désactiver ou second Click + Echap. L'icône redevient gris.
+:::
+
+#### 5.6.3 Traits de cotes
+:::figure rows image=center  width=80%
+![6. Page Carte](/assets/help/dashboard/map/map_cotes.png)
+:::
+Les traits de cotes apparaîtront lors du zoom sur la carte.
+
+Vous pouvez choisir la couleur des traits de cotes dans le panneau de gauche.
+
+#### 5.6.4 Import routage
+En cliquant sur le bouton Ajouter dans le panneau de gauche , le popup d import routage apparaîtra.
+:::figure side half
+![6. Page Carte](/assets/help/dashboard/map/import_routage_popup1.png)
 
 Menu déroulant pour choix source du routage
 
 - Zezo
 
-  Sélectionner le bateau dans la liste du centre.
+  * Sélectionner le bateau dans la liste du centre.
 
-  Appuyer sur import.
+  * Appuyer sur import.
 
-  Si les options du bateaux sont connues, après quelques instant, le routage apparaîtra sur la carte.
+  * Si les options du bateaux sont connues, après quelques instant, le routage apparaîtra sur la carte.
 
-  Vous pouvez sélectionner la couleur de votre choix.
+  * Vous pouvez sélectionner la couleur de votre choix.
+:::
+:::figure side half
+![6. Page Carte](/assets/help/dashboard/map/import_routage_popup2.png)
+- Avalon / VrZen / Zéphir / Sermar / Naya
 
-- Avalon
+  * Exportez votre routage au format csv depuis Avalon.
 
-  Exportez votre routage au format csv depuis Avalon.
+  * Vous pouvez nommer le routage comme vous le souhaitez ( par défaut le champ est pré remplie avec votre bateau ).
 
-  vous pouvez nommer le routage comme vous le souhaitez ( par défaut le champ est pré remplie avec votre bateau ).
+  * Appuyer sur import et sélectionnez le fichier exporté d'Avalon au format csv.
 
-  Appuyer sur import et sélectionnez le fichier exporté d'Avalon au format csv.
-
-  Vous pouvez sélectionner la couleur de votre choix.
-
-- Avalon
-
-  Exportez votre routage au format csv depuis VR Zen.
-
-  vous pouvez nommer le routage comme vous le souhaitez ( par défaut le champ est pré remplie avec votre bateau ).
-
-  Appuyer sur import et sélectionnez le fichier exporté de VR Zen au format csv.
-
-  Vous pouvez sélectionner la couleur de votre choix.
+  * Vous pouvez sélectionner la couleur de votre choix.
 
 - GPX
 
-  Exportez votre routage au format gpx depuis votre routeur préféré.
+  * Exportez votre routage au format gpx depuis votre routeur préféré.
 
-  Vous pouvez nommer le routage comme vous le souhaitez ( par défaut le champ est pré remplie avec votre bateau ).
+  * Vous pouvez nommer le routage comme vous le souhaitez ( par défaut le champ est pré remplie avec votre bateau ).
 
-  Appuyer sur import.
+  * Appuyer sur import.
 
-  Appuyer sur import et sélectionnez le fichier exporté de au format GPX.
+  * Appuyer sur import et sélectionnez le fichier exporté de au format GPX.
 
-  Vous pouvez sélectionner la couleur de votre choix.
+  * Vous pouvez sélectionner la couleur de votre choix.
 :::
-
-Import Routage
-
-:::figure below
-![6. Page Carte](/assets/help/original/dash/draw_route_ssmarker.png)
+:::figure rows image=center width=80%
+![6. Page Carte](/assets/help/dashboard/map/draw_route_ssmarker.png)
 
 Vous pouvez cacher un routage en cliquant sur son nom ( fond sombre : Affiché / fond clair : Caché)
 
 Vous pouvez changer la couleur d un routage en cliquant sur la couleur à sa droite
 :::
 
-Fond de carte alternatif
+Routage avec marqueurs activés
+:::figure rows image=center width=80%
+![6. Page Carte](/assets/help/dashboard/map/draw_route_marker.png)
 
-:::figure below
-![6. Page Carte](/assets/help/original/dash/map_alt.png)
-
-Vous pouvez changer le fond de carte en cliquant sur l'icone en haut à droite de la carte
+Les marqueurs noires correspondent aux changements de voile
 :::
 
-<!-- anchor:tabDashTab7 -->
-### 7. Page Résumé
 
-:::figure below
-![7. Page Résumé](/assets/help/original/dash/raceboog.png)
+#### 5.6.5 fond de carte
+En cliquant sur l icone en haut à droite le carte vous pourrez changer le fond de carte entre :
+ * Osm Classique
+
+ * Osm Dark
+
+ * Satellite (Zoom max limité)
+
+ * Artic (Zoom max limité) Spécial pour la navigation autour du pole Nord.
+
+:::figure rows image=center width=80%
+![6. Page Carte](/assets/help/dashboard/map/map_osm.png)
+
+Osm Standard
+:::
+
+:::figure rows image=center width=80%
+![6. Page Carte](/assets/help/dashboard/map/map_osm_dark.png)
+
+Osm Dark
+:::
+
+:::figure rows image=center width=80%
+![6. Page Carte](/assets/help/dashboard/map/map_sattelite.png)
+
+Google Satellite
+:::
+
+:::figure rows image=center width=80%
+![6. Page Carte](/assets/help/dashboard/map/map_artic.png)
+
+Artic
+:::
+
+
+<!-- anchor:tabDashTab7 -->
+### 5.7 Page Résumé
+#### 5.7.1 Présentation
+:::figure side width=60% blocks=10%,10%,39%,41%
+![7. Page Résumé](/assets/help/dashboard/raceResume/resume.png)
 
 - Résumé de la course
 
-  Retrouvez ici les différentes composantes de la course.
+---
+
+- Credits et Options
+
+---
+
+- Points de passage de la course
+
+---
+
+- Zones interdites et Limite de glace
+
 :::
-
-Partie Supérieure
-
-- Nom de la course.
-
-- ID de la course.
-
-- Niveau VSR.
+#### 5.7.2 Résumé de la course
+:::figure rows image=center width=100%
+![4. Calculs](/assets/help/dashboard/raceResume/resume_1.png)
+:::
+:::figure rows width=100% blocks=36%,26%,38%
+- Nom de la course et ID.
 
 - Nom du bateau.
+---
+- Modèle de vent.
+---
+- Niveau VSR.
+- Niveau Récompense.
+- Catégorie Classement Communauté.
 
-Partie centrale
+:::
 
-- Credits offerts.
 
-- Coût de chaque option.
 
-Partie inférieure
 
-- Coordonnées des différents points de passages.
+#### 5.7.3 Credits et Options
+:::figure rows image=center width=100%
+![4. Calculs](/assets/help/dashboard/raceResume/resume_2.png)
+:::
+:::figure rows width=100%
+- Game Credits : Crédits du compte du joueur.
+- Free Credits : Prime de départ pour la course (PDD).
+- Race Crédits : Crédits dépensés pour la course ( entre parenthèses ce qui a été dépensés pour les options actuelles du bateau )
 
-- Etat des points de passages.
+*En cas d achat de Full Pack le système indiquera le coût total des options , ce montant n aura pas été déduit des crédits du joueur.*
+
+---
+
+- Gains : Credits que vous gagneriez avec votre classement actuel sur la course.
+- Options avec leurs coûts individuels 
+
+*Options en vert signifie options activées*
+:::
+#### 5.7.4 Points de passage de la course
+:::figure rows image=center width=90%
+![4. Calculs](/assets/help/dashboard/raceResume/resume_3.png)
+:::
+:::figure rows width=100%
+- Coordonnées de départ et date de départ.
+- Liste des différents points de passages , coordonnées et état. 
+:::
+
+
+#### 5.7.5 Zones interdites et Limites des glaces
+:::figure rows image=center width=90%
+![4. Calculs](/assets/help/dashboard/raceResume/resume_4.png)
+:::
+:::figure rows width=100%
+- Pour chaque zone interdite :
+ - Son nom.
+ - Coordonnées de chaque point.
+- Pour la limite des glaces
+ - Coordonnées de chaque point
+:::
 
 <!-- anchor:tabDashTab8 -->
-### 8. Page Graphique
+### 5.8 Page Graphique
+
+#### 5.8.1 Présentation
+Représentation graphique du contenu du journal de bord
+
+Retrouvez ici sous forme graphique la TWS, TWS, HDG, TWA, Vitesse et Stamina à chaque itération reçu du serveur.
 
 :::figure below
-![8. Page Graphique](/assets/help/original/dash/graph.png)
+![8. Page Graphique](/assets/help/dashboard/graph/graph.png)
 
-- Représentation graphique du contenu du journal de bord
 
-  Retrouvez ici sous forme graphique la TWS, TWS, HDG, TWA, Vitesse et Stamina à chaque itération reçu du serveur.
 :::
 
 - Vous pouvez effacer les tracés en appuyant sur le bouton effacer en haut à gauche.
 
 - Vous pouvez exporter les datas en appuyant sur le bouton exporter au format csv.
 
-- La couleur du graphique correspond à la voile.
+- La couleur du graphique correspond à la voile active.
+
+### 5.9 Page Analyse
+#### 5.9.1 Présentation
+Retrouvez ici le contenu du site ITYC préconfiguré avec le bateau, les options ainsi que les paramètres de navigation.
+:::figure below
+![8. Page Graphique](/assets/help/dashboard/analyse/analyse.png)
+
+
+:::
 
 <!-- anchor:tabDashTab9 -->
-### 9. Page Notifications
+### 5.10 Page Notifications
+#### 5.10.1 Présentation
 
 :::figure below
-![9. Page Notifications](/assets/help/original/dash/notif.png)
+![9. Page Notifications](/assets/help/dashboard/notif.png)
 
 - Vous pouvez créez des alertes sur plusieurs conditions et recevoir une notification si cette condition est franchie.
 
@@ -1194,136 +1410,199 @@ Partie inférieure
 - Vous pouvez programmer une limite de HDG, ou de TWA, ou de TWS, ou de TWD !
 
 <!-- anchor:tabDashTab10 -->
-### 10. Page Configuration
+### 5.11 Page Configuration
 
+#### 5.11.1 Présentation
 :::figure below
-![10. Page Configuration](/assets/help/original/dash/config.png)
+![10. Page Configuration](/assets/help/dashboard/config/config.png)
 
 - Vous pouvez permet de configurer l'affichage ainsi que le comportment de la dashboard.
 :::
 
-:::figure below
-![10. Page Configuration](/assets/help/original/dash/config1.png)
 
+#### 5.11.2 Section générale
+:::figure rows image=center width=90%
+![4. Calculs](/assets/help/dashboard/config/config_1.png)
+:::
+:::figure rows width=100%
 Options générales
 
 - Séparateur latitude - Longitude
 
-  Activée : le "-" sera utilisé comme séparateur entre la latitude et la longitude.
+  * Activée : le "-" sera utilisé comme séparateur entre la latitude et la longitude.
 
-  Désactivée : le " " sera utilisé comme séparateur entre la latitude et la longitude.
+  * Désactivée : le " " sera utilisé comme séparateur entre la latitude et la longitude.
 
-- +1 digit
+- Affichage alternatif filtres
 
-  Activée : Les différents paramètres seront affichés avec 3 digits.
+  * Activée : Des cases à cocher seront utilisées pour les filtres.
 
-  Désactivée : Les différents paramètres seront affichés avec 2 digits.
+  * Désactivée : Des boutons à cocher seront utilisées pour les filtres.
 
 - Ré-utilisation onglet externe
 
-  Activée : Essaye de réutiliser l'onglet existant pour l'ouverture d'un lien externe.
+  * Activée : Essaye de réutiliser l'onglet existant pour l'ouverture d'un lien externe.
 
-  Désactivée : Ouvre les liens externes dans un nouvel onglet.
-
+  * Désactivée : Ouvre les liens externes dans un nouvel onglet.
+---
 - Local times
 
-  Activée : Les heures sont affichées avec le fuseau horaire local.
+  * Activée : Les heures sont affichées avec le fuseau horaire local.
 
-  Désactivée : Les heures sont affichées sur le fuseau UTC.
+  * Désactivée : Les heures sont affichées sur le fuseau UTC.
+
+- Sites polaires
+  * LSV utilise comme site pour les liens Toxxct.[Toxcct by LSV](https://vro.civis.net/polars) 
+  * INC utilise comme site pour les lien Toxxct.[Toxcct by INC](http://inc.bureauvallee.free.fr/polaires/)
 
 - Envoi info ITYC
 
-  Activée : Les infos de votre flotte seront transmises à ITYC.
+  * Activée : Les infos de votre flotte et vos options seront transmises à ITYC.
 
-  Désactivée : Les infos de votre flotte ne seront pas transmises à ITYC.
+  * Désactivée : Seulement les polaires et l info de définition des courses seront transmises à ITYC.
+
+*Note : Dans tous les cas , votre dashboard utilisera les infos ITYC pour améliorer les infos d'affichage de la flotte ( Options, team des joueurs).*
+
 :::
 
-:::figure below
-![10. Page Configuration](/assets/help/original/dash/config2.png)
+####  5.11.3 Section Affichage
+:::figure rows image=center width=40%
+![4. Calculs](/assets/help/dashboard/config/config_2.png)
+:::
+:::figure rows width=100%
+- Mode plein écran
+  * Activée : La dash étire le jeu pour qu il remplisse le pourcentage d affichage choisi.
+  * Désactivée : Le jeu sera affiché  sa taille d origine.
+---
+- Taille du jeu
+ *  Pourcentage d occupation que le jeu doit occuper quand le mode plein écran est activé.
 
-Options Race Status
-
+:::
+####  5.11.4 Section Données de course 
+:::figure rows image=center width=80%
+![10. Page Configuration](/assets/help/dashboard/config/config_3.png)
+:::
+:::figure rows width=100%
 - Affichage vitesse bateau dans champ BVMG
 
-  Activée : La vitesse du bateau sera affichée dans le champ BestVMG.
+  * Activée : La vitesse du bateau sera affichée dans le champ BestVMG.
 
-  Désactivée : La vitesse du bateau sera affichée dans le champ BestVMG.
+  * Désactivée : La vitesse du bateau sera affichée dans le champ BestVMG.
 
-  Nécessite la réception d'une itération pour être mis à jour.
-
+  *Nécessite la réception d'une itération pour être mis à jour.*
+---
 - Affichage derniers ordres
 
-  Activée : Les derniers ordres seront affichées dans une colonne supplémentaires.
+  * Activée : Les derniers ordres seront affichées dans une colonne supplémentaires.
 
-  Désactivée : Les derniers ordres ne seront pas affichées.
+  * Désactivée : Les derniers ordres ne seront pas affichées.
 
-  Nécessite la réception d'une itération pour être mis à jour.
+  *Nécessite la réception d'une itération pour être mis à jour.*
 :::
+####  5.11.5 Section Journal
+:::figure rows image=center width=90%
+![10. Page Configuration](/assets/help/dashboard/config/config_4.png)
+:::
+:::figure rows width=100%
+- Afficher que les 5 dernières lignes d ordres 
+  * Activée : Seuls les dernières lignes d ordres seront affichés dans le tableau.
+  * Désactivée :  Toutes les dernières lignes d ordres seront affichés dans le tableau.
 
-:::figure below
-![10. Page Configuration](/assets/help/original/dash/config3.png)
+- Configuration de l affichage des colonnes du tableau Journal.
 
-Options Carte
+  Vous pouvez choisir de cacher une colonne si vous le souhaitez.
+
+  * Activée : La colonne est affichée.
+
+  * Désactivée : La colonne n'est pas affichée.
+
+  *Nécessite la réception d'une itération pour être mis à jour.*
+:::
+####  5.11.6 Section Carte
+
+:::figure rows image=center width=90%
+![10. Page Configuration](/assets/help/dashboard/config/config_5.png)
+:::
+:::figure rows width=100%
 
 - Affichage les détails des traces des bateaux adverses
 
-  Vous permet d'afficher les marqueurs des traces des bateaux adversaires et d obtenir des détails au survol de la souris.
+  * Vous permet d'afficher les marqueurs des traces des bateaux adversaires et d obtenir des détails au survol de la souris.
 
-  Nécessite le redémarrge de la dashboard.
+  *Nécessite le redémarrge de la dashboard.*
 
   Fortement consommateur de mémoire !!!
+
+- Longueur de ligne de projection
+  * Vous permet de personnaliser la longueur de ligne projection de l onglet Carte .
+- Afficher les bouées invisibles.
+  * Activée : Toutes les bouées seront affichés ( passage et classment).
+  * Désactivée : Seules les bouées visible dans le jeu seront affichés ( passage).
+  *Nécessite le redémarrge de la dashboard.* 
 :::
 
-:::figure below
-![10. Page Configuration](/assets/help/original/dash/config4.png)
 
-Options Flotte 1
+####  5.11.7 Section Flotte
+:::figure rows image=center width=90%
+![10. Page Configuration](/assets/help/dashboard/config/config_6.png)
+:::
+:::figure rows width=100%
 
 - Affichage du nom des options en abrégées
 
-  Activée : Les options des bateaux seront affichées de manière abrégées, la définition complète est disponible au survol de la souris
+  * Activée : Les options des bateaux seront affichées de manière abrégées, la définition complète est disponible au survol de la souris
 
-  Désactivée : Les options des bateaux seront affichés de manière complète.
+  * Désactivée : Les options des bateaux seront affichés de manière complète.
 
-  Nécessite la réception d'une itération pour être mis à jour.
+  *Nécessite la réception d'une itération pour être mis à jour.*
 
 - Nettoyage des informations obsolètes
 
-  Certains informations comme des bateaux adversaires ne sont disponible que lorsque l on clique sur le bateau (rang, Stamina, TWA lock)
+  Certaines informations des bateaux adversaires ne sont disponible que lorsque l on clique sur le bateau (rang, TWA lock)
 
-  Activée : Les informations obsolètes seront effacées après le délai spécifié.
+  * Activée : Les informations obsolètes seront effacées après le délai spécifié.
 
-  Désactivée : Les informations obsolètes ne seront pas effacées.
+  * Désactivée : Les informations obsolètes ne seront pas effacées.
 
-  Nécessite la réception d'une itération pour être mis à jour.
-:::
-
-:::figure below
-![10. Page Configuration](/assets/help/original/dash/config5.png)
-
-Options Flotte 2
+  *Nécessite la réception d'une itération pour être mis à jour.*
 
 - Configuration de l affichage des colonnes du tableau flotte.
 
   Vous pouvez choisir de cacher une colonne si vous le souhaitez.
 
-  Activée : La colonne est affichée.
+  * Activée : La colonne est affichée.
 
-  Désactivée : La colonne n'est pas affichée.
+  * Désactivée : La colonne n'est pas affichée.
 
-  Nécessite la réception d'une itération pour être mis à jour.
+  *Nécessite la réception d'une itération pour être mis à jour.*
+
+- SailRanks raceId 
+ * Id de votre course dans SailRanks 
+ Si renseignez à l appui sur le bouton export Sailrank, les données seront automatiquement transmises au serveur SailRanks.
+
 :::
+####  5.11.8 Section Export
+:::figure rows image=center width=90%
+![10. Page Configuration](/assets/help/dashboard/config/config_7.png)
+:::
+:::figure rows width=100%
+- Export Zones interdites.
+  * Exportez toutes les zones interdites de la course au format JSON.
 
-:::figure below
-![10. Page Configuration](/assets/help/original/dash/config6.png)
+- Export polaires.
 
-Options Extra
-
-- Export polars.
-
-  Vous pouvez exportez toutes les polaires connues de la dashboard au format JSON.
+  * Exportez toutes les polaires connues de la dashboard au format JSON.
 
 - Export stamina.
 
-  Vous pouvez exportez toutes les paramètres stamina connues de la dashboard au format JSON.
+  * Exportez toutes les paramètres stamina au format JSON.
+
+- Export Trace bateau.
+
+  * Exportez la trace du bateau du joueur connecté dans la course active au format GPX.
+
+- Séparateur de valeur fichier CSV
+  * ; le point virgule sera utlisé comme spérateur de valeur.
+  * , la virgule sera utlisé comme sépérateur de valeur.
+  * Tab la tabulation sera utlisé comme spérateur de valeur.
 :::

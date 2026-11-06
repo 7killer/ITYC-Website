@@ -1,6 +1,7 @@
 /// <reference lib="webworker" />
 
 import { getBestSpeed, polarLimit } from './polarMath'
+import { sampleChartRange } from '../../../shared/charts/chartPrecision'
 import type { PolarSailId, PolarSailMapMessage, PolarSailMapRequest } from './polarTypes'
 
 declare const self: DedicatedWorkerGlobalScope
@@ -19,7 +20,7 @@ function sendProgress(requestId: number, percent: number) {
 
 self.onmessage = ({ data: request }: MessageEvent<PolarSailMapRequest>) => {
   try {
-    const twsValues = buildAxis(.5, polarLimit(request.polar, 'tws', 50), .5)
+    const twsValues = Float32Array.from(sampleChartRange(.5, polarLimit(request.polar, 'tws', 50), request.precision ?? '0.1'))
     const twaValues = buildAxis(0, polarLimit(request.polar, 'twa', 180), 1)
     const width = twsValues.length
     const height = twaValues.length

@@ -1,3 +1,5 @@
+import type { ChartPrecision } from '../../../shared/charts/chartPrecision'
+
 export type PolarSailId = 'Jib' | 'Spi' | 'Staysail' | 'LightJib' | 'Code0' | 'HeavyGnk' | 'LightGnk'
 
 export type PolarData = {
@@ -40,6 +42,7 @@ export type PolarTask = 'derived' | 'twa' | 'tws'
 export type PolarWorkerRequest = {
   options: PolarCalculationOptions
   polar: PolarData
+  precision?: ChartPrecision
   requestId: number
   task: PolarTask
   twa: number
@@ -64,6 +67,7 @@ export type PolarSailMapData = {
 export type PolarSailMapRequest = {
   options: PolarCalculationOptions
   polar: PolarData
+  precision?: ChartPrecision
   requestId: number
 }
 

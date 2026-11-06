@@ -2,6 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
+### 1.1 Présentation
 
 Les manoeuvres sont très importantes dans Virtual Regatta et les pénalités qui y sont associées peuvent être conséquentes.
 
@@ -35,8 +36,36 @@ ITYC.FR vous permet d afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
 
-<!-- anchor:tp_p1_1 -->
-### 1.1 Mode Focus
+### 1.2  Boutons du graphique
+
+#### 1.2.1 Mode affichage
+Vous pouvez changer de mode d'affichage de 2 manières :
+
+* En utilisant le sélecteur en haut de page ![Description](/assets/help/common/focusgrille.png "icon:2.5em")
+* En utilisant les boutons de chaque courbe 
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeGrilleCurve.png "icon:2.5em")
+  * Passage du mode focus à Grille ![Description](/assets/help/common/modeFocusCurve.png "icon:2.5em")
+
+
+*Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
+
+#### 1.2.2 Reset zoom
+
+Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
+
+#### 1.2.3 Raccourci aide
+
+A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
+
+#### 1.2.4 Précision
+
+Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision10.png "icon:2.5em") , pour basculer le calcul en précision 0.01.
+* Cliquez sur ce bouton ![Description](/assets/help/common/precision100.png "icon:2.5em") , pour basculer le calcul en précision 0.1.
+
+*Attention une précision de 0.01 demande plus de temps de calcul.*
+
+### 1.3 Mode Focus
 :::figure side image=left width=75% blocks=33%,33%,34%
 ![Pénalités Vue d ensemble focus](/assets/help/penalties/pena_vueensemble.png)
 
@@ -52,7 +81,7 @@ Pénalités doubles.
 :::
 
 <!-- anchor:tp_p1_1_2 -->
-### 1.2 Mode Grille
+### 1.4 Mode Grille
 
 :::figure side image=left width=75% blocks=50%,50%
 ![Pénalités Vue d ensemble grille](/assets/help/penalties/pena_vueensemble_g.png)
@@ -143,9 +172,36 @@ Réglage des paramètres de la courbe et calculatrice.
 Courbe des pénalités pour chaque type de manoeuvre.
 
 :::
+### 4.2 Réglages et Calculatrice 
+
+:::figure side image=left  blocks=18%,17%,28%,15%,22%
+![Calculatrice de pénalité simple](/assets/help/penalties/PS/pena_simple_cal.png)
+
+
+Réglez de l'énergie du skipper (stamina) %.
+
+---
+
+Réglez la vitesse du vent (nds).
+
+---
+
+Obtenez les temps de pénalité pour chaque type de manoeuvre (minutes et secondes).
+
+*Note: Ces données sont identiques à celles fournies pour la courbe.*
+
+---
+
+Régler la vitesse de votre bateau (nds).
+
+---
+
+Obtenez pour chaque type de manoeuvre la distance perdue(miles nautiques).
+
+:::
 
 <!-- anchor:tp_p4_2 -->
-### 4.2 Fonctionnalités des courbes
+### 4.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de Pénalités simples](/assets/help/penalties/PS/pena_simple_curve.png)
 
@@ -184,33 +240,6 @@ Temps de pénalité appliqué.
 :::
 
 <!-- anchor:tp_p4_3 -->
-### 4.3 Réglages et Calculatrice 
-
-:::figure side image=left  blocks=18%,17%,28%,15%,22%
-![Calculatrice de pénalité simple](/assets/help/penalties/PS/pena_simple_cal.png)
-
-
-Réglez de l'énergie du skipper (stamina) %.
-
----
-
-Réglez la vitesse du vent (nds).
-
----
-
-Obtenez les temps de pénalité pour chaque type de manoeuvre (minutes et secondes).
-
-*Note: Ces données sont identiques à celles fournies pour la courbe.*
-
----
-
-Régler la vitesse de votre bateau (nds).
-
----
-
-Obtenez pour chaque type de manoeuvre la distance perdue(miles nautiques).
-
-:::
 
 <!-- anchor:tp_p5 -->
 ## 5. Rentabilité d'un changement de voile
@@ -253,7 +282,38 @@ Courbe de la distance parcourue, avec et sans changement de voile.
 :::
 
 <!-- anchor:tp_p5_2 -->
-### 5.2 Fonctionnalités des courbes
+### 5.2 Réglages et Calculatrice 
+
+:::figure side image=left  blocks=15%,15%,20%,15%,15%,20%
+![Calculatrice de rentabilité](/assets/help/penalties/RT/pena_Renta_cal.png)
+
+
+Réglez de l'énergie du skipper (stamina) %.
+
+---
+
+Réglez la vitesse du vent (nds).
+
+---
+
+Obtenez les temps de pénalité  (minutes et secondes).
+
+---
+
+Vitesse moyenne du bateau sans changement de voile (nds).
+
+---
+
+Vitesse moyenne du bateau avec changement de voile (nds).
+
+---
+
+Temps et distance à partir duquel le changement de voile est rentable,c'est à dire le temps après lequel vous doublerez un bateau n'ayant pas pas changé de voile.
+
+:::
+
+<!-- anchor:tp_p6 -->
+### 5.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de rentabilité](/assets/help/penalties/RT/pena_Renta_curve.png)
 
@@ -292,37 +352,6 @@ Distance parcourue en miles nautiques.
 :::
 
 <!-- anchor:tp_p5_3 -->
-### 5.3 Réglages et Calculatrice 
-
-:::figure side image=left  blocks=15%,15%,20%,15%,15%,20%
-![Calculatrice de rentabilité](/assets/help/penalties/RT/pena_Renta_cal.png)
-
-
-Réglez de l'énergie du skipper (stamina) %.
-
----
-
-Réglez la vitesse du vent (nds).
-
----
-
-Obtenez les temps de pénalité  (minutes et secondes).
-
----
-
-Vitesse moyenne du bateau sans changement de voile (nds).
-
----
-
-Vitesse moyenne du bateau avec changement de voile (nds).
-
----
-
-Temps et distance à partir duquel le changement de voile est rentable,c'est à dire le temps après lequel vous doublerez un bateau n'ayant pas pas changé de voile.
-
-:::
-
-<!-- anchor:tp_p6 -->
 ## 6 Pénalités doubles
 
 <!-- anchor:tp_p6_1 -->
@@ -360,7 +389,34 @@ Courbe des pénalités pour chaque type de manoeuvre.
 :::
 
 <!-- anchor:tp_p6_2 -->
-### 6.2 Fonctionnalités des courbes
+### 6.2 Réglages et Calculatrice 
+
+:::figure side image=left  blocks=18%,17%,28%,15%,22%
+![Calculatrice de pénalité double](/assets/help/penalties/PD/pena_double_cal.png)
+
+
+Réglez de l'énergie du skipper (stamina) %.
+
+---
+
+Réglez la vitesse du vent (nds).
+
+---
+
+Obtenez les temps de pénalité pour chaque type de manoeuvre (minutes et secondes).
+
+*Note: Ces données sont identiques à celles fournies pour la courbe.*
+
+---
+
+Régler la vitesse de votre bateau (nds).
+
+---
+
+Obtenez la distance perdue.
+
+:::
+### 6.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de Pénalités double](/assets/help/penalties/RT/pena_Renta_curve.png)
 
@@ -397,30 +453,3 @@ Temps de pénalité appliqué.
 :::
 
 <!-- anchor:tp_p6_3 -->
-### 6.3 Réglages et Calculatrice 
-
-:::figure side image=left  blocks=18%,17%,28%,15%,22%
-![Calculatrice de pénalité double](/assets/help/penalties/PD/pena_double_cal.png)
-
-
-Réglez de l'énergie du skipper (stamina) %.
-
----
-
-Réglez la vitesse du vent (nds).
-
----
-
-Obtenez les temps de pénalité pour chaque type de manoeuvre (minutes et secondes).
-
-*Note: Ces données sont identiques à celles fournies pour la courbe.*
-
----
-
-Régler la vitesse de votre bateau (nds).
-
----
-
-Obtenez la distance perdue.
-
-:::

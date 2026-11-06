@@ -2,6 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Page overview
+### 1.1 Overview
 
 Manoeuvres are an important part of Virtual Regatta, and the associated penalties can be substantial.
 
@@ -35,8 +36,36 @@ ITYC.FR offers two page layouts:
 - Focus mode: one chart per view for better visibility.
 - Grid mode: two charts per view for a more compact layout.
 
-<!-- anchor:tp_p1_1 -->
-### 1.1 Focus mode
+### 1.2 Chart controls
+
+#### 1.2.1 Display mode
+You can switch display modes in two ways:
+
+* Using the selector at the top of the page ![Description](/assets/help/common/focusgrille.png "icon:2.5em")
+* Using the buttons on each chart
+  * Switch from Focus to Grid mode ![Description](/assets/help/common/modeGrilleCurve.png "icon:2.5em")
+  * Switch from Grid to Focus mode ![Description](/assets/help/common/modeFocusCurve.png "icon:2.5em")
+
+
+*When switching modes, the page scrolls automatically to keep the current chart in view.*
+
+#### 1.2.2 Reset zoom
+
+You can reset a chart's zoom at any time by pressing the button ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
+
+#### 1.2.3 Help shortcut
+
+You can open the help for the current chart at any time by clicking this button ![Description](/assets/help/common/aide.png "icon:2.5em")
+
+#### 1.2.4 Precision
+
+For every chart with TWS on the X axis, you can choose a calculation step of 0.1 or 0.01.
+* Click this button ![Description](/assets/help/common/precision10.png "icon:2.5em") to switch the calculation to 0.01 precision.
+* Click this button ![Description](/assets/help/common/precision100.png "icon:2.5em") to switch the calculation to 0.1 precision.
+
+*A precision of 0.01 requires more calculation time.*
+
+### 1.3 Focus mode
 :::figure side image=left width=75% blocks=33%,33%,34%
 ![Penalties page overview in focus mode](/assets/help/penalties/pena_vueensemble.png)
 
@@ -52,7 +81,7 @@ Double penalties.
 :::
 
 <!-- anchor:tp_p1_1_2 -->
-### 1.2 Grid mode
+### 1.4 Grid mode
 
 :::figure side image=left width=75% blocks=50%,50%
 ![Penalties page overview in grid mode](/assets/help/penalties/pena_vueensemble_g.png)
@@ -144,8 +173,36 @@ Penalty curve for each manoeuvre type.
 
 :::
 
+### 4.2 Settings and calculator
+
+:::figure side image=left  blocks=18%,17%,28%,15%,22%
+![Simple penalty calculator](/assets/help/penalties/PS/pena_simple_cal.png)
+
+
+Set the skipper's energy (stamina) in %.
+
+---
+
+Set True Wind Speed (kts).
+
+---
+
+Read the penalty time for each manoeuvre type (minutes and seconds).
+
+*Note: These values are identical to those shown on the chart.*
+
+---
+
+Set your boat speed (kts).
+
+---
+
+Read the distance lost for each manoeuvre type (nautical miles).
+
+:::
+
 <!-- anchor:tp_p4_2 -->
-### 4.2 Chart features
+### 4.3 Chart features
 :::figure side width=60% 
 ![Simple penalty chart](/assets/help/penalties/PS/pena_simple_curve.png)
 
@@ -184,33 +241,6 @@ Applied penalty time.
 :::
 
 <!-- anchor:tp_p4_3 -->
-### 4.3 Settings and calculator
-
-:::figure side image=left  blocks=18%,17%,28%,15%,22%
-![Simple penalty calculator](/assets/help/penalties/PS/pena_simple_cal.png)
-
-
-Set the skipper's energy (stamina) in %.
-
----
-
-Set True Wind Speed (kts).
-
----
-
-Read the penalty time for each manoeuvre type (minutes and seconds).
-
-*Note: These values are identical to those shown on the chart.*
-
----
-
-Set your boat speed (kts).
-
----
-
-Read the distance lost for each manoeuvre type (nautical miles).
-
-:::
 
 <!-- anchor:tp_p5 -->
 ## 5. Break-even point of a sail change
@@ -253,7 +283,38 @@ Distance travelled, with and without a sail change.
 :::
 
 <!-- anchor:tp_p5_2 -->
-### 5.2 Chart features
+### 5.2 Settings and calculator
+
+:::figure side image=left  blocks=15%,15%,20%,15%,15%,20%
+![Break-even calculator](/assets/help/penalties/RT/pena_Renta_cal.png)
+
+
+Set the skipper's energy (stamina) in %.
+
+---
+
+Set True Wind Speed (kts).
+
+---
+
+Read the penalty time (minutes and seconds).
+
+---
+
+Average boat speed without a sail change (kts).
+
+---
+
+Average boat speed with a sail change (kts).
+
+---
+
+The time and distance at which the sail change pays off: the point when you overtake a boat that did not change sail.
+
+:::
+
+<!-- anchor:tp_p6 -->
+### 5.3 Chart features
 :::figure side width=60% 
 ![Break-even chart](/assets/help/penalties/RT/pena_Renta_curve.png)
 
@@ -292,37 +353,6 @@ Distance travelled in nautical miles.
 :::
 
 <!-- anchor:tp_p5_3 -->
-### 5.3 Settings and calculator
-
-:::figure side image=left  blocks=15%,15%,20%,15%,15%,20%
-![Break-even calculator](/assets/help/penalties/RT/pena_Renta_cal.png)
-
-
-Set the skipper's energy (stamina) in %.
-
----
-
-Set True Wind Speed (kts).
-
----
-
-Read the penalty time (minutes and seconds).
-
----
-
-Average boat speed without a sail change (kts).
-
----
-
-Average boat speed with a sail change (kts).
-
----
-
-The time and distance at which the sail change pays off: the point when you overtake a boat that did not change sail.
-
-:::
-
-<!-- anchor:tp_p6 -->
 ## 6 Double penalties
 
 <!-- anchor:tp_p6_1 -->
@@ -360,7 +390,34 @@ Penalty curve for each manoeuvre type.
 :::
 
 <!-- anchor:tp_p6_2 -->
-### 6.2 Chart features
+### 6.2 Settings and calculator
+
+:::figure side image=left  blocks=18%,17%,28%,15%,22%
+![Double penalty calculator](/assets/help/penalties/PD/pena_double_cal.png)
+
+
+Set the skipper's energy (stamina) in %.
+
+---
+
+Set True Wind Speed (kts).
+
+---
+
+Read the penalty time for each manoeuvre type (minutes and seconds).
+
+*Note: These values are identical to those shown on the chart.*
+
+---
+
+Set your boat speed (kts).
+
+---
+
+Read the distance lost.
+
+:::
+### 6.3 Chart features
 :::figure side width=60% 
 ![Double penalty chart](/assets/help/penalties/RT/pena_Renta_curve.png)
 
@@ -397,30 +454,4 @@ Applied penalty time.
 :::
 
 <!-- anchor:tp_p6_3 -->
-### 6.3 Settings and calculator
 
-:::figure side image=left  blocks=18%,17%,28%,15%,22%
-![Double penalty calculator](/assets/help/penalties/PD/pena_double_cal.png)
-
-
-Set the skipper's energy (stamina) in %.
-
----
-
-Set True Wind Speed (kts).
-
----
-
-Read the penalty time for each manoeuvre type (minutes and seconds).
-
-*Note: These values are identical to those shown on the chart.*
-
----
-
-Set your boat speed (kts).
-
----
-
-Read the distance lost.
-
-:::
