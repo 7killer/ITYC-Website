@@ -2,6 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Page overview
+<!-- anchor:energy-overview -->
 ### 1.1 Overview
 
 In Virtual Regatta, as in real sailing, your skipper can be fit or tired.
@@ -36,8 +37,10 @@ ITYC.FR offers two page layouts:
 - Focus mode: one chart per view for better visibility.
 - Grid mode: two charts per view for a more compact layout.
 
+<!-- anchor:energy-chart-controls -->
 ### 1.2 Chart controls
 
+<!-- anchor:energy-display-mode -->
 #### 1.2.1 Display mode
 You can switch display modes in two ways:
 
@@ -49,14 +52,17 @@ You can switch display modes in two ways:
 
 *When switching modes, the page scrolls automatically to keep the current chart in view.*
 
+<!-- anchor:energy-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 You can reset a chart's zoom at any time by pressing the button ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
 
+<!-- anchor:energy-help-shortcut -->
 #### 1.2.3 Help shortcut
 
 You can open the help for the current chart at any time by clicking this button ![Description](/assets/help/common/aide.png "icon:2.5em")
 
+<!-- anchor:energy-precision -->
 #### 1.2.4 Precision
 
 For every chart with TWS on the X axis, you can choose a calculation step of 0.1 or 0.01.
@@ -168,7 +174,7 @@ Energy loss for each manoeuvre type.
 
 :::
 
-<!-- anchor:tp_p4_2 -->
+<!-- anchor:tp_p4_3 -->
 ### 4.2 Settings and calculator
 
 :::figure side image=left  blocks=30%,70%
@@ -185,6 +191,7 @@ and the time needed to recover the lost energy.
 
 :::
 
+<!-- anchor:tp_p4_2 -->
 ### 4.3 Chart features
 :::figure side width=60% 
 ![Energy loss chart](/assets/help/energy/el/el_curve.png)
@@ -223,8 +230,8 @@ True Wind Speed (knots).
 Energy loss.
 :::
 
-<!-- anchor:tp_p4_3 -->
 
+<!-- anchor:tp_p5 -->
 ## 5. Energy recovery
 
 <!-- anchor:tp_p5_1 -->
@@ -260,7 +267,7 @@ Time needed to recover one energy point.
 
 :::
 
-<!-- anchor:tp_p5_2 -->
+<!-- anchor:tp_p5_3 -->
 ### 5.2 Settings and calculator
 
 :::figure side image=left  blocks=25%,25%,50%
@@ -279,6 +286,7 @@ and the recovery time per energy point.
 *Note: These values are identical to those shown on the chart.*
 
 :::
+<!-- anchor:tp_p5_2 -->
 ### 5.3 Chart features
 :::figure side width=60% 
 ![Energy recovery chart](/assets/help/energy/er/er_curve.png)
@@ -315,5 +323,4 @@ True Wind Speed (knots).
 Time needed per energy point.
 :::
 
-<!-- anchor:tp_p5_3 -->
 

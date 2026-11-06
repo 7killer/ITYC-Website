@@ -2,6 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
+<!-- anchor:penalties-overview -->
 ### 1.1 Présentation
 
 Les manoeuvres sont très importantes dans Virtual Regatta et les pénalités qui y sont associées peuvent être conséquentes.
@@ -36,8 +37,10 @@ ITYC.FR vous permet d afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
 
+<!-- anchor:penalties-chart-controls -->
 ### 1.2  Boutons du graphique
 
+<!-- anchor:penalties-display-mode -->
 #### 1.2.1 Mode affichage
 Vous pouvez changer de mode d'affichage de 2 manières :
 
@@ -49,14 +52,17 @@ Vous pouvez changer de mode d'affichage de 2 manières :
 
 *Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
 
+<!-- anchor:penalties-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
 
+<!-- anchor:penalties-help-shortcut -->
 #### 1.2.3 Raccourci aide
 
 A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
 
+<!-- anchor:penalties-precision -->
 #### 1.2.4 Précision
 
 Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
@@ -65,6 +71,7 @@ Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la 
 
 *Attention une précision de 0.01 demande plus de temps de calcul.*
 
+<!-- anchor:penalties-focus-mode -->
 ### 1.3 Mode Focus
 :::figure side image=left width=75% blocks=33%,33%,34%
 ![Pénalités Vue d ensemble focus](/assets/help/penalties/pena_vueensemble.png)
@@ -172,6 +179,7 @@ Réglage des paramètres de la courbe et calculatrice.
 Courbe des pénalités pour chaque type de manoeuvre.
 
 :::
+<!-- anchor:tp_p4_3 -->
 ### 4.2 Réglages et Calculatrice 
 
 :::figure side image=left  blocks=18%,17%,28%,15%,22%
@@ -239,7 +247,6 @@ Vitesse du vents ( noeuds ).
 Temps de pénalité appliqué.
 :::
 
-<!-- anchor:tp_p4_3 -->
 
 <!-- anchor:tp_p5 -->
 ## 5. Rentabilité d'un changement de voile
@@ -281,7 +288,7 @@ Courbe de la distance parcourue, avec et sans changement de voile.
 
 :::
 
-<!-- anchor:tp_p5_2 -->
+<!-- anchor:tp_p5_3 -->
 ### 5.2 Réglages et Calculatrice 
 
 :::figure side image=left  blocks=15%,15%,20%,15%,15%,20%
@@ -312,7 +319,7 @@ Temps et distance à partir duquel le changement de voile est rentable,c'est à 
 
 :::
 
-<!-- anchor:tp_p6 -->
+<!-- anchor:tp_p5_2 -->
 ### 5.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de rentabilité](/assets/help/penalties/RT/pena_Renta_curve.png)
@@ -351,7 +358,7 @@ Temps écoulé depuis le début de la manoeuvre en secondes.
 Distance parcourue en miles nautiques.
 :::
 
-<!-- anchor:tp_p5_3 -->
+<!-- anchor:tp_p6 -->
 ## 6 Pénalités doubles
 
 <!-- anchor:tp_p6_1 -->
@@ -388,7 +395,7 @@ Courbe des pénalités pour chaque type de manoeuvre.
 
 :::
 
-<!-- anchor:tp_p6_2 -->
+<!-- anchor:tp_p6_3 -->
 ### 6.2 Réglages et Calculatrice 
 
 :::figure side image=left  blocks=18%,17%,28%,15%,22%
@@ -416,6 +423,7 @@ Régler la vitesse de votre bateau (nds).
 Obtenez la distance perdue.
 
 :::
+<!-- anchor:tp_p6_2 -->
 ### 6.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de Pénalités double](/assets/help/penalties/RT/pena_Renta_curve.png)
@@ -452,4 +460,3 @@ Vitesse du vent ( nds ).
 Temps de pénalité appliqué.
 :::
 
-<!-- anchor:tp_p6_3 -->

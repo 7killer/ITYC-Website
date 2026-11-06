@@ -6,6 +6,7 @@ les coefficients et la recherche des meilleures performances, consultez le
 
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
+<!-- anchor:polar-overview -->
 ### 1.1 Présentation
 Les polaires des bateaux permettent connaître la vitesse du bateau en fonction de nombreux paramètres :
 
@@ -58,8 +59,10 @@ Mode polaire.
 ITYC.FR vous permet d'afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
+<!-- anchor:polar-chart-controls -->
 ### 1.2 Boutons du graphique
 
+<!-- anchor:polar-display-mode -->
 #### 1.2.1 Mode affichage
 Vous pouvez changer de mode d'affichage de 2 manières :
 
@@ -71,14 +74,17 @@ Vous pouvez changer de mode d'affichage de 2 manières :
 
 *Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
 
+<!-- anchor:polar-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
 
+<!-- anchor:polar-help-shortcut -->
 #### 1.2.3 Raccourci aide
 
 A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
 
+<!-- anchor:polar-precision -->
 #### 1.2.4 Précision
 
 Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
@@ -152,7 +158,7 @@ Carte d'utilisation des voiles ( TWS, TWA ).
 
 :::
 
-<!-- anchor:tp_p1_1_2 -->
+<!-- anchor:polar-expert-grid -->
 ### 1.2 Mode Grille Expert
 
 
@@ -186,6 +192,7 @@ Carte d'utilisation des voiles ( TWS, TWA ).
 
 :::
 
+<!-- anchor:polar-normal-expert-mode -->
 ## 2. Mode Normal / Expert
 
 :::figure side width=20%
@@ -236,6 +243,7 @@ La zone permettant l activation / désactivation de chaque voile.
 
 :::
 
+<!-- anchor:polar-options-packs -->
 ### 4.1 Options et Packs
 
 :::figure rows image=center width=70% 
@@ -268,6 +276,7 @@ La zone permettant l activation / désactivation de chaque voile.
 
 :::
 
+<!-- anchor:polar-sails -->
 ### 4.2 Voiles
 
 :::figure rows image=center width=70%
@@ -278,8 +287,10 @@ Dans cette section , vous pouvez activer / désactiver indépendamment chaque vo
 Pour rappel, l'abréviation du nom anglais de la voile figure entre parenthèses pour une plus grande facilité d'utilisation.
 :::
 
+<!-- anchor:polar-analyser -->
 ## 5. Analyseur de polaire
 
+<!-- anchor:polar-analyser-overview -->
 ### 5.1 Présentation
 
 L analyseur propose un outil permettant d'afficher la totalité de la plage de TWA sous la forme d'un diagramme papillon pour une TWS donnée.
@@ -315,6 +326,7 @@ Diagramme des polaires.
 Réglage des paramètres de la courbe et infos polaires.
 
 :::
+<!-- anchor:polar-analyser-settings -->
 ### 5.2 Réglages
 :::figure side image=left  blocks=25%,35,40%
 ![Calculatrice energie perdue](/assets/help/polar/curve/polar_expert_setting.png)
@@ -334,6 +346,7 @@ Réglez la vitesse du vent (nds).
 
 :::
 
+<!-- anchor:polar-analyser-display-selector -->
 #### 5.2.1 Sélecteur d'affichage 
 :::figure side image=left  width=32%
 ![Calculatrice energie perdue](/assets/help/polar/curve/polar_expert_setting_diag.png)
@@ -347,6 +360,7 @@ Réglez la vitesse du vent (nds).
 
 :::
 
+<!-- anchor:polar-analyser-information -->
 ### 5.3 Infos polaire
 :::figure side image=left  width=32% blocks=40%,35%,25%
 ![Calculatrice energie perdue](/assets/help/polar/curve/polar_expert_infos1.png)
@@ -390,6 +404,7 @@ Pour la TWS sélectionnez , retrouvez pour chaque voile  :
 
 :::
 
+<!-- anchor:polar-analyser-chart-features -->
 ### 5.4 Fonctionnalités des courbes
 
 :::figure side image=left  width=32% 
@@ -423,7 +438,9 @@ Pour la TWS sélectionnez , retrouvez pour chaque voile  :
 * Utilisez le bouton 'reset zoom' pour réinitialiser l'affichage.
 
 
+<!-- anchor:tp_p4 -->
 ## 6. Vitesse du bateau - f(tws) à TWA fixe
+<!-- anchor:polar-fixed-twa-overview -->
 ### 6.1 Présentation
 Après avoir sélectionner vos équipements, vous devez régler l angle au vent ( TWA ) à l'aide la zone en à droite du graphique.
 
@@ -431,6 +448,7 @@ Après avoir sélectionner vos équipements, vous devez régler l angle au vent 
 ![Energie perdue focus](/assets/help/polar/curve/polar_twa_curve.png)
 :::
 
+<!-- anchor:polar-fixed-twa-settings -->
 ### 6.2 Réglages
 :::figure side image=left  width=30%
 ![Calculatrice energie perdue](/assets/help/polar/curve/polar_tws_curve_set.png)
@@ -439,6 +457,7 @@ Réglez la vitesse du vent (nds).
 
 :::
 
+<!-- anchor:polar-fixed-twa-chart-features -->
 ### 6.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_twa_curve.png)
@@ -485,7 +504,9 @@ A la TWS -1 et la TWS + 1 , La vitesse du bateau (nds ), la différence de vites
 :::
 
 
+<!-- anchor:tp_p5 -->
 ## 7. Vitesse du bateau - f(twa) à TWS fixe
+<!-- anchor:polar-fixed-tws-overview -->
 ### 7.1 Présentation
 Après avoir sélectionner vos équipements, vous devez régler la vitesse du vent (TWS) à l'aide la zone en à droite du graphique.
 
@@ -493,6 +514,7 @@ Après avoir sélectionner vos équipements, vous devez régler la vitesse du ve
 ![Energie perdue focus](/assets/help/polar/curve/polar_tws_curve.png)
 :::
 
+<!-- anchor:polar-fixed-tws-settings -->
 ### 7.2 Réglages
 :::figure side image=left  width=30%
 ![Calculatrice energie perdue](/assets/help/polar/curve/polar_tws_curve_set.png)
@@ -501,6 +523,7 @@ Réglez l'angle au vent (°).
 
 :::
 
+<!-- anchor:polar-fixed-tws-chart-features -->
 ### 7.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_tws_curve.png)
@@ -546,7 +569,9 @@ A la TWA - 2 et la TWA + 2 , La vitesse du bateau (nds ), la différence de vite
 
 :::
 
+<!-- anchor:tp_p6 -->
 ## 8. Angle au vent BestVMG - f(tws) TWA pour la meilleure VMG 
+<!-- anchor:polar-best-vmg-angle-overview -->
 ### 8.1 Présentation
 
 
@@ -562,6 +587,7 @@ Vous y trouverez l'angle au vent ( TWA ) pour obtenir la meilleure VMG en foncti
 ![Energie perdue focus](/assets/help/polar/curve/polar_bvmg_curve.png)
 :::
 
+<!-- anchor:polar-best-vmg-angle-chart-features -->
 ### 8.2 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_bvmg_curve.png)
@@ -608,7 +634,9 @@ A la TWS, La TWA best VMG UP, la vitesse du bateau (nds ) et la voile active.
 :::
 
 
+<!-- anchor:polar-vmg-speed -->
 ## 9. Vitesse du bateau VMG - f(tws) Vitesse du bateau à la meilleure VMG
+<!-- anchor:polar-vmg-speed-overview -->
 ### 9.1 Présentation
 
 Après avoir sélectionner vos équipements, la courbe des TWA pour la vitesse apparaîtra.
@@ -621,6 +649,7 @@ La VMG est la composante de vitesse utile dans l’axe du vent : elle décrit la
 ![Energie perdue focus](/assets/help/polar/curve/polar_vmg_curve.png)
 :::
 
+<!-- anchor:polar-vmg-speed-chart-features -->
 ### 9.2 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_vmg_curve.png)
@@ -667,7 +696,9 @@ A la TWS, La VMG UP, l angle au vent (TWA °), la vitesse du bateau ( nds ) et l
 :::
 
 
+<!-- anchor:tp_p7 -->
 ## 10. Angle au vent BestSpeed - f(tws) TWA pour la meilleure vitesse 
+<!-- anchor:polar-best-speed-angle-overview -->
 ### 10.1 Présentation
 
 Après avoir sélectionner vos équipements, la courbe des TWA pour la vitesse apparaîtra.
@@ -678,6 +709,7 @@ Vous y trouverez la TWA  pour obtenir le meilleure vitesse au près et au portan
 ![Energie perdue focus](/assets/help/polar/curve/polar_bspd_curve.png)
 :::
 
+<!-- anchor:polar-best-speed-angle-chart-features -->
 ### 10.2 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_bspd_curve.png)
@@ -720,7 +752,9 @@ A la TWS, La TWA pour la Best speed, la vitesse du bateau (nds ) et la voile act
 :::
 
 
+<!-- anchor:polar-best-speed -->
 ## 11. Vitesse du bateau BestSpeed- f(tws) Meilleure vitesse du bateau 
+<!-- anchor:polar-best-speed-overview -->
 ### 11.1 Présentation
 
 Après avoir sélectionner vos équipements, la courbe des TWA pour la vitesse apparaîtra.
@@ -731,6 +765,7 @@ Vous y trouverez la meilleur vitesse ( vitesse max) du bateau en fonction de la 
 ![Energie perdue focus](/assets/help/polar/curve/polar_spd_curve.png)
 :::
 
+<!-- anchor:polar-best-speed-chart-features -->
 ### 11.2 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_spd_curve.png)
@@ -772,7 +807,9 @@ A la TWS, La vitesse du bateau ( nds ),  l angle au vent (TWA °),  et la voile 
 
 :::
 
+<!-- anchor:polar-sail-map -->
 ## 12. Carte Utilisation des voiles
+<!-- anchor:polar-sail-map-overview -->
 ### 12.1 Présentation
 
 Après avoir sélectionner vos équipements, la courbe des TWA pour la vitesse apparaîtra.
@@ -788,6 +825,7 @@ Les lignes et leurs étiquettes indiquent des niveaux de vitesse du bateau. Elle
 ![Energie perdue focus](/assets/help/polar/curve/polar_bsail_curve.png)
 :::
 
+<!-- anchor:polar-sail-map-chart-features -->
 ### 12.2 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/polar/curve/polar_bsail_curve.png)

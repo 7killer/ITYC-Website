@@ -24,6 +24,7 @@ Vous pouvez installer extension de 2 manières :
 * Ou manuellement en suivant la procedure ci dessous.
 <!-- anchor:ChromeInstallTab1 -->
 ### 2.1 Installation manuelle Chrome / Opera
+<!-- anchor:dash-install-chrome-preparation -->
 #### 2.1.1 Préparation
 
 Télécharger les sources en cliquant ici :
@@ -156,6 +157,7 @@ Bravo , l'extension ITYC Dashboard est dorénavant installée dans votre navigat
 :::
 
 
+<!-- anchor:dash-install-quick-access -->
 ### 2.3 Ajout icone accès rapide
 <!-- anchor:ChromeInstallTab5 -->
 #### 2.3.1 Chrome / Opera
@@ -192,7 +194,6 @@ Puis cliquez sur la punaise, l'icône de l'extension ITYC Dashboard sera doréna
 :::
 
 
-<!-- anchor:tp_p4 -->
 
 <!-- anchor:ChromeInstallTab6 -->
 ### 2.4 Redémarrage Navigateur
@@ -202,6 +203,7 @@ Après installation, il est obligatoire de redémarrer complètement votre navig
 En effet, c'est nécessaire pour finaliser l'installation des scripts permettant de se passer du système de debuggage et le manifest V3.
 
 
+<!-- anchor:tp_p4 -->
 ## 3. Démarrage
 
 :::figure side half
@@ -499,12 +501,14 @@ Lien vers cette page et Version Extension.
 
 <!-- anchor:tabDashTab3 -->
 ### 5.3 Race Status
+<!-- anchor:dash-race-status-overview -->
 #### 5.3.1 Présentation
 :::figure below width=50%
 ![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus1.png)
 :::
 :::figure rows width=100%
 *Note : Vous personnaliser l affichage des colonne dans l onglet Configuration*
+<!-- anchor:dash-race-status-columns-rt-rank -->
 #### 5.3.2 Colonne RT à Rank
 * RT : Ouvre un onglet de routage avec vos coordonnées et vos options pré remplies.
 
@@ -527,6 +531,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
 * Rank : Classement du bateau.
 :::
+<!-- anchor:dash-race-status-columns-dtl-hdg -->
 #### 5.3.3 Colonne DTL à HDG
 :::figure below width=50%
 ![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus2.png)
@@ -557,6 +562,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
   * Couleur Blue/Fuschia si le mode TWA fixe est activée.
 :::
+<!-- anchor:dash-race-status-columns-asail-vmg -->
 #### 5.3.4 Colonne ASail à VMG
 :::figure below width=50%
 ![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus3.png)
@@ -588,6 +594,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
   * Couleur rouge Vous êtes échoués ou vous n'êtes pas parti!.
 :::
+<!-- anchor:dash-race-status-columns-best-vmg-stamina -->
 #### 5.3.5 Colonne Best VMG à Stamina
 :::figure below width=50%
 ![4. Calculs](/assets/help/dashboard/raceStatus/raceSatus4.png)
@@ -608,6 +615,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
   * Energie du skipper suivi du coefficient appliqué au temps de pénalité théorique.
 :::
+<!-- anchor:dash-race-status-columns-gybe-mnvr -->
 #### 5.3.6 Colonne Empannage à Mnvr
 
 :::figure below width=50%
@@ -653,6 +661,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 <!-- anchor:tabDashTab4 -->
 ### 5.4 Page Journal
 
+<!-- anchor:dash-log-overview -->
 #### 5.4.1 Presentation
 :::figure below width=100%
 ![4. Calculs](/assets/help/dashboard/raceLog/racelog1.png)
@@ -666,6 +675,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 :::
 
 
+<!-- anchor:dash-log-columns-time-hdg -->
 #### 5.4.2 Colonne Time à HDG
 :::figure rows width=70% 
 ![4. Calculs](/assets/help/dashboard/raceLog/racelog2.png)
@@ -705,6 +715,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
 :::
 
+<!-- anchor:dash-log-columns-asail-stamina -->
 #### 5.4.3 Colonne ASail à Stamina
 :::figure rows width=70%
 ![4. Calculs](/assets/help/dashboard/raceLog/racelog3.png)
@@ -732,6 +743,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
   * Energie du skipper.
 :::
 
+<!-- anchor:dash-log-columns-delta-d-tack -->
 #### 5.4.4 Colonne Δd à Virement
 :::figure rows width=70%
 ![4. Calculs](/assets/help/dashboard/raceLog/racelog4.png)
@@ -757,6 +769,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
   * Temps restant (s) de pénalités de virement en cours.
 :::
 
+<!-- anchor:dash-log-command-rows -->
 #### 5.4.5 Lignes Commandes
 :::figure below width=90%
 ![4. Calculs](/assets/help/dashboard/raceLog/racelog5.png)
@@ -781,6 +794,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
 <!-- anchor:tabDashTab5 -->
 ### 5.5 Page Flotte
+<!-- anchor:dash-fleet-overview -->
 #### 5.5.1 Presentation
 
 :::figure below
@@ -798,6 +812,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
   En tenant compte des filtres sélectionnés en haut à droite.
 
   
+<!-- anchor:dash-fleet-filters -->
 #### 5.5.2 Filtres
 :::figure below width=90%
 ![4. Calculs](/assets/help/dashboard/fleet/fleet_filter.png)
@@ -844,6 +859,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
   * Copie dans le presse papier le contenu de la flotte au format SailRanks.
 :::
 
+<!-- anchor:dash-fleet-columns-rt-rank -->
 #### 5.5.3 Colonne RT à Rank
 :::figure below width=90%
 ![4. Calculs](/assets/help/dashboard/fleet/fleet_1.png)
@@ -885,6 +901,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
   * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 :::
+<!-- anchor:dash-fleet-columns-dtu-hdg -->
 #### 5.5.4 Colonne DTU à HDG
 :::figure below width=90%
 ![4. Calculs](/assets/help/dashboard/fleet/fleet_2.png)
@@ -931,6 +948,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
   * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 :::
+<!-- anchor:dash-fleet-columns-speed-foils -->
 #### 5.5.5 Colonne Speed à Foils
 :::figure below width=60%
 ![4. Calculs](/assets/help/dashboard/fleet/fleet_3.png)
@@ -976,6 +994,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 - Coefficient d'utilisation des foils ( si installé)..
 
 :::
+<!-- anchor:dash-fleet-columns-race-time-average-speed -->
 #### 5.5.6 Colonne RaceTime à avgS
 :::figure below width=40%
 ![4. Calculs](/assets/help/dashboard/fleet/fleet_6.png)
@@ -1008,6 +1027,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
   * Peut être caché si décoché dans l'onglet Configuration section Flotte.
 :::
+<!-- anchor:dash-fleet-columns-position-selection -->
 #### 5.5.7 Colonne Postion à Sélection
 :::figure below width=60%
 ![4. Calculs](/assets/help/dashboard/fleet/fleet_4.png)
@@ -1057,6 +1077,7 @@ Affiche les routeurs actifs pour la course, permet de lancer Zezo, Sermar, VrZen
 
 <!-- anchor:tabDashTab6 -->
 ### 5.6 Page Carte
+<!-- anchor:dash-map-overview -->
 #### 5.6.1 Présentation
 :::figure below
 ![6. Page Carte](/assets/help/dashboard/map/map_full.png)
@@ -1116,6 +1137,7 @@ Icone des bateaux de la flotte ( Remplissage et bordure )
 - Gris : Adversaires.
 :::
 
+<!-- anchor:dash-map-actions -->
 #### 5.6.2 Actions
 :::figure side half
 ![6. Page Carte](/assets/help/dashboard/map/map_action2.png)
@@ -1183,6 +1205,7 @@ Outil mesure.
   - Re cliquez sur l'icône pour désactiver ou second Click + Echap. L'icône redevient gris.
 :::
 
+<!-- anchor:dash-map-coastlines -->
 #### 5.6.3 Traits de cotes
 :::figure rows image=center  width=80%
 ![6. Page Carte](/assets/help/dashboard/map/map_cotes.png)
@@ -1191,6 +1214,7 @@ Les traits de cotes apparaîtront lors du zoom sur la carte.
 
 Vous pouvez choisir la couleur des traits de cotes dans le panneau de gauche.
 
+<!-- anchor:dash-map-route-import -->
 #### 5.6.4 Import routage
 En cliquant sur le bouton Ajouter dans le panneau de gauche , le popup d import routage apparaîtra.
 :::figure side half
@@ -1248,6 +1272,7 @@ Les marqueurs noires correspondent aux changements de voile
 :::
 
 
+<!-- anchor:dash-map-base-maps -->
 #### 5.6.5 fond de carte
 En cliquant sur l icone en haut à droite le carte vous pourrez changer le fond de carte entre :
  * Osm Classique
@@ -1285,6 +1310,7 @@ Artic
 
 <!-- anchor:tabDashTab7 -->
 ### 5.7 Page Résumé
+<!-- anchor:dash-summary-overview -->
 #### 5.7.1 Présentation
 :::figure side width=60% blocks=10%,10%,39%,41%
 ![7. Page Résumé](/assets/help/dashboard/raceResume/resume.png)
@@ -1304,6 +1330,7 @@ Artic
 - Zones interdites et Limite de glace
 
 :::
+<!-- anchor:dash-summary-race -->
 #### 5.7.2 Résumé de la course
 :::figure rows image=center width=100%
 ![4. Calculs](/assets/help/dashboard/raceResume/resume_1.png)
@@ -1324,6 +1351,7 @@ Artic
 
 
 
+<!-- anchor:dash-summary-credits-options -->
 #### 5.7.3 Credits et Options
 :::figure rows image=center width=100%
 ![4. Calculs](/assets/help/dashboard/raceResume/resume_2.png)
@@ -1342,6 +1370,7 @@ Artic
 
 *Options en vert signifie options activées*
 :::
+<!-- anchor:dash-summary-waypoints -->
 #### 5.7.4 Points de passage de la course
 :::figure rows image=center width=90%
 ![4. Calculs](/assets/help/dashboard/raceResume/resume_3.png)
@@ -1352,6 +1381,7 @@ Artic
 :::
 
 
+<!-- anchor:dash-summary-exclusion-zones-ice-limits -->
 #### 5.7.5 Zones interdites et Limites des glaces
 :::figure rows image=center width=90%
 ![4. Calculs](/assets/help/dashboard/raceResume/resume_4.png)
@@ -1367,6 +1397,7 @@ Artic
 <!-- anchor:tabDashTab8 -->
 ### 5.8 Page Graphique
 
+<!-- anchor:dash-charts-overview -->
 #### 5.8.1 Présentation
 Représentation graphique du contenu du journal de bord
 
@@ -1384,7 +1415,9 @@ Retrouvez ici sous forme graphique la TWS, TWS, HDG, TWA, Vitesse et Stamina à 
 
 - La couleur du graphique correspond à la voile active.
 
+<!-- anchor:dash-analysis -->
 ### 5.9 Page Analyse
+<!-- anchor:dash-analysis-overview -->
 #### 5.9.1 Présentation
 Retrouvez ici le contenu du site ITYC préconfiguré avec le bateau, les options ainsi que les paramètres de navigation.
 :::figure below
@@ -1395,6 +1428,7 @@ Retrouvez ici le contenu du site ITYC préconfiguré avec le bateau, les options
 
 <!-- anchor:tabDashTab9 -->
 ### 5.10 Page Notifications
+<!-- anchor:dash-notifications-overview -->
 #### 5.10.1 Présentation
 
 :::figure below
@@ -1412,6 +1446,7 @@ Retrouvez ici le contenu du site ITYC préconfiguré avec le bateau, les options
 <!-- anchor:tabDashTab10 -->
 ### 5.11 Page Configuration
 
+<!-- anchor:dash-config-overview -->
 #### 5.11.1 Présentation
 :::figure below
 ![10. Page Configuration](/assets/help/dashboard/config/config.png)
@@ -1420,6 +1455,7 @@ Retrouvez ici le contenu du site ITYC préconfiguré avec le bateau, les options
 :::
 
 
+<!-- anchor:dash-config-general -->
 #### 5.11.2 Section générale
 :::figure rows image=center width=90%
 ![4. Calculs](/assets/help/dashboard/config/config_1.png)
@@ -1465,6 +1501,7 @@ Options générales
 
 :::
 
+<!-- anchor:dash-config-display -->
 ####  5.11.3 Section Affichage
 :::figure rows image=center width=40%
 ![4. Calculs](/assets/help/dashboard/config/config_2.png)
@@ -1478,6 +1515,7 @@ Options générales
  *  Pourcentage d occupation que le jeu doit occuper quand le mode plein écran est activé.
 
 :::
+<!-- anchor:dash-config-race-data -->
 ####  5.11.4 Section Données de course 
 :::figure rows image=center width=80%
 ![10. Page Configuration](/assets/help/dashboard/config/config_3.png)
@@ -1499,6 +1537,7 @@ Options générales
 
   *Nécessite la réception d'une itération pour être mis à jour.*
 :::
+<!-- anchor:dash-config-log -->
 ####  5.11.5 Section Journal
 :::figure rows image=center width=90%
 ![10. Page Configuration](/assets/help/dashboard/config/config_4.png)
@@ -1518,6 +1557,7 @@ Options générales
 
   *Nécessite la réception d'une itération pour être mis à jour.*
 :::
+<!-- anchor:dash-config-map -->
 ####  5.11.6 Section Carte
 
 :::figure rows image=center width=90%
@@ -1542,6 +1582,7 @@ Options générales
 :::
 
 
+<!-- anchor:dash-config-fleet -->
 ####  5.11.7 Section Flotte
 :::figure rows image=center width=90%
 ![10. Page Configuration](/assets/help/dashboard/config/config_6.png)
@@ -1581,6 +1622,7 @@ Options générales
  Si renseignez à l appui sur le bouton export Sailrank, les données seront automatiquement transmises au serveur SailRanks.
 
 :::
+<!-- anchor:dash-config-export -->
 ####  5.11.8 Section Export
 :::figure rows image=center width=90%
 ![10. Page Configuration](/assets/help/dashboard/config/config_7.png)

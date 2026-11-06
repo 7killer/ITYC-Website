@@ -2,6 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Page overview
+<!-- anchor:penalties-overview -->
 ### 1.1 Overview
 
 Manoeuvres are an important part of Virtual Regatta, and the associated penalties can be substantial.
@@ -36,8 +37,10 @@ ITYC.FR offers two page layouts:
 - Focus mode: one chart per view for better visibility.
 - Grid mode: two charts per view for a more compact layout.
 
+<!-- anchor:penalties-chart-controls -->
 ### 1.2 Chart controls
 
+<!-- anchor:penalties-display-mode -->
 #### 1.2.1 Display mode
 You can switch display modes in two ways:
 
@@ -49,14 +52,17 @@ You can switch display modes in two ways:
 
 *When switching modes, the page scrolls automatically to keep the current chart in view.*
 
+<!-- anchor:penalties-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 You can reset a chart's zoom at any time by pressing the button ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
 
+<!-- anchor:penalties-help-shortcut -->
 #### 1.2.3 Help shortcut
 
 You can open the help for the current chart at any time by clicking this button ![Description](/assets/help/common/aide.png "icon:2.5em")
 
+<!-- anchor:penalties-precision -->
 #### 1.2.4 Precision
 
 For every chart with TWS on the X axis, you can choose a calculation step of 0.1 or 0.01.
@@ -65,6 +71,7 @@ For every chart with TWS on the X axis, you can choose a calculation step of 0.1
 
 *A precision of 0.01 requires more calculation time.*
 
+<!-- anchor:penalties-focus-mode -->
 ### 1.3 Focus mode
 :::figure side image=left width=75% blocks=33%,33%,34%
 ![Penalties page overview in focus mode](/assets/help/penalties/pena_vueensemble.png)
@@ -173,6 +180,7 @@ Penalty curve for each manoeuvre type.
 
 :::
 
+<!-- anchor:tp_p4_3 -->
 ### 4.2 Settings and calculator
 
 :::figure side image=left  blocks=18%,17%,28%,15%,22%
@@ -240,7 +248,6 @@ True Wind Speed (knots).
 Applied penalty time.
 :::
 
-<!-- anchor:tp_p4_3 -->
 
 <!-- anchor:tp_p5 -->
 ## 5. Break-even point of a sail change
@@ -282,7 +289,7 @@ Distance travelled, with and without a sail change.
 
 :::
 
-<!-- anchor:tp_p5_2 -->
+<!-- anchor:tp_p5_3 -->
 ### 5.2 Settings and calculator
 
 :::figure side image=left  blocks=15%,15%,20%,15%,15%,20%
@@ -313,7 +320,7 @@ The time and distance at which the sail change pays off: the point when you over
 
 :::
 
-<!-- anchor:tp_p6 -->
+<!-- anchor:tp_p5_2 -->
 ### 5.3 Chart features
 :::figure side width=60% 
 ![Break-even chart](/assets/help/penalties/RT/pena_Renta_curve.png)
@@ -352,7 +359,7 @@ Time elapsed since the start of the manoeuvre, in seconds.
 Distance travelled in nautical miles.
 :::
 
-<!-- anchor:tp_p5_3 -->
+<!-- anchor:tp_p6 -->
 ## 6 Double penalties
 
 <!-- anchor:tp_p6_1 -->
@@ -389,7 +396,7 @@ Penalty curve for each manoeuvre type.
 
 :::
 
-<!-- anchor:tp_p6_2 -->
+<!-- anchor:tp_p6_3 -->
 ### 6.2 Settings and calculator
 
 :::figure side image=left  blocks=18%,17%,28%,15%,22%
@@ -417,6 +424,7 @@ Set your boat speed (kts).
 Read the distance lost.
 
 :::
+<!-- anchor:tp_p6_2 -->
 ### 6.3 Chart features
 :::figure side width=60% 
 ![Double penalty chart](/assets/help/penalties/RT/pena_Renta_curve.png)
@@ -453,5 +461,4 @@ True Wind Speed (kts).
 Applied penalty time.
 :::
 
-<!-- anchor:tp_p6_3 -->
 

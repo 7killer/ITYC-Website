@@ -6,6 +6,7 @@ threshold, usage ranges and overlap zones.
 
 <!-- anchor:tp_p1 -->
 ## 1. Page overview
+<!-- anchor:autosail-overview -->
 ### 1.1 Overview
 The game's automatic sail management means we do not have to change sails manually.
 
@@ -59,8 +60,10 @@ ITYC.FR provides two page layouts:
 - Focus mode: one chart per page for better visibility.
 - Grid mode: two charts per page for a more compact layout.
 
+<!-- anchor:autosail-chart-controls -->
 ### 1.2 Chart controls
 
+<!-- anchor:autosail-display-mode -->
 #### 1.2.1 Display mode
 You can switch display modes in two ways:
 
@@ -72,14 +75,17 @@ You can switch display modes in two ways:
 
 *When switching modes, the page scrolls automatically to keep the current chart in view.*
 
+<!-- anchor:autosail-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 You can reset a chart's zoom at any time by pressing the button ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
 
+<!-- anchor:autosail-help-shortcut -->
 #### 1.2.3 Help shortcut
 
 Open the help for the current chart at any time by clicking the ![Chart help](/assets/help/common/aide.png "icon:2.5em") button.
 
+<!-- anchor:autosail-precision -->
 #### 1.2.4 Precision
 
 For every chart with TWS on the X axis, you can choose a calculation step of 0.1 or 0.01.
@@ -171,6 +177,7 @@ The area for enabling or disabling each sail.
 
 :::
 
+<!-- anchor:autosail-options-packs -->
 ### 3.1 Options and Packs
 
 :::figure rows image=center width=70% 
@@ -203,6 +210,7 @@ The area for enabling or disabling each sail.
 
 :::
 
+<!-- anchor:autosail-sails -->
 ### 3.2 Sails
 
 :::figure rows image=center width=70%
@@ -213,7 +221,9 @@ In this section, you can enable or disable each sail independently.
 For ease of use, the abbreviation of each sail's English name is shown in parentheses.
 :::
 
+<!-- anchor:tp_p4 -->
 ## 4. Active sail - fixed TWA
+<!-- anchor:autosail-fixed-twa-overview -->
 ### 4.1 Overview
 Does my router suggest changing sails for one hour? Is switching temporarily to an intermediate sail worthwhile?
 
@@ -247,6 +257,7 @@ Boat speed over the TWS range at the specified TWA.
 
 :::
 
+<!-- anchor:autosail-fixed-twa-settings -->
 ### 4.2 Settings
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
 ![Active sail at fixed TWA settings](/assets/help/autosail/curve/autosail_twa_set.png)
@@ -268,6 +279,7 @@ Read the TWS range for the selected sail at the chosen TWA.
 
 :::
 
+<!-- anchor:autosail-fixed-twa-chart-features -->
 ### 4.3 Chart features
 :::figure side width=60% 
 ![Active sail at fixed TWA chart](/assets/help/autosail/curve/autosail_twa_curve.png)
@@ -337,7 +349,9 @@ Boat speed (knots), sail and, where applicable, the gain from overlap compared w
 :::
 
 
+<!-- anchor:tp_p5 -->
 ## 5. Active sail - fixed TWS
+<!-- anchor:autosail-fixed-tws-overview -->
 ### 5.1 Overview
 Does my router suggest changing sails for one hour? Is switching temporarily to an intermediate sail worthwhile?
 
@@ -371,6 +385,7 @@ Boat speed over the TWA range at the specified TWS.
 
 :::
 
+<!-- anchor:autosail-fixed-tws-settings -->
 ### 5.2 Settings
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
 ![Active sail at fixed TWS settings](/assets/help/autosail/curve/autosail_tws_set.png)
@@ -392,6 +407,7 @@ Read the TWA range for the selected sail at the chosen TWS.
 
 :::
 
+<!-- anchor:autosail-fixed-tws-chart-features -->
 ### 5.3 Chart features
 :::figure side width=60% 
 ![Active sail at fixed TWS chart](/assets/help/autosail/curve/autosail_tws_curve.png)
@@ -460,7 +476,9 @@ Boat speed (knots), sail and, where applicable, the gain from overlap compared w
 :::
 
 
+<!-- anchor:tp_p6 -->
 ## 6. Sail usage range
+<!-- anchor:autosail-sail-range-overview -->
 ### 6.1 Overview
 Want to view a sail's usage zone as a function of wind speed (TWS) and wind angle (TWA)?
 
@@ -492,6 +510,7 @@ Upper and lower wind angle (TWA) limits for a given sail.
 
 :::
 
+<!-- anchor:autosail-sail-range-settings -->
 ### 6.2 Settings
 :::figure side image=left  width=30% 
 ![Sail usage range settings](/assets/help/autosail/curve/autosail_zu_set.png)
@@ -500,6 +519,7 @@ Select the active sail.
 
 :::
 
+<!-- anchor:autosail-sail-range-chart-features -->
 ### 6.3 Chart features
 :::figure side width=60% 
 ![Sail usage range chart](/assets/help/autosail/curve/autosail_zu_curve.png)
@@ -550,7 +570,9 @@ Minimum wind angle (°), boat speed (kts).
 
 :::
 
+<!-- anchor:autosail-overlap -->
 ## 7. Overlap zone between sails
+<!-- anchor:autosail-overlap-overview -->
 ### 7.1 Overview
 Want to view the overlap zone between two sails as a function of wind speed (TWS) and wind angle (TWA)?
 
@@ -582,6 +604,7 @@ Upper and lower wind angle (TWA) limits of the overlap between the two sails.
 
 :::
 
+<!-- anchor:autosail-overlap-settings -->
 ### 7.2 Settings
 :::figure side image=left  width=30% 
 ![Sail overlap zone settings](/assets/help/autosail/curve/autosail_zr_set.png)
@@ -594,6 +617,7 @@ Select the second sail.
 
 :::
 
+<!-- anchor:autosail-overlap-chart-features -->
 ### 7.3 Chart features
 :::figure side width=60% 
 ![Sail overlap zone chart](/assets/help/autosail/curve/autosail_zr_curve.png)

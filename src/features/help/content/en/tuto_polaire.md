@@ -6,6 +6,7 @@ coefficients and how the best performance is found, see
 
 <!-- anchor:tp_p1 -->
 ## 1. Page overview
+<!-- anchor:polar-overview -->
 ### 1.1 Overview
 Boat polars show boat speed as a function of several parameters:
 
@@ -59,8 +60,10 @@ ITYC.FR provides two page layouts:
 - Focus mode: one chart per page for better visibility.
 - Grid mode: two charts per page for a more compact layout.
 
+<!-- anchor:polar-chart-controls -->
 ### 1.2 Chart controls
 
+<!-- anchor:polar-display-mode -->
 #### 1.2.1 Display mode
 You can switch display modes in two ways:
 
@@ -71,14 +74,17 @@ You can switch display modes in two ways:
 
 *When switching modes, the page scrolls to keep the current chart in view.*
 
+<!-- anchor:polar-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 You can reset a chart's zoom at any time by clicking the ![Reset zoom](/assets/help/common/resetZoom.png "icon:2.5em") button.
 
+<!-- anchor:polar-help-shortcut -->
 #### 1.2.3 Help shortcut
 
 Open the help for the current chart at any time by clicking the ![Chart help](/assets/help/common/aide.png "icon:2.5em") button.
 
+<!-- anchor:polar-precision -->
 #### 1.2.4 Precision
 
 For every chart with TWS on the X axis, you can choose a calculation step of 0.1 or 0.01.
@@ -152,7 +158,7 @@ Sail usage map (TWS, TWA).
 
 :::
 
-<!-- anchor:tp_p1_1_2 -->
+<!-- anchor:polar-expert-grid -->
 ### 1.2 Expert Grid mode
 
 
@@ -186,6 +192,7 @@ Sail usage map (TWS, TWA).
 
 :::
 
+<!-- anchor:polar-normal-expert-mode -->
 ## 2. Normal / Expert mode
 
 :::figure side width=20%
@@ -236,6 +243,7 @@ The area for enabling or disabling each sail.
 
 :::
 
+<!-- anchor:polar-options-packs -->
 ### 4.1 Options and Packs
 
 :::figure rows image=center width=70% 
@@ -268,6 +276,7 @@ The area for enabling or disabling each sail.
 
 :::
 
+<!-- anchor:polar-sails -->
 ### 4.2 Sails
 
 :::figure rows image=center width=70%
@@ -278,8 +287,10 @@ In this section, you can enable or disable each sail independently.
 For ease of use, the abbreviation of each sail's English name is shown in parentheses.
 :::
 
+<!-- anchor:polar-analyser -->
 ## 5. Polar analyser
 
+<!-- anchor:polar-analyser-overview -->
 ### 5.1 Overview
 
 The analyser displays the full TWA range as a butterfly diagram for a given TWS.
@@ -315,6 +326,7 @@ Polar diagram.
 Chart settings and polar information.
 
 :::
+<!-- anchor:polar-analyser-settings -->
 ### 5.2 Settings
 :::figure side image=left  blocks=25%,35,40%
 ![Expert polar settings](/assets/help/polar/curve/polar_expert_setting.png)
@@ -334,6 +346,7 @@ Set the wind speed (kts).
 
 :::
 
+<!-- anchor:polar-analyser-display-selector -->
 #### 5.2.1 Display selector 
 :::figure side image=left  width=32%
 ![Expert polar display selector](/assets/help/polar/curve/polar_expert_setting_diag.png)
@@ -347,6 +360,7 @@ Set the wind speed (kts).
 
 :::
 
+<!-- anchor:polar-analyser-information -->
 ### 5.3 Polar information
 :::figure side image=left  width=32% blocks=40%,35%,25%
 ![Current conditions, Best Speed and Best VMG information](/assets/help/polar/curve/polar_expert_infos1.png)
@@ -390,6 +404,7 @@ For the selected TWS, read the following for each sail:
 
 :::
 
+<!-- anchor:polar-analyser-chart-features -->
 ### 5.4 Chart features
 
 :::figure side image=left  width=32% 
@@ -423,7 +438,9 @@ For the selected TWS, read the following for each sail:
 * Use the 'reset zoom' button to reset the view.
 
 
+<!-- anchor:tp_p4 -->
 ## 6. Boat speed - f(tws) at fixed TWA
+<!-- anchor:polar-fixed-twa-overview -->
 ### 6.1 Overview
 After selecting your equipment, set the wind angle (TWA) using the controls to the right of the chart.
 
@@ -431,6 +448,7 @@ After selecting your equipment, set the wind angle (TWA) using the controls to t
 ![Boat speed by wind angle chart](/assets/help/polar/curve/polar_twa_curve.png)
 :::
 
+<!-- anchor:polar-fixed-twa-settings -->
 ### 6.2 Settings
 :::figure side image=left  width=30%
 ![Wind setting for the speed chart](/assets/help/polar/curve/polar_tws_curve_set.png)
@@ -439,6 +457,7 @@ Set the wind speed (kts).
 
 :::
 
+<!-- anchor:polar-fixed-twa-chart-features -->
 ### 6.3 Chart features
 :::figure side width=60% 
 ![Boat speed by wind angle chart](/assets/help/polar/curve/polar_twa_curve.png)
@@ -485,7 +504,9 @@ At TWS - 1 and TWS + 1: boat speed (kts), the speed difference from the TWS curv
 :::
 
 
+<!-- anchor:tp_p5 -->
 ## 7. Boat speed - f(twa) at fixed TWS
+<!-- anchor:polar-fixed-tws-overview -->
 ### 7.1 Overview
 After selecting your equipment, set the wind speed (TWS) using the controls to the right of the chart.
 
@@ -493,6 +514,7 @@ After selecting your equipment, set the wind speed (TWS) using the controls to t
 ![Boat speed by wind speed chart](/assets/help/polar/curve/polar_tws_curve.png)
 :::
 
+<!-- anchor:polar-fixed-tws-settings -->
 ### 7.2 Settings
 :::figure side image=left  width=30%
 ![Wind setting for the speed chart](/assets/help/polar/curve/polar_tws_curve_set.png)
@@ -501,6 +523,7 @@ Set the wind angle (°).
 
 :::
 
+<!-- anchor:polar-fixed-tws-chart-features -->
 ### 7.3 Chart features
 :::figure side width=60% 
 ![Boat speed by wind speed chart](/assets/help/polar/curve/polar_tws_curve.png)
@@ -546,7 +569,9 @@ At TWA - 2 and TWA + 2: boat speed (kts), the speed difference from the TWA curv
 
 :::
 
+<!-- anchor:tp_p6 -->
 ## 8. BestVMG wind angle - f(tws) TWA for best VMG 
+<!-- anchor:polar-best-vmg-angle-overview -->
 ### 8.1 Overview
 
 
@@ -562,6 +587,7 @@ It shows the wind angle (TWA) that achieves the best VMG as a function of wind s
 ![Wind angle for Best VMG chart](/assets/help/polar/curve/polar_bvmg_curve.png)
 :::
 
+<!-- anchor:polar-best-vmg-angle-chart-features -->
 ### 8.2 Chart features
 :::figure side width=60% 
 ![Wind angle for Best VMG chart](/assets/help/polar/curve/polar_bvmg_curve.png)
@@ -608,7 +634,9 @@ At the selected TWS: the Best VMG UP TWA, boat speed (kts) and active sail.
 :::
 
 
+<!-- anchor:polar-vmg-speed -->
 ## 9. VMG boat speed - f(tws) Boat speed at the best VMG
+<!-- anchor:polar-vmg-speed-overview -->
 ### 9.1 Overview
 
 After selecting your equipment, the TWA chart for speed appears.
@@ -621,6 +649,7 @@ VMG is the useful component of speed along the wind axis: it describes progress,
 ![VMG by wind speed chart](/assets/help/polar/curve/polar_vmg_curve.png)
 :::
 
+<!-- anchor:polar-vmg-speed-chart-features -->
 ### 9.2 Chart features
 :::figure side width=60% 
 ![VMG by wind speed chart](/assets/help/polar/curve/polar_vmg_curve.png)
@@ -667,7 +696,9 @@ At the selected TWS: VMG UP, wind angle (TWA °), boat speed (kts) and active sa
 :::
 
 
+<!-- anchor:tp_p7 -->
 ## 10. BestSpeed wind angle - f(tws) TWA for the best speed 
+<!-- anchor:polar-best-speed-angle-overview -->
 ### 10.1 Overview
 
 After selecting your equipment, the TWA chart for speed appears.
@@ -678,6 +709,7 @@ It shows the TWA that achieves the best upwind and downwind speed as a function 
 ![Wind angle for Best VMG or Best Speed chart](/assets/help/polar/curve/polar_bspd_curve.png)
 :::
 
+<!-- anchor:polar-best-speed-angle-chart-features -->
 ### 10.2 Chart features
 :::figure side width=60% 
 ![Wind angle for Best VMG or Best Speed chart](/assets/help/polar/curve/polar_bspd_curve.png)
@@ -720,7 +752,9 @@ At the selected TWS: the TWA for Best Speed, boat speed (kts) and active sail.
 :::
 
 
+<!-- anchor:polar-best-speed -->
 ## 11. BestSpeed boat speed - f(tws) Best boat speed 
+<!-- anchor:polar-best-speed-overview -->
 ### 11.1 Overview
 
 After selecting your equipment, the TWA chart for speed appears.
@@ -731,6 +765,7 @@ It shows the best boat speed (maximum speed) as a function of wind speed (TWS).
 ![Best boat speed by wind speed chart](/assets/help/polar/curve/polar_spd_curve.png)
 :::
 
+<!-- anchor:polar-best-speed-chart-features -->
 ### 11.2 Chart features
 :::figure side width=60% 
 ![Best boat speed by wind speed chart](/assets/help/polar/curve/polar_spd_curve.png)
@@ -772,7 +807,9 @@ At the selected TWS: boat speed (kts), wind angle (TWA °) and active sail.
 
 :::
 
+<!-- anchor:polar-sail-map -->
 ## 12. Sail usage map
+<!-- anchor:polar-sail-map-overview -->
 ### 12.1 Overview
 
 After selecting your equipment, the TWA chart for speed appears.
@@ -788,6 +825,7 @@ The lines and their labels indicate boat speed levels. They help identify zones 
 ![Sail usage map](/assets/help/polar/curve/polar_bsail_curve.png)
 :::
 
+<!-- anchor:polar-sail-map-chart-features -->
 ### 12.2 Chart features
 :::figure side width=60% 
 ![Sail usage map](/assets/help/polar/curve/polar_bsail_curve.png)

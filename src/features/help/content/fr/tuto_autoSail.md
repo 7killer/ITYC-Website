@@ -6,6 +6,7 @@ changement de voile, les plages d’utilisation et les zones de recouvrement.
 
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
+<!-- anchor:autosail-overview -->
 ### 1.1 Présentation
 Grâce à la gestion des voiles automatiques par le jeu, nous n'avons pas à nous préoccuper des changements de voiles à la main.
 
@@ -59,8 +60,10 @@ ITYC.FR vous permet d'afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
 
+<!-- anchor:autosail-chart-controls -->
 ### 1.2  Boutons du graphique
 
+<!-- anchor:autosail-display-mode -->
 #### 1.2.1 Mode affichage
 Vous pouvez changer de mode d'affichage de 2 manières :
 
@@ -72,14 +75,17 @@ Vous pouvez changer de mode d'affichage de 2 manières :
 
 *Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
 
+<!-- anchor:autosail-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
 
+<!-- anchor:autosail-help-shortcut -->
 #### 1.2.3 Raccourci aide
 
 A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
 
+<!-- anchor:autosail-precision -->
 #### 1.2.4 Précision
 
 Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
@@ -171,6 +177,7 @@ La zone permettant l activation / désactivation de chaque voile.
 
 :::
 
+<!-- anchor:autosail-options-packs -->
 ### 3.1 Options et Packs
 
 :::figure rows image=center width=70% 
@@ -203,6 +210,7 @@ La zone permettant l activation / désactivation de chaque voile.
 
 :::
 
+<!-- anchor:autosail-sails -->
 ### 3.2 Voiles
 
 :::figure rows image=center width=70%
@@ -213,7 +221,9 @@ Dans cette section , vous pouvez activer / désactiver indépendamment chaque vo
 Pour rappel, l'abréviation du nom anglais de la voile figure entre parenthèses pour une plus grande facilité d'utilisation.
 :::
 
+<!-- anchor:tp_p4 -->
 ## 4. Voile active - TWA fixe
+<!-- anchor:autosail-fixed-twa-overview -->
 ### 4.1 Présentation
 Mon routeur me ferait changer de voile pendant 1h ? On doit passer par une voile intermédiaire, es-ce utile ?
 
@@ -247,6 +257,7 @@ Vitesse du bateau pour la plage de TWS et la TWA donnée.
 
 :::
 
+<!-- anchor:autosail-fixed-twa-settings -->
 ### 4.2 Réglages
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_twa_set.png)
@@ -268,6 +279,7 @@ Obtenez la plage de TWS pour la voile sélectionnée à la TWA choisie.
 
 :::
 
+<!-- anchor:autosail-fixed-twa-chart-features -->
 ### 4.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_twa_curve.png)
@@ -337,7 +349,9 @@ Vitesse du bateau ( noeuds ), voile, gain dû au recouvrement par rapport à la 
 :::
 
 
+<!-- anchor:tp_p5 -->
 ## 5. Voile active - TWS fixe
+<!-- anchor:autosail-fixed-tws-overview -->
 ### 5.1 Présentation
 Mon routeur me ferait changer de voile pendant 1h ? On doit passer par une voile intermédiaire, es-ce utile ?
 
@@ -371,6 +385,7 @@ Vitesse du bateau pour la plage de TWA et la TWS donnée.
 
 :::
 
+<!-- anchor:autosail-fixed-tws-settings -->
 ### 5.2 Réglages
 :::figure side image=left  width=30% blocks=17%,19%,40%,24%
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_tws_set.png)
@@ -392,6 +407,7 @@ Obtenez la plage de TWA pour la voile sélectionnée à la TWS choisie.
 
 :::
 
+<!-- anchor:autosail-fixed-tws-chart-features -->
 ### 5.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_tws_curve.png)
@@ -460,7 +476,9 @@ Vitesse du bateau ( noeuds ), voile, gain dû au recouvrement par rapport à la 
 :::
 
 
+<!-- anchor:tp_p6 -->
 ## 6. Plage d utilisation d'une voile
+<!-- anchor:autosail-sail-range-overview -->
 ### 6.1 Présentation
 Envie de visualiser la zone d utilisation d'une voile en fonction de la vitesse du vent ( TWS ) et de l'angle au vent ( TWA ) ?
 
@@ -492,6 +510,7 @@ Limite haute et basse de l'angle au vent ( TWA ) pour une voile donnée.
 
 :::
 
+<!-- anchor:autosail-sail-range-settings -->
 ### 6.2 Réglages
 :::figure side image=left  width=30% 
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_zu_set.png)
@@ -500,6 +519,7 @@ Sélectionnez la voile active.
 
 :::
 
+<!-- anchor:autosail-sail-range-chart-features -->
 ### 6.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_zu_curve.png)
@@ -550,7 +570,9 @@ Angle au vent min ( ° ) , vitesse du bateau ( nds ).
 
 :::
 
+<!-- anchor:autosail-overlap -->
 ## 7. Zone de recouvrement entre voile
+<!-- anchor:autosail-overlap-overview -->
 ### 7.1 Présentation
 Envie de visualiser la zone de recouvrement entre deux voiles en fonction de la vitesse du vent ( TWS ) et de l'angle au vent ( TWA ) ?
 
@@ -582,6 +604,7 @@ Limite haute et basse de l'angle au vent ( TWA ) de recouvrement entre les deux 
 
 :::
 
+<!-- anchor:autosail-overlap-settings -->
 ### 7.2 Réglages
 :::figure side image=left  width=30% 
 ![Calculatrice energie perdue](/assets/help/autosail/curve/autosail_zr_set.png)
@@ -594,6 +617,7 @@ Sélectionnez la deuxième voile .
 
 :::
 
+<!-- anchor:autosail-overlap-chart-features -->
 ### 7.3 Fonctionnalités de la courbe
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/autosail/curve/autosail_zr_curve.png)

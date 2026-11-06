@@ -24,6 +24,7 @@ You can install the extension in two ways:
 * Or manually, by following the procedure below.
 <!-- anchor:ChromeInstallTab1 -->
 ### 2.1 Manual installation on Chrome / Opera
+<!-- anchor:dash-install-chrome-preparation -->
 #### 2.1.1 Preparation
 
 Download the source files here:
@@ -156,6 +157,7 @@ The ITYC Dashboard extension is now installed in your browser.
 :::
 
 
+<!-- anchor:dash-install-quick-access -->
 ### 2.3 Adding a quick access icon
 <!-- anchor:ChromeInstallTab5 -->
 #### 2.3.1 Chrome / Opera
@@ -192,7 +194,6 @@ Click the pin. The ITYC Dashboard icon will now remain visible in the browser to
 :::
 
 
-<!-- anchor:tp_p4 -->
 
 <!-- anchor:ChromeInstallTab6 -->
 ### 2.4 Restarting the browser
@@ -202,6 +203,7 @@ After installation, you must completely restart your browser.
 This completes the installation of the scripts used with Manifest V3, without relying on the debugging system.
 
 
+<!-- anchor:tp_p4 -->
 ## 3. Getting started
 
 :::figure side half
@@ -499,12 +501,14 @@ Link to this help page and extension version.
 
 <!-- anchor:tabDashTab3 -->
 ### 5.3 Race Status
+<!-- anchor:dash-race-status-overview -->
 #### 5.3.1 Overview
 :::figure below width=50%
 ![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus1.png)
 :::
 :::figure rows width=100%
 *Note: you can customise which columns are shown in the Configuration tab.*
+<!-- anchor:dash-race-status-columns-rt-rank -->
 #### 5.3.2 Columns RT to Rank
 * RT: opens a routing tab with your coordinates and options pre-filled.
 
@@ -527,6 +531,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
 * Rank: the boat's ranking.
 :::
+<!-- anchor:dash-race-status-columns-dtl-hdg -->
 #### 5.3.3 Columns DTL to HDG
 :::figure below width=50%
 ![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus2.png)
@@ -557,6 +562,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
   * Blue/fuchsia when fixed TWA mode is enabled.
 :::
+<!-- anchor:dash-race-status-columns-asail-vmg -->
 #### 5.3.4 Columns ASail to VMG
 :::figure below width=50%
 ![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus3.png)
@@ -588,6 +594,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
   * Red: you are aground or have not started.
 :::
+<!-- anchor:dash-race-status-columns-best-vmg-stamina -->
 #### 5.3.5 Columns Best VMG to Stamina
 :::figure below width=50%
 ![4. Calculated values](/assets/help/dashboard/raceStatus/raceSatus4.png)
@@ -608,6 +615,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
   * The skipper's energy followed by the multiplier applied to theoretical penalty times.
 :::
+<!-- anchor:dash-race-status-columns-gybe-mnvr -->
 #### 5.3.6 Columns Gybe to Mnvr
 
 :::figure below width=50%
@@ -653,6 +661,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 <!-- anchor:tabDashTab4 -->
 ### 5.4 Log page
 
+<!-- anchor:dash-log-overview -->
 #### 5.4.1 Overview
 :::figure below width=100%
 ![4. Calculated values](/assets/help/dashboard/raceLog/racelog1.png)
@@ -666,6 +675,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 :::
 
 
+<!-- anchor:dash-log-columns-time-hdg -->
 #### 5.4.2 Columns Time to HDG
 :::figure rows width=70% 
 ![4. Calculated values](/assets/help/dashboard/raceLog/racelog2.png)
@@ -705,6 +715,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
 :::
 
+<!-- anchor:dash-log-columns-asail-stamina -->
 #### 5.4.3 Columns ASail to Stamina
 :::figure rows width=70%
 ![4. Calculated values](/assets/help/dashboard/raceLog/racelog3.png)
@@ -732,6 +743,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
   * The skipper's energy.
 :::
 
+<!-- anchor:dash-log-columns-delta-d-tack -->
 #### 5.4.4 Columns Δd to Tack
 :::figure rows width=70%
 ![4. Calculated values](/assets/help/dashboard/raceLog/racelog4.png)
@@ -757,6 +769,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
   * Remaining penalty time (s) for the current tack.
 :::
 
+<!-- anchor:dash-log-command-rows -->
 #### 5.4.5 Command rows
 :::figure below width=90%
 ![4. Calculated values](/assets/help/dashboard/raceLog/racelog5.png)
@@ -781,6 +794,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
 <!-- anchor:tabDashTab5 -->
 ### 5.5 Fleet page
+<!-- anchor:dash-fleet-overview -->
 #### 5.5.1 Overview
 
 :::figure below
@@ -798,6 +812,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
   The filters selected at the top right are applied.
 
   
+<!-- anchor:dash-fleet-filters -->
 #### 5.5.2 Filters
 :::figure below width=90%
 ![4. Calculated values](/assets/help/dashboard/fleet/fleet_filter.png)
@@ -844,6 +859,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
   * Copies the fleet data to the clipboard in SailRanks format.
 :::
 
+<!-- anchor:dash-fleet-columns-rt-rank -->
 #### 5.5.3 Columns RT to Rank
 :::figure below width=90%
 ![4. Calculated values](/assets/help/dashboard/fleet/fleet_1.png)
@@ -885,6 +901,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
   * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 :::
+<!-- anchor:dash-fleet-columns-dtu-hdg -->
 #### 5.5.4 Columns DTU to HDG
 :::figure below width=90%
 ![4. Calculated values](/assets/help/dashboard/fleet/fleet_2.png)
@@ -931,6 +948,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
   * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 :::
+<!-- anchor:dash-fleet-columns-speed-foils -->
 #### 5.5.5 Columns Speed to Foils
 :::figure below width=60%
 ![4. Calculated values](/assets/help/dashboard/fleet/fleet_3.png)
@@ -976,6 +994,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 - Foil utilisation coefficient, if foils are fitted.
 
 :::
+<!-- anchor:dash-fleet-columns-race-time-average-speed -->
 #### 5.5.6 Columns RaceTime to avgS
 :::figure below width=40%
 ![4. Calculated values](/assets/help/dashboard/fleet/fleet_6.png)
@@ -1008,6 +1027,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
   * Can be hidden by unchecking it in the Fleet section of the Configuration tab.
 :::
+<!-- anchor:dash-fleet-columns-position-selection -->
 #### 5.5.7 Columns Position to Selection
 :::figure below width=60%
 ![4. Calculated values](/assets/help/dashboard/fleet/fleet_4.png)
@@ -1057,6 +1077,7 @@ Shows the routers available for the race: Zezo, Sermar, VrZen and Naya.
 
 <!-- anchor:tabDashTab6 -->
 ### 5.6 Map page
+<!-- anchor:dash-map-overview -->
 #### 5.6.1 Overview
 :::figure below
 ![6. Map page](/assets/help/dashboard/map/map_full.png)
@@ -1116,6 +1137,7 @@ Fleet boat icons: fill and border.
 - Grey: opponents.
 :::
 
+<!-- anchor:dash-map-actions -->
 #### 5.6.2 Actions
 :::figure side half
 ![6. Map page](/assets/help/dashboard/map/map_action2.png)
@@ -1185,6 +1207,7 @@ Measurement tool.
 
 :::
 
+<!-- anchor:dash-map-coastlines -->
 #### 5.6.3 Coastlines
 :::figure rows image=center  width=80%
 ![6. Map page](/assets/help/dashboard/map/map_cotes.png)
@@ -1193,6 +1216,7 @@ Coastlines appear as you zoom in on the map.
 
 You can choose their colour in the left panel.
 
+<!-- anchor:dash-map-route-import -->
 #### 5.6.4 Importing routes
 Click Add in the left panel to open the route import popup.
 :::figure side half
@@ -1250,6 +1274,7 @@ Black markers indicate sail changes.
 :::
 
 
+<!-- anchor:dash-map-base-maps -->
 #### 5.6.5 Base maps
 Click the icon at the top right of the map to choose between:
  * OSM Standard.
@@ -1287,6 +1312,7 @@ Arctic.
 
 <!-- anchor:tabDashTab7 -->
 ### 5.7 Summary page
+<!-- anchor:dash-summary-overview -->
 #### 5.7.1 Overview
 :::figure side width=60% blocks=10%,10%,39%,41%
 ![7. Summary page](/assets/help/dashboard/raceResume/resume.png)
@@ -1306,6 +1332,7 @@ Arctic.
 - Exclusion zones and ice limit.
 
 :::
+<!-- anchor:dash-summary-race -->
 #### 5.7.2 Race summary
 :::figure rows image=center width=100%
 ![4. Calculated values](/assets/help/dashboard/raceResume/resume_1.png)
@@ -1326,6 +1353,7 @@ Arctic.
 
 
 
+<!-- anchor:dash-summary-credits-options -->
 #### 5.7.3 Credits and options
 :::figure rows image=center width=100%
 ![4. Calculated values](/assets/help/dashboard/raceResume/resume_2.png)
@@ -1344,6 +1372,7 @@ Arctic.
 
 *Green options are enabled.*
 :::
+<!-- anchor:dash-summary-waypoints -->
 #### 5.7.4 Race waypoints
 :::figure rows image=center width=90%
 ![4. Calculated values](/assets/help/dashboard/raceResume/resume_3.png)
@@ -1354,6 +1383,7 @@ Arctic.
 :::
 
 
+<!-- anchor:dash-summary-exclusion-zones-ice-limits -->
 #### 5.7.5 Exclusion zones and ice limits
 :::figure rows image=center width=90%
 ![4. Calculated values](/assets/help/dashboard/raceResume/resume_4.png)
@@ -1369,6 +1399,7 @@ Arctic.
 <!-- anchor:tabDashTab8 -->
 ### 5.8 Charts page
 
+<!-- anchor:dash-charts-overview -->
 #### 5.8.1 Overview
 Graphical representation of the boat's log.
 
@@ -1386,7 +1417,9 @@ View charts of TWS, TWS, HDG, TWA, speed and stamina for each update received fr
 
 - The plot colour corresponds to the current sail.
 
+<!-- anchor:dash-analysis -->
 ### 5.9 Analysis page
+<!-- anchor:dash-analysis-overview -->
 #### 5.9.1 Overview
 Access the ITYC website's tools with the boat, options and sailing parameters already configured.
 :::figure below
@@ -1397,6 +1430,7 @@ Access the ITYC website's tools with the boat, options and sailing parameters al
 
 <!-- anchor:tabDashTab9 -->
 ### 5.10 Notifications page
+<!-- anchor:dash-notifications-overview -->
 #### 5.10.1 Overview
 
 :::figure below
@@ -1414,6 +1448,7 @@ Access the ITYC website's tools with the boat, options and sailing parameters al
 <!-- anchor:tabDashTab10 -->
 ### 5.11 Configuration page
 
+<!-- anchor:dash-config-overview -->
 #### 5.11.1 Overview
 :::figure below
 ![10. Configuration page](/assets/help/dashboard/config/config.png)
@@ -1422,6 +1457,7 @@ Access the ITYC website's tools with the boat, options and sailing parameters al
 :::
 
 
+<!-- anchor:dash-config-general -->
 #### 5.11.2 General section
 :::figure rows image=center width=90%
 ![4. Calculated values](/assets/help/dashboard/config/config_1.png)
@@ -1467,6 +1503,7 @@ General options.
 
 :::
 
+<!-- anchor:dash-config-display -->
 #### 5.11.3 Display section
 :::figure rows image=center width=40%
 ![4. Calculated values](/assets/help/dashboard/config/config_2.png)
@@ -1480,6 +1517,7 @@ General options.
  * Percentage of the display occupied by the game when fullscreen mode is enabled.
 
 :::
+<!-- anchor:dash-config-race-data -->
 #### 5.11.4 Race data section
 :::figure rows image=center width=80%
 ![10. Configuration page](/assets/help/dashboard/config/config_3.png)
@@ -1501,6 +1539,7 @@ General options.
 
   *Updates after an update is received from the server.*
 :::
+<!-- anchor:dash-config-log -->
 #### 5.11.5 Log section
 :::figure rows image=center width=90%
 ![10. Configuration page](/assets/help/dashboard/config/config_4.png)
@@ -1520,6 +1559,7 @@ General options.
 
   *Updates after an update is received from the server.*
 :::
+<!-- anchor:dash-config-map -->
 #### 5.11.6 Map section
 
 :::figure rows image=center width=90%
@@ -1544,6 +1584,7 @@ General options.
 :::
 
 
+<!-- anchor:dash-config-fleet -->
 #### 5.11.7 Fleet section
 :::figure rows image=center width=90%
 ![10. Configuration page](/assets/help/dashboard/config/config_6.png)
@@ -1583,6 +1624,7 @@ General options.
  If this is filled in, clicking Export SailRanks sends the data directly to the SailRanks server.
 
 :::
+<!-- anchor:dash-config-export -->
 #### 5.11.8 Export section
 :::figure rows image=center width=90%
 ![10. Configuration page](/assets/help/dashboard/config/config_7.png)

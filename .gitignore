@@ -4,3 +4,7 @@ dist/
 *.local
 playwright-report/
 test-results/
+tests/visual/help-anchors.spec.ts
+tests/visual/help-content-parity.spec.ts
+tests/visual/help-content-parity.spec.ts
+/tests

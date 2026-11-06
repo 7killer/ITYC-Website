@@ -2,6 +2,7 @@
 
 <!-- anchor:tp_p1 -->
 ## 1. Vue d'ensemble de la page
+<!-- anchor:energy-overview -->
 ### 1.1 Présentation
 
 Dans Virtual Regatta, comme dans le réel, votre skipper peut être en forme ou fatigué.
@@ -36,8 +37,10 @@ ITYC.FR vous permet d afficher les pages sous 2 formes :
 - Mode Focus : une courbe par page , meilleur visibilité.
 - Mode Grille : 2 courbe par page, plus compact.
 
+<!-- anchor:energy-chart-controls -->
 ### 1.2  Boutons du graphique
 
+<!-- anchor:energy-display-mode -->
 #### 1.2.1 Mode affichage
 Vous pouvez changer de mode d'affichage de 2 manières :
 
@@ -49,14 +52,17 @@ Vous pouvez changer de mode d'affichage de 2 manières :
 
 *Lors du passage d'un mode à l'autre le défilement de la page s'adapte pour garder le focus sur la courbe affichée.*
 
+<!-- anchor:energy-reset-zoom -->
 #### 1.2.2 Reset zoom
 
 Vous pouvez réinitialiser le zoom d' un courbe à tout moment en appuyant sur le bouton ![Description](/assets/help/common/resetZoom.png "icon:2.5em")
 
+<!-- anchor:energy-help-shortcut -->
 #### 1.2.3 Raccourci aide
 
 A tout moment, vous pouvez consulter l' aide du graphique concerné en cliquant sur ce bouton ![Description](/assets/help/common/aide.png "icon:2.5em")
 
+<!-- anchor:energy-precision -->
 #### 1.2.4 Précision
 
 Pour tous les graphiques dont l' axe X est la TWS, vous pouvez sélectionner la précision du calcul entre 0.1 ou 0.01. 
@@ -168,7 +174,7 @@ Perte d énergie pour chaque type de manoeuvre.
 
 :::
 
-<!-- anchor:tp_p4_2 -->
+<!-- anchor:tp_p4_3 -->
 ### 4.2 Réglages et Calculatrice 
 
 :::figure side image=left  blocks=30%,70%
@@ -184,6 +190,7 @@ et le temps nécessaire à la récupération de l'énergie perdue.
 *Note: Ces données sont identiques à celles fournies pour la courbe.*
 
 :::
+<!-- anchor:tp_p4_2 -->
 ### 4.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de energie perdue](/assets/help/energy/el/el_curve.png)
@@ -222,8 +229,8 @@ Vitesse du vents ( noeuds ).
 Pertes d'énergie.
 :::
 
-<!-- anchor:tp_p4_3 -->
 
+<!-- anchor:tp_p5 -->
 ## 5. Récupération d'énergie
 
 <!-- anchor:tp_p5_1 -->
@@ -259,7 +266,7 @@ Durée nécessaire pour récupérer un point d'énergie.
 
 :::
 
-<!-- anchor:tp_p5_2 -->
+<!-- anchor:tp_p5_3 -->
 ### 5.2 Réglages et Calculatrice 
 
 :::figure side image=left  blocks=25%,25%,50%
@@ -278,6 +285,7 @@ et le temps de récupération par point d énergie.
 *Note: Ces données sont identiques à celles fournies pour la courbe.*
 
 :::
+<!-- anchor:tp_p5_2 -->
 ### 5.3 Fonctionnalités des courbes
 :::figure side width=60% 
 ![Courbe de energie recup](/assets/help/energy/er/er_curve.png)
@@ -314,4 +322,3 @@ Vitesse du vents ( noeuds ).
 Temps nécessaire par point d'énergie.
 :::
 
-<!-- anchor:tp_p5_3 -->

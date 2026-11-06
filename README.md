@@ -38,10 +38,10 @@ pnpm install
 pnpm build
 ```
 
-Sur Windows, pour le dépôt situé dans `C:\virtual regatta\git\ITYC-Website`, ouvrir PowerShell et exécuter :
+Sur Windows, pour le dépôt situé dans `C:\git\ITYC-Website`, ouvrir PowerShell et exécuter :
 
 ```powershell
-Set-Location "C:\virtual regatta\git\ITYC-Website"
+Set-Location "C:\git\ITYC-Website"
 pnpm install
 pnpm build
 ```

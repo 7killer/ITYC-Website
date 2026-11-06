@@ -50,6 +50,26 @@ Les titres produisent automatiquement des liens partageables, par exemple
 Les commentaires `<!-- anchor:tp_p3 -->` conservent les anciennes ancres HTML.
 Ne pas les supprimer lors d’une correction de texte.
 
+Chaque titre `##`, `###` ou `####` doit avoir un commentaire d’ancre sur la ligne
+immédiatement précédente, sans ligne vide entre le commentaire et le titre :
+
+```markdown
+<!-- anchor:tp_p4 -->
+## 4. Pénalités simples
+```
+
+Une ancre doit être unique dans son document et identique pour les titres
+correspondants en français et en anglais. Lors d’un déplacement de section,
+déplacer son commentaire avec elle ; conserver son identifiant même si son titre
+ou son numéro change. Pour une nouvelle section, choisir un identifiant descriptif
+stable, par exemple `polar-expert-grid`, puis le reprendre dans les deux langues.
+Un commentaire isolé ou séparé du titre par une ligne vide ne crée aucune ancre.
+
+La recherche utilise cette ancre stable lorsqu’elle est présente. Les liens
+générés à partir du titre restent également disponibles. Le test
+`tests/visual/help-anchors.spec.ts` vérifie l’ensemble des titres, l’unicité des
+ancres, leur correspondance FR/EN et les destinations des liens internes.
+
 Les liens entre les anciens fichiers d’aide sont redirigés vers les documents
 du wiki. Les listes imbriquées, tableaux Markdown et expressions mathématiques
 `$…$` ou blocs `$$` sont pris en charge.
